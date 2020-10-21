@@ -79,9 +79,16 @@ export const NavLinks = styled(LinkS)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  color: ${({ bottom }) => (bottom ? "#efb401" : "none")};
 
   &.active {
-    border-bottom: 3px solid #01bf71;
+    border-bottom: 3px solid #efb401;
+  }
+
+  &:hover {
+    color: #efb401;
+    transition: 0.2s ease-in-out;
+    border-bottom: 3px solid #efb401;
   }
 `;
 
