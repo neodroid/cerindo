@@ -27,11 +27,11 @@ const HeroSection = () => {
       </HeroBg>
       <HeroContent>
         <HeroH1>Building a Shining Nickel and Cobalt Business</HeroH1>
-        <HeroP>
+        {/* <HeroP>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam.
-        </HeroP>
+        </HeroP> */}
 
         <HeroBtnWrapper>
           <Button
