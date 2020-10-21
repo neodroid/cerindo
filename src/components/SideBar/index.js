@@ -25,17 +25,20 @@ const Sidebar = ({ isOpen, toggle }) => {
             About
           </SidebarLink>
           <SidebarLink to="partners" onClick={toggle}>
-            Partners
+            Mining
           </SidebarLink>
           <SidebarLink to="event" onClick={toggle}>
-            Event
+            Corporate News
+          </SidebarLink>
+          <SidebarLink to="event" onClick={toggle}>
+            Career
           </SidebarLink>
         </SidebarMenu>
-        <SideBtnWrap>
+        {/* <SideBtnWrap>
           <SidebarRoute to="/register" onClick={toggle}>
             Register
           </SidebarRoute>
-        </SideBtnWrap>
+        </SideBtnWrap> */}
       </SidebarWrapper>
     </SidebarContainer>
   );

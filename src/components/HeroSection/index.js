@@ -26,11 +26,22 @@ const HeroSection = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
       <HeroContent>
-        <HeroP>WE MUST ACHIEVE ZERO EMISSION IN:</HeroP>
-        <HeroH1>00:00:00:00:00</HeroH1>
+        <HeroH1>Building a Shining Nickel and Cobalt Business</HeroH1>
+        <HeroP>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam.
+        </HeroP>
+
         <HeroBtnWrapper>
-          <Button to="register" onMouseEnter={onHover} onMouseLeave={onHover}>
-            Get Started {hover ? <ArrowForward /> : <ArrowRight />}
+          <Button
+            primary="true"
+            dark="true"
+            to="register"
+            onMouseEnter={onHover}
+            onMouseLeave={onHover}
+          >
+            Read More {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
         </HeroBtnWrapper>
       </HeroContent>
