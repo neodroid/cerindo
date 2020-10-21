@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
+import image from "../../images/logo.png";
 import {
   Nav,
   NavbarContainer,
@@ -15,6 +16,7 @@ import {
   Dropbtn,
   Item,
   Flag,
+  Logo,
 } from "./NavbarElements";
 import getFlagUrl from "./getFlagURL";
 import { ArrowDown } from "../HeroSection/HeroElements";
@@ -57,7 +59,9 @@ const Navbar = ({ toggle }) => {
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/">cerindo</NavLogo>
+          <NavLogo to="/">
+            <Logo src={image} />
+          </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
