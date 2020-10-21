@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import {
   Nav,
@@ -9,32 +9,20 @@ import {
   NavItem,
   NavLinks,
   NavBtn,
-  NavBtnLink,
   DropDownContent,
-  ArrowDown,
+  ArrowDownLang,
   DropDown,
   Dropbtn,
   Item,
   Flag,
 } from "./NavbarElements";
 import getFlagUrl from "./getFlagURL";
-
-function getFlagCode(language) {
-  switch (language) {
-    case "en":
-      return "us";
-    case "ar":
-      return "eg";
-    default:
-      return language;
-  }
-}
+import { ArrowDown } from "../HeroSection/HeroElements";
 
 function Menu({ items, value, onChange, placeholder, showFlag }) {
-  // so we can allow menu to work controlled or non-controlled.
-  const [selected, setSelected] = React.useState(value || null);
+  const [selected, setSelected] = useState(value || null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (onChange) onChange(selected);
   }, [selected, onChange]);
 
@@ -43,7 +31,7 @@ function Menu({ items, value, onChange, placeholder, showFlag }) {
       <Dropbtn>
         {showFlag ? value ? <Flag src={getFlagUrl(value)} /> : null : null}
         {value || placeholder || ""}
-        <ArrowDown />
+        <ArrowDownLang />
       </Dropbtn>
 
       <DropDownContent>
@@ -80,13 +68,21 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="discover">About</NavLinks>
+              <NavLinks to="discover">
+                About
+                <ArrowDown />
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="services">Mining</NavLinks>
+              <NavLinks to="services">
+                Mining <ArrowDown />
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="register">Corporate News</NavLinks>
+              <NavLinks to="register">
+                Corporate News
+                <ArrowDown />
+              </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="services">Career</NavLinks>

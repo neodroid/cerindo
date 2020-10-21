@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
+import {
+  MdKeyboardArrowRight,
+  MdArrowForward,
+  MdArrowDownward,
+  MdKeyboardArrowDown,
+} from "react-icons/md";
 
 export const Nav = styled.nav`
   background: transparent;
@@ -133,8 +139,9 @@ export const DropDownContent = styled.div`
   z-index: 1;
 `;
 
-export const ArrowDown = styled.div`
+export const ArrowDownLang = styled.div`
   border: solid white;
+
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
@@ -156,17 +163,21 @@ export const DropDown = styled.div`
     background-color: rgba(0, 0, 0, 0.1);
   }
 
-  & ${ArrowDown} {
+  & ${ArrowDownLang} {
     transform: rotate(45deg);
   }
 
-  &:focus ${ArrowDown}, &:active ${ArrowDown} {
+  &:focus ${ArrowDownLang}, &:active ${ArrowDownLang} {
     transform: rotate(225deg);
   }
 
   &:focus ${DropDownContent}, &:active ${DropDownContent} {
     display: block;
     max-width: 100vw;
+  }
+
+  &:hover {
+    color: #efb401;
   }
 `;
 export const Dropbtn = styled.div`
@@ -190,7 +201,7 @@ export const Item = styled.a`
   /* border: 1px solid; */
   max-width: 90vw;
   &:hover {
-    background-color: #f1f1f1;
+    background-color: #efb401;
   }
 `;
 
@@ -200,4 +211,9 @@ export const Flag = styled.img`
   position: relative;
   top: 2px;
   left: -4px;
+`;
+
+export const ArrowForward = styled(MdArrowDownward)`
+  margin-left: 8px;
+  font-size: 20px;
 `;

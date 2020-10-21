@@ -9,8 +9,8 @@ import {
   HeroH1,
   HeroP,
   HeroBtnWrapper,
-  ArrowForward,
-  ArrowRight,
+  ArrowDownward,
+  ArrowDown,
 } from "./HeroElements";
 
 const HeroSection = () => {
@@ -41,7 +41,7 @@ const HeroSection = () => {
             onMouseEnter={onHover}
             onMouseLeave={onHover}
           >
-            Read More {hover ? <ArrowForward /> : <ArrowRight />}
+            Read More {hover ? <ArrowDownward /> : <ArrowDown />}
           </Button>
         </HeroBtnWrapper>
       </HeroContent>
