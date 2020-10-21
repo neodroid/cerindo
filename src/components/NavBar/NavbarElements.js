@@ -113,3 +113,84 @@ export const NavBtnLink = styled(LinkR)`
     color: #010606;
   }
 `;
+
+////////////////////////////////////////
+//DROPDOWN LANGUAGE
+export const DropDownContent = styled.div`
+  max-width: 100vw;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  /* min-width: 160px; */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+`;
+
+export const ArrowDown = styled.div`
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  position: relative;
+  left: 6px;
+  top: -2px;
+  transition: all 0.6s;
+`;
+export const DropDown = styled.div`
+  display: inline-block;
+  cursor: pointer;
+  max-width: 100vw;
+  > * {
+    cursor: pointer;
+  }
+
+  &:focus,
+  &:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  & ${ArrowDown} {
+    transform: rotate(45deg);
+  }
+
+  &:focus ${ArrowDown}, &:active ${ArrowDown} {
+    transform: rotate(225deg);
+  }
+
+  &:focus ${DropDownContent}, &:active ${DropDownContent} {
+    display: block;
+    max-width: 100vw;
+  }
+`;
+export const Dropbtn = styled.div`
+  color: white;
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  /* border: 1px solid;
+	border-radius: 5px; */
+`;
+
+export const Item = styled.a`
+  max-width: 100vw;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+
+  /* border: 1px solid; */
+  max-width: 90vw;
+  &:hover {
+    background-color: #f1f1f1;
+  }
+`;
+
+export const Flag = styled.img`
+  max-width: 1.4rem;
+  max-height: 1rem;
+  position: relative;
+  top: 2px;
+  left: -4px;
+`;
