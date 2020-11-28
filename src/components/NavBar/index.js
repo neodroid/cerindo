@@ -19,7 +19,7 @@ import {
   Logo,
 } from "./NavbarElements";
 import getFlagUrl from "./getFlagURL";
-import { ArrowDown } from "../HeroSection/HeroElements";
+// import { ArrowDown } from "../HeroSection/HeroElements";
 
 function Menu({ items, value, onChange, placeholder, showFlag }) {
   const [selected, setSelected] = useState(value || null);
@@ -87,28 +87,31 @@ const Navbar = ({ toggle }) => {
             <NavItem>
               <NavLinks to="discover">
                 About Us
-                <ArrowDown />
+                {/* <ArrowDown /> */}
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="services">
-                Investor Relation <ArrowDown />
+                Investor Relation
+                {/* <ArrowDown /> */}
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="services">
-                QHSE-CSR <ArrowDown />
+                QHSE-CSR
+                {/* <ArrowDown /> */}
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="services">
-                Business <ArrowDown />
+                Business
+                {/* <ArrowDown /> */}
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="register">
                 Corporate News
-                <ArrowDown />
+                {/* <ArrowDown /> */}
               </NavLinks>
             </NavItem>
             <NavItem>
