@@ -9,7 +9,8 @@ import {
 } from "react-icons/md";
 
 export const Nav = styled.nav`
-  background: transparent;
+  /* background: ${({ scrollNav }) => (scrollNav ? "#fff" : "transparent")}; */
+  background: #fff;
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -18,7 +19,7 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
-
+  transition: 0.8s all ease;
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
   }
@@ -32,7 +33,7 @@ export const NavbarContainer = styled.div`
   z-index: 1;
   width: 100%;
   padding: 0 24px;
-  max-width: 1100px;
+  max-width: 1366px;
 `;
 
 export const HeaderImage = styled.div`
@@ -49,7 +50,7 @@ export const NavLogo = styled(LinkR)`
   border-radius: 50px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #fff;
+  /* background-color: #fff; */
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -65,7 +66,7 @@ export const NavLogo = styled(LinkR)`
 export const MobileIcon = styled.div`
   display: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1080px) {
     display: block;
     position: absolute;
     top: 0;
@@ -73,7 +74,7 @@ export const MobileIcon = styled.div`
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-    color: #fff;
+    color: #333;
   }
 `;
 
@@ -84,7 +85,7 @@ export const NavMenu = styled.ul`
   text-align: center;
   margin-right: -22px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1080px) {
     display: none;
   }
 `;
@@ -94,7 +95,9 @@ export const NavItem = styled.li`
 `;
 
 export const NavLinks = styled(LinkS)`
-  color: #fff;
+  font-family: "Montserrat";
+  color: #333;
+  font-weight: bold;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -105,10 +108,12 @@ export const NavLinks = styled(LinkS)`
 
   &.active {
     border-bottom: 3px solid #efb401;
+    font-weight: bold;
   }
 
   &:hover {
     color: #efb401;
+    font-weight: bold;
     transition: 0.2s ease-in-out;
     border-bottom: 3px solid #efb401;
   }
@@ -118,7 +123,7 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1080px) {
     display: none;
   }
 `;
@@ -156,7 +161,7 @@ export const DropDownContent = styled.div`
 `;
 
 export const ArrowDownLang = styled.div`
-  border: solid white;
+  border: solid black;
 
   border-width: 0 2px 2px 0;
   display: inline-block;
@@ -197,7 +202,7 @@ export const DropDown = styled.div`
   }
 `;
 export const Dropbtn = styled.div`
-  color: white;
+  color: #333;
   display: inline-block;
   text-align: center;
   padding: 14px 16px;
@@ -213,7 +218,7 @@ export const Item = styled.a`
   text-decoration: none;
   display: block;
   text-align: left;
-
+  font-family: "Montserrat";
   /* border: 1px solid; */
   max-width: 90vw;
   &:hover {

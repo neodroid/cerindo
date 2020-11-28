@@ -53,11 +53,24 @@ function Menu({ items, value, onChange, placeholder, showFlag }) {
 }
 
 const Navbar = ({ toggle }) => {
+  const [scrollNav, setScrollnav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollnav(true);
+    } else {
+      setScrollnav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
   const [val1, setValue1] = useState("en");
 
   return (
     <>
-      <Nav>
+      <Nav scrollNav={scrollNav}>
         <NavbarContainer>
           <NavLogo to="/">
             <Logo src={image} />
@@ -73,13 +86,23 @@ const Navbar = ({ toggle }) => {
             </NavItem>
             <NavItem>
               <NavLinks to="discover">
-                About
+                About Us
                 <ArrowDown />
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="services">
-                Mining <ArrowDown />
+                Investor Relation <ArrowDown />
+              </NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="services">
+                QHSE-CSR <ArrowDown />
+              </NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="services">
+                Business <ArrowDown />
               </NavLinks>
             </NavItem>
             <NavItem>

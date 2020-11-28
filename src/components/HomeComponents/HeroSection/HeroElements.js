@@ -12,10 +12,13 @@ export const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 800px;
+  min-height: 625px;
   position: relative;
   z-index: 1;
-
+  background-image: url(${(props) => props.img});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   /* add before styles */
 `;
 export const HeroBg = styled.div`
@@ -29,13 +32,13 @@ export const HeroBg = styled.div`
   overflow: hidden;
 `;
 
-export const VideoBg = styled.video`
-  width: 100%;
-  height: 100%;
-  --o-object-fit: cover;
-  object-fit: cover;
-  background: #232a34;
-`;
+// export const VideoBg = styled.video`
+//   width: 100%;
+//   height: 100%;
+//   --o-object-fit: cover;
+//   object-fit: cover;
+//   background: #232a34;
+// `;
 
 export const HeroContent = styled.div`
   z-index: 3;
@@ -49,10 +52,15 @@ export const HeroContent = styled.div`
 
 export const HeroH1 = styled.h1`
   color: #fff;
-  font-size: 48px;
-  text-align: center;
-  max-width: 800px;
-
+  /* font-size: 48px;
+  text-align: center; */
+  max-width: 500px;
+  /* font-family: Montserrat; */
+  /* font-style: normal; */
+  /* font-weight: 900; */
+  font-size: 40px;
+  line-height: 70px;
+  font-family: "Montserrat-black";
   @media screen and (max-width: 768px) {
     font-size: 40px;
   }
