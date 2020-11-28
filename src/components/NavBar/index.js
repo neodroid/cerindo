@@ -17,6 +17,10 @@ import {
   Item,
   Flag,
   Logo,
+  NavDropLinks,
+  DropDiv,
+  NavText,
+  NavbarDropdownContent,
 } from "./NavbarElements";
 import getFlagUrl from "./getFlagURL";
 // import { ArrowDown } from "../HeroSection/HeroElements";
@@ -85,33 +89,97 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="discover">
+              <NavLinks>
                 About Us
-                {/* <ArrowDown /> */}
+                <NavbarDropdownContent>
+                  <DropDiv>
+                    <NavDropLinks to="/">
+                      Mission, Vision and Value
+                    </NavDropLinks>
+                    <NavDropLinks to="/">Company Subsidiary</NavDropLinks>
+                    <NavDropLinks to="/">Board of Director</NavDropLinks>
+                    <NavDropLinks to="/">Organization Structure</NavDropLinks>
+                  </DropDiv>
+                  <DropDiv>
+                    <NavDropLinks to="/">History and Milestone</NavDropLinks>
+                    <NavDropLinks to="/">Concession Area</NavDropLinks>
+                    <NavDropLinks to="/">Legal and Awards</NavDropLinks>
+                    <NavDropLinks to="/">
+                      Sustainability Commitment
+                    </NavDropLinks>
+                  </DropDiv>
+                </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="services">
                 Investor Relation
-                {/* <ArrowDown /> */}
+                <NavbarDropdownContent>
+                  <DropDiv>
+                    <NavDropLinks to="/">Reports</NavDropLinks>
+                    <NavDropLinks to="/">Stock Information</NavDropLinks>
+                  </DropDiv>
+                </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="services">
                 QHSE-CSR
-                {/* <ArrowDown /> */}
+                <NavbarDropdownContent>
+                  <DropDiv>
+                    <NavText>QHSE</NavText>
+                    <NavDropLinks to="/">Quality</NavDropLinks>
+                    <NavDropLinks to="/">
+                      Health, Safety, Environtment
+                    </NavDropLinks>
+                  </DropDiv>
+                  <DropDiv>
+                    <NavText>CSR</NavText>
+                    <NavDropLinks to="/">CSR Activities</NavDropLinks>
+                    <NavDropLinks to="/">Economic Responsibility</NavDropLinks>
+                    <NavDropLinks to="/">
+                      Environmental Responsibility
+                    </NavDropLinks>
+                    <NavDropLinks to="/">Social Responsibility</NavDropLinks>
+                  </DropDiv>
+                </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="services">
                 Business
-                {/* <ArrowDown /> */}
+                <NavbarDropdownContent>
+                  <DropDiv>
+                    <NavText>Mining</NavText>
+                    <NavDropLinks to="/">Nickle Ore Mining</NavDropLinks>
+                    <NavDropLinks to="/">Nickle - Cobalt HPAL</NavDropLinks>
+                    <NavDropLinks to="/">Ferronickle Smelting</NavDropLinks>
+                    <NavDropLinks to="/">Resource and Reserve</NavDropLinks>
+                  </DropDiv>
+                  <DropDiv>
+                    <NavText>Logistic</NavText>
+                    <NavDropLinks to="/">Jetty Terminal</NavDropLinks>
+                    <NavText>Energy</NavText>
+                    <NavDropLinks to="/">Power Plant</NavDropLinks>
+                  </DropDiv>
+                </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="register">
                 Corporate News
-                {/* <ArrowDown /> */}
+                <NavbarDropdownContent>
+                  <DropDiv>
+                    <NavText>Press</NavText>
+                    <NavDropLinks to="/">News Release</NavDropLinks>
+                    <NavDropLinks to="/">Internal News</NavDropLinks>
+                    <NavDropLinks to="/">Ceria in Media</NavDropLinks>
+
+                    <NavText>Gallery</NavText>
+                    <NavDropLinks to="/">Photos</NavDropLinks>
+                    <NavDropLinks to="/">Videos</NavDropLinks>
+                  </DropDiv>
+                </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>

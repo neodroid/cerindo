@@ -55,7 +55,12 @@ const AboutUs = ({
               </TextWrapper>
             </Column1>
             <Column2>
-              <video width="430" height="275" controls src={Vids}></video>
+              <video
+                width="480"
+                height="300"
+                controls
+                src="https://cerindocorp.com/wp-content/uploads/2020/10/profile-vid_eng.mp4"
+              ></video>
             </Column2>
           </InfoRow>
         </InfoWrapper>

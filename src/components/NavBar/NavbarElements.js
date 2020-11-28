@@ -9,7 +9,6 @@ import {
 } from "react-icons/md";
 
 export const Nav = styled.nav`
-  /* background: ${({ scrollNav }) => (scrollNav ? "#fff" : "transparent")}; */
   background: #fff;
   height: 80px;
   margin-top: -80px;
@@ -94,7 +93,31 @@ export const NavItem = styled.li`
   height: 80px;
 `;
 
-export const NavLinks = styled(LinkS)`
+export const DropDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  height: 100%;
+`;
+
+export const NavbarDropdownContent = styled.div`
+  border-radius: 50;
+  /* margin-top: 150px; */
+
+  display: none;
+
+  color: #333;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
+  padding: 12px 12px;
+  z-index: 1;
+  position: absolute;
+  top: 80px;
+`;
+
+export const NavLinks = styled(LinkR)`
   font-family: "Montserrat";
   color: #333;
   font-weight: bold;
@@ -104,6 +127,9 @@ export const NavLinks = styled(LinkS)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+
+  font-size: 14px;
+  line-height: 17px;
   color: ${({ bottom }) => (bottom ? "#efb401" : "none")};
 
   &.active {
@@ -116,6 +142,53 @@ export const NavLinks = styled(LinkS)`
     font-weight: bold;
     transition: 0.2s ease-in-out;
     border-bottom: 3px solid #efb401;
+  }
+
+  &:hover ${NavbarDropdownContent} {
+    display: flex;
+  }
+`;
+
+export const NavText = styled.h1`
+  font-family: "Montserrat-black";
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 15px;
+  padding: 0 1rem;
+  height: 100%;
+  margin-top: 5px;
+`;
+
+export const NavDropLinks = styled(LinkR)`
+  font-family: "Montserrat";
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 15px 1rem;
+  font-size: 12px;
+  line-height: 15px;
+  /* height: 100%; */
+  margin: 0 10px;
+  border-bottom: 1px solid #808080;
+
+  cursor: pointer;
+  color: ${({ bottom }) => (bottom ? "#efb401" : "none")};
+
+  &:hover {
+    color: #efb401;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+    border-bottom: 3px solid #efb401;
+  }
+
+  &:hover ${NavbarDropdownContent} {
+    display: flex;
   }
 `;
 
@@ -134,7 +207,7 @@ export const NavBtnLink = styled(LinkR)`
   white-space: nowrap;
   padding: 10px 22px;
   color: #010606;
-  font-size: 16px;
+  font-size: 14px;
   outline: none;
   border: none;
   cursor: pointer;
