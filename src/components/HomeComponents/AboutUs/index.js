@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "../../ButtonElement";
-import Vids from "../../../videos/video.mp4";
 import {
   InfoContainer,
   InfoWrapper,
