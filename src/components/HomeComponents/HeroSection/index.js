@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Bg from "../../../images/Home_background1.png";
 import {
   HeroContainer,
   HeroContent,
   HeroH1,
   HeroNewsContent,
-  H1Wrap,
   HeroRow,
   Column1,
   Column2,
@@ -34,12 +33,6 @@ const Berita = ({ img, title, time }) => {
 };
 
 const HeroSection = () => {
-  const [hover, sethover] = useState(false);
-
-  const onHover = () => {
-    sethover(!hover);
-  };
-
   return (
     <HeroContainer img={Bg}>
       <HeroContent>

@@ -1,17 +1,11 @@
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
-import { Link as LinkS } from "react-scroll";
-import {
-  MdKeyboardArrowRight,
-  MdArrowForward,
-  MdArrowDownward,
-  MdKeyboardArrowDown,
-} from "react-icons/md";
+import { MdArrowDownward } from "react-icons/md";
 
 export const Nav = styled.nav`
   background: #fff;
   height: 80px;
-  margin-top: -80px;
+  /* margin-top: -80px; */
   display: flex;
   justify-content: center;
   font-size: 1 rem;

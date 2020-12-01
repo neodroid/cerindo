@@ -23,7 +23,6 @@ import {
   NavbarDropdownContent,
 } from "./NavbarElements";
 import getFlagUrl from "./getFlagURL";
-// import { ArrowDown } from "../HeroSection/HeroElements";
 
 function Menu({ items, value, onChange, placeholder, showFlag }) {
   const [selected, setSelected] = useState(value || null);
@@ -84,27 +83,37 @@ const Navbar = ({ toggle }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="about" bottom="true">
-                Home
-              </NavLinks>
+              <NavLinks to="/">Home</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks>
                 About Us
                 <NavbarDropdownContent>
                   <DropDiv>
-                    <NavDropLinks to="/">
+                    <NavDropLinks to="/Mission-Vision">
                       Mission, Vision and Value
                     </NavDropLinks>
-                    <NavDropLinks to="/">Company Subsidiary</NavDropLinks>
-                    <NavDropLinks to="/">Board of Director</NavDropLinks>
-                    <NavDropLinks to="/">Organization Structure</NavDropLinks>
+                    <NavDropLinks to="/Subsidiary">
+                      Company Subsidiary
+                    </NavDropLinks>
+                    <NavDropLinks to="/Board-of-Director">
+                      Board of Director
+                    </NavDropLinks>
+                    <NavDropLinks to="/Organization-Structure">
+                      Organization Structure
+                    </NavDropLinks>
                   </DropDiv>
                   <DropDiv>
-                    <NavDropLinks to="/">History and Milestone</NavDropLinks>
-                    <NavDropLinks to="/">Concession Area</NavDropLinks>
-                    <NavDropLinks to="/">Legal and Awards</NavDropLinks>
-                    <NavDropLinks to="/">
+                    <NavDropLinks to="/History-Milestone">
+                      History and Milestone
+                    </NavDropLinks>
+                    <NavDropLinks to="/Concession-Area">
+                      Concession Area
+                    </NavDropLinks>
+                    <NavDropLinks to="/Legal-Awards">
+                      Legal and Awards
+                    </NavDropLinks>
+                    <NavDropLinks to="/Sustainability">
                       Sustainability Commitment
                     </NavDropLinks>
                   </DropDiv>
@@ -112,78 +121,98 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="services">
+              <NavLinks>
                 Investor Relation
                 <NavbarDropdownContent>
                   <DropDiv>
-                    <NavDropLinks to="/">Reports</NavDropLinks>
-                    <NavDropLinks to="/">Stock Information</NavDropLinks>
+                    <NavDropLinks to="/Reports">Reports</NavDropLinks>
+                    <NavDropLinks to="/Stock">Stock Information</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="services">
+              <NavLinks>
                 QHSE-CSR
                 <NavbarDropdownContent>
                   <DropDiv>
                     <NavText>QHSE</NavText>
-                    <NavDropLinks to="/">Quality</NavDropLinks>
-                    <NavDropLinks to="/">
+                    <NavDropLinks to="/Quality">Quality</NavDropLinks>
+                    <NavDropLinks to="/HSE">
                       Health, Safety, Environtment
                     </NavDropLinks>
                   </DropDiv>
                   <DropDiv>
                     <NavText>CSR</NavText>
-                    <NavDropLinks to="/">CSR Activities</NavDropLinks>
-                    <NavDropLinks to="/">Economic Responsibility</NavDropLinks>
-                    <NavDropLinks to="/">
+                    <NavDropLinks to="/CSR-Activities">
+                      CSR Activities
+                    </NavDropLinks>
+                    <NavDropLinks to="/Economic-Responsibility">
+                      Economic Responsibility
+                    </NavDropLinks>
+                    <NavDropLinks to="/Environmental-Responsibility">
                       Environmental Responsibility
                     </NavDropLinks>
-                    <NavDropLinks to="/">Social Responsibility</NavDropLinks>
+                    <NavDropLinks to="/Social-Responsibility">
+                      Social Responsibility
+                    </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="services">
+              <NavLinks>
                 Business
                 <NavbarDropdownContent>
                   <DropDiv>
                     <NavText>Mining</NavText>
-                    <NavDropLinks to="/">Nickle Ore Mining</NavDropLinks>
-                    <NavDropLinks to="/">Nickle - Cobalt HPAL</NavDropLinks>
-                    <NavDropLinks to="/">Ferronickle Smelting</NavDropLinks>
-                    <NavDropLinks to="/">Resource and Reserve</NavDropLinks>
+                    <NavDropLinks to="/Nickle-Ore-Mining">
+                      Nickle Ore Mining
+                    </NavDropLinks>
+                    <NavDropLinks to="/Nickle-Cobalt-HPAL">
+                      Nickle - Cobalt HPAL
+                    </NavDropLinks>
+                    <NavDropLinks to="/Ferronickle-Smelting">
+                      Ferronickle Smelting
+                    </NavDropLinks>
+                    <NavDropLinks to="/Resource-Reserve">
+                      Resource and Reserve
+                    </NavDropLinks>
                   </DropDiv>
                   <DropDiv>
                     <NavText>Logistic</NavText>
-                    <NavDropLinks to="/">Jetty Terminal</NavDropLinks>
+                    <NavDropLinks to="/Jetty-Terminal">
+                      Jetty Terminal
+                    </NavDropLinks>
                     <NavText>Energy</NavText>
-                    <NavDropLinks to="/">Power Plant</NavDropLinks>
+                    <NavDropLinks to="/Power-Plant">Power Plant</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="register">
+              <NavLinks>
                 Corporate News
                 <NavbarDropdownContent>
                   <DropDiv>
                     <NavText>Press</NavText>
-                    <NavDropLinks to="/">News Release</NavDropLinks>
-                    <NavDropLinks to="/">Internal News</NavDropLinks>
-                    <NavDropLinks to="/">Ceria in Media</NavDropLinks>
+                    <NavDropLinks to="/News-Release">News Release</NavDropLinks>
+                    <NavDropLinks to="/Internal-News">
+                      Internal News
+                    </NavDropLinks>
+                    <NavDropLinks to="/Ceria in Media">
+                      Ceria in Media
+                    </NavDropLinks>
 
                     <NavText>Gallery</NavText>
-                    <NavDropLinks to="/">Photos</NavDropLinks>
-                    <NavDropLinks to="/">Videos</NavDropLinks>
+                    <NavDropLinks to="/Photos">Photos</NavDropLinks>
+                    <NavDropLinks to="/Videos">Videos</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="services">Career</NavLinks>
+              <NavLinks to="/Career">Career</NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>

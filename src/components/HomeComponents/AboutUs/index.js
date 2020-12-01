@@ -6,12 +6,9 @@ import {
   InfoRow,
   Column1,
   TextWrapper,
-  TopLine,
   Heading,
   Subtitle,
   Column2,
-  Img,
-  ImgWrap,
   BtnWrap,
 } from "./AboutUsElements";
 
@@ -21,13 +18,10 @@ const AboutUs = ({
   id,
   imgStart,
   headline,
-  topLine,
   darktext,
   description1,
   buttonLabel,
-  img,
   button,
-  alt,
 }) => {
   return (
     <>
