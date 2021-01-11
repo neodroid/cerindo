@@ -16,6 +16,10 @@ import FerronickleSmelting from "./pages/FerronickleSmelting";
 import ResourceReserve from "./pages/ResourceReserve";
 import JettyTerminal from "./pages/JettyTerminal";
 import PowerPlant from "./pages/PowerPlant";
+import NewsRelease from "./pages/NewRelease";
+import NewsComponent from "./components/CorporateNewsComponents/NewsComponent";
+import Vismis from "./pages/Vismis";
+import Subsidiary from "./pages/Subsidiary"
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,6 +52,10 @@ function App() {
           <Route path="/Resource-Reserve" component={ResourceReserve} exact />
           <Route path="/Jetty-Terminal" component={JettyTerminal} exact />
           <Route path="/Power-Plant" component={PowerPlant} exact />
+          <Route path="/News-Release" component={NewsRelease} exact />
+          <Route path="/News/:title" component={NewsComponent} exact />
+          <Route path="/Mission-Vision" component={Vismis} exact />
+          <Route path="/Subsidiary" component={Subsidiary} exact />
         </Switch>
 
         <Footer />
