@@ -30,6 +30,8 @@ export const BlogWrapped = styled.div`
     }
 `;
 export const BoxContainer = styled.div`
+    white-space: pre-line;  
+    vertical-align: bottom;
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;

@@ -1,38 +1,38 @@
 import styled from "styled-components";
+import {Link as LinkR} from "react-router-dom";
 
 export const SubsidiaryContent = styled.div`
     margin: 50px 20px 10px;
 `;
-
-export const BaganContent = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    align-items:center;
-    background-image: url(${(props) => props.img});
-    background-repeat: no-repeat;
-    background-position: 52% 32%;
-    background-size: 620px auto;
+export const Phasexp = styled(LinkR)`
+    display: block;
+    background: #EFB401;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    width: 236px;
+    margin: 15px 0 8px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 34px;
+    color: #FFFFFF;
+    padding: 0 5px;
+    text-decoration: none;
 `;
 
-export const BaganApart = styled.div`
+export const PhaseWrited = styled.div`
     display: flex;
     flex-direction: row;
-    color: white;
+    align-items:center;
 `;
-
-export const BaganBox = styled.div`
-    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    background-color: ${(props) => props.bgcolor};
-    font-weight: bold;
-    font-size: ${(props) => props.phase ? "12px" : "14px"};
-    line-height: 20px;
-    padding: 15px 25px;
-    width: 155px;
-    height: ${(props) => props.height}px;
-    color: ${(props) => props.color};
-    margin: 0 8px 55px 0;
-    alin-self: center;
+export const PhaseWritedApart = styled.div`
+    display: flex;
+    flex-basis: ${(props)=>(props.simbol ? "8%" : "90%")};
+    flex-direction: ${(props)=>(props.simbol ? "row-reverse" : "row")};
+    self-align:center;
+`;
+export const SubsidiaryExp = styled.p`
+    font-size: 14px;
+    line-height: 24px;
+    color: #111111;
+    margin: 20px 0;
 `;

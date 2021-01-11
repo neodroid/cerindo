@@ -2,7 +2,7 @@ import React from "react";
 import {Aboutstyle,AboutSideBar,AboutMain,AboutSideBarContent} from "../AboutUsElements";
 import misimage from "../../../images/image 20.png";
 import visimage from "../../../images/sEApBUS4fIk.png";
-import {ValueData} from "../../Data/AboutusData/VismisDatas";
+import {ValueData,VismisData} from "../../Data/AboutusData/VismisDatas";
 import {
     VismisContent,
     VismisWrited,
@@ -32,7 +32,7 @@ const VismisComponents = () => {
                 <VismisContent>
                     <VismisApart writed>
                         <VismisWrited title>Mission</VismisWrited>
-                        <VismisWrited>To produce quality nickel and cobalt products by maximizing value through efficient industry best practices.</VismisWrited>
+                        <VismisWrited>{VismisData.misi}</VismisWrited>
                     </VismisApart>
                     <VismisApart>
                         <VismisImagePart>
@@ -48,81 +48,24 @@ const VismisComponents = () => {
                     </VismisApart>
                     <VismisApart writed>
                         <VismisWrited title vision>Vision</VismisWrited>
-                        <VismisWrited vision>To become a world class nickel and cobalt company through efficient and sustainable business practices.</VismisWrited>
+                        <VismisWrited vision>{VismisData.visi}</VismisWrited>
                     </VismisApart>
                 </VismisContent>
                 <ValueContent>
                     <h1>Value</h1>
                     <Angle>
-                        <div>
-                            <ValueWrite choose>
-                                C.
-                            </ValueWrite>
-                            <ValueWrite>
-                            E.R.I.A.
-                            </ValueWrite>
-                            <Valuexp>
-                                <Valuexpwrited title>{ValueData[0].title}</Valuexpwrited>
-                                <Valuexpwrited>{ValueData[0].desc}</Valuexpwrited>
-                            </Valuexp>
-                        </div>
-                        <div>
-                            <ValueWrite>
-                            C.
-                            </ValueWrite>
-                            <ValueWrite choose>
-                                E.
-                            </ValueWrite>
-                            <ValueWrite>
-                            R.I.A.
-                            </ValueWrite>
-                            <Valuexp>
-                                <Valuexpwrited title>{ValueData[1].title}</Valuexpwrited>
-                                <Valuexpwrited>{ValueData[1].desc}</Valuexpwrited>
-                            </Valuexp>
-                        </div>
-                        <div>
-                            <ValueWrite>
-                            C.E.
-                            </ValueWrite>
-                            <ValueWrite choose>
-                                R.
-                            </ValueWrite>
-                            <ValueWrite>
-                            I.A.
-                            </ValueWrite>
-                            <Valuexp>
-                                <Valuexpwrited title>{ValueData[2].title}</Valuexpwrited>
-                                <Valuexpwrited>{ValueData[2].desc}</Valuexpwrited>
-                            </Valuexp>
-                        </div>
-                        <div>
-                            <ValueWrite>
-                            C.E.R.
-                            </ValueWrite>
-                            <ValueWrite choose>
-                                I.
-                            </ValueWrite>
-                            <ValueWrite>
-                            A.
-                            </ValueWrite>
-                            <Valuexp>
-                                <Valuexpwrited title>{ValueData[3].title}</Valuexpwrited>
-                                <Valuexpwrited>{ValueData[3].desc}</Valuexpwrited>
-                            </Valuexp>
-                        </div>
-                        <div>
-                            <ValueWrite>
-                            C.E.R.I.
-                            </ValueWrite>
-                            <ValueWrite choose>
-                                A.
-                            </ValueWrite>
-                            <Valuexp>
-                                <Valuexpwrited title>{ValueData[4].title}</Valuexpwrited>
-                                <Valuexpwrited>{ValueData[4].desc}</Valuexpwrited>
-                            </Valuexp>
-                        </div>
+                    {ValueData.map((data)=>{
+                            return(
+                            <div>
+                                <ValueWrite>{data.valueUp}</ValueWrite>
+                                <ValueWrite choose>{data.valueChoose}</ValueWrite>
+                                <ValueWrite>{data.valueDown}</ValueWrite>
+                                <Valuexp>
+                                    <Valuexpwrited title>{data.title}</Valuexpwrited>
+                                    <Valuexpwrited>{data.desc}</Valuexpwrited>
+                                </Valuexp>
+                            </div>
+                        )})}
                     </Angle>
                 </ValueContent>
             </AboutMain>

@@ -19,7 +19,12 @@ import PowerPlant from "./pages/PowerPlant";
 import NewsRelease from "./pages/NewRelease";
 import NewsComponent from "./components/CorporateNewsComponents/NewsComponent";
 import Vismis from "./pages/Vismis";
-import Subsidiary from "./pages/Subsidiary"
+import Subsidiary from "./pages/Subsidiary";
+import BOD from "./pages/BOD";
+import Organization from "./pages/Organization";
+import History from "./pages/History";
+import Concession from "./pages/Concession";
+import License from "./pages/LicensePages"
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,6 +61,11 @@ function App() {
           <Route path="/News/:title" component={NewsComponent} exact />
           <Route path="/Mission-Vision" component={Vismis} exact />
           <Route path="/Subsidiary" component={Subsidiary} exact />
+          <Route path="/Board-of-Director" component={BOD} exact />
+          <Route path="/Organization-Structure" component={Organization} exact />
+          <Route path="/History-Milestone" component={History} exact />
+          <Route path="/Concession-Area" component={Concession} exact />
+          <Route path="/License-And-Award" component={License} exact />
         </Switch>
 
         <Footer />

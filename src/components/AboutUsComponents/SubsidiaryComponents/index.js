@@ -1,11 +1,13 @@
 import React from "react";
 import {Aboutstyle,AboutSideBar,AboutMain,AboutSideBarContent} from "../AboutUsElements";
-import arrowBagan from "../../../images/arrowBagan.png"
+import {SubsidaryConstruct, PhasexpData,SubsidiaryexpData} from "../../Data/AboutusData/SubsidiaryDatas";
+import { FaAngleRight } from "react-icons/fa";
 import {
     SubsidiaryContent,
-    BaganContent,
-    BaganBox,
-    BaganApart
+    Phasexp,
+    PhaseWrited,
+    PhaseWritedApart,
+    SubsidiaryExp
 } from "./SubsidiaryElements";
 
 const SubsidiaryComponents = () => {
@@ -23,20 +25,21 @@ const SubsidiaryComponents = () => {
             </AboutSideBar>
             <AboutMain>
                 <SubsidiaryContent>
-                    <BaganContent img={arrowBagan}>
-                        <BaganBox bgcolor={`#FBFF47`} height={64}>Ceria Holding Company</BaganBox>
-                        <BaganApart>
-                            <BaganBox bgcolor={`#20A1E4`}>Mining Co.</BaganBox>
-                            <BaganBox bgcolor={`#20A1E4`}>PT. Ferrox Ceria Indonesia</BaganBox>
-                        </BaganApart>
-                        <BaganApart>
-                            <BaganBox bgcolor={`#D2222B`} phase>RKEF Line 1:<br/>Phase 1</BaganBox>
-                            <BaganBox bgcolor={`#D2222B`} phase>RKEF Line 2:<br/>Phase 2</BaganBox>
-                            <BaganBox bgcolor={`#D2222B`} phase>RKEF Line 3 & 4:<br/>Phase 3</BaganBox>
-                            <BaganBox bgcolor={`#D2222B`} phase>RKEF Line 5 & 6:<br/>Phase 3a</BaganBox>
-                            <BaganBox bgcolor={`#D2222B`} phase>HPAL:<br/>PT Ceria Cobalt Indotama</BaganBox>
-                        </BaganApart>
-                    </BaganContent>
+                <img src={SubsidaryConstruct.img} width={`700px`} />
+                    {PhasexpData.map((data,idx)=>{
+                        return(
+                            <Phasexp key={idx}>
+                                <PhaseWrited>
+                                    <PhaseWritedApart>{data.title}</PhaseWritedApart>
+                                    <PhaseWritedApart simbol><FaAngleRight/></PhaseWritedApart>
+                                </PhaseWrited>
+                            </Phasexp>
+                        )
+                    })}
+                    {SubsidiaryexpData.map((data,idx)=>{
+                        return(
+                        <SubsidiaryExp key={idx}>{data.content}</SubsidiaryExp>
+                    )})}
                 </SubsidiaryContent>
             </AboutMain>
         </Aboutstyle>

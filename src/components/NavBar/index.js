@@ -87,78 +87,6 @@ const Navbar = ({ toggle }) => {
             </NavItem>
             <NavItem>
               <NavLinks>
-                About Us
-                <NavbarDropdownContent>
-                  <DropDiv>
-                    <NavDropLinks to="/Mission-Vision">
-                      Mission, Vision and Value
-                    </NavDropLinks>
-                    <NavDropLinks to="/Subsidiary">
-                      Company Subsidiary
-                    </NavDropLinks>
-                    <NavDropLinks to="/Board-of-Director">
-                      Board of Director
-                    </NavDropLinks>
-                    <NavDropLinks to="/Organization-Structure">
-                      Organization Structure
-                    </NavDropLinks>
-                  </DropDiv>
-                  <DropDiv>
-                    <NavDropLinks to="/History-Milestone">
-                      History and Milestone
-                    </NavDropLinks>
-                    <NavDropLinks to="/Concession-Area">
-                      Concession Area
-                    </NavDropLinks>
-                    <NavDropLinks to="/License-And-Award">
-                      License and Award
-                    </NavDropLinks>
-                  </DropDiv>
-                </NavbarDropdownContent>
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks>
-                Investor Relation
-                <NavbarDropdownContent>
-                  <DropDiv>
-                    <NavDropLinks to="/Reports">Reports</NavDropLinks>
-                    <NavDropLinks to="/Stock">Stock Information</NavDropLinks>
-                  </DropDiv>
-                </NavbarDropdownContent>
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks>
-                QHSE-CSR
-                <NavbarDropdownContent>
-                  <DropDiv>
-                    <NavText>QHSE</NavText>
-                    <NavDropLinks to="/Quality">Quality</NavDropLinks>
-                    <NavDropLinks to="/HSE">
-                      Health, Safety, Environtment
-                    </NavDropLinks>
-                  </DropDiv>
-                  <DropDiv>
-                    <NavText>CSR</NavText>
-                    <NavDropLinks to="/CSR-Activities">
-                      CSR Activities
-                    </NavDropLinks>
-                    <NavDropLinks to="/Economic-Responsibility">
-                      Economic Responsibility
-                    </NavDropLinks>
-                    <NavDropLinks to="/Environmental-Responsibility">
-                      Environmental Responsibility
-                    </NavDropLinks>
-                    <NavDropLinks to="/Social-Responsibility">
-                      Social Responsibility
-                    </NavDropLinks>
-                  </DropDiv>
-                </NavbarDropdownContent>
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks>
                 Business
                 <NavbarDropdownContent>
                   <DropDiv>
@@ -189,6 +117,18 @@ const Navbar = ({ toggle }) => {
             </NavItem>
             <NavItem>
               <NavLinks>
+                Global Sustainability
+                <NavbarDropdownContent>
+                  <DropDiv>
+                    <NavDropLinks to="/Activities">Activities</NavDropLinks>
+                    <NavDropLinks to="/Report">Report</NavDropLinks>
+                    <NavDropLinks to="/Commitmen">Commitmen</NavDropLinks>
+                  </DropDiv>
+                </NavbarDropdownContent>
+              </NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks>
                 Corporate News
                 <NavbarDropdownContent>
                   <DropDiv>
@@ -198,6 +138,38 @@ const Navbar = ({ toggle }) => {
                     <NavText>Gallery</NavText>
                     <NavDropLinks to="/Photos">Photos</NavDropLinks>
                     <NavDropLinks to="/Videos">Videos</NavDropLinks>
+                  </DropDiv>
+                </NavbarDropdownContent>
+              </NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks>
+                About Us
+                <NavbarDropdownContent>
+                  <DropDiv>
+                    <NavDropLinks to="/Mission-Vision">
+                      Mission, Vision and Value
+                    </NavDropLinks>
+                    <NavDropLinks to="/Subsidiary">
+                      Company Subsidiary
+                    </NavDropLinks>
+                    <NavDropLinks to="/Board-of-Director">
+                      Board of Director
+                    </NavDropLinks>
+                    <NavDropLinks to="/Organization-Structure">
+                      Organization Structure
+                    </NavDropLinks>
+                  </DropDiv>
+                  <DropDiv>
+                    <NavDropLinks to="/History-Milestone">
+                      History and Milestone
+                    </NavDropLinks>
+                    <NavDropLinks to="/Concession-Area">
+                      Concession Area
+                    </NavDropLinks>
+                    <NavDropLinks to="/License-And-Award">
+                      License and Award
+                    </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
