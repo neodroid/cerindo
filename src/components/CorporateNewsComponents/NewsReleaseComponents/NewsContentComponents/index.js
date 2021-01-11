@@ -1,14 +1,15 @@
-import React from "react";
-import {NewsData} from "../../../Data/News";
+import React, { useState, useEffect } from "react";
+import { NewsData } from "../../../Data/News";
+import { newsService } from "../../../../service/News";
 import {
-    NewsContent,
-    NewsBox,
-    BoxContainer,
-    NewsImage,
-    Newsbtn,
-    BoxWrapper,
-    NewsContainerPart,
-    Pagination,
+  NewsContent,
+  NewsBox,
+  BoxContainer,
+  NewsImage,
+  Newsbtn,
+  BoxWrapper,
+  NewsContainerPart,
+  Pagination,
 } from "./NewsContentElements";
 
 /* const Pagination = ({ postPerPage, totalPost }) =>{
@@ -32,7 +33,17 @@ import {
 } */
 
 const NewsContentComponents = () => {
-    /* const [post, setPost] = useState([]);
+  const [newsData, setNewsData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await newsService.getListNews();
+      const data = response.data;
+      setNewsData(data);
+    };
+    fetchData();
+  });
+
+  /* const [post, setPost] = useState([]);
     const [currentPage,setCurrentPage] = useState();
     const [postPerPage, setPostPerPage] = useState();
     setCurrentPage(1);
@@ -44,33 +55,39 @@ const NewsContentComponents = () => {
     const indexOfLastPost = currentPage * postPerPage;
     const indexOfFirstPost = indexOfLastPost - postPerPage;
     const currentPost = post.slice(indexOfFirstPost) */
-    return(
-        <>
-        <NewsContent>
-            {NewsData.map((data)=>{
-                return(
-                <NewsBox>
-                    <BoxWrapper>
-                        <NewsContainerPart><NewsImage src={data.image} /></NewsContainerPart>
-                        <NewsContainerPart wrt>
-                            <BoxContainer titlee >{data.title}</BoxContainer>
-                            <BoxContainer>{data.description}</BoxContainer>
-                        </NewsContainerPart>
-                        <NewsContainerPart btn><Newsbtn to = {`/News/${data.title}`}>Continue Reading</Newsbtn></NewsContainerPart>
-                    </BoxWrapper>
-                </NewsBox>
-            )
-            })}
-        </NewsContent>
-        <Pagination>
-            <a>&laquo;</a>
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>&raquo;</a>
-        </Pagination>
-        </>
-    );
+  if (newsData.length === 0) return null;
+  console.log(newsData);
+  return (
+    <>
+      <NewsContent>
+        {newsData.map((data) => {
+          return (
+            <NewsBox>
+              <BoxWrapper>
+                <NewsContainerPart>
+                  <NewsImage src={data.news_img.url} />
+                </NewsContainerPart>
+                <NewsContainerPart wrt>
+                  <BoxContainer titlee>{data.title_en}</BoxContainer>
+                  <BoxContainer>{data.news_en}</BoxContainer>
+                </NewsContainerPart>
+                <NewsContainerPart btn>
+                  <Newsbtn to={`/News/${data._id}`}>Continue Reading</Newsbtn>
+                </NewsContainerPart>
+              </BoxWrapper>
+            </NewsBox>
+          );
+        })}
+      </NewsContent>
+      <Pagination>
+        <a>&laquo;</a>
+        <a>1</a>
+        <a>2</a>
+        <a>3</a>
+        <a>&raquo;</a>
+      </Pagination>
+    </>
+  );
 };
 
 export default NewsContentComponents;
