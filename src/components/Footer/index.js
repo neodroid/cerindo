@@ -83,7 +83,7 @@ const Footer = () => {
           <SocialMediaWrap>
             {/* <SocialLogo to="/">CENS-UI 2020</SocialLogo> */}
             <WebsiteRights>
-              ©2020 Copyright PT. Ceria Nugraha Indotama All rights reserved
+              ©2021 Copyright PT. Ceria Nugraha Indotama All rights reserved
             </WebsiteRights>
             <SocialIcons>
               <SocialIconLink

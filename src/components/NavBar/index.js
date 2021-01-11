@@ -110,11 +110,8 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Concession-Area">
                       Concession Area
                     </NavDropLinks>
-                    <NavDropLinks to="/Legal-Awards">
-                      Legal and Awards
-                    </NavDropLinks>
-                    <NavDropLinks to="/Sustainability">
-                      Sustainability Commitment
+                    <NavDropLinks to="/License-And-Award">
+                      License and Award
                     </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
@@ -197,12 +194,6 @@ const Navbar = ({ toggle }) => {
                   <DropDiv>
                     <NavText>Press</NavText>
                     <NavDropLinks to="/News-Release">News Release</NavDropLinks>
-                    <NavDropLinks to="/Internal-News">
-                      Internal News
-                    </NavDropLinks>
-                    <NavDropLinks to="/Ceria in Media">
-                      Ceria in Media
-                    </NavDropLinks>
 
                     <NavText>Gallery</NavText>
                     <NavDropLinks to="/Photos">Photos</NavDropLinks>

@@ -1,12 +1,12 @@
 import React from "react";
 import { BannerContainer, BannerWrapper, Heading } from "./BannerElement";
 
-const Banner = ({ img, heading }) => {
+const Banner = ({ img, heading,lightText }) => {
   return (
     <>
       <BannerContainer img={img}>
         <BannerWrapper>
-          <Heading>{heading}</Heading>
+          <Heading lightText={lightText}>{heading}</Heading>
         </BannerWrapper>
       </BannerContainer>
     </>

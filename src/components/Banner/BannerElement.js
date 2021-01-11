@@ -7,30 +7,24 @@ export const BannerContainer = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
-  @media screen and (max-width: 768px) {
-    padding: 100px 0;
-  }
 `;
 
 export const BannerWrapper = styled.div`
-  display: grid;
-  z-index: 1;
+  position: inherit;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
-  max-width: 1100px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0 24px;
-  justify-content: center;
+  height: 100%;
   align-items: center;
+  justify-content: center;
 `;
 
 export const Heading = styled.h1`
-  font-family: "Montserrat-black";
-  margin-bottom: 24px;
-  font-size: 48px;
   line-height: 1.1;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 60px;
   color: ${({ lightText }) => (lightText ? "#fff" : "#333")};
 
   @media screen and (max-width: 480px) {
