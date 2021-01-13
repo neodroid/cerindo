@@ -263,12 +263,12 @@ color: #333333;
 `;
 
 export const VideoTemptWrapped = styled.div`
-  background-image: url(${(props) => props.img});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  display: flex;
+  align-items:center;
+  background: rgba(137, 204, 255,0.5);
   margin: 0 8px;
   color: white;
-  font-size: 25px;
-  padding: 20px 23px;
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 60%;
 `;
