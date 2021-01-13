@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Aboutstyle,
   AboutSideBar,
   AboutMain,
   AboutSideBarContent,
 } from "../AboutUsElements";
+import { aboutUsService } from "../../../service/Aboutus";
 import {
   HistoryData,
   MilestoneData,
@@ -24,6 +25,18 @@ import {
 } from "./HistoryElements";
 
 const HistoryComponents = () => {
+  const [historyMileStone, setHistoryMilestone] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await aboutUsService.getListAboutUs();
+      const data = response.data;
+      setHistoryMilestone(data.hisMil);
+    };
+    fetchData();
+  }, []);
+
+  console.log(historyMileStone);
+  if (historyMileStone.length === 0) return null;
   return (
     <>
       <Aboutstyle>
@@ -52,16 +65,16 @@ const HistoryComponents = () => {
         </AboutSideBar>
         <AboutMain>
           <HisWrapped>
-            {HistoryData.map((data, idx) => {
+            {historyMileStone.histories.map((data, idx) => {
               if (idx % 2 == 0) {
                 return (
                   <HisContent wrap key={idx}>
                     <HisContent>
                       <HisContent wrap>
-                        <HisBoxWrited title>{data.title}</HisBoxWrited>
-                        <HisBoxWrited>{data.content}</HisBoxWrited>
+                        <HisBoxWrited title>{data.title_en}</HisBoxWrited>
+                        <HisBoxWrited>{data.description_en}</HisBoxWrited>
                       </HisContent>
-                      <img src={data.image} width={`332px`} />
+                      <img src={data.history_image.url} width={`332px`} />
                     </HisContent>
                   </HisContent>
                 );
@@ -69,10 +82,10 @@ const HistoryComponents = () => {
                 return (
                   <HisContent wrap key={idx}>
                     <HisContent>
-                      <img src={data.image} width={`332px`} />
+                      <img src={data.history_image.url} width={`332px`} />
                       <HisContent wrap>
-                        <HisBoxWrited title>{data.title}</HisBoxWrited>
-                        <HisBoxWrited>{data.content}</HisBoxWrited>
+                        <HisBoxWrited title>{data.title_en}</HisBoxWrited>
+                        <HisBoxWrited>{data.description_en}</HisBoxWrited>
                       </HisContent>
                     </HisContent>
                   </HisContent>
@@ -81,7 +94,7 @@ const HistoryComponents = () => {
             })}
             <MilestoneContent>
               <h2>Milestone</h2>
-              {MilestoneData.map((data, idx) => {
+              {historyMileStone.milestone.map((data, idx) => {
                 return (
                   <MilesBoxContent key={idx}>
                     <MilesBoxApart year>
@@ -89,9 +102,9 @@ const HistoryComponents = () => {
                     </MilesBoxApart>
                     <Birght />
                     <MilesBoxApart>
-                      <MilesImage img={data.image}>
+                      <MilesImage img={data.image.url}>
                         <Opac />
-                        <MilesImageDesc>{data.title}</MilesImageDesc>
+                        <MilesImageDesc>{data.title_en}</MilesImageDesc>
                       </MilesImage>
                     </MilesBoxApart>
                   </MilesBoxContent>

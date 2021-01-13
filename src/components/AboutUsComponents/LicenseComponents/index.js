@@ -57,16 +57,16 @@ const LicenseComponents = () => {
         </AboutSideBar>
         <AboutMain>
           <LicWrapped>
-            {LicenseData.map((data, idx) => {
+            {license.license.map((data, idx) => {
               if (idx % 2 == 0) {
                 return (
                   <LicContent wrap key={idx}>
                     <LicContent>
                       <LicContent wrap>
-                        <LicBoxWrited title>{data.title}</LicBoxWrited>
-                        <LicBoxWrited>{data.content}</LicBoxWrited>
+                        <LicBoxWrited title>{data.title_en}</LicBoxWrited>
+                        <LicBoxWrited>{data.content_en}</LicBoxWrited>
                       </LicContent>
-                      <img src={data.image} width={`332px`} />
+                      <img src={data.image.url} width={`332px`} />
                     </LicContent>
                   </LicContent>
                 );
@@ -74,10 +74,10 @@ const LicenseComponents = () => {
                 return (
                   <LicContent wrap key={idx}>
                     <LicContent>
-                      <img src={data.image} width={`332px`} />
+                      <img src={data.image.url} width={`332px`} />
                       <LicContent wrap>
-                        <LicBoxWrited title>{data.title}</LicBoxWrited>
-                        <LicBoxWrited>{data.content}</LicBoxWrited>
+                        <LicBoxWrited title>{data.title_en}</LicBoxWrited>
+                        <LicBoxWrited>{data.content_en}</LicBoxWrited>
                       </LicContent>
                     </LicContent>
                   </LicContent>
@@ -86,11 +86,11 @@ const LicenseComponents = () => {
             })}
             <AwardContent>
               <h2>Awards</h2>
-              {AwardData.map((data, idx) => {
+              {license.Awards.map((data, idx) => {
                 return (
                   <Figured key={idx}>
-                    <img src={data.image} alt={data.image} />
-                    <figcaption>{data.desc}</figcaption>
+                    <img src={data.award_img.url} alt={data.image} />
+                    <figcaption>{data.award_name}</figcaption>
                   </Figured>
                 );
               })}

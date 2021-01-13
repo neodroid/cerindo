@@ -21,17 +21,17 @@ import {
 } from "./VismisElements";
 
 const VismisComponents = () => {
-  const [detailMVV, setDetailMVV] = useState([]);
+  const [MVV, setMVV] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await aboutUsService.getListAboutUs();
       const data = response.data;
-      setDetailMVV(data.MVV);
+      setMVV(data.MVV);
     };
     fetchData();
   }, []);
 
-  if (detailMVV.length === 0) return null;
+  if (MVV.length === 0) return null;
   return (
     <>
       <Aboutstyle>
@@ -62,25 +62,25 @@ const VismisComponents = () => {
           <VismisContent>
             <VismisApart writed>
               <VismisWrited title>Mission</VismisWrited>
-              <VismisWrited>{detailMVV.Mission_description}</VismisWrited>
+              <VismisWrited>{MVV.Mission_description}</VismisWrited>
             </VismisApart>
             <VismisApart>
               <VismisImagePart>
-                <img src={detailMVV.MVV_images[0].url} />
+                <img src={MVV.MVV_images[0].url} />
               </VismisImagePart>
             </VismisApart>
           </VismisContent>
           <VismisContent>
             <VismisApart>
               <VismisImagePart misi>
-                <img src={detailMVV.MVV_images[1].url} />
+                <img src={MVV.MVV_images[1].url} />
               </VismisImagePart>
             </VismisApart>
             <VismisApart writed>
               <VismisWrited title vision>
                 Vision
               </VismisWrited>
-              <VismisWrited vision>{detailMVV.Vision_Description}</VismisWrited>
+              <VismisWrited vision>{MVV.Vision_Description}</VismisWrited>
             </VismisApart>
           </VismisContent>
           <ValueContent>

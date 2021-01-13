@@ -49,7 +49,9 @@ const BODComponents = () => {
           <AboutSideBarContent to="/History-Milestone">
             History and Milestone
           </AboutSideBarContent>
-          <AboutSideBarContent to="/BOD-Area">BOD Area</AboutSideBarContent>
+          <AboutSideBarContent to="/Concession-Area">
+            Concession Area
+          </AboutSideBarContent>
           <AboutSideBarContent to="/License-And-Award">
             License and Award
           </AboutSideBarContent>
