@@ -268,7 +268,7 @@ export const VideoTemptWrapped = styled.div`
   background: rgba(137, 204, 255,0.5);
   margin: 0 8px;
   color: white;
-  font-size: 30px;
-  padding: 20px;
+  font-size: 40px;
+  padding: 15px;
   border-radius: 60%;
 `;
