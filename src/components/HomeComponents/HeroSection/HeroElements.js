@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { MdArrowDownward, MdKeyboardArrowDown } from "react-icons/md";
+import { MdArrowDownward, MdKeyboardArrowDown} from "react-icons/md";
+import {Link as LinkR} from "react-router-dom";
 
 export const HeroContainer = styled.div`
   background: #0c0c0c;
@@ -14,6 +15,7 @@ export const HeroContainer = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  margin-top:-80px;
   /* add before styles */
 `;
 export const HeroBg = styled.div`
@@ -41,7 +43,7 @@ export const HeroContent = styled.div`
   /* position: absolute; */
   padding: 8px 24px;
   display: grid;
-
+  margin-top: 100px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -81,7 +83,6 @@ export const Column2 = styled.div`
 
   margin-top: 25px;
 `;
-
 export const H1Wrap = styled.div`
   z-index: 3;
 
@@ -92,25 +93,29 @@ export const H1Wrap = styled.div`
   align-items: center;
 `;
 
+export const HeroNewsFlex = styled.div`
+  display:flex;
+  flex-direction: row;
+`;
+
 export const HeroNewsWrap = styled.div`
   z-index: 3;
-
   min-height: 471 px;
-  min-width: 450;
-  background: #fff;
+  overflow: hidden;
+  width: 1000px;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   /* position: absolute; */
   /* margin-top: 40px; */
   padding: 8px 24px;
   display: flex;
   flex-direction: column;
-
+  margin: 50px 0;
   /* align-items: center; */
-  align-items: flex-start;
 `;
 
 export const HeroH1 = styled.h1`
-  color: #fff;
   /* font-size: 48px;
   text-align: center; */
   max-width: 500px;
@@ -167,6 +172,20 @@ export const HeroBtnWrapper = styled.div`
   align-items: center;
 `;
 
+export const TitleNewsApart = styled.div`
+  flex-basis:50%;
+  width:100%;
+`;
+export const ViewedAll = styled(LinkR)`
+  display: flex;
+  flex-direction: row-reverse;
+  font-weight: bold;
+  font-size: 15px;
+  color: #EFB401;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 5px;
+`;
 export const ArrowDownward = styled(MdArrowDownward)`
   margin-left: 8px;
   font-size: 20px;
@@ -179,7 +198,7 @@ export const ArrowDown = styled(MdKeyboardArrowDown)`
 
 export const ImgWrap = styled.div`
   width: 124px;
-  height: 94px;
+  height: 96px;
   box-shadow: 5px 5px 2px #aaaaaa;
 `;
 
@@ -188,21 +207,20 @@ export const Img = styled.img`
   height: 100%;
 `;
 
-export const HeroNewsContent = styled.div`
+export const HeroNewsContent = styled(LinkR)`
   cursor: pointer;
-  width: 100%;
-  z-index: 3;
-  margin: 10px 5px;
+  min-width: 295px;
+  margin: 15px;
 
   display: flex;
   flex-direction: row;
   padding-bottom: 10px;
-  border-bottom: 2px solid #aaa;
-  align-items: flex-start;
+  border-right: 2px solid #aaa;
+  text-decoration: none;
+  color: black;
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #f5f5f5;
     transform: scale(1.02);
   }
 `;
@@ -228,4 +246,29 @@ export const HeroNewsTimeP = styled.p`
   font-weight: normal;
   font-size: 10px;
   line-height: 30px;
+`;
+
+export const VideoWrapped = styled(LinkR)`
+  display: flex;
+  align-items:center;
+  margin: 24px 0;
+  text-decoration: none;
+  width: fit-content;
+`;
+export const VideoWrited = styled.p`
+font-weight: 600;
+font-size: 15px;
+line-height: 70px;
+color: #333333;
+`;
+
+export const VideoTemptWrapped = styled.div`
+  background-image: url(${(props) => props.img});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0 8px;
+  color: white;
+  font-size: 25px;
+  padding: 20px 23px;
 `;

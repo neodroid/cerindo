@@ -3,7 +3,7 @@ import { Link as LinkR } from "react-router-dom";
 import { MdArrowDownward } from "react-icons/md";
 
 export const Nav = styled.nav`
-  background: #fff;
+  background: ${({ scrollNav }) => (scrollNav ? "#fff" : "transparent")};
   height: 80px;
   /* margin-top: -80px; */
   display: flex;

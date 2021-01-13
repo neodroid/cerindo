@@ -48,27 +48,36 @@ const Footer = () => {
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle>About Us</FooterLinkTitle>
-              <FooterLink to="/">Mission, Vision and Value</FooterLink>
-              <FooterLink to="/">Company Holding</FooterLink>
-              <FooterLink to="/">Board of Directors</FooterLink>
-              <FooterLink to="/">History</FooterLink>
-              <FooterLinkTitle>QHSE - CSR</FooterLinkTitle>
-              <FooterLink to="/">Quality</FooterLink>
-              <FooterLink to="/">HSE</FooterLink>
-              <FooterLink to="/">CSR</FooterLink>
+              <FooterLink to="/Mission-Vision">Mission, Vision and Value</FooterLink>
+              <FooterLink to="/Subsidiary">Company Subsidiary</FooterLink>
+              <FooterLink to="/Board-of-Director">Board of Directors</FooterLink>
+              <FooterLink to="/Organization-Structure">Organization Structure</FooterLink>
+              <FooterLink to="/History-Milestone">History and Milestone</FooterLink>
+              <FooterLink to="/Concession-Area">Concession Area</FooterLink>
+              <FooterLink to="/License-And-Award">License and Award</FooterLink>
+              <FooterLinkTitle>Global Sustainability</FooterLinkTitle>
+              <FooterLink to="/Activities">Activities</FooterLink>
+              <FooterLink to="/Report">Report</FooterLink>
+              <FooterLink to="/Commitmen">Commitmen</FooterLink>
             </FooterLinkItems>
           </FooterLinkWrapper>
 
           <FooterLinkWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>Corporate News</FooterLinkTitle>
+              <FooterLinkTitle>Purpose</FooterLinkTitle>
               <FooterLink to="/">Press Release</FooterLink>
               <FooterLink to="/">Ceria in Media</FooterLink>
               <FooterLink to="/">Gallery</FooterLink>
               <FooterLinkTitle>Business</FooterLinkTitle>
-              <FooterLink to="/">Mining</FooterLink>
-              <FooterLink to="/">Logistics</FooterLink>
-              <FooterLink to="/">Energy</FooterLink>
+              <FooterLinkTitle>Mining</FooterLinkTitle>
+              <FooterLink to="/Nickle-Ore-Mining">Nickle Ore Mining</FooterLink>
+              <FooterLink to="/Nickle-Cobalt-HPAL">Nickle - Cobalt HPAL</FooterLink>
+              <FooterLink to="/Ferronickle-Smelting">Ferronickle Smelting</FooterLink>
+              <FooterLink to="/Resource-Reserve">Resource and Reserve</FooterLink>
+              <FooterLinkTitle>Logistic</FooterLinkTitle>
+              <FooterLink to="/Jetty-Terminal">Jetty Terminal</FooterLink>
+              <FooterLinkTitle>Energy</FooterLinkTitle>
+              <FooterLink to="/Power-Plant">Power Plant</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle>Reach Us At</FooterLinkTitle>
