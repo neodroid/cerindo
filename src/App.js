@@ -44,16 +44,8 @@ function App() {
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/Nickle-Ore-Mining" component={NickleOreMining} exact />
-          <Route
-            path="/Nickle-Cobalt-HPAL"
-            component={NickleCobaltHPAL}
-            exact
-          />
-          <Route
-            path="/Ferronickle-Smelting"
-            component={FerronickleSmelting}
-            exact
-          />
+          <Route path="/Nickle-Cobalt-HPAL" component={NickleCobaltHPAL} exact />
+          <Route path="/Ferronickle-Smelting" component={FerronickleSmelting} exact />
           <Route path="/Resource-Reserve" component={ResourceReserve} exact />
           <Route path="/Jetty-Terminal" component={JettyTerminal} exact />
           <Route path="/Power-Plant" component={PowerPlant} exact />

@@ -12,7 +12,7 @@ export const BannerContainer = styled.div`
 export const BannerWrapper = styled.div`
   position: inherit;
   display: flex;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: ${({texted})=>(texted ? "transparent" : "rgba(0, 0, 0, 0.7)")};
   width: 100%;
   height: 100%;
   align-items: center;

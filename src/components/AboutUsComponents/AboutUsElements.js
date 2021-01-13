@@ -10,7 +10,6 @@ export const Aboutstyle = styled.div`
 
 export const AboutSideBar = styled.div`
     flex-basis: 15%; 
-    flex-direction: row-reverse;
     margin-top: 55px;
 `;
 

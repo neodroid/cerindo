@@ -1,0 +1,11 @@
+export const NickleOreMiningHead = {
+    img: require("../../../images/NickelOreMiningBanner.png"),
+    texted: true,
+};
+
+export const NickleOreMiningContent = [
+    {
+        "title":"Nickel Ore Mining",
+        "content":"Ceria operates a large laterite nickel mine on a mining area with the size of 6,785 hectares, which is known as Block Lapaopao in the sub-district of Wolo, Kolaka, South East Sulawesi Province, Indonesia.\n\nBased on JORC Mineral Resource Report in 2017 by Ade Kadarusman, PhD., MAusIMM, the Lapapao block has a resource of 91.3 million tonnes (wet) with an average of 1.53% nickel in saprolite and 74 million tonnes (wet) with an average of 1.25% nickel and 0.13% cobalt in limonite.\n\nThe Lapaopao block also has potential resource of 80 – 292 million tonnes (wet), containing an average of 1.05% – 1,7% nickel. Latest JORC Mineral Resource Report in April 2018 by the Competent Person, Ade Kadarusman, PhD., MAusIMM., reported a total of 90.12 million tonnes (wet) with an average of 1.52% nickel in saproline and a total of 75.40 million tonnes (wet) with an average of 1.25% nickel and 0.13% cobalt.\n\nLatest ore reserves of Wolo, Jessica, Ruby and Samaenre prospects, a small portion of Lapaopao block, in May 2018 by the same competent person reported a total of 5.07 million tonnes (wet) with an average of 1.65% nickel. The ore reserve is for direct shipping ore (DSO).\n\nCeria in May 2018 has started an aggressive resource and reserve drilling campaign within the mining lease with a target of 2,477 drill holes and a total depth of 61,925 meters involving four drilling contractors. The campaign will be completed in mid 2019 and will provide a renewed JORC mineral resources and reserves report.\n\nA number of nickel experts assist in the drilling campaign through the resource estimation following the 2011 JORC standard. The experts are Mick Elias from CSA Global, Perth, Australia, Ade Kadarusman, PhD., MAusIMM., from AKA Geosains, Jakarta, Indonesia, and Tobias Maya from Geosearch, Jakarta, Indonesia.\n\nCeria has also identified a vast potential mineral through a Geo Penetrating Radar Surveys (GPR). The initial GPR surveys reported an estimated volume of laterites totaling 505 million tonnes comprising 260 million tonnes of limonite and 221 million tonnes of saprolite."
+    },
+]

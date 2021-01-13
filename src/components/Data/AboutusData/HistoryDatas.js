@@ -1,5 +1,10 @@
 import sharehold from "../../../images/Rectangle228.png";
 import constrkef from "../../../images/Rectangle123.png";
+import constrhpal from "../../../images/Rectangle115.png";
+import complerkef from "../../../images/Rectangle122.png";
+import commerkef from "../../../images/Rectangle124.png";
+import commiskef from "../../../images/Rectangle128.png";
+import integ from "../../../images/Rectangle131.png";
 
 export const HistoryHead = {
     img: require("../../../images/image3.png"),
@@ -23,27 +28,27 @@ export const MilestoneData = [
     },
     {
         "year":"2021",
-        "image":constrkef,
+        "image":constrhpal,
         "title":"HPAL Construction"
     },
     {
         "year":"2022",
-        "image":constrkef,
+        "image":complerkef,
         "title":"RKEF Completion and Commisioning"
     },
     {
         "year":"2023",
-        "image":constrkef,
+        "image":commerkef,
         "title":"RKEF Commercial, Production and HPAL Completion"
     },
     {
         "year":"2024",
-        "image":constrkef,
+        "image":commiskef,
         "title":"HPAL Commisioning, Commercial and Production"
     },
     {
         "year":"2025",
-        "image":constrkef,
+        "image":integ,
         "title":"Integrated Downstream Nickel Based End-Product"
     },
 ]

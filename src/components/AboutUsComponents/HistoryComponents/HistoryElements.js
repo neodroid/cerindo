@@ -73,7 +73,7 @@ export const MilesImageDesc = styled.div`
     align-self: flex-end;
     flex-direction: column-reverse;
     height: 100%;
-    background: linear-gradient(357.39deg, #000000 2.63%, rgba(0, 0, 0, 0.89958) 25%, rgba(0, 0, 0, 0.6) 61.53%, rgba(0, 0, 0, 0) 90.58%);
+    background: linear-gradient(357.39deg, #000000 2.63%, rgba(0, 0, 0, 0.9) 23%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 90.58%);
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
