@@ -2,7 +2,6 @@ import React from "react";
 import Bg from "../../../images/Home_background1.png";
 import { MdTrendingFlat } from "react-icons/md";
 import { FaPlayCircle } from "react-icons/fa";
-import circle from "../../../images/Ellipse 17.png";
 import {NewsData} from "../../Data/News";
 import {
   HeroContainer,
@@ -32,7 +31,7 @@ const HeroSection = () => {
             <HeroH1>Building a Shining Nickel and Cobalt Business</HeroH1>
 
             <VideoWrapped>
-              <VideoTemptWrapped img={circle}>
+              <VideoTemptWrapped>
                 <FaPlayCircle/>
               </VideoTemptWrapped>
               <VideoWrited>PLAY VIDEO</VideoWrited>
