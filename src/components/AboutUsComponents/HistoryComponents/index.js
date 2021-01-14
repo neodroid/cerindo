@@ -1,4 +1,5 @@
 import React from "react";
+import {useContext} from 'react'
 import {
   Aboutstyle,
   AboutSideBar,
@@ -23,7 +24,11 @@ import {
   Opac,
 } from "./HistoryElements";
 
+import { langContext } from "../../../langContext";
+import { HistoryLangTitle } from "./HistoryLang";
+
 const HistoryComponents = () => {
+  const {language} = useContext(langContext);
   return (
     <>
       <Aboutstyle>

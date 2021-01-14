@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Aboutstyle,
   AboutSideBar,
@@ -19,8 +19,11 @@ import {
   PhaseWritedApart,
   SubsidiaryExp,
 } from "./SubsidiaryElements";
+import { langContext } from "../../../langContext";
+import { SubsidiaryLang } from "./SubsidiaryLang";
 
 const SubsidiaryComponents = () => {
+  const {language} = useContext(langContext);
   const [detailSubsidiary, setDetailSubsidiary] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -77,7 +80,7 @@ const SubsidiaryComponents = () => {
                 </Phasexp>
               );
             })}
-            <SubsidiaryExp>{detailSubsidiary.description_en}</SubsidiaryExp>;
+            <SubsidiaryExp>{SubsidiaryLang(detailSubsidiary, language)}</SubsidiaryExp>;
           </SubsidiaryContent>
         </AboutMain>
       </Aboutstyle>

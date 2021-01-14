@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Aboutstyle,
   AboutSideBar,
@@ -18,7 +18,13 @@ import {
   BodDescriptionContent,
 } from "./BODElements";
 
+import { langContext } from "../../../langContext";
+import { BODlang } from "./BODlang"
+
+
 const BODComponents = () => {
+  const {language} = useContext(langContext);
+
   const [BOD, setBOD] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +34,7 @@ const BODComponents = () => {
     };
     fetchData();
   }, []);
+
   console.log(BOD);
   if (BOD.length === 0) return null;
   return (
@@ -75,7 +82,7 @@ const BODComponents = () => {
                         </div>
                       </BodBoxIntro>
                       <BodDescriptionContent>
-                        {data.description_en}
+                        {BODlang(data, language)}
                       </BodDescriptionContent>
                     </BodBoxContent>
                   </Bodbox>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FaBars } from "react-icons/fa";
 import image from "../../images/logo.png";
 import {
@@ -22,7 +22,10 @@ import {
   NavText,
   NavbarDropdownContent,
 } from "./NavbarElements";
+
 import getFlagUrl from "./getFlagURL";
+import { langContext } from "../../langContext";
+export let lang;
 
 function Menu({ items, value, onChange, placeholder, showFlag }) {
   const [selected, setSelected] = useState(value || null);
@@ -69,7 +72,10 @@ const Navbar = ({ toggle }) => {
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
   }, []);
+
   const [val1, setValue1] = useState("en");
+  const {language, setLanguage} = useContext(langContext);
+  setLanguage(val1);
 
   return (
     <>
@@ -134,7 +140,6 @@ const Navbar = ({ toggle }) => {
                   <DropDiv>
                     <NavText>Press</NavText>
                     <NavDropLinks to="/News-Release">News Release</NavDropLinks>
-
                     <NavText>Gallery</NavText>
                     <NavDropLinks to="/Photos">Photos</NavDropLinks>
                     <NavDropLinks to="/Videos">Videos</NavDropLinks>
