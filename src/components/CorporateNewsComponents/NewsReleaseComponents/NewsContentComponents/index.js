@@ -41,7 +41,7 @@ const NewsContentComponents = () => {
       setNewsData(data);
     };
     fetchData();
-  });
+  }, []);
 
   /* const [post, setPost] = useState([]);
     const [currentPage,setCurrentPage] = useState();
@@ -56,7 +56,7 @@ const NewsContentComponents = () => {
     const indexOfFirstPost = indexOfLastPost - postPerPage;
     const currentPost = post.slice(indexOfFirstPost) */
   if (newsData.length === 0) return null;
-  console.log(newsData);
+
   return (
     <>
       <NewsContent>

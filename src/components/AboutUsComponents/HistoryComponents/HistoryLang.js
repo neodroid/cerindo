@@ -9,5 +9,17 @@ export const HistoryLangTitle = (data, lang) => {
     (lang == "cn") ? 
         <div>{data.title_ch}</div> : null;
 
-    return text
+    return text;
+}
+
+export const HistoryLangDesc = (data, lang) => {
+    var text = 
+    (lang == "en") ? 
+        <div>{data.description_en}</div> :
+    (lang == "id") ? 
+        <div>{data.description_id}</div> :
+    (lang == "cn") ? 
+        <div>{data.description_ch}</div> : null;
+
+    return text;
 }

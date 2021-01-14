@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Aboutstyle,
   AboutSideBar,
@@ -15,7 +15,11 @@ import {
   Figured,
 } from "./LicenseElements";
 
+import { langContext } from "../../../langContext";
+import { LicenseTitle, LicenseContent } from './LicenseLang';
+
 const LicenseComponents = () => {
+  const {language} = useContext(langContext);
   const [license, setLicense] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -57,16 +61,16 @@ const LicenseComponents = () => {
         </AboutSideBar>
         <AboutMain>
           <LicWrapped>
-            {LicenseData.map((data, idx) => {
+            {license.license.map((data, idx) => {
               if (idx % 2 == 0) {
                 return (
                   <LicContent wrap key={idx}>
                     <LicContent>
                       <LicContent wrap>
-                        <LicBoxWrited title>{data.title}</LicBoxWrited>
-                        <LicBoxWrited>{data.content}</LicBoxWrited>
+                        <LicBoxWrited title>{LicenseTitle(data, language)}</LicBoxWrited>
+                        <LicBoxWrited>{LicenseContent(data, language)}</LicBoxWrited>
                       </LicContent>
-                      <img src={data.image} width={`332px`} />
+                      <img src={data.image.url} width={`332px`} />
                     </LicContent>
                   </LicContent>
                 );
@@ -74,10 +78,10 @@ const LicenseComponents = () => {
                 return (
                   <LicContent wrap key={idx}>
                     <LicContent>
-                      <img src={data.image} width={`332px`} />
+                      <img src={data.image.url} width={`332px`} />
                       <LicContent wrap>
-                        <LicBoxWrited title>{data.title}</LicBoxWrited>
-                        <LicBoxWrited>{data.content}</LicBoxWrited>
+                        <LicBoxWrited title>{LicenseTitle(data, language)}</LicBoxWrited>
+                        <LicBoxWrited>{LicenseContent(data, language)}</LicBoxWrited>
                       </LicContent>
                     </LicContent>
                   </LicContent>
@@ -86,11 +90,11 @@ const LicenseComponents = () => {
             })}
             <AwardContent>
               <h2>Awards</h2>
-              {AwardData.map((data, idx) => {
+              {license.Awards.map((data, idx) => {
                 return (
                   <Figured key={idx}>
-                    <img src={data.image} alt={data.image} />
-                    <figcaption>{data.desc}</figcaption>
+                    <img src={data.award_img.url} alt={data.image} />
+                    <figcaption>{data.award_name}</figcaption>
                   </Figured>
                 );
               })}
