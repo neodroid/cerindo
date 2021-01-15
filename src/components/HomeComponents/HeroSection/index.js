@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Bg from "../../../images/Home_background1.png";
 import { MdTrendingFlat } from "react-icons/md";
 import { FaPlayCircle } from "react-icons/fa";
@@ -23,9 +23,12 @@ import {
   VideoTemptWrapped,
   VideoWrited,
 } from "./HeroElements";
+import { langContext } from "../../../langContext";
+import { NewsLangTitle } from "./HeroLang";
 import { homeNewsOne, homeNewsThree, homeNewsTwo } from "../../Data/HomeData";
 
 const HeroSection = () => {
+  const {language} = useContext(langContext);
   const [newsData, setNewsData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -69,7 +72,7 @@ const HeroSection = () => {
                     <Img src={data.news_img.url} />
                   </ImgWrap>
                   <HeroNewsDesc>
-                    <HeroNewsP>{data.title_en}</HeroNewsP>
+                    <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                     <HeroNewsTimeP>{data.news_date}</HeroNewsTimeP>
                   </HeroNewsDesc>
                 </HeroNewsContent>

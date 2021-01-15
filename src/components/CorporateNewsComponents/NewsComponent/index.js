@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { NewsData } from "../../Data/News";
 import { newsService } from "../../../service/News";
 import {
@@ -13,6 +13,8 @@ import {
   BlogImageArt,
   GlobalContent,
 } from "./NewsElements";
+import { langContext } from "../../../langContext";
+import { DetailsNewsLangTitle, DetailsNewsLangContent, NewsLangTitle } from "./NewsLang";
 
 const ManageOthArtData = ({ image, title, date }) => {
   return (
@@ -35,6 +37,7 @@ const ManageOthArtData = ({ image, title, date }) => {
 };
 
 const NewsComponent = (props) => {
+  const {language} = useContext(langContext);
   const [detailsNews, setDetailsNews] = useState([]);
   const [listNews, setListNews] = useState([]);
   const fetchDataDetails = async () => {
@@ -61,12 +64,12 @@ const NewsComponent = (props) => {
       <GlobalContent>
         <BlogApart containe>
           <BlogDivApart contain>
-            <TitleContent>{detailsNews.title_en}</TitleContent>
+            <TitleContent>{DetailsNewsLangTitle(detailsNews, language)}</TitleContent>
             <BlogWrapped image>
               <BlogImage src={detailsNews.news_img.url} />
             </BlogWrapped>
             <BlogWrapped>
-              <BoxContainer>{detailsNews.news_en}</BoxContainer>
+              <BoxContainer>{DetailsNewsLangContent(detailsNews, language)}</BoxContainer>
             </BlogWrapped>
           </BlogDivApart>
           <BlogDivApart>
@@ -76,7 +79,7 @@ const NewsComponent = (props) => {
                 <ManageOthArtData
                   key={idx}
                   image={data.news_img.url}
-                  title={data.title_en}
+                  title={NewsLangTitle(data, language)}
                   date={data.news_date}
                 />
               ))}

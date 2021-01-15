@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { NewsData } from "../../../Data/News";
 import { newsService } from "../../../../service/News";
 import {
@@ -11,6 +11,8 @@ import {
   NewsContainerPart,
   Pagination,
 } from "./NewsContentElements";
+import { langContext } from "../../../../langContext";
+import { NewsLangContent, NewsLangTitle} from './NewsContentLang';
 
 /* const Pagination = ({ postPerPage, totalPost }) =>{
     const pageNumbers = [];
@@ -33,6 +35,7 @@ import {
 } */
 
 const NewsContentComponents = () => {
+  const {language} = useContext(langContext);
   const [newsData, setNewsData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -68,8 +71,8 @@ const NewsContentComponents = () => {
                   <NewsImage src={data.news_img.url} />
                 </NewsContainerPart>
                 <NewsContainerPart wrt>
-                  <BoxContainer titlee>{data.title_en}</BoxContainer>
-                  <BoxContainer>{data.news_en}</BoxContainer>
+                  <BoxContainer titlee>{NewsLangTitle(data, language)}</BoxContainer>
+                  <BoxContainer>{NewsLangContent(data, language)}</BoxContainer>
                 </NewsContainerPart>
                 <NewsContainerPart btn>
                   <Newsbtn to={`/News/${data._id}`}>Continue Reading</Newsbtn>
