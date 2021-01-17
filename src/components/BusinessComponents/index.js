@@ -11,12 +11,18 @@ import {
     Contentt,
     Changed
 } from "./BusinessElements";
-import {BusinessAllImage} from "../Data/BusinessData/BussinessDatas"
+import {BusinessAllImage} from "../Data/BusinessData/BussinessDatas";
+import {businessService} from "../../service/Business";
 
 const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
   const [businessImage, setBusinessImage] = useState([]);
   const [selected, setSelected] = useState(true);
+
+  const Clickit = ()=>{
+    setSelected(!selected);
+  }
   useEffect(() => {
+    Clickit()
     const fetchData = async () => {
       const response = await businessService.getListBusiness();
       const data = response.data;
@@ -30,13 +36,6 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
   };
   if (businessImage.length === 0) return null;
 
-    const Clickit = ()=>{
-        setSelected(!selected);
-    }
-
-    useEffect(()=>{
-        Clickit()
-    },[])
     return(
         <>
             <BusinessSideBar>
