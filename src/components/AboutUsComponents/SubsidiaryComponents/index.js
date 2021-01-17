@@ -23,7 +23,7 @@ import { langContext } from "../../../langContext";
 import { SubsidiaryLang } from "./SubsidiaryLang";
 
 const SubsidiaryComponents = () => {
-  const {language} = useContext(langContext);
+  const { language } = useContext(langContext);
   const [detailSubsidiary, setDetailSubsidiary] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -80,7 +80,10 @@ const SubsidiaryComponents = () => {
                 </Phasexp>
               );
             })}
-            <SubsidiaryExp>{SubsidiaryLang(detailSubsidiary, language)}</SubsidiaryExp>;
+            <SubsidiaryExp>
+              {SubsidiaryLang(detailSubsidiary, language)}
+            </SubsidiaryExp>
+            ;
           </SubsidiaryContent>
         </AboutMain>
       </Aboutstyle>
