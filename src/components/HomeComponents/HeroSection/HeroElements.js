@@ -48,6 +48,9 @@ export const HeroContent = styled.div`
   align-items: center;
   justify-content: center;
   /* margin-top: 80px; */
+  @media screen and (max-width: 577px) {
+    text-align:center;
+  }
 `;
 
 export const HeroRow = styled.div`
@@ -95,7 +98,10 @@ export const H1Wrap = styled.div`
 
 export const HeroNewsFlex = styled.div`
   display:flex;
-  flex-direction: row;
+  flex-direction: ${(props)=>(props.content ? "row" : "row")};
+  @media screen and (max-width: 1065px) {
+    flex-direction: ${(props)=>(props.content ? "column" : "row")};
+  }
 `;
 
 export const HeroNewsWrap = styled.div`
@@ -113,6 +119,9 @@ export const HeroNewsWrap = styled.div`
   flex-direction: column;
   margin: 50px 0;
   /* align-items: center; */
+  @media screen and (max-width: 1065px) {
+    width: 100%;
+  }
 `;
 
 export const HeroH1 = styled.h1`
@@ -145,6 +154,9 @@ export const HeroMediaH1 = styled.h1`
   margin-top: 5px;
   font-family: "Montserrat-black";
   margin-bottom: 10px;
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 export const HeroP = styled.p`
@@ -185,6 +197,9 @@ export const ViewedAll = styled(LinkR)`
   align-items: center;
   text-decoration: none;
   margin-top: 5px;
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 export const ArrowDownward = styled(MdArrowDownward)`
   margin-left: 8px;
@@ -223,6 +238,14 @@ export const HeroNewsContent = styled(LinkR)`
     transition: all 0.2s ease-in-out;
     transform: scale(1.02);
   }
+  @media screen and (max-width: 486px) {
+    flex-direction: column;
+    align-items:center;
+    text-align:center;
+    border-bottom: 2px solid #aaa;
+    border-right: none;
+    min-width: 0px;
+  }
 `;
 export const HeroNewsDesc = styled.div`
   max-width: 70%;
@@ -232,6 +255,11 @@ export const HeroNewsDesc = styled.div`
   flex-direction: column;
 
   align-items: flex-start;
+  @media screen and (max-width: 480px) {
+    align-items:center;
+    margin-left: 0px;
+    padding: 10px;
+  }
 `;
 
 export const HeroNewsP = styled.p`
@@ -248,12 +276,13 @@ export const HeroNewsTimeP = styled.p`
   line-height: 30px;
 `;
 
-export const VideoWrapped = styled(LinkR)`
+export const VideoWrapped = styled.a`
   display: flex;
   align-items:center;
   margin: 24px 0;
   text-decoration: none;
   width: fit-content;
+  cursor:pointer;
 `;
 export const VideoWrited = styled.p`
 font-weight: 600;

@@ -25,7 +25,6 @@ import {
 } from "./HeroElements";
 import { langContext } from "../../../langContext";
 import { NewsLangTitle } from "./HeroLang";
-import { homeNewsOne, homeNewsThree, homeNewsTwo } from "../../Data/HomeData";
 
 const HeroSection = () => {
   const {language} = useContext(langContext);
@@ -64,8 +63,9 @@ const HeroSection = () => {
               </ViewedAll>
             </TitleNewsApart>
           </HeroNewsFlex>
-          <HeroNewsFlex>
+          <HeroNewsFlex content>
             {newsData.map((data, idx) => {
+              if (idx<3){
               return (
                 <HeroNewsContent to={`/News/${data._id}`} key={idx}>
                   <ImgWrap>
@@ -77,6 +77,7 @@ const HeroSection = () => {
                   </HeroNewsDesc>
                 </HeroNewsContent>
               );
+              }
             })}
           </HeroNewsFlex>
         </HeroNewsWrap>

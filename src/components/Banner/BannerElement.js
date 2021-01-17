@@ -17,6 +17,7 @@ export const BannerWrapper = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
+  text-align: center;
 `;
 
 export const Heading = styled.h1`

@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import {
-  BusinessSideBar,
-  BusinessSideBarContent,
-  BusinessSideBarImage,
+    BusinessSideBar,
+    BusinessSideBarContent,
+    BusinessSideBarImage,
+    ArrowDiv,
+    ArrowDownLang,
+    TextButton,
+    DropDown,
+    Dropbtn,
+    Contentt,
+    Changed
 } from "./BusinessElements";
-import { BusinessAllImage } from "../Data/BusinessData/BussinessDatas";
-import { businessService } from "../../service/Business";
-const BusinessSideBarComponents = ({
-  page1,
-  page2,
-  page3,
-  page4,
-  page5,
-  page6,
-}) => {
+import {BusinessAllImage} from "../Data/BusinessData/BussinessDatas"
+
+const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
   const [businessImage, setBusinessImage] = useState([]);
+  const [selected, setSelected] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       const response = await businessService.getListBusiness();
@@ -29,44 +30,82 @@ const BusinessSideBarComponents = ({
   };
   if (businessImage.length === 0) return null;
 
-  return (
-    <>
-      <BusinessSideBar>
-        <h1>Mining</h1>
-        <BusinessSideBarImage img={callImage(0)}>
-          <BusinessSideBarContent page={page1} to="/Nickle-Ore-Mining">
-            Nickel Ore Mining
-          </BusinessSideBarContent>
-        </BusinessSideBarImage>
-        <BusinessSideBarImage img={callImage(1)}>
-          <BusinessSideBarContent page={page2} to="/Ferronickle-Smelting">
-            Ferronickel Smelting
-          </BusinessSideBarContent>
-        </BusinessSideBarImage>
-        <BusinessSideBarImage img={callImage(2)}>
-          <BusinessSideBarContent page={page3} to="/Resource-Reserve">
-            Resource and Reserve
-          </BusinessSideBarContent>
-        </BusinessSideBarImage>
-        <BusinessSideBarImage img={callImage(3)}>
-          <BusinessSideBarContent page={page4} to="/Nickle-Cobalt-HPAL">
-            Nickel-Cobalt HPAL
-          </BusinessSideBarContent>
-        </BusinessSideBarImage>
-        <h1>Logistic</h1>
-        <BusinessSideBarImage img={callImage(4)}>
-          <BusinessSideBarContent page={page5} to="/Jetty-Terminal">
-            Jetty Terminal
-          </BusinessSideBarContent>
-        </BusinessSideBarImage>
-        <h1>Energy</h1>
-        <BusinessSideBarImage img={callImage(5)}>
-          <BusinessSideBarContent page={page6} to="/Power-Plant">
-            Power Plants
-          </BusinessSideBarContent>
-        </BusinessSideBarImage>
-      </BusinessSideBar>
-    </>
-  );
+    const Clickit = ()=>{
+        setSelected(!selected);
+    }
+
+    useEffect(()=>{
+        Clickit()
+    },[])
+    return(
+        <>
+            <BusinessSideBar>
+                    <DropDown tabIndex={-1}>
+                    <Dropbtn onClick={Clickit}>
+                        <TextButton page={page1}>Nickel Ore Mining</TextButton>
+                        <TextButton page={page2}>Ferronickel Smelting</TextButton>
+                        <TextButton page={page3}>Resource and Reserve</TextButton>
+                        <TextButton page={page4}>Nickel-Cobalt HPAL</TextButton>
+                        <TextButton page={page5}>Jetty Terminal</TextButton>
+                        <TextButton page={page6}>Power Plants</TextButton>
+
+                        <ArrowDiv>
+                            {selected ? <ArrowDownLang style={{transform: "rotate(225deg)"}}/> : <ArrowDownLang/>}
+                        </ArrowDiv>
+                    </Dropbtn>
+                    { selected ? 
+                    <Contentt>
+                        <h1>Mining</h1>
+                        <BusinessSideBarImage img={callImage(0)}>
+                            <BusinessSideBarContent page={page1} to="/Nickle-Ore-Mining">Nickel Ore Mining</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                        <BusinessSideBarImage img={callImage(1)}>
+                            <BusinessSideBarContent page={page2} to="/Ferronickle-Smelting">Ferronickel Smelting</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                        <BusinessSideBarImage img={callImage(2)}>
+                            <BusinessSideBarContent page={page3} to="/Resource-Reserve">Resource and Reserve</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                        <BusinessSideBarImage img={callImage(3)}>
+                            <BusinessSideBarContent page={page4} to="/Nickle-Cobalt-HPAL">Nickel-Cobalt HPAL</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                        <h1>Logistic</h1>
+                        <BusinessSideBarImage img={callImage(4)}>
+                            <BusinessSideBarContent page={page5} to="/Jetty-Terminal">Jetty Terminal</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                        <h1>Energy</h1>
+                        <BusinessSideBarImage img={callImage(5)}>
+                            <BusinessSideBarContent page={page6} to="/Power-Plant">Power Plants</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                    </Contentt>
+                    : 
+                    <Changed>
+                        <Contentt>
+                        <h1>Mining</h1>
+                        <BusinessSideBarImage img={callImage(0)}>
+                            <BusinessSideBarContent page={page1} to="/Nickle-Ore-Mining">Nickel Ore Mining</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                        <BusinessSideBarImage img={callImage(1)}>
+                            <BusinessSideBarContent page={page2} to="/Ferronickle-Smelting">Ferronickel Smelting</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                        <BusinessSideBarImage img={callImage(2)}>
+                            <BusinessSideBarContent page={page3} to="/Resource-Reserve">Resource and Reserve</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                        <BusinessSideBarImage img={callImage(3)}>
+                            <BusinessSideBarContent page={page4} to="/Nickle-Cobalt-HPAL">Nickel-Cobalt HPAL</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                        <h1>Logistic</h1>
+                        <BusinessSideBarImage img={callImage(4)}>
+                            <BusinessSideBarContent page={page5} to="/Jetty-Terminal">Jetty Terminal</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                        <h1>Energy</h1>
+                        <BusinessSideBarImage img={callImage(5)}>
+                            <BusinessSideBarContent page={page6} to="/Power-Plant">Power Plants</BusinessSideBarContent>
+                        </BusinessSideBarImage>
+                    </Contentt>
+                    </Changed>}
+                    </DropDown>
+            </BusinessSideBar>
+        </>
+    )
 };
 export default BusinessSideBarComponents;

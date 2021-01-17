@@ -5,7 +5,10 @@ export const VismisContent = styled.div`
     border-bottom: 2px solid #E0E0E0;
     display: flex;
     margin: 1px 40px;
-    height: 220px;
+    @media screen and (max-width: 820px) {
+        flex-direction: column;
+        margin: 0 auto;
+    }
 `;
 
 export const VismisApart = styled.div`
@@ -47,6 +50,9 @@ export const ValueWrite = styled.div`
     line-height: 40px;
     color: ${(props) => (props.choose ? "#EFB401" : "#e0e0e0")};
     margin: 30px 0;
+    @media screen and (max-width: 820px) {
+        font-size: 30px;
+    }
 `;
 
 export const Valuexp = styled.div`
@@ -55,6 +61,10 @@ export const Valuexp = styled.div`
     text-align: center;
     padding: 10px 100px !important;
     width: 100% !important;
+    @media screen and (max-width: 820px) {
+        padding: 20px 5px !important;
+        border-radius: 25px;
+    }
 `;
 
 export const Valuexpwrited = styled.div`
@@ -63,6 +73,9 @@ export const Valuexpwrited = styled.div`
     line-height: ${(props) => (props.title ? "30px" : "20px")};
     letter-spacing: ${(props) => (props.title ? "0.1em" : "none")};
     color: ${(props) => (props.title ? "#333333" : "#111111")};
+    @media screen and (max-width: 820px) {
+        font-size: ${(props) => (props.title ? "16px" : "10px")};
+    }
 `;
 
 export const Angle = styled(Carousel)`

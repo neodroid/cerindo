@@ -5,7 +5,7 @@ import {
   AboutMain,
   AboutSideBarContent,
 } from "../AboutUsElements";
-
+import AboutSideBarComponents from "../index";
 import { aboutUsService } from "../../../service/Aboutus";
 import { ValueData, VismisData } from "../../Data/AboutusData/VismisDatas";
 import {
@@ -35,29 +35,7 @@ const VismisComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBar>
-          <AboutSideBarContent page to="/Mission-Vision">
-            Mission, Vision and Value
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Subsidiary">
-            Company Subsidiary
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Board-of-Director">
-            Board of Director
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Organization-Structure">
-            Organization Structure
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/History-Milestone">
-            History and Milestone
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Concession-Area">
-            Concession Area
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/License-And-Award">
-            License and Award
-          </AboutSideBarContent>
-        </AboutSideBar>
+        <AboutSideBarComponents page1={true}/>
         <AboutMain>
           <VismisContent>
             <VismisApart writed>
@@ -66,14 +44,14 @@ const VismisComponents = () => {
             </VismisApart>
             <VismisApart>
               <VismisImagePart>
-                <img src={MVV.MVV_images[0].url} />
+                <img src={MVV.MVV_images[0].url} style={{maxWith:"318px"}}/>
               </VismisImagePart>
             </VismisApart>
           </VismisContent>
           <VismisContent>
             <VismisApart>
               <VismisImagePart misi>
-                <img src={MVV.MVV_images[1].url} />
+                <img src={MVV.MVV_images[1].url} style={{maxWith:"235px"}}/>
               </VismisImagePart>
             </VismisApart>
             <VismisApart writed>

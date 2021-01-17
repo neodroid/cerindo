@@ -5,6 +5,7 @@ import {
   AboutMain,
   AboutSideBarContent,
 } from "../AboutUsElements";
+import AboutSideBarComponents from "../index";
 import { LicenseData, AwardData } from "../../Data/AboutusData/LicenseDatas";
 import { aboutUsService } from "../../../service/Aboutus";
 import {
@@ -36,29 +37,7 @@ const LicenseComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBar>
-          <AboutSideBarContent to="/Mission-Vision">
-            Mission, Vision and Value
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Subsidiary">
-            Company Subsidiary
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Board-of-Director">
-            Board of Director
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/license-Structure">
-            license Structure
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/History-Milestone">
-            History and Milestone
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Concession-Area">
-            Concession Area
-          </AboutSideBarContent>
-          <AboutSideBarContent page to="/License-And-Award">
-            License and Award
-          </AboutSideBarContent>
-        </AboutSideBar>
+        <AboutSideBarComponents page7={true}/>
         <AboutMain>
           <LicWrapped>
             {license.license.map((data, idx) => {

@@ -6,6 +6,7 @@ import {
   AboutSideBarContent,
 } from "../AboutUsElements";
 import { aboutUsService } from "../../../service/Aboutus";
+import AboutSideBarComponents from "../index";
 import {
   SubsidaryConstruct,
   PhasexpData,
@@ -18,6 +19,8 @@ import {
   PhaseWrited,
   PhaseWritedApart,
   SubsidiaryExp,
+  Images,
+  SubsExpCon
 } from "./SubsidiaryElements";
 import { langContext } from "../../../langContext";
 import { SubsidiaryLang } from "./SubsidiaryLang";
@@ -39,34 +42,11 @@ const SubsidiaryComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBar>
-          <AboutSideBarContent to="/Mission-Vision">
-            Mission, Vision and Value
-          </AboutSideBarContent>
-          <AboutSideBarContent page to="/Subsidiary">
-            Company Subsidiary
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Board-of-Director">
-            Board of Director
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Organization-Structure">
-            Organization Structure
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/History-Milestone">
-            History and Milestone
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Concession-Area">
-            Concession Area
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/License-And-Award">
-            License and Award
-          </AboutSideBarContent>
-        </AboutSideBar>
+        <AboutSideBarComponents page2={true}/>
         <AboutMain>
           <SubsidiaryContent>
-            <img
+            <Images
               src={detailSubsidiary.company_subsidiary_image.url}
-              width={`700px`}
             />
             {PhasexpData.map((data, idx) => {
               return (
@@ -80,10 +60,9 @@ const SubsidiaryComponents = () => {
                 </Phasexp>
               );
             })}
-            <SubsidiaryExp>
-              {SubsidiaryLang(detailSubsidiary, language)}
-            </SubsidiaryExp>
-            ;
+            <SubsExpCon>
+            <SubsidiaryExp>{SubsidiaryLang(detailSubsidiary, language)}</SubsidiaryExp>
+            </SubsExpCon>
           </SubsidiaryContent>
         </AboutMain>
       </Aboutstyle>

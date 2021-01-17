@@ -241,7 +241,7 @@ export const ArrowDownLang = styled.div`
 export const DropDown = styled.div`
   display: inline-block;
   cursor: pointer;
-  max-width: 100vw;
+  width: 80px;
   > * {
     cursor: pointer;
   }
@@ -249,6 +249,7 @@ export const DropDown = styled.div`
   &:focus,
   &:active {
     background-color: rgba(0, 0, 0, 0.1);
+    outline:none;
   }
 
   & ${ArrowDownLang} {

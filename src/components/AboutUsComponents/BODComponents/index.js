@@ -7,6 +7,7 @@ import {
 } from "../AboutUsElements";
 import { BODContentData } from "../../Data/AboutusData/BODDatas";
 import { aboutUsService } from "../../../service/Aboutus";
+import AboutSideBarComponents from "../index";
 import Masonry from "react-masonry-component";
 import {
   BodGridded,
@@ -40,29 +41,7 @@ const BODComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBar>
-          <AboutSideBarContent to="/Mission-Vision">
-            Mission, Vision and Value
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Subsidiary">
-            Company Subsidiary
-          </AboutSideBarContent>
-          <AboutSideBarContent page to="/Board-of-Director">
-            Board of Director
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Organization-Structure">
-            Organization Structure
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/History-Milestone">
-            History and Milestone
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/Concession-Area">
-            Concession Area
-          </AboutSideBarContent>
-          <AboutSideBarContent to="/License-And-Award">
-            License and Award
-          </AboutSideBarContent>
-        </AboutSideBar>
+        <AboutSideBarComponents page3={true}/>
         <AboutMain>
           <Bodwrapped>
             <Masonry>

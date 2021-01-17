@@ -49,6 +49,9 @@ export const Column2 = styled.div`
   grid-area: col2;
 
   /* background: blue; */
+  @media screen and (max-width: 577px) {
+    text-align: center;
+  }
 `;
 
 export const TextWrapper = styled.div`
@@ -116,4 +119,13 @@ export const Img = styled.img`
   width: 100%;
   margin: 0 0 10px 0;
   padding-right: 0;
+`;
+
+export const VideoContent = styled.video`
+  width:480px;
+  height:300px;
+  @media screen and (max-width: 577px) {
+    width: 80%;
+    height: 150px;
+  }
 `;

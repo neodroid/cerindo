@@ -135,14 +135,12 @@ const Navbar = ({ toggle }) => {
             </NavItem>
             <NavItem>
               <NavLinks>
-                Corporate News
+                Purpose
                 <NavbarDropdownContent>
                   <DropDiv>
-                    <NavText>Press</NavText>
-                    <NavDropLinks to="/News-Release">News Release</NavDropLinks>
-                    <NavText>Gallery</NavText>
-                    <NavDropLinks to="/Photos">Photos</NavDropLinks>
-                    <NavDropLinks to="/Videos">Videos</NavDropLinks>
+                    <NavDropLinks to="/dummy">Dummy</NavDropLinks>
+                    <NavDropLinks to="/dummy">Dummy</NavDropLinks>
+                    <NavDropLinks to="/dummy">Dummy</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>

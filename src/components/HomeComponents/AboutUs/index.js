@@ -10,6 +10,7 @@ import {
   Subtitle,
   Column2,
   BtnWrap,
+  VideoContent
 } from "./AboutUsElements";
 
 const AboutUs = ({
@@ -48,12 +49,10 @@ const AboutUs = ({
               </TextWrapper>
             </Column1>
             <Column2>
-              <video
-                width="480"
-                height="300"
+              <VideoContent
                 controls
                 src="https://cerindocorp.com/wp-content/uploads/2020/10/profile-vid_eng.mp4"
-              ></video>
+              ></VideoContent>
             </Column2>
           </InfoRow>
         </InfoWrapper>
