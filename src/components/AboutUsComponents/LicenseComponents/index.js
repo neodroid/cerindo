@@ -14,6 +14,9 @@ import {
   LicBoxWrited,
   AwardContent,
   Figured,
+  LicContents,
+  LicImageApart,
+  LicImage
 } from "./LicenseElements";
 
 import { langContext } from "../../../langContext";
@@ -43,27 +46,31 @@ const LicenseComponents = () => {
             {license.license.map((data, idx) => {
               if (idx % 2 == 0) {
                 return (
-                  <LicContent wrap key={idx}>
+                  <LicContents wrap key={idx}>
                     <LicContent>
                       <LicContent wrap>
                         <LicBoxWrited title>{LicenseTitle(data, language)}</LicBoxWrited>
                         <LicBoxWrited>{LicenseContent(data, language)}</LicBoxWrited>
                       </LicContent>
-                      <img src={data.image.url} width={`332px`} />
+                      <LicImageApart>
+                      <LicImage src={data.image.url} width={`332px`} />
+                      </LicImageApart>
                     </LicContent>
-                  </LicContent>
+                  </LicContents>
                 );
               } else {
                 return (
-                  <LicContent wrap key={idx}>
+                  <LicContents wrap key={idx}>
                     <LicContent>
-                      <img src={data.image.url} width={`332px`} />
+                      <LicImageApart>
+                      <LicImage src={data.image.url} width={`332px`} />
+                      </LicImageApart>
                       <LicContent wrap>
                         <LicBoxWrited title>{LicenseTitle(data, language)}</LicBoxWrited>
                         <LicBoxWrited>{LicenseContent(data, language)}</LicBoxWrited>
                       </LicContent>
                     </LicContent>
-                  </LicContent>
+                  </LicContents>
                 );
               }
             })}

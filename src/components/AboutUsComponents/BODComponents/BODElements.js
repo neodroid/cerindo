@@ -1,11 +1,24 @@
 import styled from "styled-components";
+import Masonry from "react-masonry-component";
+
 
 export const Bodwrapped = styled.div`
     margin: 50px 5px 10px 10px;
+    @media screen and (max-width: 1125px) {
+        margin: 50px 5px 10px;
+    }
+    @media screen and (max-width: 1050px) {
+       width: 100%;
+       margin: 0 auto;
+    }
+    @media screen and (max-width: 650px) {
+        height: 750px;
+        overflow-y: scroll;
+    }
 `;
 
 export const Bodbox = styled.div`
-    width: 400px !important;
+    width: 400px;
     border: 1px solid #D2D2D2;
     box-sizing: border-box;
     height: fit-content !important;
@@ -13,7 +26,23 @@ export const Bodbox = styled.div`
     border-radius: 10px;
     margin: 10px;
     @media screen and (max-width: 1125px) {
-        width: 250px !important;
+        width: 305px;
+    }
+    @media screen and (max-width: 1050px) {
+        width: 400px;
+    }
+    @media screen and (max-width: 1010px) {
+        width: 350px;
+    }
+    @media screen and (max-width: 896px) {
+        width: 300px;
+    }
+    @media screen and (max-width: 776px) {
+        width: 250px;
+    }
+    @media screen and (max-width: 650px) {
+        margin: 10px 0;
+        width: 100%;
     }
 `;
 
@@ -46,4 +75,10 @@ export const BodDescriptionContent = styled.div`
     line-height: 24px;
     color: #111111;
     margin: 0 32px 25px;
+`;
+
+export const Masonries = styled(Masonry)`
+@media screen and (max-width: 1050px) {
+    width: 100% !important;
+}
 `;

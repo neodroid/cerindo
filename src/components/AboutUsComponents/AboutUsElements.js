@@ -32,13 +32,16 @@ export const AboutSideBarContent = styled(LinkR)`
     display:block;
     color: black;
     text-decoration: none;
+    &:hover {
+      background-color: ${(props)=>(props.page ? "#FBFF47" : "#dedede")};
+  }
 `;
 
 export const AboutMain = styled.div`
     flex-basis: 75%;
     margin: 12px 20px 10px;
     @media screen and (max-width: 1050px) {
-        margin: 10px auto;
+        margin: 10px 0;
     }
 `;
 

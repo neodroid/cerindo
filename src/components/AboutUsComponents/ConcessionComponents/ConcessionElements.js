@@ -7,6 +7,15 @@ export const ConcWrapped = styled.div`
     align-items:center;
     margin: 50px 20px 10px;
 `;
+export const Imagees = styled.img`
+  width: 809px;
+  @media screen and (max-width: 900px) {
+    width: 500px;
+}
+@media screen and (max-width: 570px) {
+  width: 300px;
+}
+`;
 
 export const Tabled = styled.div`
     margin: 20px auto;

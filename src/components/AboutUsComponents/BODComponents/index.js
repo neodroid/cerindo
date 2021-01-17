@@ -1,22 +1,19 @@
 import React, { useState, useEffect, useContext } from "react";
 import {
   Aboutstyle,
-  AboutSideBar,
   AboutMain,
-  AboutSideBarContent,
 } from "../AboutUsElements";
 import { BODContentData } from "../../Data/AboutusData/BODDatas";
 import { aboutUsService } from "../../../service/Aboutus";
 import AboutSideBarComponents from "../index";
-import Masonry from "react-masonry-component";
 import {
-  BodGridded,
   Bodwrapped,
   Bodbox,
   BodBoxContent,
   BodBoxIntro,
   BodBoxIntroTitle,
   BodDescriptionContent,
+  Masonries
 } from "./BODElements";
 
 import { langContext } from "../../../langContext";
@@ -44,7 +41,7 @@ const BODComponents = () => {
         <AboutSideBarComponents page3={true}/>
         <AboutMain>
           <Bodwrapped>
-            <Masonry>
+            <Masonries>
               {BOD.map((data, idx) => {
                 return (
                   <Bodbox key={idx}>
@@ -69,7 +66,7 @@ const BODComponents = () => {
                   </Bodbox>
                 );
               })}
-            </Masonry>
+            </Masonries>
           </Bodwrapped>
         </AboutMain>
       </Aboutstyle>

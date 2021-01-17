@@ -1,13 +1,44 @@
 import styled from "styled-components";
 import { BsCircleFill } from "react-icons/bs";
 
-export const HisWrapped = styled.div`margin: 50px 20px 10px;`;
+export const HisWrapped = styled.div`
+margin: 50px 20px 10px;
+@media screen and (max-width: 882px) {
+    margin: 5px auto;
+}
+`;
+
+export const HisContents = styled.div`
+display: flex;
+flex-direction: column;
+width: 90%;
+@media screen and (max-width: 882px) {
+    width: 100%;
+}
+`;
 export const HisContent = styled.div`
     display: flex;
     flex-direction: ${(props)=>(props.wrap ? "column" : "row")};
     width: ${(props)=>(props.wrap ? "90%" : "100%")};
     padding: ${(props)=>(props.wrap ? "0" : "15px 0")};
     border-bottom: ${(props)=>(props.wrap ? "none" : "2px solid #E0E0E0")};
+    @media screen and (max-width: 882px) {
+        flex-direction: ${(props)=>(props.wrap ? "column" : "column")};
+        width: 100%;
+    }
+`;
+
+export const HisImageApart = styled.div`
+text-align:center;
+@media screen and (max-width: 882px) {
+    margin: 10px 0;
+}
+`;
+export const HisImage = styled.img`
+    width:332px;
+    @media screen and (max-width: 882px) {
+        width: 250px;
+    }
 `;
 
 export const HisBoxContent = styled.div`flex-basis: 50%;`;
@@ -24,6 +55,11 @@ export const MilestoneContent = styled.div`
     h2 {
         margin-bottom: 50px;
     }
+    @media screen and (max-width: 579px) {
+        h2 {
+            margin-bottom: 100px;
+        }
+    }
 `;
 
 export const MilesBoxContent = styled.div`
@@ -32,11 +68,17 @@ export const MilesBoxContent = styled.div`
     align-items:center;
     align-self:center;
     height: 300px;
-
+    @media screen and (max-width: 579px) {
+        margin: 0 auto;
+        height: 160px;
+    }
 `;
 
 export const MilesBoxApart = styled.div`
     flex-basis: ${(props)=>(props.year ? "15%" : "45%")};
+    @media screen and (max-width: 579px) {
+        flex-basis: ${(props)=>(props.year ? "12%" : "35%")};
+    }
 `;
 
 export const MilesYearContent = styled.div`
@@ -47,6 +89,9 @@ export const MilesYearContent = styled.div`
     line-height: 24px;
     color: #111111;
     box-sizing:border-box;
+    @media screen and (max-width: 579px) {
+        padding: 80px 5px;
+    }
 `;
 
 export const Birght = styled(BsCircleFill)`
@@ -55,6 +100,10 @@ export const Birght = styled(BsCircleFill)`
     z-index:3;
     font-weight: bold;
     font-size: 20px;
+    @media screen and (max-width: 579px) {
+        font-size: 12px;
+        margin-left: -8px;
+    }
 `;
 
 export const MilesImage = styled.div`
@@ -66,6 +115,10 @@ export const MilesImage = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    @media screen and (max-width: 579px) {
+        width: 180px;
+        height: 120px;
+    }
 `;
 
 export const MilesImageDesc = styled.div`

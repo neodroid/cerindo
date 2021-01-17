@@ -24,6 +24,9 @@ import {
   MilesImage,
   MilesImageDesc,
   Opac,
+  HisContents,
+  HisImage,
+  HisImageApart
 } from "./HistoryElements";
 
 import { langContext } from "../../../langContext";
@@ -55,27 +58,31 @@ const HistoryComponents = () => {
             {historyMileStone.histories.map((data, idx) => {
               if (idx % 2 == 0) {
                 return (
-                  <HisContent wrap key={idx}>
+                  <HisContents wrap key={idx}>
                     <HisContent>
                       <HisContent wrap>
                         <HisBoxWrited title>{HistoryLangTitle(data, language)}</HisBoxWrited>
                         <HisBoxWrited>{HistoryLangDesc(data, language)}</HisBoxWrited>
                       </HisContent>
-                      <img src={data.history_image.url} width={`332px`} />
+                      <HisImageApart>
+                      <HisImage src={data.history_image.url} />
+                      </HisImageApart>
                     </HisContent>
-                  </HisContent>
+                  </HisContents>
                 );
               } else {
                 return (
-                  <HisContent wrap key={idx}>
+                  <HisContents wrap key={idx}>
                     <HisContent>
-                      <img src={data.history_image.url} width={`332px`} />
+                      <HisImageApart>
+                      <HisImage src={data.history_image.url} />
+                      </HisImageApart>
                       <HisContent wrap>
                         <HisBoxWrited title>{HistoryLangTitle(data, language)}</HisBoxWrited>
                         <HisBoxWrited>{HistoryLangDesc(data, language)}</HisBoxWrited>
                       </HisContent>
                     </HisContent>
-                  </HisContent>
+                  </HisContents>
                 );
               }
             })}

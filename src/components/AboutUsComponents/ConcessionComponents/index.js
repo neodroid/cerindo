@@ -10,7 +10,7 @@ import {
   ConcImgData,
   ConcTableData,
 } from "../../Data/AboutusData/ConcessionDatas";
-import { ConcWrapped, Tabled } from "./ConcessionElements";
+import { ConcWrapped, Tabled,Imagees } from "./ConcessionElements";
 import { aboutUsService } from "../../../service/Aboutus";
 
 const ConcessionComponents = () => {
@@ -31,7 +31,7 @@ const ConcessionComponents = () => {
         <AboutSideBarComponents page6={true}/>
         <AboutMain>
           <ConcWrapped>
-            <img
+            <Imagees
               src={concession.concession_images[0].url}
               alt="concession_image"
               width={`809px`}

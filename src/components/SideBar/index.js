@@ -22,13 +22,16 @@ const Sidebar = ({ isOpen, toggle }) => {
             Home
           </SidebarLink>
           <SidebarLink to="/about" onClick={toggle}>
-            About
+            Business
           </SidebarLink>
           <SidebarLink to="partners" onClick={toggle}>
-            Mining
+            Global Sustainability
           </SidebarLink>
           <SidebarLink to="event" onClick={toggle}>
-            Corporate News
+            Purpose
+          </SidebarLink>
+          <SidebarLink to="event" onClick={toggle}>
+            About Us
           </SidebarLink>
           <SidebarLink to="event" onClick={toggle}>
             Career
