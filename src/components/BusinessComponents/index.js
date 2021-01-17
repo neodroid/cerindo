@@ -23,6 +23,7 @@ const BusinessSideBarComponents = ({
     };
     fetchData();
   }, []);
+  console.log(businessImage);
 
   if (businessImage.length === 0) return null;
 
@@ -35,29 +36,29 @@ const BusinessSideBarComponents = ({
             Nickel Ore Mining
           </BusinessSideBarContent>
         </BusinessSideBarImage>
-        <BusinessSideBarImage img={businessImage[1].thumbnail.ur}>
+        <BusinessSideBarImage img={businessImage[1].thumbnail.url}>
           <BusinessSideBarContent page={page2} to="/Ferronickle-Smelting">
             Ferronickel Smelting
           </BusinessSideBarContent>
         </BusinessSideBarImage>
-        <BusinessSideBarImage img={businessImage[2].thumbnail.ur}>
+        <BusinessSideBarImage img={businessImage[2].thumbnail.url}>
           <BusinessSideBarContent page={page3} to="/Resource-Reserve">
             Resource and Reserve
           </BusinessSideBarContent>
         </BusinessSideBarImage>
-        <BusinessSideBarImage img={businessImage[3].thumbnail.ur}>
+        <BusinessSideBarImage img={businessImage[3].thumbnail.url}>
           <BusinessSideBarContent page={page4} to="/Nickle-Cobalt-HPAL">
             Nickel-Cobalt HPAL
           </BusinessSideBarContent>
         </BusinessSideBarImage>
         <h1>Logistic</h1>
-        <BusinessSideBarImage img={businessImage[4].thumbnail.ur}>
+        <BusinessSideBarImage img={businessImage[4].thumbnail.url}>
           <BusinessSideBarContent page={page5} to="/Jetty-Terminal">
             Jetty Terminal
           </BusinessSideBarContent>
         </BusinessSideBarImage>
         <h1>Energy</h1>
-        <BusinessSideBarImage img={businessImage[5].thumbnail.ur}>
+        <BusinessSideBarImage img={businessImage[5].thumbnail.url}>
           <BusinessSideBarContent page={page6} to="/Power-Plant">
             Power Plants
           </BusinessSideBarContent>
