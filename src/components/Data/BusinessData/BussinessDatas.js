@@ -6,10 +6,10 @@ import jettyimg from "../../../images/Rectangle183.png";
 import pplantimg from "../../../images/Rectangle184.png";
 
 export const BusinessAllImage = {
-    "image1":nickleimg,
-    "image2":ferroimg,
-    "image3":rscimg,
-    "image4":hpalimg,
-    "image5":jettyimg,
-    "image6":pplantimg,
-}
+  image1: nickleimg,
+  image2: ferroimg,
+  image3: rscimg,
+  image4: hpalimg,
+  image5: jettyimg,
+  image6: pplantimg,
+};
