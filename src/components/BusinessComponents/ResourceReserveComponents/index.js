@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Businessstyle,
   BusinessMain,
@@ -7,8 +7,11 @@ import {
 import BusinessSideBarComponents from "../index";
 import { ResourceReserveContent } from "../../Data/BusinessData/ResourceReserveDatas";
 import { businessService } from "../../../service/Business";
+import { langContext } from "../../../langContext";
+import { ResourceReserveLangBody, ResourceReserveLangTitle } from "./ResourceReserverLang";
 
 const ResourceReserveComponents = () => {
+  const { language } = useContext(langContext);
   const [resourceReserve, setResourceReserve] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +28,10 @@ const ResourceReserveComponents = () => {
       <Businessstyle>
         <BusinessSideBarComponents page3={true} />
         <BusinessMain>
-          <BusinessWrited title>{resourceReserve.title_en}</BusinessWrited>
-          <BusinessWrited>{resourceReserve.body_en}</BusinessWrited>
+          <BusinessWrited title>{ResourceReserveLangTitle(resourceReserve, language)}</BusinessWrited>
+          <BusinessWrited>
+            {ResourceReserveLangBody(resourceReserve, language)}
+          </BusinessWrited>
         </BusinessMain>
       </Businessstyle>
     </>

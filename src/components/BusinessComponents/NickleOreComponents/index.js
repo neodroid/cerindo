@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Businessstyle,
   BusinessMain,
@@ -7,8 +7,11 @@ import {
 import BusinessSideBarComponents from "../index";
 import { NickleOreMiningContent } from "../../Data/BusinessData/NickleOreMiningDatas";
 import { businessService } from "../../../service/Business";
+import { langContext } from "../../../langContext";
+import { NickleOreLangBody, NickleOreLangTitle } from "./NickleOreLang";
 
 const NickleOreComponents = () => {
+  const { language } = useContext(langContext);
   const [nickelOre, setNickelOre] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +28,10 @@ const NickleOreComponents = () => {
       <Businessstyle>
         <BusinessSideBarComponents page1={true} />
         <BusinessMain>
-          <BusinessWrited title>{nickelOre.title_en}</BusinessWrited>
-          <BusinessWrited>{nickelOre.body_en}</BusinessWrited>
+          <BusinessWrited title>{NickleOreLangTitle(nickelOre, language)}</BusinessWrited>
+          <BusinessWrited>
+            {NickleOreLangBody(nickelOre, language)}
+          </BusinessWrited>
         </BusinessMain>
       </Businessstyle>
     </>

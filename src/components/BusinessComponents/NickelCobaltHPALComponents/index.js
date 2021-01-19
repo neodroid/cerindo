@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   Businessstyle,
   BusinessMain,
@@ -7,8 +7,11 @@ import {
 import BusinessSideBarComponents from "../index";
 import { HPALContent } from "../../Data/BusinessData/HPALDatas";
 import { businessService } from "../../../service/Business";
+import { langContext } from "../../../langContext";
+import { NickleCobaltLangBody, NickleCobaltLangTitle } from "./NickleCobaltHPALLang";
 
 const NickelCobaltHPALComponents = () => {
+  const { language } = useContext(langContext);
   const [nickelCobalt, setNickelCobalt] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +28,10 @@ const NickelCobaltHPALComponents = () => {
       <Businessstyle>
         <BusinessSideBarComponents page4={true} />
         <BusinessMain>
-          <BusinessWrited title>{nickelCobalt.title_en}</BusinessWrited>
-          <BusinessWrited>{nickelCobalt.body_en}</BusinessWrited>
+          <BusinessWrited title>{NickleCobaltLangTitle(nickelCobalt, language)}</BusinessWrited>
+          <BusinessWrited>
+            {NickleCobaltLangBody(nickelCobalt, language)}
+          </BusinessWrited>
         </BusinessMain>
       </Businessstyle>
     </>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   Businessstyle,
   BusinessMain,
@@ -7,7 +7,11 @@ import {
 import BusinessSideBarComponents from "../index";
 import { PowerPlantContent } from "../../Data/BusinessData/PowerPlantDatas";
 import { businessService } from "../../../service/Business";
+import { langContext } from "../../../langContext";
+import { PowerPlantLangBody, PowerPlantLangTitle } from "./PowerPlantLang";
+
 const PowerPlantComponents = () => {
+  const { language } = useContext(langContext);
   const [powerPlant, setPowerPlant] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -24,8 +28,10 @@ const PowerPlantComponents = () => {
       <Businessstyle>
         <BusinessSideBarComponents page6={true} />
         <BusinessMain>
-          <BusinessWrited title>{powerPlant.title_en}</BusinessWrited>
-          <BusinessWrited>{powerPlant.body_en}</BusinessWrited>
+          <BusinessWrited title>{PowerPlantLangTitle(powerPlant, language)}</BusinessWrited>
+          <BusinessWrited>
+            {PowerPlantLangBody(powerPlant, language)}
+          </BusinessWrited>
         </BusinessMain>
       </Businessstyle>
     </>

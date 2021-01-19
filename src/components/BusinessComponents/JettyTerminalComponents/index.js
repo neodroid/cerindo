@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   Businessstyle,
   BusinessMain,
@@ -7,8 +7,11 @@ import {
 import BusinessSideBarComponents from "../index";
 import { JettyTerminalContent } from "../../Data/BusinessData/JettyTerminalDatas";
 import { businessService } from "../../../service/Business";
+import { langContext } from "../../../langContext";
+import { JettyTerminalLangTitle, JettyTerminalLangBody } from "./JettyTerminalLang";
 
 const JettyTerminalComponents = () => {
+  const { language } = useContext(langContext);
   const [jettyTerminal, setJettyTerminal] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +28,10 @@ const JettyTerminalComponents = () => {
       <Businessstyle>
         <BusinessSideBarComponents page5={true} />
         <BusinessMain>
-          <BusinessWrited title>{jettyTerminal.title_en}</BusinessWrited>
-          <BusinessWrited>{jettyTerminal.body_en}</BusinessWrited>
+          <BusinessWrited title>{JettyTerminalLangTitle(jettyTerminal, language)}</BusinessWrited>
+          <BusinessWrited>
+            {JettyTerminalLangBody(jettyTerminal, language)}
+          </BusinessWrited>
         </BusinessMain>
       </Businessstyle>
     </>

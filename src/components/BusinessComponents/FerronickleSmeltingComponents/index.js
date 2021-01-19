@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   Businessstyle,
   BusinessMain,
@@ -7,8 +7,11 @@ import {
 import BusinessSideBarComponents from "../index";
 import { FerronickleSmeltingContent } from "../../Data/BusinessData/FerronickleSmeltingDatas";
 import { businessService } from "../../../service/Business";
+import { langContext } from "../../../langContext";
+import { FerronickleLangTitle, FerronickleLangBody } from "./FerronickleSmeltingLang";
 
 const FerronickleSmeltingComponents = () => {
+  const { language } = useContext(langContext);
   const [ferronicle, setFerronicle] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +28,10 @@ const FerronickleSmeltingComponents = () => {
       <Businessstyle>
         <BusinessSideBarComponents page2={true} />
         <BusinessMain>
-          <BusinessWrited title>{ferronicle.title_en}</BusinessWrited>
-          <BusinessWrited>{ferronicle.body_en}</BusinessWrited>
+          <BusinessWrited title>{FerronickleLangTitle(ferronicle, language)}</BusinessWrited>
+          <BusinessWrited>
+            {FerronickleLangBody(ferronicle, language)}
+          </BusinessWrited>
         </BusinessMain>
       </Businessstyle>
     </>
