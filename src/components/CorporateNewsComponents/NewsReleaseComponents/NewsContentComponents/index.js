@@ -12,7 +12,7 @@ import {
   Pagination,
 } from "./NewsContentElements";
 import { langContext } from "../../../../langContext";
-import { NewsLangContent, NewsLangTitle} from './NewsContentLang';
+import { NewsLangContent, NewsLangTitle } from "./NewsContentLang";
 
 /* const Pagination = ({ postPerPage, totalPost }) =>{
     const pageNumbers = [];
@@ -35,7 +35,7 @@ import { NewsLangContent, NewsLangTitle} from './NewsContentLang';
 } */
 
 const NewsContentComponents = () => {
-  const {language} = useContext(langContext);
+  const { language } = useContext(langContext);
   const [newsData, setNewsData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -71,7 +71,9 @@ const NewsContentComponents = () => {
                   <NewsImage src={data.news_img.url} />
                 </NewsContainerPart>
                 <NewsContainerPart wrt>
-                  <BoxContainer titlee>{NewsLangTitle(data, language)}</BoxContainer>
+                  <BoxContainer titlee>
+                    {NewsLangTitle(data, language)}
+                  </BoxContainer>
                   <BoxContainer>{NewsLangContent(data, language)}</BoxContainer>
                 </NewsContainerPart>
                 <NewsContainerPart btn>

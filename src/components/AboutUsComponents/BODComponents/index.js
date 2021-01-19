@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import {
-  Aboutstyle,
-  AboutMain,
-} from "../AboutUsElements";
+import { Aboutstyle, AboutMain } from "../AboutUsElements";
 import { BODContentData } from "../../Data/AboutusData/BODDatas";
 import { aboutUsService } from "../../../service/Aboutus";
 import AboutSideBarComponents from "../index";
@@ -13,16 +10,14 @@ import {
   BodBoxIntro,
   BodBoxIntroTitle,
   BodDescriptionContent,
-  Masonries
+  Masonries,
 } from "./BODElements";
 
 import { langContext } from "../../../langContext";
-import { BODlang } from "./BODlang"
-
+import { BODlang } from "./BODlang";
 
 const BODComponents = () => {
-  const {language} = useContext(langContext);
-
+  const { language } = useContext(langContext);
   const [BOD, setBOD] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -33,12 +28,11 @@ const BODComponents = () => {
     fetchData();
   }, []);
 
-  console.log(BOD);
   if (BOD.length === 0) return null;
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page3={true}/>
+        <AboutSideBarComponents page3={true} />
         <AboutMain>
           <Bodwrapped>
             <Masonries>

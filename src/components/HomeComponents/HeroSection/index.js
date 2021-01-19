@@ -27,7 +27,7 @@ import { langContext } from "../../../langContext";
 import { NewsLangTitle } from "./HeroLang";
 
 const HeroSection = () => {
-  const {language} = useContext(langContext);
+  const { language } = useContext(langContext);
   const [newsData, setNewsData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -65,18 +65,18 @@ const HeroSection = () => {
           </HeroNewsFlex>
           <HeroNewsFlex content>
             {newsData.map((data, idx) => {
-              if (idx<3){
-              return (
-                <HeroNewsContent to={`/News/${data._id}`} key={idx}>
-                  <ImgWrap>
-                    <Img src={data.news_img.url} />
-                  </ImgWrap>
-                  <HeroNewsDesc>
-                    <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                    <HeroNewsTimeP>{data.news_date}</HeroNewsTimeP>
-                  </HeroNewsDesc>
-                </HeroNewsContent>
-              );
+              if (idx < 3) {
+                return (
+                  <HeroNewsContent to={`/News/${data._id}`} key={idx}>
+                    <ImgWrap>
+                      <Img src={data.news_img.url} />
+                    </ImgWrap>
+                    <HeroNewsDesc>
+                      <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                      <HeroNewsTimeP>{data.news_date}</HeroNewsTimeP>
+                    </HeroNewsDesc>
+                  </HeroNewsContent>
+                );
               }
             })}
           </HeroNewsFlex>
