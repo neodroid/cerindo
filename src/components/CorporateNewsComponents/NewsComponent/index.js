@@ -14,7 +14,11 @@ import {
   GlobalContent,
 } from "./NewsElements";
 import { langContext } from "../../../langContext";
-import { DetailsNewsLangTitle, DetailsNewsLangContent, NewsLangTitle } from "./NewsLang";
+import {
+  DetailsNewsLangTitle,
+  DetailsNewsLangContent,
+  NewsLangTitle,
+} from "./NewsLang";
 
 const ManageOthArtData = ({ image, title, date }) => {
   return (
@@ -37,7 +41,7 @@ const ManageOthArtData = ({ image, title, date }) => {
 };
 
 const NewsComponent = (props) => {
-  const {language} = useContext(langContext);
+  const { language } = useContext(langContext);
   const [detailsNews, setDetailsNews] = useState([]);
   const [listNews, setListNews] = useState([]);
   const fetchDataDetails = async () => {
@@ -64,12 +68,16 @@ const NewsComponent = (props) => {
       <GlobalContent>
         <BlogApart containe>
           <BlogDivApart contain>
-            <TitleContent>{DetailsNewsLangTitle(detailsNews, language)}</TitleContent>
+            <TitleContent>
+              {DetailsNewsLangTitle(detailsNews, language)}
+            </TitleContent>
             <BlogWrapped image>
               <BlogImage src={detailsNews.news_img.url} />
             </BlogWrapped>
             <BlogWrapped>
-              <BoxContainer>{DetailsNewsLangContent(detailsNews, language)}</BoxContainer>
+              <BoxContainer>
+                {DetailsNewsLangContent(detailsNews, language)}
+              </BoxContainer>
             </BlogWrapped>
           </BlogDivApart>
           <BlogDivApart>
