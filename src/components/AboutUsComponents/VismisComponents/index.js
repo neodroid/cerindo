@@ -44,14 +44,14 @@ const VismisComponents = () => {
             </VismisApart>
             <VismisApart>
               <VismisImagePart>
-                <img src={MVV.MVV_images[0].url} style={{maxWith:"318px"}}/>
+                <img src={MVV.MVV_images[0].url} style={{maxWidth:"318px"}}/>
               </VismisImagePart>
             </VismisApart>
           </VismisContent>
           <VismisContent>
             <VismisApart>
               <VismisImagePart misi>
-                <img src={MVV.MVV_images[1].url} style={{maxWith:"235px"}}/>
+                <img src={MVV.MVV_images[1].url} style={{maxWidth:"235px"}}/>
               </VismisImagePart>
             </VismisApart>
             <VismisApart writed>

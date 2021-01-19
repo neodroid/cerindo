@@ -10,6 +10,9 @@ margin: 50px 20px 10px;
 export const Imagess = styled.img`
 width:782px;
     @media screen and (max-width: 940px) {
-        width:100%;
+        width:600px;
+    }
+    @media screen and (max-width: 940px) {
+        width:300px;
     }
 `;

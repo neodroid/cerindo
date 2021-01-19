@@ -56,9 +56,10 @@ const Footer = () => {
               <FooterLink to="/Concession-Area">Concession Area</FooterLink>
               <FooterLink to="/License-And-Award">License and Award</FooterLink>
               <FooterLinkTitle>Global Sustainability</FooterLinkTitle>
-              <FooterLink to="/Activities">Activities</FooterLink>
+              <FooterLink to="/QHSE">QHSE</FooterLink>
+              <FooterLink to="/Community-Activity">Community Activity</FooterLink>
               <FooterLink to="/Report">Report</FooterLink>
-              <FooterLink to="/Commitmen">Commitmen</FooterLink>
+              <FooterLink to="/Award">Award</FooterLink>
             </FooterLinkItems>
           </FooterLinkWrapper>
 
@@ -69,14 +70,11 @@ const Footer = () => {
               <FooterLink to="/">Ceria in Media</FooterLink>
               <FooterLink to="/">Gallery</FooterLink>
               <FooterLinkTitle>Business</FooterLinkTitle>
-              <FooterLinkTitle>Mining</FooterLinkTitle>
               <FooterLink to="/Nickle-Ore-Mining">Nickle Ore Mining</FooterLink>
               <FooterLink to="/Nickle-Cobalt-HPAL">Nickle - Cobalt HPAL</FooterLink>
               <FooterLink to="/Ferronickle-Smelting">Ferronickle Smelting</FooterLink>
               <FooterLink to="/Resource-Reserve">Resource and Reserve</FooterLink>
-              <FooterLinkTitle>Logistic</FooterLinkTitle>
               <FooterLink to="/Jetty-Terminal">Jetty Terminal</FooterLink>
-              <FooterLinkTitle>Energy</FooterLinkTitle>
               <FooterLink to="/Power-Plant">Power Plant</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>

@@ -50,7 +50,7 @@ const SubsidiaryComponents = () => {
             />
             {PhasexpData.map((data, idx) => {
               return (
-                <Phasexp key={idx}>
+                <Phasexp key={idx} to={`/Phase/${data.title}`}>
                   <PhaseWrited>
                     <PhaseWritedApart>{data.title}</PhaseWritedApart>
                     <PhaseWritedApart simbol>

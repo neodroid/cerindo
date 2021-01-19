@@ -48,6 +48,9 @@ export const SubsidiaryExp = styled.p`
 export const Images = styled.img`
     width: 700px;
     @media screen and (max-width: 820px) {
-        width: 100%;
+        width: 500px;
+    }
+    @media screen and (max-width: 820px) {
+        width: 330px;
     }
 `;

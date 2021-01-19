@@ -24,7 +24,13 @@ import BOD from "./pages/BOD";
 import Organization from "./pages/Organization";
 import History from "./pages/History";
 import Concession from "./pages/Concession";
-import License from "./pages/LicensePages"
+import License from "./pages/LicensePages";
+import PhaseOne from "./pages/PhaseOne";
+import PhaseTwo from "./pages/PhaseTwo";
+import PhaseThree from "./pages/PhaseThree";
+import PhaseThreeA from "./pages/PhaseThreeA";
+import PhaseLast from "./pages/PhaseLast";
+import Career from "./pages/Career";
 import { langContext } from "./langContext";
 
 function App() {
@@ -61,6 +67,12 @@ function App() {
             <Route path="/History-Milestone" component={History} exact />
             <Route path="/Concession-Area" component={Concession} exact />
             <Route path="/License-And-Award" component={License} exact />
+            <Route path="/Phase/Phase 1" component={PhaseOne} exact/>
+            <Route path="/Phase/Phase 2" component={PhaseTwo} exact/>
+            <Route path="/Phase/Phase 3" component={PhaseThree} exact/>
+            <Route path="/Phase/Phase 3a" component={PhaseThreeA} exact/>
+            <Route path="/Phase/PT Ceria Cobalt Indotama" component={PhaseLast} exact/>
+            <Route path="/Career" component={Career} exact/>
           </Switch>
         </langContext.Provider>
 

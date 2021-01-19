@@ -126,9 +126,10 @@ const Navbar = ({ toggle }) => {
                 Global Sustainability
                 <NavbarDropdownContent>
                   <DropDiv>
-                    <NavDropLinks to="/Activities">Activities</NavDropLinks>
+                    <NavDropLinks to="/QHSE">QHSE</NavDropLinks>
+                    <NavDropLinks to="/Community-Activity">Community Activity</NavDropLinks>
                     <NavDropLinks to="/Report">Report</NavDropLinks>
-                    <NavDropLinks to="/Commitmen">Commitmen</NavDropLinks>
+                    <NavDropLinks to="/Award">Award</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>

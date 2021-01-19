@@ -286,6 +286,7 @@ export const Item = styled.a`
   text-decoration: none;
   display: block;
   text-align: left;
+  outline: none;
   font-family: "Montserrat";
   /* border: 1px solid; */
   max-width: 90vw;
