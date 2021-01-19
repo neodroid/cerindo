@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:1337";
+const BASE_URL = "http://54.251.78.10:1337";
 
 async function http(method, endpoint, body = null) {
   const headers = {
