@@ -21,6 +21,11 @@ import {
   DropDiv,
   NavText,
   NavbarDropdownContent,
+  SearchImage,
+  SearchField,
+  SearchInput,
+  SearchButton,
+  Nulity
 } from "./NavbarElements";
 
 import getFlagUrl from "./getFlagURL";
@@ -60,9 +65,14 @@ function Menu({ items, value, onChange, placeholder, showFlag }) {
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollnav] = useState(false);
+  const [searchbuttons, setSearchbuttons] = useState(true);
+
+  const SearchedButton = () => {
+      setSearchbuttons(!searchbuttons)
+  }
 
   const changeNav = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 1) {
       setScrollnav(true);
     } else {
       setScrollnav(false);
@@ -71,6 +81,7 @@ const Navbar = ({ toggle }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
+    SearchedButton();
   }, []);
 
   const [val1, setValue1] = useState("en");
@@ -183,6 +194,14 @@ const Navbar = ({ toggle }) => {
             </NavItem>
           </NavMenu>
           <NavBtn>
+            <SearchImage onClick={SearchedButton}/>
+              {searchbuttons ?
+              <SearchField>
+                <SearchInput type="search" placeholder="Type Anything Here....."/>
+                <SearchButton type="button" onClick={SearchedButton}>Search</SearchButton>
+              </SearchField>
+              :
+              <Nulity></Nulity>}
             <Menu
               value={val1}
               onChange={setValue1}

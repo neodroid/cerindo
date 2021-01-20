@@ -9,6 +9,27 @@ export const NewsContent = styled.div`
     padding: 5px;
     width: 900px;
     margin: 50px auto;
+    @media screen and (max-width: 930px) {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-gap: 10px;
+        width: 700px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 719px) {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        width: 500px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 594px) {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-gap: 5px;
+        width: 100%;
+        margin: 0 auto;
+    }
 `;
 
 export const NewsBox = styled.div`
@@ -20,6 +41,22 @@ export const NewsBox = styled.div`
         transition: 0.2s ease-in-out;
         transform: scale(1.05);
     };
+    @media screen and (max-width: 930px) {
+        margin: 10px auto;
+        width: 260px;
+    }
+    @media screen and (max-width: 594px) {
+        width: 200px;
+    }
+    @media screen and (max-width: 403px) {
+        width: 150px;
+        height: 350px;
+        box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.25);
+        &:hover {
+            transition: 0.2s ease-in-out;
+            transform: scale(1.01);
+            }
+    }
 `;
 
 export const BoxWrapper = styled.div`
@@ -35,12 +72,25 @@ export const BoxContainer = styled.p`
     font-weight: ${(props) => (props.titlee ? "bold" : "normal") };
     font-size: ${(props) => (props.titlee ? "14px" : "12px") };
     line-height: ${(props) => (props.titlee ? "28px" : "20px") };
+    @media screen and (max-width: 930px) {
+        line-height: ${(props) => (props.titlee ? "15px" : "15px") };
+    }
 `;
 
 export const NewsImage = styled.img`
     z-index: 3;
     width: 260px;
     height: 179px;
+    @media screen and (max-width: 930px) {
+        width: 230px;
+    }
+    @media screen and (max-width: 594px) {
+        width: 170px;
+    }
+    @media screen and (max-width: 403px) {
+        width: 120px;
+        max-height: 120px;
+    }
 `;
 
 export const NewsContainerPart = styled.div`
@@ -66,6 +116,15 @@ export const Newsbtn = styled(LinkR)`
     &:hover {
         transition: all 0.2s ease-in-out;
         opacity: 50%;
+    }
+    @media screen and (max-width: 930px) {
+        padding: 8px 60px;
+    }
+    @media screen and (max-width: 594px) {
+        padding: 8px 10px;
+    }
+    @media screen and (max-width: 403px) {
+        padding: 5px;
     }
 `;
 

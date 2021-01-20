@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { MdArrowDownward } from "react-icons/md";
+import {FaSearch} from "react-icons/fa";
 
 export const Nav = styled.nav`
   background: ${({ scrollNav }) => (scrollNav ? "#fff" : "transparent")};
@@ -107,7 +108,6 @@ export const NavbarDropdownContent = styled.div`
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
   padding: 12px 12px;
   z-index: 1;
-  position: absolute;
   top: 80px;
 `;
 
@@ -271,12 +271,13 @@ export const DropDown = styled.div`
 `;
 export const Dropbtn = styled.div`
   color: #333;
-  display: inline-block;
+  display: ${(props) => (props.search ? "flex" : "inline-block")};
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   /* border: 1px solid;
-	border-radius: 5px; */
+  border-radius: 5px; */
+  justify-content: ${(props) => (props.search ? "center" : "normal")};
 `;
 
 export const Item = styled.a`
@@ -307,3 +308,55 @@ export const ArrowForward = styled(MdArrowDownward)`
   margin-left: 8px;
   font-size: 20px;
 `;
+
+/////Search Button
+export const SearchImage = styled(FaSearch)`
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+`;
+
+export const SearchField = styled.div`
+  background: #f9f9f9;
+  max-width: 500px;
+  padding: 15px;
+  display:block;
+  border-radius: 0 0 8px 8px;
+  margin-left:-200px;
+  text-align:center;
+  position: absolute;
+  top: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+`;
+
+export const SearchInput = styled.input`
+  width: 70%;
+  padding: 16px;
+  border: 1px solid #efb401;
+  font-weight: bold;
+  margin-left: auto;
+  border-radius: 10px 0 0 10px;
+  &:focus {
+    outline: 0;
+    border: 1px solid #efb401;
+  }
+`;
+
+export const SearchButton = styled.button`
+  width: 23%;
+  cursor: pointer;
+  margin-right: auto;
+  padding: 16px 50px 16px 16px;
+  background-color: #efb401;
+  color: white;
+  border: 1px solid #efb401;
+  border-radius: 0 10px 10px 0;
+  &:focus {
+    outline: 0;
+    border: 1px solid yellow;
+  }
+`;
+
+export const Nulity = styled.div`display:none;`
