@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { FaBars } from "react-icons/fa";
 import image from "../../images/logo.png";
+import { newsService } from "../../service/News";
 import {
   Nav,
   NavbarContainer,
@@ -25,7 +26,7 @@ import {
   SearchField,
   SearchInput,
   SearchButton,
-  Nulity
+  Nulity,
 } from "./NavbarElements";
 
 import getFlagUrl from "./getFlagURL";
@@ -64,12 +65,14 @@ function Menu({ items, value, onChange, placeholder, showFlag }) {
 }
 
 const Navbar = ({ toggle }) => {
+  const [newsList, setNewsList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [scrollNav, setScrollnav] = useState(false);
   const [searchbuttons, setSearchbuttons] = useState(true);
 
   const SearchedButton = () => {
-      setSearchbuttons(!searchbuttons)
-  }
+    setSearchbuttons(!searchbuttons);
+  };
 
   const changeNav = () => {
     if (window.scrollY >= 1) {
@@ -79,13 +82,20 @@ const Navbar = ({ toggle }) => {
     }
   };
 
+  const fetchData = async () => {
+    const response = await newsService.getListNews;
+    const data = response.data;
+    setNewsList(data);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
     SearchedButton();
+    fetchData();
   }, []);
 
   const [val1, setValue1] = useState("en");
-  const {language, setLanguage} = useContext(langContext);
+  const { language, setLanguage } = useContext(langContext);
   setLanguage(val1);
 
   return (
@@ -138,7 +148,9 @@ const Navbar = ({ toggle }) => {
                 <NavbarDropdownContent>
                   <DropDiv>
                     <NavDropLinks to="/QHSE">QHSE</NavDropLinks>
-                    <NavDropLinks to="/Community-Activity">Community Activity</NavDropLinks>
+                    <NavDropLinks to="/Community-Activity">
+                      Community Activity
+                    </NavDropLinks>
                     <NavDropLinks to="/Report">Report</NavDropLinks>
                     <NavDropLinks to="/Award">Award</NavDropLinks>
                   </DropDiv>
@@ -194,14 +206,23 @@ const Navbar = ({ toggle }) => {
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <SearchImage onClick={SearchedButton}/>
-              {searchbuttons ?
+            <SearchImage onClick={SearchedButton} />
+            {searchbuttons ? (
               <SearchField>
-                <SearchInput type="search" placeholder="Type Anything Here....."/>
-                <SearchButton type="button" onClick={SearchedButton}>Search</SearchButton>
+                <SearchInput
+                  type="search"
+                  placeholder="Type Anything Here....."
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                  }}
+                />
+                <SearchButton type="button" onClick={SearchedButton}>
+                  Search
+                </SearchButton>
               </SearchField>
-              :
-              <Nulity></Nulity>}
+            ) : (
+              <Nulity></Nulity>
+            )}
             <Menu
               value={val1}
               onChange={setValue1}
