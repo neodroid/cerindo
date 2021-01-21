@@ -22,7 +22,9 @@ const PhaseThreeComponents = () => {
   const [phase, setPhase] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await phasesService.getListPhases();
+      const response = await phasesService.getDetailPhases(
+        "60097b5a03d5721630ad1668"
+      );
       const data = response.data;
       setPhase(data);
     };
@@ -37,11 +39,11 @@ const PhaseThreeComponents = () => {
         <BusinessMain>
           <PhaseContent>
             <h2>Phase 3</h2>
-            <TextPhase>{phase[2].body_en}</TextPhase>
+            <TextPhase>{phase.body_en}</TextPhase>
             <h2>Structure</h2>
-            <Imagess src={phase[2].structure_img.url} alt="structure" />
+            <Imagess src={phase.structure_img.url} alt="structure" />
             <h2>Financial Report</h2>
-            <PdfPart href={phase[2].financialReport.url}>
+            <PdfPart href={phase.financialReport.url}>
               <PdfImage />
             </PdfPart>
           </PhaseContent>

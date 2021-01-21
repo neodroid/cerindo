@@ -22,7 +22,9 @@ const PhaseLastComponents = () => {
   const [phase, setPhase] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await phasesService.getListPhases();
+      const response = await phasesService.getDetailPhases(
+        "60097c0103d5721630ad166e"
+      );
       const data = response.data;
       setPhase(data);
     };
@@ -37,15 +39,15 @@ const PhaseLastComponents = () => {
         <BusinessMain>
           <PhaseContent>
             <h2>PT Ceria Cobalt Indotama</h2>
-            <TextPhase>{phase[4].body_en}</TextPhase>
+            <TextPhase>{phase.body_en}</TextPhase>
             <h2>Structure</h2>
             <Imagess
-              src={phase[4].structure_img.url}
+              src={phase.structure_img.url}
               alt="structure"
               width={`782px`}
             />
             <h2>Financial Report</h2>
-            <PdfPart href={phase[4].financialReport.url}>
+            <PdfPart href={phase.financialReport.url}>
               <PdfImage />
             </PdfPart>
           </PhaseContent>
