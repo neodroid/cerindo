@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { phasesService } from "../../../service/Phases";
 import {
   Businessstyle,
@@ -17,8 +17,11 @@ import {
   PdfPart,
   PdfImage,
 } from "../PhaseElements";
+import { langContext } from "../../../langContext";
+import { PhaseBody } from '../PhaseLang';
 
 const PhaseThreeAComponents = () => {
+  const { language } = useContext(langContext);
   const [phase, setPhase] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -39,7 +42,7 @@ const PhaseThreeAComponents = () => {
         <BusinessMain>
           <PhaseContent>
             <h2>Phase 3a</h2>
-            <TextPhase>{phase.body_en}</TextPhase>
+            <TextPhase>{PhaseBody(phase, language)}</TextPhase>
             <h2>Structure</h2>
             <Imagess
               src={phase.structure_img.url}
