@@ -360,3 +360,15 @@ export const SearchButton = styled.button`
 `;
 
 export const Nulity = styled.div`display:none;`
+
+export const SearchTermed = styled.div`
+  background: #f9f9f9;
+  max-width: 500px;
+  padding: 15px;
+  display:block;
+  border-radius: 0 0 8px 8px;
+  margin-left:-200px;
+  text-align:center;
+  position: absolute;
+  top: 150px;
+`;

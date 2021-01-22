@@ -58,6 +58,7 @@ export const SidebarLink = styled(LinkR)`
   transition: 0.2s ease-in-out;
   color: #fff;
   cursor: pointer;
+  line-height: 3rem;
 
   &:hover {
     color: #efb401;
@@ -66,8 +67,15 @@ export const SidebarLink = styled(LinkR)`
 `;
 
 export const SideBtnWrap = styled.div`
-  display: flex;
-  justify-content: center;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+text-decoration: none;
+list-style: none;
+transition: 0.2s ease-in-out;
+color: #fff;
+cursor: pointer;
 `;
 
 export const SidebarRoute = styled(LinkR)`
@@ -89,3 +97,20 @@ export const SidebarRoute = styled(LinkR)`
     color: #010606;
   }
 `;
+
+export const SidebarDropContent = styled.div`
+  background-color: #262323;
+  display: block;
+  line-hegiht: 2px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  color: #fff;
+  cursor: pointer;
+  height: 200px;
+  z-index: 999;
+  overflow: scroll;
+  padding: 10px 0;
+`;
+
+export const Nulity = styled.div`display:none;`

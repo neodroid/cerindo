@@ -27,6 +27,7 @@ import {
   SearchInput,
   SearchButton,
   Nulity,
+  SearchTermed
 } from "./NavbarElements";
 
 import getFlagUrl from "./getFlagURL";
@@ -159,18 +160,6 @@ const Navbar = ({ toggle }) => {
             </NavItem>
             <NavItem>
               <NavLinks>
-                Purpose
-                <NavbarDropdownContent>
-                  <DropDiv>
-                    <NavDropLinks to="/dummy">Dummy</NavDropLinks>
-                    <NavDropLinks to="/dummy">Dummy</NavDropLinks>
-                    <NavDropLinks to="/dummy">Dummy</NavDropLinks>
-                  </DropDiv>
-                </NavbarDropdownContent>
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks>
                 About Us
                 <NavbarDropdownContent>
                   <DropDiv>
@@ -223,6 +212,11 @@ const Navbar = ({ toggle }) => {
             ) : (
               <Nulity></Nulity>
             )}
+            {searchTerm ? 
+            <SearchTermed>
+              Test
+            </SearchTermed> 
+            : <Nulity></Nulity>}
             <Menu
               value={val1}
               onChange={setValue1}

@@ -65,10 +65,6 @@ const Footer = () => {
 
           <FooterLinkWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>Purpose</FooterLinkTitle>
-              <FooterLink to="/">Press Release</FooterLink>
-              <FooterLink to="/">Ceria in Media</FooterLink>
-              <FooterLink to="/">Gallery</FooterLink>
               <FooterLinkTitle>Business</FooterLinkTitle>
               <FooterLink to="/Nickle-Ore-Mining">Nickle Ore Mining</FooterLink>
               <FooterLink to="/Nickle-Cobalt-HPAL">Nickle - Cobalt HPAL</FooterLink>
