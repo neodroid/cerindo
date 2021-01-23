@@ -12,8 +12,7 @@ export const Imageqhse = styled.img`
 `;
 
 export const Images = styled.div`
-    padding: 0 0 20px 20px;
-    margin-top: 50px;
+    margin: 25px 20px 40px 50px;
     @media screen and (max-width: 638px) {
         padding: 20px;
         text-align:center;
@@ -21,7 +20,6 @@ export const Images = styled.div`
 `;
 
 export const WritedPart = styled.div`
-    padding-right: 20px;
     margin-top: -26px;
     @media screen and (max-width: 638px) {
         padding-right: 0px;
