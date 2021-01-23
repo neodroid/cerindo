@@ -4,6 +4,10 @@ import {
   BusinessMain,
   BusinessWrited,
 } from "../BusinessElements";
+import {
+  Aboutstyle,
+  AboutMain,
+} from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { PowerPlantContent } from "../../Data/BusinessData/PowerPlantDatas";
 import { businessService } from "../../../service/Business";
@@ -25,15 +29,15 @@ const PowerPlantComponents = () => {
   }, []);
   return (
     <>
-      <Businessstyle>
+      <Aboutstyle>
         <BusinessSideBarComponents page6={true} />
-        <BusinessMain>
+        <AboutMain>
           <BusinessWrited title>{PowerPlantLangTitle(powerPlant, language)}</BusinessWrited>
           <BusinessWrited>
             {PowerPlantLangBody(powerPlant, language)}
           </BusinessWrited>
-        </BusinessMain>
-      </Businessstyle>
+        </AboutMain>
+      </Aboutstyle>
     </>
   );
 };

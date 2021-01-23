@@ -4,6 +4,10 @@ import {
   BusinessMain,
   BusinessWrited,
 } from "../BusinessElements";
+import {
+  Aboutstyle,
+  AboutMain,
+} from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { ResourceReserveContent } from "../../Data/BusinessData/ResourceReserveDatas";
 import { businessService } from "../../../service/Business";
@@ -25,15 +29,15 @@ const ResourceReserveComponents = () => {
   }, []);
   return (
     <>
-      <Businessstyle>
+      <Aboutstyle>
         <BusinessSideBarComponents page3={true} />
-        <BusinessMain>
+        <AboutMain>
           <BusinessWrited title>{ResourceReserveLangTitle(resourceReserve, language)}</BusinessWrited>
           <BusinessWrited>
             {ResourceReserveLangBody(resourceReserve, language)}
           </BusinessWrited>
-        </BusinessMain>
-      </Businessstyle>
+        </AboutMain>
+      </Aboutstyle>
     </>
   );
 };

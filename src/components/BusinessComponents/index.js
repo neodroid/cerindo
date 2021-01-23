@@ -11,7 +11,7 @@ import {
     Changed
 } from "../AboutUsComponents/AboutUsElements";
 
-const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7}) => {
+const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
     const [selected, setSelected] = useState(true);
 
     const Clickit = ()=>{

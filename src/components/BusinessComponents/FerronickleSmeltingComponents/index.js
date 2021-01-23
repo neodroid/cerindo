@@ -4,6 +4,10 @@ import {
   BusinessMain,
   BusinessWrited,
 } from "../BusinessElements";
+import {
+  Aboutstyle,
+  AboutMain,
+} from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { FerronickleSmeltingContent } from "../../Data/BusinessData/FerronickleSmeltingDatas";
 import { businessService } from "../../../service/Business";
@@ -25,15 +29,15 @@ const FerronickleSmeltingComponents = () => {
   }, []);
   return (
     <>
-      <Businessstyle>
+      <Aboutstyle>
         <BusinessSideBarComponents page2={true} />
-        <BusinessMain>
+        <AboutMain>
           <BusinessWrited title>{FerronickleLangTitle(ferronicle, language)}</BusinessWrited>
           <BusinessWrited>
             {FerronickleLangBody(ferronicle, language)}
           </BusinessWrited>
-        </BusinessMain>
-      </Businessstyle>
+        </AboutMain>
+      </Aboutstyle>
     </>
   );
 };

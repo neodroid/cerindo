@@ -4,6 +4,10 @@ import {
   BusinessMain,
   BusinessWrited,
 } from "../BusinessElements";
+import {
+  Aboutstyle,
+  AboutMain,
+} from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { JettyTerminalContent } from "../../Data/BusinessData/JettyTerminalDatas";
 import { businessService } from "../../../service/Business";
@@ -25,15 +29,15 @@ const OreExportComponents = () => {
   }, []);
   return (
     <>
-      <Businessstyle>
+      <Aboutstyle>
         <BusinessSideBarComponents page5={true} />
-        <BusinessMain>
+        <AboutMain>
           <BusinessWrited title>{JettyTerminalLangTitle(jettyTerminal, language)}</BusinessWrited>
           <BusinessWrited>
             {JettyTerminalLangBody(jettyTerminal, language)}
           </BusinessWrited>
-        </BusinessMain>
-      </Businessstyle>
+        </AboutMain>
+      </Aboutstyle>
     </>
   );
 };

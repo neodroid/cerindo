@@ -4,6 +4,10 @@ import {
   BusinessMain,
   BusinessWrited,
 } from "../BusinessElements";
+import {
+  Aboutstyle,
+  AboutMain,
+} from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { HPALContent } from "../../Data/BusinessData/HPALDatas";
 import { businessService } from "../../../service/Business";
@@ -25,15 +29,15 @@ const NickelCobaltHPALComponents = () => {
   }, []);
   return (
     <>
-      <Businessstyle>
+      <Aboutstyle>
         <BusinessSideBarComponents page4={true} />
-        <BusinessMain>
+        <AboutMain>
           <BusinessWrited title>{NickleCobaltLangTitle(nickelCobalt, language)}</BusinessWrited>
           <BusinessWrited>
             {NickleCobaltLangBody(nickelCobalt, language)}
           </BusinessWrited>
-        </BusinessMain>
-      </Businessstyle>
+        </AboutMain>
+      </Aboutstyle>
     </>
   );
 };

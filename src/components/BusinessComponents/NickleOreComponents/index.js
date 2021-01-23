@@ -4,6 +4,10 @@ import {
   BusinessMain,
   BusinessWrited,
 } from "../BusinessElements";
+import {
+  Aboutstyle,
+  AboutMain,
+} from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { NickleOreMiningContent } from "../../Data/BusinessData/NickleOreMiningDatas";
 import { businessService } from "../../../service/Business";
@@ -25,15 +29,15 @@ const NickleOreComponents = () => {
   }, []);
   return (
     <>
-      <Businessstyle>
+      <Aboutstyle>
         <BusinessSideBarComponents page1={true} />
-        <BusinessMain>
+        <AboutMain>
           <BusinessWrited title>{NickleOreLangTitle(nickelOre, language)}</BusinessWrited>
           <BusinessWrited>
             {NickleOreLangBody(nickelOre, language)}
           </BusinessWrited>
-        </BusinessMain>
-      </Businessstyle>
+        </AboutMain>
+      </Aboutstyle>
     </>
   );
 };
