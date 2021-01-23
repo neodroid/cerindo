@@ -27,11 +27,12 @@ import {
   SearchInput,
   SearchButton,
   Nulity,
-  SearchTermed
+  SearchTermed,
 } from "./NavbarElements";
 
 import getFlagUrl from "./getFlagURL";
 import { langContext } from "../../langContext";
+import { Link } from "react-router-dom";
 export let lang;
 
 function Menu({ items, value, onChange, placeholder, showFlag }) {
@@ -84,7 +85,7 @@ const Navbar = ({ toggle }) => {
   };
 
   const fetchData = async () => {
-    const response = await newsService.getListNews;
+    const response = await newsService.getListNews();
     const data = response.data;
     setNewsList(data);
   };
@@ -98,6 +99,8 @@ const Navbar = ({ toggle }) => {
   const [val1, setValue1] = useState("en");
   const { language, setLanguage } = useContext(langContext);
   setLanguage(val1);
+  if (newsList.length === 0) return null;
+  console.log(newsList);
 
   return (
     <>
@@ -212,11 +215,29 @@ const Navbar = ({ toggle }) => {
             ) : (
               <Nulity></Nulity>
             )}
-            {searchTerm ? 
-            <SearchTermed>
-              Test
-            </SearchTermed> 
-            : <Nulity></Nulity>}
+            {searchTerm ? (
+              <SearchTermed>
+                {newsList
+                  .filter((val) => {
+                    if (
+                      val.title_en
+                        .toLowerCase()
+                        .includes(searchTerm.toLowerCase())
+                    ) {
+                      return val;
+                    }
+                  })
+                  .map((val, key) => {
+                    return (
+                      <Link to={"/News/" + val._id}>
+                        <p>{val.title_en}</p>
+                      </Link>
+                    );
+                  })}
+              </SearchTermed>
+            ) : (
+              <Nulity></Nulity>
+            )}
             <Menu
               value={val1}
               onChange={setValue1}
