@@ -19,8 +19,12 @@ export const InfoWrapper = styled.div`
   max-width: 930px;
   margin-right: auto;
   margin-left: auto;
-  padding: 60px 0;
+  padding: 70px 0 60px;
   justify-content: center;
+  @media screen and (max-width: 1033px) {
+    width: 90%;
+    max-width: auto;
+  }
 `;
 
 export const InfoRow = styled.div`
@@ -31,7 +35,7 @@ export const InfoRow = styled.div`
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1033px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
@@ -39,8 +43,12 @@ export const InfoRow = styled.div`
 
 export const Column1 = styled.div`
   /* margin-bottom: 15px; */
-  padding: 0 15px;
+  padding: 0 40px 0 15px;
   grid-area: col1;
+  @media screen and (max-width: 1033px) {
+    padding: 0 20px;
+    text-align:center;
+  }
 `;
 
 export const Column2 = styled.div`
@@ -49,7 +57,7 @@ export const Column2 = styled.div`
   grid-area: col2;
 
   /* background: blue; */
-  @media screen and (max-width: 577px) {
+  @media screen and (max-width: 1033px) {
     text-align: center;
   }
 `;
@@ -58,6 +66,13 @@ export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
+  @media screen and (max-width: 1033px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+  }
 `;
 
 export const TopLine = styled.p`
@@ -75,7 +90,7 @@ export const Heading = styled.h1`
   /* font-size: 24px;
   line-height: 1.1;
   font-weight: 600; */
-  color: #333;
+  color: ${({ lighText }) => (lighText ? "white" : "#333")};
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
@@ -92,7 +107,7 @@ export const Subtitle = styled.p`
   margin-bottom: 35px;
   /* font-size: 14px;
   line-height: 24px; */
-  color: #333;
+  color: ${({ lighText }) => (lighText ? "#fff" : "#333")};
   font-family: "Montserrat";
   font-style: normal;
   font-weight: normal;
@@ -103,6 +118,11 @@ export const Subtitle = styled.p`
 export const BtnWrap = styled.div`
   display: ${({ button }) => (button ? "flex" : "none")};
   justify-content: flex-start;
+  @media screen and (max-width: 1033px) {
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+  }
 `;
 
 export const ImgWrap = styled.div`
@@ -125,7 +145,7 @@ export const VideoContent = styled.video`
   width:480px;
   height:300px;
   @media screen and (max-width: 577px) {
-    width: 80%;
+    width: 300px;
     height: 150px;
   }
 `;

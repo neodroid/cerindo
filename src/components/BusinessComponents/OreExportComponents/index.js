@@ -10,7 +10,7 @@ import { businessService } from "../../../service/Business";
 import { langContext } from "../../../langContext";
 import { JettyTerminalLangTitle, JettyTerminalLangBody } from "./JettyTerminalLang";
 
-const JettyTerminalComponents = () => {
+const OreExportComponents = () => {
   const { language } = useContext(langContext);
   const [jettyTerminal, setJettyTerminal] = useState([]);
   useEffect(() => {
@@ -37,4 +37,4 @@ const JettyTerminalComponents = () => {
     </>
   );
 };
-export default JettyTerminalComponents;
+export default OreExportComponents;

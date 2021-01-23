@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { businessService } from "../service/Business";
-import { JettyTerminalHead } from "../components/Data/BusinessData/JettyTerminalDatas";
 import Banner from "../components/Banner";
-import JettyTerminalComponents from "../components/BusinessComponents/JettyTerminalComponents";
+import OreExportComponents from "../components/BusinessComponents/OreExportComponents";
 
-const JettyTerminal = () => {
+const OreExport = () => {
   const [businessList, setBusinessList] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -19,9 +18,9 @@ const JettyTerminal = () => {
   return (
     <>
       <Banner img={businessList[4].thumbnail.url} texted={true} />
-      <JettyTerminalComponents />
+      <OreExportComponents />
     </>
   );
 };
 
-export default JettyTerminal;
+export default OreExport;

@@ -44,13 +44,6 @@ const HeroSection = () => {
       <HeroContent>
         <HeroH1>Building a Shining Nickel and Cobalt Business</HeroH1>
 
-        <VideoWrapped>
-          <VideoTemptWrapped>
-            <FaPlayCircle />
-          </VideoTemptWrapped>
-          <VideoWrited>PLAY VIDEO</VideoWrited>
-        </VideoWrapped>
-
         <HeroNewsWrap>
           <HeroNewsFlex>
             <TitleNewsApart>

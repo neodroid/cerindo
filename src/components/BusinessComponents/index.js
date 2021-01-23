@@ -1,5 +1,97 @@
 import React,{ useState, useEffect } from "react";
 import {
+    AboutSideBar,
+    AboutSideBarContent,
+    ArrowDiv,
+    ArrowDownLang,
+    TextButton,
+    DropDown,
+    Dropbtn,
+    Contentt,
+    Changed
+} from "../AboutUsComponents/AboutUsElements";
+
+const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7}) => {
+    const [selected, setSelected] = useState(true);
+
+    const Clickit = ()=>{
+        setSelected(!selected);
+    }
+
+    useEffect(()=>{
+        Clickit()
+    },[])
+    return(
+        <>
+            <AboutSideBar>
+                <DropDown tabIndex={-1}>
+                    <Dropbtn onClick={Clickit}>
+                        <TextButton page={page1}>Nickel Ore Mining</TextButton>
+                        <TextButton page={page2}>Ferronickel Smelting</TextButton>
+                        <TextButton page={page3}>Resource and Reserve</TextButton>
+                        <TextButton page={page4}>Nickel-Cobalt HPAL</TextButton>
+                        <TextButton page={page5}>Ore Export</TextButton>
+                        <TextButton page={page6}>Power Plants</TextButton>
+
+                        <ArrowDiv>
+                            {selected ? <ArrowDownLang style={{transform: "rotate(225deg)"}}/> : <ArrowDownLang/>}
+                        </ArrowDiv>
+                    </Dropbtn>
+                    { selected ?
+                    <Contentt>
+                        <AboutSideBarContent page={page1} to="/Nickle-Ore-Mining">
+                            Nickel Ore Mining
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page2} to="/Ferronickle-Smelting">
+                            Ferronickel Smelting
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page3} to="/Resource-Reserve">
+                            Resource and Reserve
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page4} to="/Nickle-Cobalt-HPAL">
+                            Nickel-Cobalt HPAL
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page5} to="/Ore-Export">
+                            Ore Export
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page6} to="/Power-Plant">
+                            Power Plants
+                        </AboutSideBarContent>
+                    </Contentt>
+                    : 
+                    <Changed>
+                        <Contentt>
+                        <AboutSideBarContent page={page1} to="/Nickle-Ore-Mining">
+                        Nickel Ore Mining
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page2} to="/Ferronickle-Smelting">
+                        Ferronickel Smelting
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page3} to="/Resource-Reserve">
+                        Resource and Reserve
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page4} to="/Nickle-Cobalt-HPAL">
+                            Nickel-Cobalt HPAL
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page5} to="/Ore-Export">
+                            Ore Export
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page6} to="/Power-Plant">
+                            Power Plants
+                        </AboutSideBarContent>
+                    </Contentt>
+                    </Changed>
+                    }
+                </DropDown>
+            </AboutSideBar>
+        </>
+    )
+}
+
+export default BusinessSideBarComponents;
+/*
+import React,{ useState, useEffect } from "react";
+import {
     BusinessSideBar,
     BusinessSideBarContent,
     BusinessSideBarImage,
@@ -13,7 +105,6 @@ import {
 } from "./BusinessElements";
 import {BusinessAllImage} from "../Data/BusinessData/BussinessDatas";
 import {businessService} from "../../service/Business";
-
 const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
   const [businessImage, setBusinessImage] = useState([]);
   const [selected, setSelected] = useState(true);
@@ -107,4 +198,4 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
         </>
     )
 };
-export default BusinessSideBarComponents;
+export default BusinessSideBarComponents; */

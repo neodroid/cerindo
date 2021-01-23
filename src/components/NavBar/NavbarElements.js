@@ -319,8 +319,8 @@ export const SearchImage = styled(FaSearch)`
 `;
 
 export const SearchField = styled.div`
-  background: #f9f9f9;
-  max-width: 500px;
+  background: ${({ scrollNav }) => (scrollNav ? "#f9f9f9" : "transparent")};
+  width: 334px;
   padding: 15px;
   display:block;
   border-radius: 0 0 8px 8px;
@@ -332,12 +332,12 @@ export const SearchField = styled.div`
 `;
 
 export const SearchInput = styled.input`
-  width: 70%;
+  width: 100%;
   padding: 16px;
   border: 1px solid #efb401;
   font-weight: bold;
   margin-left: auto;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
   &:focus {
     outline: 0;
     border: 1px solid #efb401;
@@ -371,4 +371,18 @@ export const SearchTermed = styled.div`
   text-align:center;
   position: absolute;
   top: 150px;
+  color: black;
+  text-align: left;
+  text-decoration: none;
+  max-height: 300px;
+  overflow-y: scroll
+`;
+
+export const SearchLinked = styled(LinkR)`
+text-decoration: none;
+color: black;
+border-bottom: 1px solid black;
+&:hover {
+  color: #04235c;
+}
 `;

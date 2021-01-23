@@ -1,5 +1,7 @@
 import React from "react";
+import {Link as LinkR} from "react-router-dom";
 import { Button } from "../../ButtonElement";
+import {AboutUsDatas} from "../../Data/HomeData/AboutUsElementsDatas"
 import {
   InfoContainer,
   InfoWrapper,
@@ -20,7 +22,6 @@ const AboutUs = ({
   imgStart,
   headline,
   darktext,
-  description1,
   buttonLabel,
   button,
 }) => {
@@ -32,18 +33,18 @@ const AboutUs = ({
             <Column1>
               <TextWrapper>
                 <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle darktext={darktext}>{description1}</Subtitle>
+                <Subtitle darktext={darktext}>{AboutUsDatas.about}</Subtitle>
                 <BtnWrap button={button}>
                   <Button
                     primary="true"
-                    to="/about"
                     smooth={true}
                     duration={500}
                     spy={true}
                     exact="true"
                     offset={-80}
-                  >
+                  ><LinkR to="/Mission-Vision" style={{textDecoration: "none", color:"white"}}>
                     {buttonLabel}
+                    </LinkR>
                   </Button>
                 </BtnWrap>
               </TextWrapper>

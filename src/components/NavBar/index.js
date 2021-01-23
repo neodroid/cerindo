@@ -25,7 +25,7 @@ import {
   SearchImage,
   SearchField,
   SearchInput,
-  SearchButton,
+  SearchLinked,
   Nulity,
   SearchTermed,
 } from "./NavbarElements";
@@ -74,6 +74,7 @@ const Navbar = ({ toggle }) => {
 
   const SearchedButton = () => {
     setSearchbuttons(!searchbuttons);
+    setSearchTerm(false);
   };
 
   const changeNav = () => {
@@ -137,8 +138,8 @@ const Navbar = ({ toggle }) => {
                   </DropDiv>
                   <DropDiv>
                     <NavText>Logistic</NavText>
-                    <NavDropLinks to="/Jetty-Terminal">
-                      Jetty Terminal
+                    <NavDropLinks to="/Ore-Export">
+                      Ore Export
                     </NavDropLinks>
                     <NavText>Energy</NavText>
                     <NavDropLinks to="/Power-Plant">Power Plant</NavDropLinks>
@@ -200,7 +201,7 @@ const Navbar = ({ toggle }) => {
           <NavBtn>
             <SearchImage onClick={SearchedButton} />
             {searchbuttons ? (
-              <SearchField>
+              <SearchField scrollNav={scrollNav}>
                 <SearchInput
                   type="search"
                   placeholder="Type Anything Here....."
@@ -208,10 +209,8 @@ const Navbar = ({ toggle }) => {
                     setSearchTerm(e.target.value);
                   }}
                 />
-                <SearchButton type="button" onClick={SearchedButton}>
-                  Search
-                </SearchButton>
               </SearchField>
+              
             ) : (
               <Nulity></Nulity>
             )}
@@ -229,9 +228,9 @@ const Navbar = ({ toggle }) => {
                   })
                   .map((val, key) => {
                     return (
-                      <Link to={"/News/" + val._id}>
+                      <SearchLinked to={"/News/" + val._id} onClick={SearchedButton}>
                         <p>{val.title_en}</p>
-                      </Link>
+                      </SearchLinked>
                     );
                   })}
               </SearchTermed>
