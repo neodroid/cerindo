@@ -42,9 +42,9 @@ const AboutUs = ({
                     spy={true}
                     exact="true"
                     offset={-80}
-                  ><LinkR to="/Mission-Vision" style={{textDecoration: "none", color:"white"}}>
+                    to="/Mission-Vision"
+                  >
                     {buttonLabel}
-                    </LinkR>
                   </Button>
                 </BtnWrap>
               </TextWrapper>

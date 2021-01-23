@@ -35,9 +35,9 @@ const Business = () => {
                                 spy={true}
                                 exact="true"
                                 offset={-80}
-                            ><LinkR to="/Nickle-Ore-Mining" style={{textDecoration: "none", color:"white"}}>
+                                to="/Nickle-Ore-Mining"
+                            >
                                 Learn More
-                                </LinkR>
                             </Button>
                             </BtnWrap>
                         </TextWrapper>

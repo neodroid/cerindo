@@ -33,9 +33,9 @@ const Sustainability = () => {
                                     spy={true}
                                     exact="true"
                                     offset={-80}
-                                ><LinkR to="/QHSE" style={{textDecoration: "none", color:"white"}}>
+                                    to="/QHSE"
+                                >
                                     View Our Commitment
-                                    </LinkR>
                                 </Button>
                                 </BtnWrap>
                             </TextWrapper>
