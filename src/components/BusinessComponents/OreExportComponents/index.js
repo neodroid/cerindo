@@ -12,18 +12,18 @@ import BusinessSideBarComponents from "../index";
 import { JettyTerminalContent } from "../../Data/BusinessData/JettyTerminalDatas";
 import { businessService } from "../../../service/Business";
 import { langContext } from "../../../langContext";
-import { JettyTerminalLangTitle, JettyTerminalLangBody } from "./JettyTerminalLang";
+import { OreExportLangTitle, OreExportLangBody } from "./OreExportLang";
 
 const OreExportComponents = () => {
   const { language } = useContext(langContext);
-  const [jettyTerminal, setJettyTerminal] = useState([]);
+  const [oreExport, setOreExport] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await businessService.getDetailBusiness(
         "5ff43e54b9e34a0df87694af"
       );
       const data = response.data;
-      setJettyTerminal(data);
+      setOreExport(data);
     };
     fetchData();
   }, []);
@@ -32,9 +32,9 @@ const OreExportComponents = () => {
       <Aboutstyle>
         <BusinessSideBarComponents page5={true} />
         <AboutMain>
-          <BusinessWrited title>{JettyTerminalLangTitle(jettyTerminal, language)}</BusinessWrited>
+          <BusinessWrited title>{OreExportLangTitle(oreExport, language)}</BusinessWrited>
           <BusinessWrited>
-            {JettyTerminalLangBody(jettyTerminal, language)}
+            {OreExportLangBody(oreExport, language)}
           </BusinessWrited>
         </AboutMain>
       </Aboutstyle>
