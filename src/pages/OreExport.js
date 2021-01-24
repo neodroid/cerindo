@@ -17,7 +17,7 @@ const OreExport = () => {
   if (businessList.length === 0) return null;
   return (
     <>
-      <Banner img={businessList[4].thumbnail.url} texted={true} />
+      <Banner img={businessList[4].banner[0].url} texted={true} />
       <OreExportComponents />
     </>
   );

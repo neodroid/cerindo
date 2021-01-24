@@ -38,7 +38,6 @@ const HeroSection = () => {
     fetchData();
   }, []);
   if (newsData.length === 0) return null;
-  console.log(newsData);
   return (
     <HeroContainer img={Bg}>
       <HeroContent>

@@ -18,7 +18,7 @@ const NickleOreMining = () => {
   if (businessList.length === 0) return null;
   return (
     <>
-      <Banner img={businessList[0].thumbnail.url} texted={true} />
+      <Banner img={businessList[0].banner[0].url} texted={true} />
       <NickleOreComponents />
     </>
   );

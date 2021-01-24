@@ -1,7 +1,8 @@
-import React from "react";
-import {Link as LinkR} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link as LinkR } from "react-router-dom";
 import { Button } from "../../ButtonElement";
-import {AboutUsDatas} from "../../Data/HomeData/AboutUsElementsDatas"
+import { AboutUsDatas } from "../../Data/HomeData/AboutUsElementsDatas";
+import { homeService } from "../../../service/Homepage";
 import {
   InfoContainer,
   InfoWrapper,
@@ -12,7 +13,7 @@ import {
   Subtitle,
   Column2,
   BtnWrap,
-  VideoContent
+  VideoContent,
 } from "./AboutUsElements";
 
 const AboutUs = ({
@@ -25,6 +26,16 @@ const AboutUs = ({
   buttonLabel,
   button,
 }) => {
+  const [homeData, setHomeData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await homeService.getListHome();
+      const data = response.data;
+      setHomeData(data.AboutUs);
+    };
+    fetchData();
+  }, []);
+  if (homeData.length === 0) return null;
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -32,8 +43,8 @@ const AboutUs = ({
           <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle darktext={darktext}>{AboutUsDatas.about}</Subtitle>
+                <Heading lightText={lightText}>{homeData.title_en}</Heading>
+                <Subtitle darktext={darktext}>{homeData.body_en}</Subtitle>
                 <BtnWrap button={button}>
                   <Button
                     primary="true"
@@ -44,7 +55,7 @@ const AboutUs = ({
                     offset={-80}
                     to="/Mission-Vision"
                   >
-                    {buttonLabel}
+                    {homeData.button_en}
                   </Button>
                 </BtnWrap>
               </TextWrapper>

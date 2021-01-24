@@ -18,7 +18,7 @@ const NickleCobaltHPAL = () => {
   if (businessList.length === 0) return null;
   return (
     <>
-      <Banner img={businessList[3].thumbnail.url} texted={true} />
+      <Banner img={businessList[3].banner[0].url} texted={true} />
       <NickelCobaltHPALComponents />
     </>
   );

@@ -18,7 +18,7 @@ const PowerPlant = () => {
   if (businessList.length === 0) return null;
   return (
     <>
-      <Banner img={businessList[5].thumbnail.url} texted={true} />
+      <Banner img={businessList[5].banner[0].url} texted={true} />
       <PowerPlantComponents />
     </>
   );
