@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { homeService } from "../../../service/Homepage";
 import { BusinessElementsDatas } from "../../Data/HomeData/BusinessElementsDatas";
 import { Link as LinkR } from "react-router-dom";
@@ -18,8 +18,11 @@ import {
   BtnWrap,
   InfoWrapper,
 } from "../AboutUs/AboutUsElements";
+import { langContext } from "../../../langContext";
+import { HomeLangTitle, HomeLangBody, HomeLangButton } from '../HomeLang';
 
 const Business = () => {
+  const { language } = useContext(langContext);
   const [homeData, setHomeData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -37,8 +40,8 @@ const Business = () => {
           <InfoRow imgStart={false}>
             <Column1>
               <TextWrapper>
-                <Heading>{homeData.title_en}</Heading>
-                <Subtitle>{homeData.body_en}</Subtitle>
+                <Heading>{HomeLangTitle(homeData, language)}</Heading>
+                <Subtitle>{HomeLangBody(homeData, language)}</Subtitle>
                 <BtnWrap button={true}>
                   <Button
                     primary="false"
@@ -49,7 +52,7 @@ const Business = () => {
                     offset={-80}
                     to="/Nickle-Ore-Mining"
                   >
-                    Learn More
+                    {HomeLangButton(homeData, language)}
                   </Button>
                 </BtnWrap>
               </TextWrapper>

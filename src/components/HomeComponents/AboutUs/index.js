@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link as LinkR } from "react-router-dom";
 import { Button } from "../../ButtonElement";
 import { AboutUsDatas } from "../../Data/HomeData/AboutUsElementsDatas";
@@ -15,6 +15,8 @@ import {
   BtnWrap,
   VideoContent,
 } from "./AboutUsElements";
+import { langContext } from "../../../langContext";
+import { HomeLangTitle, HomeLangBody, HomeLangButton } from '../HomeLang';
 
 const AboutUs = ({
   lightText,
@@ -26,6 +28,7 @@ const AboutUs = ({
   buttonLabel,
   button,
 }) => {
+  const { language } = useContext(langContext);
   const [homeData, setHomeData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -43,8 +46,8 @@ const AboutUs = ({
           <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <Heading lightText={lightText}>{homeData.title_en}</Heading>
-                <Subtitle darktext={darktext}>{homeData.body_en}</Subtitle>
+                <Heading lightText={lightText}>{HomeLangTitle(homeData, language)}</Heading>
+                <Subtitle darktext={darktext}>{HomeLangBody(homeData, language)}</Subtitle>
                 <BtnWrap button={button}>
                   <Button
                     primary="true"
@@ -55,7 +58,7 @@ const AboutUs = ({
                     offset={-80}
                     to="/Mission-Vision"
                   >
-                    {homeData.button_en}
+                    {HomeLangButton(homeData, language)}
                   </Button>
                 </BtnWrap>
               </TextWrapper>

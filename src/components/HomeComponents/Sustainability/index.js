@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { homeService } from "../../../service/Homepage";
 import { SustainabilityElementsDatas } from "../../Data/HomeData/SustainabilityElementsDatas";
 import { Link as LinkR } from "react-router-dom";
@@ -19,8 +19,11 @@ import {
   ImageCanvas,
   Imaging,
 } from "./SustainabilityElements";
+import { langContext } from "../../../langContext";
+import { HomeLangTitle, HomeLangBody, HomeLangButton } from '../HomeLang';
 
 const Sustainability = () => {
+  const { language } = useContext(langContext); 
   const [homeData, setHomeData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -37,8 +40,8 @@ const Sustainability = () => {
         <InfoRow imgStart={true}>
           <Column1>
             <TextWrapper>
-              <Heading lightText={true}>{homeData.title_en}</Heading>
-              <Subtitle darktext={false}>{homeData.body_en}</Subtitle>
+              <Heading lightText={true}>{HomeLangTitle(homeData, language)}</Heading>
+              <Subtitle darktext={false}>{HomeLangBody(homeData, language)}</Subtitle>
               <BtnWrap button={true}>
                 <Button
                   primary="false"
@@ -49,7 +52,7 @@ const Sustainability = () => {
                   offset={-80}
                   to="/QHSE"
                 >
-                  {homeData.button_en}
+                  {HomeLangButton(homeData, language)}
                 </Button>
               </BtnWrap>
             </TextWrapper>
