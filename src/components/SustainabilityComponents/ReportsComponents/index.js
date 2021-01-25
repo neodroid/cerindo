@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { sustainService } from "../../../service/Sustainability";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
@@ -9,8 +9,11 @@ import {
   ReportImage,
   ImageB,
 } from "./ReportsElements";
+import { langContext } from "../../../langContext";
+import { ReportsDataLangTitle, ReportsDataLangBody } from "./ReportsLang";
 
 const ReportsComponents = () => {
+  const { language } = useContext(langContext);
   const [ReportsData, setReportsData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -29,8 +32,8 @@ const ReportsComponents = () => {
         <AboutMain>
           <ReportsFlex>
             <ReportsContent>
-              <ReportWrited title>{ReportsData.title_en}</ReportWrited>
-              <ReportWrited>{ReportsData.body_en}</ReportWrited>
+              <ReportWrited title>{ReportsDataLangTitle(ReportsData, language)}</ReportWrited>
+              <ReportWrited>{ReportsDataLangBody(ReportsData, language)}</ReportWrited>
             </ReportsContent>
             <ReportsContent>
               <ReportImage>

@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { sustainService } from "../../../service/Sustainability";
 import { BusinessWrited } from "../../BusinessComponents/BusinessElements";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { Imageqhse, Images, WritedPart } from "./QHSEElements";
+import { langContext } from "../../../langContext";
+import { QHSEContentLangTitle, QHSEContentLangBody } from "./QHSELang";
 
 const QHSEComponents = () => {
+  const { language } = useContext(langContext);
   const [QHSEContent, setQHSEContent] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -26,8 +29,8 @@ const QHSEComponents = () => {
             <Imageqhse src={QHSEContent.image.url} />
           </Images>
           <WritedPart>
-            <BusinessWrited title>{QHSEContent.title_en}</BusinessWrited>
-            <BusinessWrited>{QHSEContent.body_en}</BusinessWrited>
+            <BusinessWrited title>{QHSEContentLangTitle(QHSEContent, language)}</BusinessWrited>
+            <BusinessWrited>{QHSEContentLangBody(QHSEContent, language)}</BusinessWrited>
           </WritedPart>
         </AboutMain>
       </Aboutstyle>

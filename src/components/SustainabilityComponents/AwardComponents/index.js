@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { sustainService } from "../../../service/Sustainability";
 import { BusinessWrited } from "../../BusinessComponents/BusinessElements";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { AwardsesContent, Figured } from "./AwardElements";
+import { langContext } from "../../../langContext";
+import { AwardContentLangTitle, AwardContentLangBody } from "./AwardLang";
 
 const AwardComponents = () => {
+  const { language } = useContext(langContext);
   const [AwardContent, setAwardContent] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -22,8 +25,8 @@ const AwardComponents = () => {
       <Aboutstyle>
         <BusinessSideBarComponents page4={true} />
         <AboutMain>
-          <BusinessWrited title>{AwardContent.title_en}</BusinessWrited>
-          <BusinessWrited>{AwardContent.body_en}</BusinessWrited>
+          <BusinessWrited title>{AwardContentLangTitle(AwardContent, language)}</BusinessWrited>
+          <BusinessWrited>{AwardContentLangBody(AwardContent, language)}</BusinessWrited>
           <AwardsesContent>
             {AwardContent.awards_list.map((data, idx) => {
               return (

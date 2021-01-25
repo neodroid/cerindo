@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import { NewsData } from "../../Data/News";
 import { communityService } from "../../../service/Community";
@@ -13,8 +13,11 @@ import {
   ActivityContainerPart,
   ActivityTitle,
 } from "./ActivityElements";
+import { langContext } from "../../../langContext";
+import { ActivityLangTitle, ActivityLangBody } from "./ActivityLang";
 
 const ActivityComponents = () => {
+  const { language } = useContext(langContext);
   const [activity, setActivity] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -41,9 +44,9 @@ const ActivityComponents = () => {
                       <ActivityImage src={data.image.url} />
                     </ActivityContainerPart>
                     <ActivityContainerPart wrt>
-                      <BoxContainer titlee>{data.title_en}</BoxContainer>
+                      <BoxContainer titlee>{ActivityLangTitle(data, language)}</BoxContainer>
                       <BoxContainer>
-                        {`${data.news_en.substring(0, 100)}...`}
+                        {ActivityLangBody(data, language)}
                       </BoxContainer>
                     </ActivityContainerPart>
                     <ActivityContainerPart btn>
