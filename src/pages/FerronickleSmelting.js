@@ -19,7 +19,9 @@ const FerronickleSmelting = () => {
   if (businessList.length === 0) return null;
   return (
     <>
-      <Banner img={businessList[1].banner[0].url} texted={true} />
+      {businessList[1].banner.map((data, idx) => {
+        return <Banner img={data.url} texted={true} key={idx} />;
+      })}
       <FerronickleSmeltingComponents />
     </>
   );

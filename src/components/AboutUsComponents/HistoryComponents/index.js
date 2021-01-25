@@ -1,5 +1,5 @@
 import React from "react";
-import {useContext, useState, useEffect} from 'react'
+import { useContext, useState, useEffect } from "react";
 import {
   Aboutstyle,
   AboutSideBar,
@@ -26,17 +26,14 @@ import {
   Opac,
   HisContents,
   HisImage,
-  HisImageApart
+  HisImageApart,
 } from "./HistoryElements";
 
 import { langContext } from "../../../langContext";
-import { 
-  HistoryLangTitle, 
-  HistoryLangDesc, 
-} from "./HistoryLang";
+import { HistoryLangTitle, HistoryLangDesc } from "./HistoryLang";
 
 const HistoryComponents = () => {
-  const {language} = useContext(langContext);
+  const { language } = useContext(langContext);
   const [historyMileStone, setHistoryMilestone] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -52,20 +49,24 @@ const HistoryComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page5={true}/>
+        <AboutSideBarComponents page5={true} />
         <AboutMain>
           <HisWrapped>
             {historyMileStone.histories.map((data, idx) => {
-              if (idx % 2 == 0) {
+              if (idx % 2 === 0) {
                 return (
                   <HisContents wrap key={idx}>
                     <HisContent>
                       <HisContent wrap>
-                        <HisBoxWrited title>{HistoryLangTitle(data, language)}</HisBoxWrited>
-                        <HisBoxWrited>{HistoryLangDesc(data, language)}</HisBoxWrited>
+                        <HisBoxWrited title>
+                          {HistoryLangTitle(data, language)}
+                        </HisBoxWrited>
+                        <HisBoxWrited>
+                          {HistoryLangDesc(data, language)}
+                        </HisBoxWrited>
                       </HisContent>
                       <HisImageApart>
-                      <HisImage src={data.history_image.url} />
+                        <HisImage src={data.history_image.url} />
                       </HisImageApart>
                     </HisContent>
                   </HisContents>
@@ -75,11 +76,15 @@ const HistoryComponents = () => {
                   <HisContents wrap key={idx}>
                     <HisContent>
                       <HisImageApart>
-                      <HisImage src={data.history_image.url} />
+                        <HisImage src={data.history_image.url} />
                       </HisImageApart>
                       <HisContent wrap>
-                        <HisBoxWrited title>{HistoryLangTitle(data, language)}</HisBoxWrited>
-                        <HisBoxWrited>{HistoryLangDesc(data, language)}</HisBoxWrited>
+                        <HisBoxWrited title>
+                          {HistoryLangTitle(data, language)}
+                        </HisBoxWrited>
+                        <HisBoxWrited>
+                          {HistoryLangDesc(data, language)}
+                        </HisBoxWrited>
                       </HisContent>
                     </HisContent>
                   </HisContents>
@@ -98,7 +103,9 @@ const HistoryComponents = () => {
                     <MilesBoxApart>
                       <MilesImage img={data.image.url}>
                         <Opac />
-                        <MilesImageDesc>{HistoryLangTitle(data, language)}</MilesImageDesc>
+                        <MilesImageDesc>
+                          {HistoryLangTitle(data, language)}
+                        </MilesImageDesc>
                       </MilesImage>
                     </MilesBoxApart>
                   </MilesBoxContent>

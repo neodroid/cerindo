@@ -18,7 +18,9 @@ const PowerPlant = () => {
   if (businessList.length === 0) return null;
   return (
     <>
-      <Banner img={businessList[5].banner[0].url} texted={true} />
+      {businessList[5].banner.map((data, idx) => {
+        return <Banner img={data.url} texted={true} key={idx} />;
+      })}
       <PowerPlantComponents />
     </>
   );

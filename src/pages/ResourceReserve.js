@@ -18,7 +18,9 @@ const ResourceReserve = () => {
   if (businessList.length === 0) return null;
   return (
     <>
-      <Banner img={businessList[2].banner[0].url} texted={true} />
+      {businessList[2].banner.map((data, idx) => {
+        return <Banner img={data.url} texted={true} key={idx} />;
+      })}
       <ResourceReserveComponents />
     </>
   );

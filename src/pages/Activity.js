@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { sustainService } from "../service/Sustainability";
 import { ActivityHead } from "../components/Data/SustainabilityData/ActivityDatas";
 import Banner from "../components/Banner";
 import ActivityComponents from "../components/SustainabilityComponents/ActivityComponents";
 
 const Activity = () => {
+  const [activity, setActivity] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await sustainService.getListSustain();
+      const data = response.data.CommunityActivities;
+      setActivity(data);
+    };
+    fetchData();
+  }, []);
+
+  if (activity.length === 0) return null;
   return (
     <>
-    {ActivityHead.map((data,idx)=>{
-        return(
-      <Banner img={data.img} texted={true} key={idx}/>
-    )})}
+      {activity.banner.map((data, idx) => {
+        return <Banner img={data.url} texted={true} key={idx} />;
+      })}
       <ActivityComponents />
     </>
   );
