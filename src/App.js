@@ -25,13 +25,11 @@ import Organization from "./pages/Organization";
 import History from "./pages/History";
 import Concession from "./pages/Concession";
 import License from "./pages/LicensePages";
-import PhaseOne from "./pages/PhaseOne";
-import PhaseTwo from "./pages/PhaseTwo";
-import PhaseThree from "./pages/PhaseThree";
-import PhaseThreeA from "./pages/PhaseThreeA";
-import PhaseLast from "./pages/PhaseLast";
 import Career from "./pages/Career";
-import QHSE from "./pages/QHSE"
+import QHSE from "./pages/QHSE";
+import Activity from "./pages/Activity";
+import Reports from "./pages/Reports";
+import Award from "./pages/Award"
 import { langContext } from "./langContext";
 
 function App() {
@@ -68,13 +66,11 @@ function App() {
             <Route path="/History-Milestone" component={History} exact />
             <Route path="/Concession-Area" component={Concession} exact />
             <Route path="/License-And-Award" component={License} exact />
-            <Route path="/Phase/Phase 1" component={PhaseOne} exact/>
-            <Route path="/Phase/Phase 2" component={PhaseTwo} exact/>
-            <Route path="/Phase/Phase 3" component={PhaseThree} exact/>
-            <Route path="/Phase/Phase 3a" component={PhaseThreeA} exact/>
-            <Route path="/Phase/PT Ceria Cobalt Indotama" component={PhaseLast} exact/>
             <Route path="/Career" component={Career} exact/>
             <Route path="/QHSE" component={QHSE} exact/>
+            <Route path="/Community-Activities" component={Activity} exact/>
+            <Route path="/Reports" component={Reports} exact/>
+            <Route path="/Awards" component={Award} exact/>
           </Switch>
         </langContext.Provider>
 

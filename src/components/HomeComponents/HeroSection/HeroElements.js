@@ -1,21 +1,17 @@
 import styled from "styled-components";
 import { MdArrowDownward, MdKeyboardArrowDown} from "react-icons/md";
 import {Link as LinkR} from "react-router-dom";
+import Carousel from "react-elastic-carousel";
 
 export const HeroContainer = styled.div`
-  background: #0c0c0c;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 30px;
-  min-height: 625px;
-  position: relative;
-  z-index: 1;
   background-image: url(${(props) => props.img});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin-top:-80px;
+  /*margin-top:-80px;*/
   /* add before styles */
 `;
 export const HeroBg = styled.div`
@@ -39,14 +35,15 @@ export const HeroBg = styled.div`
 
 export const HeroContent = styled.div`
   z-index: 3;
-  max-width: 1200px;
+  max-width: 1000px;
   /* position: absolute; */
   padding: 8px 24px;
-  display: grid;
+  display: flex;
   margin-top: 100px;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   /* margin-top: 80px; */
   @media screen and (max-width: 577px) {
     text-align:center;
@@ -131,6 +128,7 @@ export const HeroH1 = styled.h1`
   font-size: 40px;
   line-height: 70px;
   font-family: "Montserrat-black";
+  color: white;
   @media screen and (max-width: 768px) {
     font-size: 40px;
   }
@@ -300,4 +298,27 @@ export const VideoTemptWrapped = styled.div`
   font-size: 40px;
   padding: 15px;
   border-radius: 60%;
+`;
+
+export const Angle = styled(Carousel)`
+    margin: 0 auto;
+    width: 90%;
+    box-sizing: content-box !important;
+    .rec-carousel-item-visible {
+        width: 100% !important;
+    }
+    .rec-slider {
+        transition: none !important;
+    }
+    button.rec-arrow{
+        display: none;
+    };
+    button.rec-dot{
+      color: #EFB401;
+    };
+`;
+
+export const BgColoring = styled.div`
+  background-color: rgba(0,0,0,0.3);
+  width: 100%;
 `;

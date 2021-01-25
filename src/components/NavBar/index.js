@@ -156,8 +156,8 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Community-Activities">
                     Community Activities
                     </NavDropLinks>
-                    <NavDropLinks to="/Report">Report</NavDropLinks>
-                    <NavDropLinks to="/Award">Award</NavDropLinks>
+                    <NavDropLinks to="/Reports">Reports</NavDropLinks>
+                    <NavDropLinks to="/Awards">Awards</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>

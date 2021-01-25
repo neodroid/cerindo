@@ -22,6 +22,8 @@ import {
   VideoWrapped,
   VideoTemptWrapped,
   VideoWrited,
+  Angle,
+  BgColoring
 } from "./HeroElements";
 import { langContext } from "../../../langContext";
 import { NewsLangTitle } from "./HeroLang";
@@ -40,40 +42,41 @@ const HeroSection = () => {
   if (newsData.length === 0) return null;
   return (
     <HeroContainer img={Bg}>
-      <HeroContent>
-        <HeroH1>Building a Shining Nickel and Cobalt Business</HeroH1>
-
-        <HeroNewsWrap>
-          <HeroNewsFlex>
-            <TitleNewsApart>
-              <HeroMediaH1>Recent Update</HeroMediaH1>
-            </TitleNewsApart>
-            <TitleNewsApart>
-              <ViewedAll to="/News-Release">
-                <MdTrendingFlat target="_blank" />
-                View All
-              </ViewedAll>
-            </TitleNewsApart>
-          </HeroNewsFlex>
-          <HeroNewsFlex content>
-            {newsData.map((data, idx) => {
-              if (idx < 3) {
-                return (
-                  <HeroNewsContent to={`/News/${data._id}`} key={idx}>
-                    <ImgWrap>
-                      <Img src={data.news_img.url} />
-                    </ImgWrap>
-                    <HeroNewsDesc>
-                      <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                      <HeroNewsTimeP>{data.news_date}</HeroNewsTimeP>
-                    </HeroNewsDesc>
-                  </HeroNewsContent>
-                );
-              }
-            })}
-          </HeroNewsFlex>
-        </HeroNewsWrap>
-      </HeroContent>
+      <BgColoring>
+        <HeroContent>
+          <HeroH1>Building a Shining Nickel and Cobalt Business</HeroH1>
+          <HeroNewsWrap>
+            <HeroNewsFlex>
+              <TitleNewsApart>
+                <HeroMediaH1>Recent Update</HeroMediaH1>
+              </TitleNewsApart>
+              <TitleNewsApart>
+                <ViewedAll to="/News-Release">
+                  <MdTrendingFlat target="_blank" />
+                  View All
+                </ViewedAll>
+              </TitleNewsApart>
+            </HeroNewsFlex>
+            <HeroNewsFlex content>
+              {newsData.map((data, idx) => {
+                if (idx < 3) {
+                  return (
+                    <HeroNewsContent to={`/News/${data._id}`} key={idx}>
+                      <ImgWrap>
+                        <Img src={data.news_img.url} />
+                      </ImgWrap>
+                      <HeroNewsDesc>
+                        <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                        <HeroNewsTimeP>{data.news_date}</HeroNewsTimeP>
+                      </HeroNewsDesc>
+                    </HeroNewsContent>
+                  );
+                }
+              })}
+            </HeroNewsFlex>
+          </HeroNewsWrap>
+        </HeroContent>
+      </BgColoring>
     </HeroContainer>
   );
 };
