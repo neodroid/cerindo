@@ -5,23 +5,29 @@ import { SubsidiaryHead } from "../components/Data/AboutusData/SubsidiaryDatas";
 import SubsidiaryComponents from "../components/AboutUsComponents/SubsidiaryComponents";
 
 const Subsidiary = () => {
-  const [banner, setBanner] = useState([]);
+  const [subsidiary, setSubsidiary] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await aboutUsService.getListAboutUs();
       const data = response.data;
-      setBanner(data.aboutUsBanner);
+      setSubsidiary(data.companySubsidiary);
     };
     fetchData();
   }, []);
-  if (banner.length === 0) return null;
+
+  if (subsidiary.length === 0) return null;
   return (
     <>
-      <Banner
-        img={banner[1].url}
-        heading="COMPANY SUBSIDIARY"
-        lightText={true}
-      />
+      {subsidiary.banner.map((data, idx) => {
+        return (
+          <Banner
+            img={data.url}
+            lightText={true}
+            heading="COMPANY SUBSIDIARY"
+            key={idx}
+          />
+        );
+      })}
       <SubsidiaryComponents />
     </>
   );

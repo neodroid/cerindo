@@ -4,25 +4,29 @@ import { BODHead } from "../components/Data/AboutusData/BODDatas";
 import BODComponents from "../components/AboutUsComponents/BODComponents";
 import { aboutUsService } from "../service/Aboutus";
 const BOD = () => {
-  const [banner, setBanner] = useState([]);
+  const [BOD, setBOD] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await aboutUsService.getListAboutUs();
       const data = response.data;
-      setBanner(data.aboutUsBanner);
+      setBOD(data.boardOfDirectors);
     };
     fetchData();
   }, []);
-
-  if (banner.length === 0) return null;
+  if (BOD.length === 0) return null;
 
   return (
     <>
-      <Banner
-        img={banner[2].url}
-        heading="BOARD OF DIRECTOR"
-        lightText={true}
-      />
+      {BOD.banner.map((data, idx) => {
+        return (
+          <Banner
+            img={data.url}
+            lightText={true}
+            heading="BOARD OF DIRECTORS"
+            key={idx}
+          />
+        );
+      })}
       <BODComponents />
     </>
   );

@@ -36,13 +36,13 @@ const BODComponents = () => {
         <AboutMain>
           <Bodwrapped>
             <Masonries>
-              {BOD.map((data, idx) => {
+              {BOD.listBoardOfDirectors.map((data, idx) => {
                 return (
                   <Bodbox key={idx}>
                     <BodBoxContent>
                       <BodBoxIntro>
                         <img
-                          src={data.Picture.url}
+                          src={data.picture.url}
                           width={`83px`}
                           height={`125px`}
                         />

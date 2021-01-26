@@ -101,7 +101,6 @@ const Navbar = ({ toggle }) => {
   const { language, setLanguage } = useContext(langContext);
   setLanguage(val1);
   if (newsList.length === 0) return null;
-  console.log(newsList);
 
   return (
     <>
@@ -139,9 +138,7 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Resource-Reserve">
                       Resource and Reserve
                     </NavDropLinks>
-                    <NavDropLinks to="/Ore-Export">
-                      Ore Export
-                    </NavDropLinks>
+                    <NavDropLinks to="/Ore-Export">Ore Export</NavDropLinks>
                     <NavDropLinks to="/Power-Plant">Power Plant</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
@@ -154,7 +151,7 @@ const Navbar = ({ toggle }) => {
                   <DropDiv>
                     <NavDropLinks to="/QHSE">QHSE</NavDropLinks>
                     <NavDropLinks to="/Community-Activities">
-                    Community Activities
+                      Community Activities
                     </NavDropLinks>
                     <NavDropLinks to="/Reports">Reports</NavDropLinks>
                     <NavDropLinks to="/Awards">Awards</NavDropLinks>
@@ -170,9 +167,7 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Mission-Vision">
                       Mission, Vision and Value
                     </NavDropLinks>
-                    <NavDropLinks to="/Commitment">
-                      Commitment
-                    </NavDropLinks>
+                    <NavDropLinks to="/Commitment">Commitment</NavDropLinks>
                     <NavDropLinks to="/Subsidiary">
                       Company's Subsidiaries
                     </NavDropLinks>
@@ -193,9 +188,7 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Press-Release">
                       Press Release
                     </NavDropLinks>
-                    <NavDropLinks to="/Gallery">
-                      Gallery
-                    </NavDropLinks>
+                    <NavDropLinks to="/Gallery">Gallery</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
@@ -216,7 +209,6 @@ const Navbar = ({ toggle }) => {
                   }}
                 />
               </SearchField>
-              
             ) : (
               <Nulity></Nulity>
             )}
@@ -234,7 +226,10 @@ const Navbar = ({ toggle }) => {
                   })
                   .map((val, key) => {
                     return (
-                      <SearchLinked to={"/News/" + val._id} onClick={SearchedButton}>
+                      <SearchLinked
+                        to={"/News/" + val._id}
+                        onClick={SearchedButton}
+                      >
                         <p>{val.title_en}</p>
                       </SearchLinked>
                     );

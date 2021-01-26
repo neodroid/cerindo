@@ -62,7 +62,6 @@ const MediaComponent = (props) => {
   if (detailsNews.length === 0) return null;
   if (listNews.length === 0) return null;
 
-  console.log(detailsNews.news_en);
   return (
     <>
       <GlobalContent>

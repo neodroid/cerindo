@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
-import { NewsData } from "../../Data/News";
 import { communityService } from "../../../service/Community";
 import BusinessSideBarComponents from "../index";
 import {
@@ -44,13 +43,15 @@ const ActivityComponents = () => {
                       <ActivityImage src={data.image.url} />
                     </ActivityContainerPart>
                     <ActivityContainerPart wrt>
-                      <BoxContainer titlee>{ActivityLangTitle(data, language)}</BoxContainer>
+                      <BoxContainer titlee>
+                        {ActivityLangTitle(data, language)}
+                      </BoxContainer>
                       <BoxContainer>
                         {ActivityLangBody(data, language)}
                       </BoxContainer>
                     </ActivityContainerPart>
                     <ActivityContainerPart btn>
-                      <Activitybtn to={`/Activityscontainer/${data._id}`}>
+                      <Activitybtn to={`/Community-Activity/${data._id}`}>
                         Continue Reading
                       </Activitybtn>
                     </ActivityContainerPart>

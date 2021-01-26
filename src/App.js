@@ -19,7 +19,7 @@ import PowerPlant from "./pages/PowerPlant";
 import NewsRelease from "./pages/NewRelease";
 import NewsComponent from "./components/CorporateNewsComponents/NewsComponent";
 import Vismis from "./pages/Vismis";
-import Commitment from "./pages/Commitment"
+import Commitment from "./pages/Commitment";
 import Subsidiary from "./pages/Subsidiary";
 import BOD from "./pages/BOD";
 import Organization from "./pages/Organization";
@@ -31,7 +31,7 @@ import QHSE from "./pages/QHSE";
 import Activity from "./pages/Activity";
 import Reports from "./pages/Reports";
 import Award from "./pages/Award";
-import ActivityContentComponent from "./components/CorporateNewsComponents/NewsComponent"
+import ActivityContentComponent from "./components/SustainabilityComponents/ActivityComponents/ActivityContentComponents";
 import { langContext } from "./langContext";
 
 function App() {
@@ -49,13 +49,25 @@ function App() {
         <ScrollToTop />
         <GlobalFonts />
         <Sidebar isOpen={isOpen} toggle={toggle} />
-        <langContext.Provider value={{language, setLanguage}}>
+        <langContext.Provider value={{ language, setLanguage }}>
           <Navbar toggle={toggle} />
           <Switch>
             <Route path="/" component={Home} exact />
-            <Route path="/Nickle-Ore-Mining" component={NickleOreMining} exact />
-            <Route path="/Nickle-Cobalt-HPAL" component={NickleCobaltHPAL} exact />
-            <Route path="/Ferronickle-Smelting" component={FerronickleSmelting} exact />
+            <Route
+              path="/Nickle-Ore-Mining"
+              component={NickleOreMining}
+              exact
+            />
+            <Route
+              path="/Nickle-Cobalt-HPAL"
+              component={NickleCobaltHPAL}
+              exact
+            />
+            <Route
+              path="/Ferronickle-Smelting"
+              component={FerronickleSmelting}
+              exact
+            />
             <Route path="/Resource-Reserve" component={ResourceReserve} exact />
             <Route path="/Ore-Export" component={OreExport} exact />
             <Route path="/Power-Plant" component={PowerPlant} exact />
@@ -66,15 +78,22 @@ function App() {
             <Route path="/Commitment" component={Commitment} exact />
             <Route path="/Subsidiary" component={Subsidiary} exact />
             <Route path="/Board-of-Director" component={BOD} exact />
-            <Route path="/Organization-Structure" component={Organization} exact />
+            <Route
+              path="/Organization-Structure"
+              component={Organization}
+              exact
+            />
             <Route path="/History-Milestone" component={History} exact />
             <Route path="/Licenses-Concession" component={License} exact />
-            <Route path="/Career" component={Career} exact/>
-            <Route path="/QHSE" component={QHSE} exact/>
-            <Route path="/Community-Activities" component={Activity} exact/>
-            <Route path="/Reports" component={Reports} exact/>
-            <Route path="/Awards" component={Award} exact/>
-            <Route path="/Activityscontainer/:id" component={ActivityContentComponent} exact />
+            <Route path="/Career" component={Career} exact />
+            <Route path="/QHSE" component={QHSE} exact />
+            <Route path="/Community-Activities" component={Activity} exact />
+            <Route path="/Reports" component={Reports} exact />
+            <Route path="/Awards" component={Award} exact />
+            <Route
+              path="/Community-Activity/:id"
+              component={ActivityContentComponent}
+            />
           </Switch>
         </langContext.Provider>
 

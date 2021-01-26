@@ -4,26 +4,28 @@ import { OrganizationHead } from "../components/Data/AboutusData/OrganizationDat
 import OrganizationComponents from "../components/AboutUsComponents/OrganizationComponents";
 import { aboutUsService } from "../service/Aboutus";
 const Organization = () => {
-  const [banner, setBanner] = useState([]);
+  const [organization, setOrganization] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await aboutUsService.getListAboutUs();
       const data = response.data;
-      setBanner(data.aboutUsBanner);
+      setOrganization(data.organizationStructure);
     };
     fetchData();
   }, []);
-
-  if (banner.length === 0) {
-    return null;
-  }
+  if (organization.length === 0) return null;
   return (
     <>
-      <Banner
-        img={banner[3].url}
-        heading="ORGANIZATION STRUCTURE"
-        lightText={true}
-      />
+      {organization.banner.map((data, idx) => {
+        return (
+          <Banner
+            img={data.url}
+            lightText={true}
+            heading="ORGANIZATION STRUCTURE"
+            key={idx}
+          />
+        );
+      })}
       <OrganizationComponents />
     </>
   );

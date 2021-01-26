@@ -6,30 +6,30 @@ import {
   AboutSideBarContent,
 } from "../AboutUsElements";
 import AboutSideBarComponents from "../index";
-import { LicenseData, ConcessionData } from "../../Data/AboutusData/LicenseDatas";
 import { aboutUsService } from "../../../service/Aboutus";
 import {
-  LicWrapped,ConcessionImage,
+  LicWrapped,
+  ConcessionImage,
   LicContent,
   LicBoxWrited,
   AwardContent,
   ConcessionExp,
-  LicContents,ConcessionWrited,
+  LicContents,
+  ConcessionWrited,
   ConcessionContent,
-  ImageCentered
+  ImageCentered,
 } from "./LicenseElements";
 
 import { langContext } from "../../../langContext";
-import { LicenseTitle, LicenseContent } from './LicenseLang';
 
 const LicenseComponents = () => {
-  const {language} = useContext(langContext);
+  const { language } = useContext(langContext);
   const [license, setLicense] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await aboutUsService.getListAboutUs();
       const data = response.data;
-      setLicense(data.license_and_award);
+      setLicense(data.license_and_concession);
     };
     fetchData();
   }, []);
@@ -40,37 +40,37 @@ const LicenseComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page7={true}/>
+        <AboutSideBarComponents page7={true} />
         <AboutMain>
           <LicWrapped>
-            {LicenseData.map((data, idx) => {
-                return (
-                  <LicContents wrap key={idx}>
-                    <LicContent>
-                      <LicContent wrap>
-                        <LicBoxWrited title>{data.title}</LicBoxWrited>
-                        <LicBoxWrited>{data.content}</LicBoxWrited>
-                      </LicContent>
+            {license.license.map((data, idx) => {
+              return (
+                <LicContents wrap key={idx}>
+                  <LicContent>
+                    <LicContent wrap>
+                      <LicBoxWrited title>{data.title_en}</LicBoxWrited>
+                      <LicBoxWrited>{data.content_en}</LicBoxWrited>
                     </LicContent>
-                  </LicContents>
-                );
+                  </LicContent>
+                </LicContents>
+              );
             })}
             <AwardContent>
               <h2>Concession Area</h2>
-              {ConcessionData.map((data,idx)=>{
-                return(
+              {license.Concession.map((data, idx) => {
+                return (
                   <>
-                  <ImageCentered src={data.imageCenter} />
-                  <ConcessionExp>
-                    <ConcessionContent>
-                      <ConcessionWrited>{data.desc}</ConcessionWrited>
-                    </ConcessionContent>
-                    <ConcessionContent>
-                      <ConcessionImage src={data.imageSide}/>
-                    </ConcessionContent>
-                  </ConcessionExp>
+                    <ImageCentered src={data.concession_images[0].url} />
+                    <ConcessionExp>
+                      <ConcessionContent>
+                        <ConcessionWrited>{data.body_en}</ConcessionWrited>
+                      </ConcessionContent>
+                      <ConcessionContent>
+                        <ConcessionImage src={data.concession_images[1].url} />
+                      </ConcessionContent>
+                    </ConcessionExp>
                   </>
-                )
+                );
               })}
             </AwardContent>
           </LicWrapped>

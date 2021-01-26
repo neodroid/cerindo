@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Aboutstyle,
-  AboutMain,
-} from "../AboutUsElements";
+import { Aboutstyle, AboutMain } from "../AboutUsElements";
 import AboutSideBarComponents from "../index";
 import { aboutUsService } from "../../../service/Aboutus";
 import { ValuesData, VismisData } from "../../Data/AboutusData/VismisDatas";
@@ -12,8 +9,10 @@ import {
   VismisApart,
   VismisImagePart,
   ValueContent,
-  ValueWrite,ValuePartexp,
-  Valuexp,ValuesWrited,
+  ValueWrite,
+  ValuePartexp,
+  Valuexp,
+  ValuesWrited,
   Valuexpwrited,
   Angle,
 } from "./VismisElements";
@@ -33,30 +32,28 @@ const VismisComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page1={true}/>
+        <AboutSideBarComponents page1={true} />
         <AboutMain>
           <VismisContent>
             <VismisApart>
-            <VismisWrited title>
-                Vision
-              </VismisWrited>
+              <VismisWrited title>Vision</VismisWrited>
               <VismisWrited>{MVV.Vision_Description}</VismisWrited>
             </VismisApart>
             <VismisApart>
-            <VismisWrited title>Mission</VismisWrited>
+              <VismisWrited title>Mission</VismisWrited>
               <VismisWrited>{MVV.Mission_description}</VismisWrited>
             </VismisApart>
           </VismisContent>
           <ValueContent>
             <h1>Value</h1>
             <ValueWrite choose>C.E.R.I.A</ValueWrite>
-            {ValuesData.map((data,idx)=>{
-              return(
+            {MVV.ceriaValue.map((data, idx) => {
+              return (
                 <ValuePartexp key={idx}>
-                  <ValuesWrited title>{data.title}</ValuesWrited>
-                  <ValuesWrited>{data.explanation}</ValuesWrited>
+                  <ValuesWrited title>{data.value}</ValuesWrited>
+                  <ValuesWrited>{data.value_description}</ValuesWrited>
                 </ValuePartexp>
-              )
+              );
             })}
           </ValueContent>
         </AboutMain>

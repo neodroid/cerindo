@@ -20,7 +20,7 @@ import {
   PhaseWritedApart,
   SubsidiaryExp,
   Images,
-  SubsExpCon
+  SubsExpCon,
 } from "./SubsidiaryElements";
 import { langContext } from "../../../langContext";
 import { SubsidiaryLang } from "./SubsidiaryLang";
@@ -42,15 +42,17 @@ const SubsidiaryComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page3={true}/>
+        <AboutSideBarComponents page3={true} />
         <AboutMain>
           <SubsidiaryContent>
-            <Images
-              src={detailSubsidiary.company_subsidiary_image.url}
-            />
-            <SubsidiaryExp>As of 21 January 2021</SubsidiaryExp> {/*Tanggal di sini*/}
+            <Images src={detailSubsidiary.company_subsidiary_image.url} />
+            <SubsidiaryExp>As of {detailSubsidiary.date}</SubsidiaryExp>{" "}
+            {/*Tanggal di sini*/}
             <SubsExpCon>
-            <SubsidiaryExp><strong>Disclaimer</strong>{SubsidiaryLang(detailSubsidiary, language)}</SubsidiaryExp>
+              <SubsidiaryExp>
+                <strong>Disclaimer</strong>
+                {SubsidiaryLang(detailSubsidiary, language)}
+              </SubsidiaryExp>
             </SubsExpCon>
           </SubsidiaryContent>
         </AboutMain>

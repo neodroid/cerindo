@@ -4,26 +4,28 @@ import { LicenseHead } from "../components/Data/AboutusData/LicenseDatas";
 import LicenseComponents from "../components/AboutUsComponents/LicenseComponents";
 import { aboutUsService } from "../service/Aboutus";
 const License = () => {
-  const [banner, setBanner] = useState([]);
+  const [license, setLicense] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await aboutUsService.getListAboutUs();
       const data = response.data;
-      setBanner(data.aboutUsBanner);
+      setLicense(data.license_and_concession);
     };
     fetchData();
   }, []);
-
-  if (banner.length === 0) {
-    return null;
-  }
+  if (license.length === 0) return null;
   return (
     <>
-      <Banner
-        img={banner[6].url}
-        heading="LICENSES AND CONCESSION"
-        lightText={true}
-      />
+      {license.banner.map((data, idx) => {
+        return (
+          <Banner
+            img={data.url}
+            lightText={true}
+            heading="LICENSE AND CONCESSION"
+            key={idx}
+          />
+        );
+      })}
       <LicenseComponents />
     </>
   );

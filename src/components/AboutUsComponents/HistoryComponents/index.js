@@ -10,7 +10,8 @@ import AboutSideBarComponents from "../index";
 import { aboutUsService } from "../../../service/Aboutus";
 import {
   HistoryData,
-  MilestoneData,ComplianceData
+  MilestoneData,
+  ComplianceData,
 } from "../../Data/AboutusData/HistoryDatas";
 import {
   HisWrapped,
@@ -20,13 +21,16 @@ import {
   MilesBoxContent,
   MilesBoxApart,
   MilesYearContent,
-  Birght,Images,
+  Birght,
+  Images,
   MilesImage,
   MilesImageDesc,
   Opac,
   HisContents,
-  HisImage,ImagWrited,
-  HisImageApart,ImagePart,
+  HisImage,
+  ImagWrited,
+  HisImageApart,
+  ImagePart,
 } from "./HistoryElements";
 
 import { langContext } from "../../../langContext";
@@ -53,25 +57,25 @@ const HistoryComponents = () => {
         <AboutMain>
           <HisWrapped>
             {historyMileStone.histories.map((data, idx) => {
-                return (
-                  <HisContents wrap key={idx}>
-                    <HisContent>
-                      <HisContent wrap>
-                        <HisBoxWrited title>
-                          {HistoryLangTitle(data, language)}
-                        </HisBoxWrited>
-                        <HisBoxWrited>
-                          {HistoryLangDesc(data, language)}
-                        </HisBoxWrited>
-                      </HisContent>
+              return (
+                <HisContents wrap key={idx}>
+                  <HisContent>
+                    <HisContent wrap>
+                      <HisBoxWrited title>
+                        {HistoryLangTitle(data, language)}
+                      </HisBoxWrited>
+                      <HisBoxWrited>
+                        {HistoryLangDesc(data, language)}
+                      </HisBoxWrited>
                     </HisContent>
-                  </HisContents>
-                );
+                  </HisContent>
+                </HisContents>
+              );
             })}
             <MilestoneContent>
-              <ImagWrited>Compliance and Development Timelines</ImagWrited>
+              <ImagWrited>{historyMileStone.Timeline[0].title_en}</ImagWrited>
               <ImagePart>
-                <Images src={ComplianceData.image} />
+                <Images src={historyMileStone.Timeline[0].Timeline.url} />
               </ImagePart>
               <h2>Milestone</h2>
               {historyMileStone.milestone.map((data, idx) => {

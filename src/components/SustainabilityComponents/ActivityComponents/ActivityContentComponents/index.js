@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { NewsData } from "../../Data/News";
+import { communityService } from "../../../../service/Community";
 import {
   TitleContent,
   BoxContainer,
@@ -13,9 +13,9 @@ import {
   GlobalContent,
 } from "../../../CorporateNewsComponents/NewsComponent/NewsElements";
 
-const ManageOthArtData = ({ image, title, date }) => {
+const ManageOthArtData = ({ image, id, date, title }) => {
   return (
-    <Linked to={`/News/${title}`}>
+    <Linked to={`/Community-Activity/${id}`}>
       <BlogApart art>
         <BlogDivApart imagart>
           <BlogImageArt src={image} />
@@ -33,40 +33,53 @@ const ManageOthArtData = ({ image, title, date }) => {
   );
 };
 
-const ActivityContentComponent = ({match}) => {
-    const newss = NewsData.filter(x => x['_id'] == match.params._id)
-    function shuffleArray(array){
-        array.sort(function(){
-            return 0.5-Math.random();
-        });
-    }
-    shuffleArray(NewsData);
+const ActivityContentComponent = (props) => {
+  const [detailsCommunity, setDetailsCommunity] = useState([]);
+  const [listCommunity, setListCommunity] = useState([]);
+  const fetchDataDetails = async () => {
+    const response = await communityService.getDetailCommunity(
+      props.match.params.id
+    );
+    const data = response.data;
+    setDetailsCommunity(data);
+  };
+  const fetchDataList = async () => {
+    const response = await communityService.getListCommunity();
+    const data = response.data;
+    setListCommunity(data);
+  };
+  console.log(props);
+
+  useEffect(() => {
+    fetchDataDetails();
+    fetchDataList();
+  }, []);
+  if (detailsCommunity.length === 0) return null;
+  if (listCommunity.length === 0) return null;
+
   return (
     <>
       <GlobalContent>
         <BlogApart containe>
           <BlogDivApart contain>
-            <TitleContent>
-              {newss.title}
-            </TitleContent>
+            <TitleContent>{detailsCommunity.title_en}</TitleContent>
             <BlogWrapped image>
-              <BlogImage src={newss.image} />
+              <BlogImage src={detailsCommunity.image.url} />
             </BlogWrapped>
             <BlogWrapped>
-              <BoxContainer>
-                {newss.content}
-              </BoxContainer>
+              <BoxContainer>{detailsCommunity.news_en}</BoxContainer>
             </BlogWrapped>
           </BlogDivApart>
           <BlogDivApart>
             <TitleContent art>Other Article</TitleContent>
             <ArticlePart>
-              {NewsData.map((data, idx) => (
+              {listCommunity.map((data, idx) => (
                 <ManageOthArtData
                   key={idx}
-                  image={data.image}
-                  title={data.title}
+                  image={data.image.url}
+                  id={data._id}
                   date={data.date}
+                  title={data.title_en}
                 />
               ))}
             </ArticlePart>
