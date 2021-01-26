@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import { NewsData } from "../../../Data/News";
+import { NewsData,AnnouncementData } from "../../../Data/News";
+import {
+  Aboutstyle,
+  AboutMain,
+} from "../../../AboutUsComponents/AboutUsElements";
+import AboutSideBarComponents from "../../../AboutUsComponents/index";
 import { newsService } from "../../../../service/News";
 import {
   NewsContent,
@@ -8,8 +13,11 @@ import {
   NewsImage,
   Newsbtn,
   BoxWrapper,
-  NewsContainerPart,
-  Pagination,
+  NewsContainerPart,AnnounContent,
+  Pagination,NewsWrapped,AnnounWrapped,
+  AnnounApart,
+  AnnounWrited,ChoisenDesc,
+  Warned,Nulity,ChoisenNews
 } from "./NewsContentElements";
 import { langContext } from "../../../../langContext";
 import { NewsLangContent, NewsLangTitle } from "./NewsContentLang";
@@ -36,13 +44,19 @@ import { NewsLangContent, NewsLangTitle } from "./NewsContentLang";
 
 const NewsContentComponents = () => {
   const { language } = useContext(langContext);
+  const [selected, setSelected] = useState(false)
   const [newsData, setNewsData] = useState([]);
+  
+  function Clicked() {
+    setSelected(!selected)
+  }
   useEffect(() => {
     const fetchData = async () => {
       const response = await newsService.getListNews();
       const data = response.data;
       setNewsData(data);
     };
+    Clicked()
     fetchData();
   }, []);
 
@@ -61,37 +75,106 @@ const NewsContentComponents = () => {
   if (newsData.length === 0) return null;
 
   return (
-    <>
-      <NewsContent>
-        {newsData.map((data) => {
-          return (
-            <NewsBox>
-              <BoxWrapper>
-                <NewsContainerPart>
-                  <NewsImage src={data.news_img.url} />
-                </NewsContainerPart>
-                <NewsContainerPart wrt>
-                  <BoxContainer titlee>
-                    {NewsLangTitle(data, language)}
-                  </BoxContainer>
-                  <BoxContainer>{NewsLangContent(data, language)}</BoxContainer>
-                </NewsContainerPart>
-                <NewsContainerPart btn>
-                  <Newsbtn to={`/News/${data._id}`}>Continue Reading</Newsbtn>
-                </NewsContainerPart>
-              </BoxWrapper>
-            </NewsBox>
-          );
+    <Aboutstyle>
+      <AboutSideBarComponents page8={true}/>
+      <AboutMain>
+        <NewsWrapped>
+        <h2>Announcement</h2>
+        {AnnouncementData.map((data,idx)=>{
+          return(
+            <>
+            <AnnounWrapped key={idx}>
+              <AnnounContent>
+                <AnnounApart>
+                  <AnnounWrited>{data.content}</AnnounWrited>
+                </AnnounApart>
+                {data.warning ?
+                <AnnounApart warned>
+                  <Warned alt="warned"/>
+                </AnnounApart>
+                :
+                <Nulity></Nulity>}
+              </AnnounContent>
+            </AnnounWrapped>
+            </>
+          )
         })}
-      </NewsContent>
-      <Pagination>
-        <a>&laquo;</a>
-        <a>1</a>
-        <a>2</a>
-        <a>3</a>
-        <a>&raquo;</a>
-      </Pagination>
-    </>
+        {selected ? (
+          <>
+        <ChoisenNews>
+          <ChoisenDesc choose onClick={Clicked}>News</ChoisenDesc>
+          <ChoisenDesc onClick={Clicked}>Ceria in Media</ChoisenDesc>
+        </ChoisenNews>
+        <NewsContent>
+          {newsData.map((data,idx) => {
+            return (
+              <NewsBox key={idx}>
+                <BoxWrapper>
+                  <NewsContainerPart>
+                    <NewsImage src={data.news_img.url} />
+                  </NewsContainerPart>
+                  <NewsContainerPart wrt>
+                    <BoxContainer titlee>
+                      {NewsLangTitle(data, language)}
+                    </BoxContainer>
+                    <BoxContainer>{NewsLangContent(data, language)}</BoxContainer>
+                  </NewsContainerPart>
+                  <NewsContainerPart btn>
+                    <Newsbtn to={`/News/${data._id}`}>Continue Reading</Newsbtn>
+                  </NewsContainerPart>
+                </BoxWrapper>
+              </NewsBox>
+            );
+          })}
+        </NewsContent>
+        {/*<Pagination>
+          <a>&laquo;</a>
+          <a>1</a>
+          <a>2</a>
+          <a>3</a>
+          <a>&raquo;</a>
+        </Pagination>*/}
+        </>
+        ) : (
+          <>
+        <ChoisenNews>
+          <ChoisenDesc onClick={Clicked}>News</ChoisenDesc>
+          <ChoisenDesc choose onClick={Clicked}>Ceria in Media</ChoisenDesc>
+        </ChoisenNews>
+        <NewsContent>
+          {NewsData.map((data,idx) => {
+            return (
+              <NewsBox key={idx}>
+                <BoxWrapper>
+                  <NewsContainerPart>
+                    <NewsImage src={data.image} />
+                  </NewsContainerPart>
+                  <NewsContainerPart wrt>
+                    <BoxContainer titlee>
+                      {data.title}
+                    </BoxContainer>
+                    <BoxContainer>{data.description}</BoxContainer>
+                  </NewsContainerPart>
+                  <NewsContainerPart btn>
+                    <Newsbtn to={`/Media/${data._id}`}>Continue Reading</Newsbtn>
+                  </NewsContainerPart>
+                </BoxWrapper>
+              </NewsBox>
+            );
+          })}
+        </NewsContent>
+        {/*<Pagination>
+          <a>&laquo;</a>
+          <a>1</a>
+          <a>2</a>
+          <a>3</a>
+          <a>&raquo;</a>
+        </Pagination>*/}
+        </>
+        )}
+        </NewsWrapped>
+      </AboutMain>
+    </Aboutstyle>
   );
 };
 

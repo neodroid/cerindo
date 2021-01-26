@@ -75,7 +75,7 @@ export const ActivityImage = styled.img`
     width: 216px;
     height: 216px;
     @media screen and (max-width: 610px) {
-        width: 95%;
+        width: 120px;
         max-height: 120px;
     }
 `;

@@ -9,7 +9,7 @@ import bbc from "../../images/image 34.png";
 
 export const NReleaseBanner = {
     img: require("../../images/press.png"),
-    heading: "PRESS",
+    heading: "PRESS RELEASE",
   lightText: true,
 };
 
@@ -19,6 +19,17 @@ export const NewsMediaData = [
     {"image":times},
     {"image":cnn},
     {"image":bbc},
+]
+
+export const AnnouncementData = [
+    {
+        "content" : "COVID - 19 Situation",
+        "warning" : true,
+    },
+    {
+        "content" : "Ceria New Head Office Location ",
+        "warning" : false,
+    },
 ]
 
 export const NewsData = [

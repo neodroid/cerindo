@@ -67,7 +67,7 @@ const Sidebar = ({ isOpen, toggle }) => {
           <SidebarLink to="/QHSE" onClick={toggle}>
           QHSE
           </SidebarLink>
-          <SidebarLink to="/Community-Activity" onClick={toggle}>
+          <SidebarLink to="/Community-Activities" onClick={toggle}>
           Community Activity
           </SidebarLink>
           <SidebarLink to="/Report" onClick={toggle}>

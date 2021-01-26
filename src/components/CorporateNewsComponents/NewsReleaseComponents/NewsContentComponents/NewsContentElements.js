@@ -1,62 +1,49 @@
 import styled from "styled-components";
 import {Link as LinkR} from "react-router-dom";
+import { AiFillWarning} from "react-icons/ai";
 
 export const NewsContent = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto;
+display: grid;
+grid-template-columns: auto auto auto;
+grid-template-rows: auto auto;
+grid-gap: 20px;
+padding: 10px;
+margin-left: 10px;
+align-items: center;
+@media screen and (max-width: 1015px) {
+    grid-template-columns: auto auto;
     grid-template-rows: auto auto;
-    grid-gap: 25px;
-    padding: 5px;
-    width: 900px;
-    margin: 50px auto;
-    @media screen and (max-width: 930px) {
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto;
-        grid-gap: 10px;
-        width: 700px;
-        margin: 0 auto;
-    }
-    @media screen and (max-width: 719px) {
-        grid-template-columns: auto auto;
-        grid-template-rows: auto;
-        grid-gap: 10px;
-        width: 500px;
-        margin: 0 auto;
-    }
-    @media screen and (max-width: 594px) {
-        grid-template-columns: 50% 50%;
-        grid-template-rows: auto;
-        grid-gap: 5px;
-        width: 100%;
-        margin: 0 auto;
-    }
+  }
+@media screen and (max-width: 610px) {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    padding: 0;
+    grid-gap: 30px;
+    margin-left: -15px;
+}
 `;
 
 export const NewsBox = styled.div`
-    width: 290px;
-    height: 433px;
-    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+width: 250px;
+height: 450px;
+box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.2);
+border-radius: 5px;
+&:hover {
+    transition: 0.2s ease-in-out;
+    transform: scale(1.05);
+    }
+@media screen and (max-width: 1015px) {
+    margin: 0 auto;
+}
+@media screen and (max-width: 610px) {
+    width: 150px;
+    height: 350px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.25);
     &:hover {
         transition: 0.2s ease-in-out;
-        transform: scale(1.05);
-    };
-    @media screen and (max-width: 930px) {
-        margin: 10px auto;
-        width: 260px;
-    }
-    @media screen and (max-width: 594px) {
-        width: 200px;
-    }
-    @media screen and (max-width: 403px) {
-        width: 150px;
-        height: 350px;
-        box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.25);
-        &:hover {
-            transition: 0.2s ease-in-out;
-            transform: scale(1.01);
-            }
-    }
+        transform: scale(1.01);
+        }
+}
 `;
 
 export const BoxWrapper = styled.div`
@@ -78,19 +65,13 @@ export const BoxContainer = styled.p`
 `;
 
 export const NewsImage = styled.img`
-    z-index: 3;
-    width: 260px;
-    height: 179px;
-    @media screen and (max-width: 930px) {
-        width: 230px;
-    }
-    @media screen and (max-width: 594px) {
-        width: 170px;
-    }
-    @media screen and (max-width: 403px) {
-        width: 120px;
-        max-height: 120px;
-    }
+z-index: 3;
+width: 216px;
+height: 216px;
+@media screen and (max-width: 610px) {
+    width: 120px;
+    max-height: 130px;
+}
 `;
 
 export const NewsContainerPart = styled.div`
@@ -102,30 +83,25 @@ export const NewsContainerPart = styled.div`
 `;
 
 export const Newsbtn = styled(LinkR)`
-    font-weight: bold;
+margin: 10px 0;
+border-radius: 5px;
+background: #EFB401;
+padding: 8px 32px;
+color: #fff;
+font-size: 16px;
+outline: none;
+border: none;
+cursor: pointer;
+text-decoration: none;
+&:hover {
+    transition: all 0.2s ease-in-out;
+    opacity: 50%;
+}
+@media screen and (max-width: 610px) {
     font-size: 12px;
-    line-height: 30px;
-    border-radius: 5px;
-    background: #EFB401;
-    padding: 8px 75px;
-    color: #fff;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    &:hover {
-        transition: all 0.2s ease-in-out;
-        opacity: 50%;
-    }
-    @media screen and (max-width: 930px) {
-        padding: 8px 60px;
-    }
-    @media screen and (max-width: 594px) {
-        padding: 8px 10px;
-    }
-    @media screen and (max-width: 403px) {
-        padding: 5px;
-    }
+    margin: 30px 0;
+    padding: 5px;
+}
 `;
 
 export const Pagination = styled.div`
@@ -145,5 +121,74 @@ export const Pagination = styled.div`
         :hover{
             background-color: #ddd;
         }
+    }
+`;
+
+export const NewsWrapped = styled.div`
+margin: 20px;
+h2{
+    font-size: 26px;
+    line-height: 50px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+`;
+
+export const AnnounWrapped = styled.div`
+width: 100%;
+background: #FFFFFF;
+border: 1px solid #E1E1E1;
+box-sizing: border-box;
+box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+margin-bottom: 15px;
+&:hover{
+    transform: scale(1.03);
+    transition: 0.6s ease-in;
+};
+`;
+
+export const AnnounContent = styled.div`
+    display: flex;
+    padding: 15px;
+`;
+
+export const AnnounApart = styled.div`
+    flex-basis: ${(props) => (props.warned ? "10%" : "90%")};
+    align-self: center;
+    text-align: ${(props) => (props.warned ? "right" : "left")};
+`;
+export const AnnounWrited = styled.div`
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 28px;
+    color: #111111;
+`;
+export const Warned = styled(AiFillWarning)`
+    color: #EFB401;
+    font-size: 30px;
+`;
+
+export const Nulity = styled.div`display: none`;
+
+export const ChoisenNews = styled.div`
+    display: flex;
+    margin: 30px auto;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+`;
+
+export const ChoisenDesc = styled.div`
+    color: ${(props)=>(props.choose ? "#EFB401" : "#C4C4C4")};
+    border-bottom: ${(props)=>(props.choose ? "10px solid #EFB401" : "10px solid #C4C4C4")};
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 50px;
+    width: 300px;
+    cursor: pointer;
+    @media screen and (max-width: 480px) {
+        font-size: 14px;
+        border-bottom: ${(props)=>(props.choose ? "8px solid #EFB401" : "8px solid #C4C4C4")};
     }
 `;

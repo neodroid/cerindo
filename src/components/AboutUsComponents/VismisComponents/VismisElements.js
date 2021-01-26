@@ -2,9 +2,8 @@ import styled from "styled-components";
 import Carousel from "react-elastic-carousel";
 
 export const VismisContent = styled.div`
-    border-bottom: 2px solid #E0E0E0;
     display: flex;
-    margin: 1px 40px;
+    margin: 1px 20px;
     @media screen and (max-width: 820px) {
         flex-direction: column;
         margin: 0 auto;
@@ -12,14 +11,12 @@ export const VismisContent = styled.div`
 `;
 
 export const VismisApart = styled.div`
-    flex-basis: ${(props) => (props.writed ? "60%" : "30%")};
-    margin: ${(props) => (props.writed ? "5px 30px" : "5px 20px 0px")};
+    flex-basis: 50%;
+    margin: 20px;
     align-self: center;
 `;
 
 export const VismisWrited = styled.div`
-    font-style: normal;
-    text-align: ${(props) => (props.vision ? "right" : "left")};
     font-weight: ${(props) => (props.title ? "bold" : "normal")};
     font-size: ${(props) => (props.title ? "26px" : "14px")};
     line-height: ${(props) => (props.title ? "50px" : "24px")};
@@ -33,28 +30,41 @@ export const VismisImagePart = styled.div`
 `;
 
 export const ValueContent = styled.div`
-    margin: 15px auto;
-    text-align: center;
+    margin: 15px 40px;
     h1 {
         font-weight: bold;
         font-size: 26px;
         line-height: 50px;
         color: #333333;
     }
+    @media screen and (max-width: 820px) {
+        margin: 15px 20px;
+    }
 `;
 
 export const ValueWrite = styled.div`
-    display: inline-block;
     font-weight: 900;
     font-size: 50px;
     line-height: 40px;
+    text-align:center;
+    margin-bottom: 30px;
     color: ${(props) => (props.choose ? "#EFB401" : "#e0e0e0")};
     margin: 30px 0;
     @media screen and (max-width: 820px) {
         font-size: 30px;
     }
+`; 
+export const ValuePartexp = styled.div`margin-bottom: 25px;`;
+export const ValuesWrited = styled.div`
+    font-weight: ${(props) => (props.title ? "bold" : "normal")};
+    font-size: ${(props) => (props.title ? "20px" : "14px")};
+    line-height: ${(props) => (props.title ? "36px" : "24px")};
+    color: ${(props) => (props.title ? "#333333" : "#111111")};
+    margin-bottom: ${(props) => (props.title ? "5px" : "0")};
+    @media screen and (max-width: 820px) {
+        font-size: ${(props) => (props.title ? "18px" : "14px")};
+    }
 `;
-
 export const Valuexp = styled.div`
     background: #F2F2F2;
     border-radius: 100px;

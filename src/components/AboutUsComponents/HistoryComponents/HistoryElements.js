@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BsCircleFill } from "react-icons/bs";
 
 export const HisWrapped = styled.div`
-margin: 50px 20px 10px;
+margin: 20px 20px 10px;
 @media screen and (max-width: 882px) {
     margin: 5px auto;
 }
@@ -21,7 +21,6 @@ export const HisContent = styled.div`
     flex-direction: ${(props)=>(props.wrap ? "column" : "row")};
     width: ${(props)=>(props.wrap ? "90%" : "100%")};
     padding: ${(props)=>(props.wrap ? "0" : "15px 0")};
-    border-bottom: ${(props)=>(props.wrap ? "none" : "2px solid #E0E0E0")};
     @media screen and (max-width: 882px) {
         flex-direction: ${(props)=>(props.wrap ? "column" : "column")};
         width: 100%;
@@ -41,13 +40,13 @@ export const HisImage = styled.img`
     }
 `;
 
-export const HisBoxContent = styled.div`flex-basis: 50%;`;
-
 export const HisBoxWrited = styled.div`
     font-weight: ${(props)=>(props.title ? "bold":"normal")};
     font-size: ${(props)=>(props.title ? "26px":"13px")};
     line-height: ${(props)=>(props.title ? "50px":"20px")};
     margin: 0 20px;
+    white-space: pre-line;  
+    vertical-align: bottom;
 `;
 
 export const MilestoneContent = styled.div`
@@ -140,4 +139,22 @@ export const MilesImageDesc = styled.div`
 export const Opac = styled.div`
     display:flex;
     flex-basis:50%;
+`;
+
+export const Images = styled.img`
+    width: 758px;
+`;
+export const ImagWrited = styled.div`
+font-weight: bold;
+font-size: 26px;
+line-height: 50px;
+margin-top: 15px;
+`;
+export const ImagePart = styled.div`
+    margin-bottom: 50px;
+    width: 758px;
+    @media screen and (max-width: 900px) {
+        overflow-x: auto;
+        width: 100%;
+    }
 `;

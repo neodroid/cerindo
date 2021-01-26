@@ -32,7 +32,7 @@ const BODComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page3={true} />
+        <AboutSideBarComponents page4={true} />
         <AboutMain>
           <Bodwrapped>
             <Masonries>

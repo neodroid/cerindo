@@ -25,7 +25,7 @@ const OrganizationComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page4={true}/>
+        <AboutSideBarComponents page5={true}/>
         <AboutMain>
           <OrgWrapped>
             <Imagess

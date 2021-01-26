@@ -10,7 +10,7 @@ import AboutSideBarComponents from "../index";
 import { aboutUsService } from "../../../service/Aboutus";
 import {
   HistoryData,
-  MilestoneData,
+  MilestoneData,ComplianceData
 } from "../../Data/AboutusData/HistoryDatas";
 import {
   HisWrapped,
@@ -20,13 +20,13 @@ import {
   MilesBoxContent,
   MilesBoxApart,
   MilesYearContent,
-  Birght,
+  Birght,Images,
   MilesImage,
   MilesImageDesc,
   Opac,
   HisContents,
-  HisImage,
-  HisImageApart,
+  HisImage,ImagWrited,
+  HisImageApart,ImagePart,
 } from "./HistoryElements";
 
 import { langContext } from "../../../langContext";
@@ -49,11 +49,10 @@ const HistoryComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page5={true} />
+        <AboutSideBarComponents page6={true} />
         <AboutMain>
           <HisWrapped>
             {historyMileStone.histories.map((data, idx) => {
-              if (idx % 2 === 0) {
                 return (
                   <HisContents wrap key={idx}>
                     <HisContent>
@@ -65,33 +64,15 @@ const HistoryComponents = () => {
                           {HistoryLangDesc(data, language)}
                         </HisBoxWrited>
                       </HisContent>
-                      <HisImageApart>
-                        <HisImage src={data.history_image.url} />
-                      </HisImageApart>
                     </HisContent>
                   </HisContents>
                 );
-              } else {
-                return (
-                  <HisContents wrap key={idx}>
-                    <HisContent>
-                      <HisImageApart>
-                        <HisImage src={data.history_image.url} />
-                      </HisImageApart>
-                      <HisContent wrap>
-                        <HisBoxWrited title>
-                          {HistoryLangTitle(data, language)}
-                        </HisBoxWrited>
-                        <HisBoxWrited>
-                          {HistoryLangDesc(data, language)}
-                        </HisBoxWrited>
-                      </HisContent>
-                    </HisContent>
-                  </HisContents>
-                );
-              }
             })}
             <MilestoneContent>
+              <ImagWrited>Compliance and Development Timelines</ImagWrited>
+              <ImagePart>
+                <Images src={ComplianceData.image} />
+              </ImagePart>
               <h2>Milestone</h2>
               {historyMileStone.milestone.map((data, idx) => {
                 return (

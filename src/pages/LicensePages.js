@@ -21,7 +21,7 @@ const License = () => {
     <>
       <Banner
         img={banner[6].url}
-        heading="LICENSE AND AWARDS"
+        heading="LICENSES AND CONCESSION"
         lightText={true}
       />
       <LicenseComponents />

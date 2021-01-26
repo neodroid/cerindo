@@ -16,9 +16,12 @@ export const HistoryData = [
     {
         "title":"Ceria is fully owned by Indonesian share holder",
         "content":"Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis et lectus tellus mi varius commodo nulla. Suspendisse accumsan, dui morbi vitae augue risus lectus. Velit magna id nunc, aliquam suscipit lorem. Habitant felis commodo viverra.",
-        "image":sharehold,
     },
 ];
+
+export const ComplianceData = {
+    "image" : require("../../../images/image58.png"),
+}
 
 export const MilestoneData = [
     {

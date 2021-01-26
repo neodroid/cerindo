@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const LicWrapped = styled.div`
-margin: 50px 20px 10px;
+margin: 20px 10px 10px;
 @media screen and (max-width: 882px) {
     margin: 10px auto;
 }`;
 export const LicContent = styled.div`
     display: flex;
     flex-direction: ${(props)=>(props.wrap ? "column" : "row")};
-    border-bottom: ${(props)=>(props.wrap ? "none" : "2px solid #E0E0E0")};
     width: ${(props)=>(props.wrap ? "90%" : "100%")};
     padding: ${(props)=>(props.wrap ? "0" : "15px 0")};
     @media screen and (max-width: 882px) {
@@ -22,7 +21,6 @@ export const LicImage = styled.img`
         width: 250px;
     }
 `;
-export const LicBoxContent = styled.div`flex-basis: 50%;`;
 export const LicContents = styled.div`
 display: flex;
 flex-direction: column;
@@ -40,27 +38,58 @@ text-align:center;
 
 export const LicBoxWrited = styled.div`
     font-weight: ${(props)=>(props.title ? "bold":"normal")};
-    font-size: ${(props)=>(props.title ? "26px":"13px")};
-    line-height: ${(props)=>(props.title ? "50px":"20px")};
+    font-size: ${(props)=>(props.title ? "26px":"14px")};
+    line-height: ${(props)=>(props.title ? "50px":"24px")};
     margin: 0 20px;
+    white-space: pre-line;  
+    vertical-align: bottom;
 `;
 
 export const AwardContent=styled.div`
     margin: 10px 20px;
+    h2{
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 50px;
+        color: #111111;
+    }
 `;
 
-export const Figured = styled.figure`
-    margin: 15px 10px 10px;
-    img {
-        width: 356px;
-        @media screen and (max-width: 882px) {
-            width:250px;
-        }
+export const ImageCentered = styled.img`
+    width: 711px;
+    @media screen and (max-width: 874px) {
+        width: 100%;
+        overflow-x:scroll;
     }
-    figcaption {
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 25px;
-        padding: 5px 0;
+`;
+
+export const ConcessionExp = styled.div`
+    display: flex;
+    margin: 30px auto;
+    @media screen and (max-width: 797px) {
+        flex-direction: column;
+    }
+`;
+
+export const ConcessionContent = styled.div`
+    display: flex;
+    flex-basis: 50%;
+    padding: 10px;
+`;
+
+export const ConcessionWrited = styled.div`
+    font-size: 14px;
+    line-height: 24px;
+    white-space: pre-line;  
+    vertical-align: bottom;
+`;
+
+export const ConcessionImage = styled.img`
+    width: 355px;
+    @media screen and (max-width: 882px) {
+        width: 300px;
+    }
+    @media screen and (max-width: 500px) {
+        width: 240px;
     }
 `;

@@ -122,7 +122,6 @@ const Navbar = ({ toggle }) => {
                 Business
                 <NavbarDropdownContent>
                   <DropDiv>
-                    <NavText>Mining</NavText>
                     <NavDropLinks to="/Nickle-Ore-Mining">
                       Nickle Ore Mining
                     </NavDropLinks>
@@ -137,11 +136,12 @@ const Navbar = ({ toggle }) => {
                     </NavDropLinks>
                   </DropDiv>
                   <DropDiv>
-                    <NavText>Logistic</NavText>
+                    <NavDropLinks to="/Resource-Reserve">
+                      Resource and Reserve
+                    </NavDropLinks>
                     <NavDropLinks to="/Ore-Export">
                       Ore Export
                     </NavDropLinks>
-                    <NavText>Energy</NavText>
                     <NavDropLinks to="/Power-Plant">Power Plant</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
@@ -170,25 +170,31 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Mission-Vision">
                       Mission, Vision and Value
                     </NavDropLinks>
+                    <NavDropLinks to="/Commitment">
+                      Commitment
+                    </NavDropLinks>
                     <NavDropLinks to="/Subsidiary">
-                      Company Subsidiary
+                      Company's Subsidiaries
                     </NavDropLinks>
                     <NavDropLinks to="/Board-of-Director">
-                      Board of Director
+                      Board of Directors
                     </NavDropLinks>
                     <NavDropLinks to="/Organization-Structure">
-                      Organization Structure
+                      Organization Structures
                     </NavDropLinks>
                   </DropDiv>
                   <DropDiv>
                     <NavDropLinks to="/History-Milestone">
                       History and Milestone
                     </NavDropLinks>
-                    <NavDropLinks to="/Concession-Area">
-                      Concession Area
+                    <NavDropLinks to="/Licenses-Concession">
+                      Licenses and Concession
                     </NavDropLinks>
-                    <NavDropLinks to="/License-And-Award">
-                      License and Award
+                    <NavDropLinks to="/Press-Release">
+                      Press Release
+                    </NavDropLinks>
+                    <NavDropLinks to="/Gallery">
+                      Gallery
                     </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>

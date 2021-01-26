@@ -42,26 +42,15 @@ const SubsidiaryComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page2={true}/>
+        <AboutSideBarComponents page3={true}/>
         <AboutMain>
           <SubsidiaryContent>
             <Images
               src={detailSubsidiary.company_subsidiary_image.url}
             />
-            {PhasexpData.map((data, idx) => {
-              return (
-                <Phasexp key={idx} to={`/Phase/${data.title}`}>
-                  <PhaseWrited>
-                    <PhaseWritedApart>{data.title}</PhaseWritedApart>
-                    <PhaseWritedApart simbol>
-                      <FaAngleRight />
-                    </PhaseWritedApart>
-                  </PhaseWrited>
-                </Phasexp>
-              );
-            })}
+            <SubsidiaryExp>As of 21 January 2021</SubsidiaryExp> {/*Tanggal di sini*/}
             <SubsExpCon>
-            <SubsidiaryExp>{SubsidiaryLang(detailSubsidiary, language)}</SubsidiaryExp>
+            <SubsidiaryExp><strong>Disclaimer</strong>{SubsidiaryLang(detailSubsidiary, language)}</SubsidiaryExp>
             </SubsExpCon>
           </SubsidiaryContent>
         </AboutMain>

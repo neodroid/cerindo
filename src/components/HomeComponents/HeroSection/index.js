@@ -51,7 +51,7 @@ const HeroSection = () => {
                 <HeroMediaH1>Recent Update</HeroMediaH1>
               </TitleNewsApart>
               <TitleNewsApart>
-                <ViewedAll to="/News-Release">
+                <ViewedAll to="/Press-Release">
                   <MdTrendingFlat target="_blank" />
                   View All
                 </ViewedAll>

@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
 import {
   Aboutstyle,
-  AboutSideBar,
   AboutMain,
-  AboutSideBarContent,
 } from "../AboutUsElements";
 import AboutSideBarComponents from "../index";
 import { aboutUsService } from "../../../service/Aboutus";
-import { ValueData, VismisData } from "../../Data/AboutusData/VismisDatas";
+import { ValuesData, VismisData } from "../../Data/AboutusData/VismisDatas";
 import {
   VismisContent,
   VismisWrited,
   VismisApart,
   VismisImagePart,
   ValueContent,
-  ValueWrite,
-  Valuexp,
+  ValueWrite,ValuePartexp,
+  Valuexp,ValuesWrited,
   Valuexpwrited,
   Angle,
 } from "./VismisElements";
@@ -38,32 +36,38 @@ const VismisComponents = () => {
         <AboutSideBarComponents page1={true}/>
         <AboutMain>
           <VismisContent>
-            <VismisApart writed>
-              <VismisWrited title>Mission</VismisWrited>
-              <VismisWrited>{MVV.Mission_description}</VismisWrited>
-            </VismisApart>
             <VismisApart>
-              <VismisImagePart>
-                <img src={MVV.MVV_images[0].url} style={{maxWidth:"318px"}}/>
-              </VismisImagePart>
-            </VismisApart>
-          </VismisContent>
-          <VismisContent>
-            <VismisApart>
-              <VismisImagePart misi>
-                <img src={MVV.MVV_images[1].url} style={{maxWidth:"235px"}}/>
-              </VismisImagePart>
-            </VismisApart>
-            <VismisApart writed>
-              <VismisWrited title vision>
+            <VismisWrited title>
                 Vision
               </VismisWrited>
-              <VismisWrited vision>{MVV.Vision_Description}</VismisWrited>
+              <VismisWrited>{MVV.Vision_Description}</VismisWrited>
+            </VismisApart>
+            <VismisApart>
+            <VismisWrited title>Mission</VismisWrited>
+              <VismisWrited>{MVV.Mission_description}</VismisWrited>
             </VismisApart>
           </VismisContent>
           <ValueContent>
             <h1>Value</h1>
-            <Angle>
+            <ValueWrite choose>C.E.R.I.A</ValueWrite>
+            {ValuesData.map((data,idx)=>{
+              return(
+                <ValuePartexp key={idx}>
+                  <ValuesWrited title>{data.title}</ValuesWrited>
+                  <ValuesWrited>{data.explanation}</ValuesWrited>
+                </ValuePartexp>
+              )
+            })}
+          </ValueContent>
+        </AboutMain>
+      </Aboutstyle>
+    </>
+  );
+};
+export default VismisComponents;
+
+/* 
+<Angle>
               {ValueData.map((data) => {
                 return (
                   <div>
@@ -78,10 +82,4 @@ const VismisComponents = () => {
                 );
               })}
             </Angle>
-          </ValueContent>
-        </AboutMain>
-      </Aboutstyle>
-    </>
-  );
-};
-export default VismisComponents;
+*/
