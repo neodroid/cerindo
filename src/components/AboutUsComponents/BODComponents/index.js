@@ -23,6 +23,7 @@ const BODComponents = () => {
     const fetchData = async () => {
       const response = await aboutUsService.getListAboutUs();
       const data = response.data;
+      console.log(data);
       setBOD(data.boardOfDirectors);
     };
     fetchData();
@@ -48,7 +49,7 @@ const BODComponents = () => {
                         />
                         <div>
                           <BodBoxIntroTitle title>
-                            {data.name_of_director}
+                            {data.name}
                           </BodBoxIntroTitle>
                           <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
                         </div>

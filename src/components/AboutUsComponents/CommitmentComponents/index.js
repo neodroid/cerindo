@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Aboutstyle, AboutMain } from "../AboutUsElements";
 import AboutSideBarComponents from "../index";
 import { CommitmentWrited, CommitmentContent } from "./CommitmentElements";
 import { aboutUsService } from "../../../service/Aboutus";
+import { langContext } from "../../../langContext";
+import { CommitmentLangBody, CommitmentLangTitle } from "./CommitmentLang";
 
 const CommitmentComponents = () => {
+  const { language } = useContext(langContext);
   const [commitment, setCommitment] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -26,9 +29,9 @@ const CommitmentComponents = () => {
               return (
                 <>
                   <CommitmentWrited title key={idx}>
-                    {data.title_en}
+                    {CommitmentLangTitle(data, language)}
                   </CommitmentWrited>
-                  <CommitmentWrited>{data.body_en}</CommitmentWrited>
+                  <CommitmentWrited>{CommitmentLangBody(data, language)}</CommitmentWrited>
                 </>
               );
             })}

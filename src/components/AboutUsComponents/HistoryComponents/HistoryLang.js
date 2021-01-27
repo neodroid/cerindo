@@ -23,3 +23,15 @@ export const HistoryLangDesc = (data, lang) => {
 
     return text;
 }
+
+export const HistoryLangMilestone = (historyMileStone, lang) => {
+    var text = 
+    (lang == "en") ? 
+        <div>{historyMileStone.Timeline[0].title_en}</div> :
+    (lang == "id") ? 
+        <div>{historyMileStone.Timeline[0].title_id}</div> :
+    (lang == "cn") ? 
+        <div>{historyMileStone.Timeline[0].title_ch}</div> : null;
+
+    return text; 
+}

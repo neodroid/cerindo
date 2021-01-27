@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const LicenseTitle = (data, lang) => {
+export const CommitmentLangTitle = (data, lang) => {
     var text = 
     (lang == "en") ? 
         <div>{data.title_en}</div> :
@@ -12,19 +12,7 @@ export const LicenseTitle = (data, lang) => {
     return text
 }
 
-export const LicenseContent = (data, lang) => {
-    var text = 
-    (lang == "en") ? 
-        <div>{data.content_en}</div> :
-    (lang == "id") ? 
-        <div>{data.content_id}</div> :
-    (lang == "cn") ? 
-        <div>{data.content_ch}</div> : null;
-
-    return text
-}
-
-export const LicenseBody = (data, lang) => {
+export const CommitmentLangBody = (data, lang) => {
     var text = 
     (lang == "en") ? 
         <div>{data.body_en}</div> :

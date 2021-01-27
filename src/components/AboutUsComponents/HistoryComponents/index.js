@@ -34,7 +34,7 @@ import {
 } from "./HistoryElements";
 
 import { langContext } from "../../../langContext";
-import { HistoryLangTitle, HistoryLangDesc } from "./HistoryLang";
+import { HistoryLangTitle, HistoryLangDesc, HistoryLangMilestone } from "./HistoryLang";
 
 const HistoryComponents = () => {
   const { language } = useContext(langContext);
@@ -73,7 +73,7 @@ const HistoryComponents = () => {
               );
             })}
             <MilestoneContent>
-              <ImagWrited>{historyMileStone.Timeline[0].title_en}</ImagWrited>
+              <ImagWrited>{HistoryLangMilestone(historyMileStone, language)}</ImagWrited>
               <ImagePart>
                 <Images src={historyMileStone.Timeline[0].Timeline.url} />
               </ImagePart>

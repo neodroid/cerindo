@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   Aboutstyle,
   AboutSideBar,
@@ -12,8 +12,10 @@ import {
 } from "../../Data/AboutusData/ConcessionDatas";
 import { ConcWrapped, Tabled,Imagees } from "./ConcessionElements";
 import { aboutUsService } from "../../../service/Aboutus";
+import { langContext } from "../../../langContext";
 
 const ConcessionComponents = () => {
+  const { language } = useContext(langContext);
   const [concession, setConcession] = useState([]);
   useEffect(() => {
     const fetchData = async () => {

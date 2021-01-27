@@ -21,6 +21,7 @@ import {
 } from "./LicenseElements";
 
 import { langContext } from "../../../langContext";
+import { LicenseContent, LicenseTitle, LicenseBody } from "./LicenseLang";
 
 const LicenseComponents = () => {
   const { language } = useContext(langContext);
@@ -48,8 +49,8 @@ const LicenseComponents = () => {
                 <LicContents wrap key={idx}>
                   <LicContent>
                     <LicContent wrap>
-                      <LicBoxWrited title>{data.title_en}</LicBoxWrited>
-                      <LicBoxWrited>{data.content_en}</LicBoxWrited>
+                      <LicBoxWrited title>{LicenseTitle(data, language)}</LicBoxWrited>
+                      <LicBoxWrited>{LicenseContent(data, language)}</LicBoxWrited>
                     </LicContent>
                   </LicContent>
                 </LicContents>
@@ -63,7 +64,7 @@ const LicenseComponents = () => {
                     <ImageCentered src={data.concession_images[0].url} />
                     <ConcessionExp>
                       <ConcessionContent>
-                        <ConcessionWrited>{data.body_en}</ConcessionWrited>
+                        <ConcessionWrited>{LicenseBody(data, language)}</ConcessionWrited>
                       </ConcessionContent>
                       <ConcessionContent>
                         <ConcessionImage src={data.concession_images[1].url} />
