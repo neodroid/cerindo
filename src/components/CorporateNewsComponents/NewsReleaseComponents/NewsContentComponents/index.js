@@ -20,7 +20,7 @@ import {
   Warned,Nulity,ChoisenNews
 } from "./NewsContentElements";
 import { langContext } from "../../../../langContext";
-import { NewsLangContent, NewsLangTitle } from "./NewsContentLang";
+import { NewsLangContent, NewsLangContentSubstring, NewsLangTitle } from "./NewsContentLang";
 
 /* const Pagination = ({ postPerPage, totalPost }) =>{
     const pageNumbers = [];
@@ -117,7 +117,7 @@ const NewsContentComponents = () => {
                     <BoxContainer titlee>
                       {NewsLangTitle(data, language)}
                     </BoxContainer>
-                    <BoxContainer>{NewsLangContent(data, language)}</BoxContainer>
+                    <BoxContainer>{NewsLangContentSubstring(data, language)}</BoxContainer>
                   </NewsContainerPart>
                   <NewsContainerPart btn>
                     <Newsbtn to={`/News/${data._id}`}>Continue Reading</Newsbtn>

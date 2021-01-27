@@ -12,6 +12,9 @@ import {
   BlogImageArt,
   GlobalContent,
 } from "../../../CorporateNewsComponents/NewsComponent/NewsElements";
+import { langContext } from "../../../../langContext";
+import { ActivityContentLangTitle, ActivityContentDetailsLangTitle, ActivityContentDetailsLangNews } from './ActivityContentLang';
+import { ActivityLangTitle } from "../ActivityLang";
 
 const ManageOthArtData = ({ image, id, date, title }) => {
   return (
@@ -34,6 +37,7 @@ const ManageOthArtData = ({ image, id, date, title }) => {
 };
 
 const ActivityContentComponent = (props) => {
+  const { language } = useContext(langContext);
   const [detailsCommunity, setDetailsCommunity] = useState([]);
   const [listCommunity, setListCommunity] = useState([]);
   const fetchDataDetails = async () => {
@@ -62,12 +66,12 @@ const ActivityContentComponent = (props) => {
       <GlobalContent>
         <BlogApart containe>
           <BlogDivApart contain>
-            <TitleContent>{detailsCommunity.title_en}</TitleContent>
+            <TitleContent>{ActivityContentDetailsLangTitle(detailsCommunity, language)}</TitleContent>
             <BlogWrapped image>
               <BlogImage src={detailsCommunity.image.url} />
             </BlogWrapped>
             <BlogWrapped>
-              <BoxContainer>{detailsCommunity.news_en}</BoxContainer>
+              <BoxContainer>{ActivityContentDetailsLangNews(detailsCommunity, language)}</BoxContainer>
             </BlogWrapped>
           </BlogDivApart>
           <BlogDivApart>
@@ -79,7 +83,7 @@ const ActivityContentComponent = (props) => {
                   image={data.image.url}
                   id={data._id}
                   date={data.date}
-                  title={data.title_en}
+                  title={ActivityLangTitle(data, language)}
                 />
               ))}
             </ArticlePart>
