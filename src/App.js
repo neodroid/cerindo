@@ -18,19 +18,20 @@ import OreExport from "./pages/OreExport";
 import PowerPlant from "./pages/PowerPlant";
 import NewsRelease from "./pages/NewRelease";
 import NewsComponent from "./components/CorporateNewsComponents/NewsComponent";
+import AlbumComponent from "./components/AboutUsComponents/GalleryComponents/AlbumComponents";
 import Vismis from "./pages/Vismis";
 import Commitment from "./pages/Commitment";
 import Subsidiary from "./pages/Subsidiary";
 import BOD from "./pages/BOD";
 import Organization from "./pages/Organization";
 import History from "./pages/History";
-import MediaComponent from "./components/CorporateNewsComponents/MediaComponent";
 import License from "./pages/LicensePages";
 import Career from "./pages/Career";
 import QHSE from "./pages/QHSE";
 import Activity from "./pages/Activity";
 import Reports from "./pages/Reports";
 import Award from "./pages/Award";
+import Gallery from "./pages/Gallery"
 import ActivityContentComponent from "./components/SustainabilityComponents/ActivityComponents/ActivityContentComponents";
 import { langContext } from "./langContext";
 
@@ -73,7 +74,6 @@ function App() {
             <Route path="/Power-Plant" component={PowerPlant} exact />
             <Route path="/Press-Release" component={NewsRelease} exact />
             <Route path="/News/:title" component={NewsComponent} exact />
-            <Route path="/Media/:title" component={MediaComponent} exact />
             <Route path="/Mission-Vision" component={Vismis} exact />
             <Route path="/Commitment" component={Commitment} exact />
             <Route path="/Subsidiary" component={Subsidiary} exact />
@@ -90,10 +90,12 @@ function App() {
             <Route path="/Community-Activities" component={Activity} exact />
             <Route path="/Reports" component={Reports} exact />
             <Route path="/Awards" component={Award} exact />
+            <Route path="/Gallery" component={Gallery} exact />
             <Route
               path="/Community-Activity/:id"
               component={ActivityContentComponent}
             />
+            <Route path="/Album/:caption" component={AlbumComponent} exact />
           </Switch>
         </langContext.Provider>
 

@@ -19,7 +19,12 @@ const ResourceReserve = () => {
   return (
     <>
       {businessList[2].banner.map((data, idx) => {
-        return <Banner img={data.url} texted={true} key={idx} />;
+        return <Banner 
+        img={data.url} 
+        texted={true} 
+        key={idx} 
+        place="Business"
+        />;
       })}
       <ResourceReserveComponents />
     </>

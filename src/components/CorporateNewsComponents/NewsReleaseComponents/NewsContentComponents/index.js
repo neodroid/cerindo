@@ -99,12 +99,11 @@ const NewsContentComponents = () => {
             </>
           )
         })}
-        {selected ? (
           <>
-        <ChoisenNews>
+        {/*<ChoisenNews>
           <ChoisenDesc choose onClick={Clicked}>News</ChoisenDesc>
           <ChoisenDesc onClick={Clicked}>Ceria in Media</ChoisenDesc>
-        </ChoisenNews>
+        </ChoisenNews>*/}
         <NewsContent>
           {newsData.map((data,idx) => {
             return (
@@ -135,43 +134,6 @@ const NewsContentComponents = () => {
           <a>&raquo;</a>
         </Pagination>*/}
         </>
-        ) : (
-          <>
-        <ChoisenNews>
-          <ChoisenDesc onClick={Clicked}>News</ChoisenDesc>
-          <ChoisenDesc choose onClick={Clicked}>Ceria in Media</ChoisenDesc>
-        </ChoisenNews>
-        <NewsContent>
-          {NewsData.map((data,idx) => {
-            return (
-              <NewsBox key={idx}>
-                <BoxWrapper>
-                  <NewsContainerPart>
-                    <NewsImage src={data.image} />
-                  </NewsContainerPart>
-                  <NewsContainerPart wrt>
-                    <BoxContainer titlee>
-                      {data.title}
-                    </BoxContainer>
-                    <BoxContainer>{data.description}</BoxContainer>
-                  </NewsContainerPart>
-                  <NewsContainerPart btn>
-                    <Newsbtn to={`/Media/${data._id}`}>Continue Reading</Newsbtn>
-                  </NewsContainerPart>
-                </BoxWrapper>
-              </NewsBox>
-            );
-          })}
-        </NewsContent>
-        {/*<Pagination>
-          <a>&laquo;</a>
-          <a>1</a>
-          <a>2</a>
-          <a>3</a>
-          <a>&raquo;</a>
-        </Pagination>*/}
-        </>
-        )}
         </NewsWrapped>
       </AboutMain>
     </Aboutstyle>

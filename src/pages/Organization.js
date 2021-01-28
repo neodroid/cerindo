@@ -20,9 +20,9 @@ const Organization = () => {
         return (
           <Banner
             img={data.url}
-            lightText={true}
-            heading="ORGANIZATION STRUCTURE"
+            texted={true}
             key={idx}
+            place="About Us"
           />
         );
       })}

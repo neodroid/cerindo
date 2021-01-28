@@ -121,7 +121,7 @@ export const NavLinks = styled(LinkR)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-
+  transition: 0.5s all ease;
   font-size: 14px;
   line-height: 17px;
   color: ${({ bottom }) => (bottom ? "#efb401" : "none")};

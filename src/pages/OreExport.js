@@ -18,7 +18,7 @@ const OreExport = () => {
   return (
     <>
       {businessList[4].banner.map((data, idx) => {
-        return <Banner img={data.url} texted={true} key={idx} />;
+        return <Banner img={data.url} texted={true} key={idx} place="Business"/>;
       })}
       <OreExportComponents />
     </>

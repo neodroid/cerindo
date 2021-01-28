@@ -26,10 +26,11 @@ align-items: center;
 export const NewsBox = styled.div`
 width: 250px;
 height: 450px;
-box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.2);
+border: 0.5px solid #B2B2B2;
+box-sizing: border-box;
 border-radius: 5px;
+transition: 0.5s ease-in-out;
 &:hover {
-    transition: 0.2s ease-in-out;
     transform: scale(1.05);
     }
 @media screen and (max-width: 1015px) {
@@ -39,8 +40,8 @@ border-radius: 5px;
     width: 150px;
     height: 350px;
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.25);
+    transition: 0.5s ease-in-out;
     &:hover {
-        transition: 0.2s ease-in-out;
         transform: scale(1.01);
         }
 }
@@ -93,8 +94,8 @@ outline: none;
 border: none;
 cursor: pointer;
 text-decoration: none;
+transition: all 0.5s ease-in-out;
 &:hover {
-    transition: all 0.2s ease-in-out;
     opacity: 50%;
 }
 @media screen and (max-width: 610px) {
@@ -139,12 +140,13 @@ width: 100%;
 background: #FFFFFF;
 border: 1px solid #E1E1E1;
 box-sizing: border-box;
-box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.25);
+border: 0.5px solid #B2B2B2;
+box-sizing: border-box;
 border-radius: 10px;
 margin-bottom: 15px;
+transition: 0.6s ease-in;
 &:hover{
     transform: scale(1.03);
-    transition: 0.6s ease-in;
 };
 `;
 

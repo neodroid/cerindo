@@ -231,9 +231,9 @@ export const HeroNewsContent = styled(LinkR)`
   border-right: 2px solid #aaa;
   text-decoration: none;
   color: black;
+  transition: all 0.5s ease-in-out;
 
   &:hover {
-    transition: all 0.2s ease-in-out;
     transform: scale(1.02);
   }
   @media screen and (max-width: 486px) {

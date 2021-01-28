@@ -24,7 +24,6 @@ export const LicImage = styled.img`
 export const LicContents = styled.div`
 display: flex;
 flex-direction: column;
-width: 90%;
 @media screen and (max-width: 882px) {
     width: 100%;
 }
@@ -43,6 +42,7 @@ export const LicBoxWrited = styled.div`
     margin: 0 20px;
     white-space: pre-line;  
     vertical-align: bottom;
+    text-align: ${(props)=>(props.title ? "left":"justify")};
 `;
 
 export const AwardContent=styled.div`

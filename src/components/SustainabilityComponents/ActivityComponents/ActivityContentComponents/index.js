@@ -24,7 +24,7 @@ const ManageOthArtData = ({ image, id, date, title }) => {
           <BlogImageArt src={image} />
         </BlogDivApart>
         <BlogDivApart contain>
-          <BoxContainer>
+          <BoxContainer title>
             <h4>{title}</h4>
           </BoxContainer>
           <BoxContainer>

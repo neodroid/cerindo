@@ -3,6 +3,7 @@ import { Link as LinkR } from "react-router-dom";
 import { Button } from "../../ButtonElement";
 import { AboutUsDatas } from "../../Data/HomeData/AboutUsElementsDatas";
 import { homeService } from "../../../service/Homepage";
+import {VideoProfileData} from "../../Data/AboutusData/GalleryDatas"
 import {
   InfoContainer,
   InfoWrapper,
@@ -66,7 +67,7 @@ const AboutUs = ({
             <Column2>
               <VideoContent
                 controls
-                src="https://cerindocorp.com/wp-content/uploads/2020/10/profile-vid_eng.mp4"
+                src={VideoProfileData.video}
               ></VideoContent>
             </Column2>
           </InfoRow>

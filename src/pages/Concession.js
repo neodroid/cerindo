@@ -17,7 +17,7 @@ const Concession = () => {
   if (banner.length === 0) return null;
   return (
     <>
-      <Banner img={banner[5].url} heading="CONCESSION AREA" lightText={true} />
+      <Banner img={banner[5].url} texted={true} lightText={true} place="About Us"/>
       <ConcessionComponents />
     </>
   );

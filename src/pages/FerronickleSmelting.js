@@ -20,7 +20,7 @@ const FerronickleSmelting = () => {
   return (
     <>
       {businessList[1].banner.map((data, idx) => {
-        return <Banner img={data.url} texted={true} key={idx} />;
+        return <Banner img={data.url} texted={true} key={idx} place="Business"/>;
       })}
       <FerronickleSmeltingComponents />
     </>

@@ -8,7 +8,8 @@ export const CommitmentWrited = styled.div`
     margin-bottom: ${(props) => (props.title ? "5px" : "0")};
     white-space: pre-line;  
     vertical-align: bottom;
+    text-align: ${(props) => (props.title ? "left" : "justify")};
 `;
 export const CommitmentContent = styled.div`
-    margin: 20px;
+    margin: 35px 20px;
 `;

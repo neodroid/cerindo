@@ -35,6 +35,7 @@ export const BoxContainer = styled.div`
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
+    text-align: ${(props)=>(props.title ? "left" : "justify")};
     h4 {
         font-weight: bold;
         font-size: 12px;
@@ -74,8 +75,6 @@ export const BlogImageArt = styled.img`
 
 export const BlogApart = styled.div`
     display: flex;
-    height: ${(props) => (props.art ? "133px" : "auto")};
-    overflow: ${(props) => (props.art ? "hidden" : "none")};
     &:hover {
         transition: ${(props) => (props.art ? "0.2s ease-in-out" : "none")};
         transform: ${(props) => (props.art ? "scale(1.02)" : "none")};
@@ -96,17 +95,6 @@ export const BlogDivApart = styled.div`
 `;
 
 export const ArticlePart = styled.div`
-    max-height: 538px;
-    overflow: hidden;
-    @media screen and (max-width: 1250px) {
-        max-height: 590px;
-    }
-    @media screen and (max-width: 750px) {
-        max-height: 504px;
-    }
-    @media screen and (max-width: 684px) {
-        max-height: 472px;
-    }
 `;
 export const Linked = styled(Link)`
     cursor: pointer;

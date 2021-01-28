@@ -19,7 +19,12 @@ const PowerPlant = () => {
   return (
     <>
       {businessList[5].banner.map((data, idx) => {
-        return <Banner img={data.url} texted={true} key={idx} />;
+        return <Banner 
+        img={data.url} 
+        texted={true} 
+        key={idx}
+        place="Business"
+        />;
       })}
       <PowerPlantComponents />
     </>

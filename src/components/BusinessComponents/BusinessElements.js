@@ -86,6 +86,7 @@ export const BusinessWrited = styled.div`
     white-space: pre-line;  
     vertical-align: bottom;
     margin-top:${(props) => (props.title ? "8px" : "30px")};
+    text-align: ${(props) => (props.title ? "left" : "justify")};
     @media screen and (max-width: 810px) {
         text-align: ${(props) => (props.title ? "center" : "justify")};
     }

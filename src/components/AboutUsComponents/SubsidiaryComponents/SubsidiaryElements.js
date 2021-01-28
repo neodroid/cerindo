@@ -43,6 +43,7 @@ export const SubsidiaryExp = styled.p`
     line-height: 24px;
     color: #111111;
     margin: 20px 0;
+    text-align: justify;
 `;
 
 export const Images = styled.img`

@@ -14,9 +14,9 @@ export const InfoWrappered = styled.div`
 export const ImageInfo = styled.img`
     width: 431px;
     height: 293px;
+    transition: 0.6s ease-in-out;
     &:hover{
         transform: scale(1.05);
-        transition: 0.6s ease-in-out;
     };
     @media screen and (max-width: 545px) {
         width: 323px;

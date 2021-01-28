@@ -4,3 +4,21 @@
   padding: 0;
   font-family: "Encode Sans Expanded", sans-serif;
 }
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background: #edebeb;
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgba(158, 158, 158,0.6);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: rgba(158, 158, 158,0.9);
+  border-radius: 8px;
+}

@@ -21,7 +21,8 @@ const License = () => {
           <Banner
             img={data.url}
             lightText={true}
-            heading="LICENSE AND CONCESSION"
+            texted={true}
+            place="About Us"
             key={idx}
           />
         );

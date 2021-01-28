@@ -28,7 +28,7 @@ const ManageOthArtData = ({ image, title, date }) => {
           <BlogImageArt src={image} />
         </BlogDivApart>
         <BlogDivApart contain>
-          <BoxContainer>
+          <BoxContainer title>
             <h4>{title}</h4>
           </BoxContainer>
           <BoxContainer>
@@ -83,14 +83,16 @@ const NewsComponent = (props) => {
           <BlogDivApart>
             <TitleContent art>Other Article</TitleContent>
             <ArticlePart>
-              {listNews.map((data, idx) => (
+              {listNews.map((data, idx) => {
+                if(idx < 4){
+                return(
                 <ManageOthArtData
                   key={idx}
                   image={data.news_img.url}
                   title={NewsLangTitle(data, language)}
                   date={data.news_date}
-                />
-              ))}
+                />)}
+              })}
             </ArticlePart>
           </BlogDivApart>
         </BlogApart>

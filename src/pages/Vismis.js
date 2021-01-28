@@ -22,8 +22,9 @@ const Vismis = () => {
           <Banner
             img={data.url}
             lightText={true}
-            heading="ABOUT US"
+            texted={true}
             key={idx}
+            place="About Us"
           />
         );
       })}

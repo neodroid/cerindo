@@ -11,7 +11,6 @@ margin: 20px 20px 10px;
 export const HisContents = styled.div`
 display: flex;
 flex-direction: column;
-width: 90%;
 @media screen and (max-width: 882px) {
     width: 100%;
 }
@@ -44,6 +43,7 @@ export const HisBoxWrited = styled.div`
     font-weight: ${(props)=>(props.title ? "bold":"normal")};
     font-size: ${(props)=>(props.title ? "26px":"13px")};
     line-height: ${(props)=>(props.title ? "50px":"20px")};
+    text-align: ${(props)=>(props.title ? "left":"justify")};
     margin: 0 20px;
     white-space: pre-line;  
     vertical-align: bottom;
@@ -114,6 +114,10 @@ export const MilesImage = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transition: 0.5s all ease;
+    &:hover {
+        transform: scale(1.03);
+    }
     @media screen and (max-width: 579px) {
         width: 180px;
         height: 120px;

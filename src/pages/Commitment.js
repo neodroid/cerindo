@@ -21,8 +21,9 @@ const Commitment = () => {
           <Banner
             img={data.url}
             lightText={true}
-            heading="COMMITMENT"
+            texted={true}
             key={idx}
+            place="About Us"
           />
         );
       })}

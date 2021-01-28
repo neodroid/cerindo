@@ -18,7 +18,7 @@ const Reports = () => {
   return (
     <>
       {report.banner.map((data, idx) => {
-        return <Banner img={data.url} texted={true} key={idx} />;
+        return <Banner img={data.url} texted={true} key={idx} place="Global Sustainability"/>;
       })}
       <ReportsComponents />
     </>

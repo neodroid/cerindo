@@ -51,9 +51,9 @@ export const ImageRight = styled.div`
   background-position: center;
   background-size: cover;
   border-radius: 3px;
+  transition: 0.6s all ease-in-out;
   &:hover{
     transform: scale(1.05);
-    transition: 0.6s ease-in-out;
   };
   @media screen and (max-width: 555px) {
     height: 126px;
@@ -73,9 +73,9 @@ export const ImageLeft = styled.div`
   border-radius: 3px;
   margin-top: -40px;
   margin-left: 140px;
+  transition: 0.6s all ease-in-out;
   &:hover{
     transform: scale(1.05);
-    transition: 0.6s ease-in-out;
 };
 @media screen and (max-width: 555px) {
     height: 129px;
@@ -97,9 +97,9 @@ export const ImageCenter = styled.div`
   border-radius: 3px;
   margin-top: -100px;
   margin-left: 200px;
+  transition: 0.6s all ease-in-out;
   &:hover{
     transform: scale(1.05);
-    transition: 0.6s ease-in-out;
 };
 @media screen and (max-width: 555px) {
     height: 145px;

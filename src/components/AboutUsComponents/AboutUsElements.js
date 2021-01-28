@@ -12,7 +12,7 @@ export const Aboutstyle = styled.div`
 `;
 
 export const AboutSideBar = styled.div`
-    flex-basis: 15%; 
+    flex-basis: 20%; 
     margin-top: 55px;
     @media screen and (max-width: 810px) {
         background-color: white;
@@ -28,6 +28,7 @@ export const AboutSideBarContent = styled(LinkR)`
     font-size: 14px;
     line-height: 25px;
     margin-bottom: 14px;
+    font-weight: 600;
     padding: 2px;
     display:block;
     color: black;
@@ -139,9 +140,13 @@ display: none;
 `;
 
 export const Contentt = styled.div`
+background: #FFFFFF;
+box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.15);
+border-radius: 10px;
+padding: 15px;
 @media screen and (max-width: 1050px) {
     background-color: #f5f5f5;
-    borderRadius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
     padding:10px;
   }
 `;

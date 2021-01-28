@@ -20,9 +20,9 @@ const NewsRelease = () => {
         return (
           <Banner
             img={data.url}
-            lightText={true}
-            heading="PRESS RELEASE"
+            texted={true}            
             key={idx}
+            place="About Us"
           />
         );
       })}

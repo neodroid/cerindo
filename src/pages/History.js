@@ -21,8 +21,9 @@ const History = () => {
           <Banner
             img={data.url}
             lightText={true}
-            heading="HISTORY AND MILESTONE"
+            texted={true}
             key={idx}
+            place="About Us"
           />
         );
       })}

@@ -22,8 +22,9 @@ const BOD = () => {
           <Banner
             img={data.url}
             lightText={true}
-            heading="BOARD OF DIRECTORS"
+            texted={true}
             key={idx}
+            place="About Us"
           />
         );
       })}

@@ -18,7 +18,7 @@ const QHSE = () => {
   return (
     <>
       {QHSEContent.banner.map((data, idx) => {
-        return <Banner img={data.url} texted={true} key={idx} />;
+        return <Banner img={data.url} texted={true} key={idx} place="Global Sustainability"/>;
       })}
       <QHSEComponents />
     </>

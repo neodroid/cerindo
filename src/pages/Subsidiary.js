@@ -23,8 +23,9 @@ const Subsidiary = () => {
           <Banner
             img={data.url}
             lightText={true}
-            heading="COMPANY SUBSIDIARY"
+            texted={true}
             key={idx}
+            place="About Us"
           />
         );
       })}

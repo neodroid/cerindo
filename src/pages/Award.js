@@ -19,7 +19,7 @@ const Award = () => {
   return (
     <>
       {award.banner.map((data, idx) => {
-        return <Banner img={data.url} texted={true} key={idx} />;
+        return <Banner img={data.url} texted={true} key={idx} place="Global Sustainability"/>;
       })}
       <AwardComponents />
     </>

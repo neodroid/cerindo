@@ -19,7 +19,7 @@ const NickleOreMining = () => {
   return (
     <>
       {businessList[0].banner.map((data, idx) => {
-        return <Banner img={data.url} texted={true} key={idx} />;
+        return <Banner img={data.url} texted={true} key={idx} place="Business"/>;
       })}
       <NickleOreComponents />
     </>
