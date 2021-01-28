@@ -6,7 +6,10 @@ import CareerComponents from "../components/CareerComponents";
 const Career = () => {
   return (
     <>
-      <Banner {...CareerHead}/>
+      <Banner 
+      {...CareerHead}
+      place="Career"
+      />
       <CareerComponents />
     </>
   );

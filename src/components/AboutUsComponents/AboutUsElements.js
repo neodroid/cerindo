@@ -144,6 +144,7 @@ background: #FFFFFF;
 box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.15);
 border-radius: 10px;
 padding: 15px;
+margin-bottom: 20px;
 @media screen and (max-width: 1050px) {
     background-color: #f5f5f5;
     border-radius: 0 0 10px 10px;
