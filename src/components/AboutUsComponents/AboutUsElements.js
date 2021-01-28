@@ -149,6 +149,8 @@ margin-bottom: 20px;
     background-color: #f5f5f5;
     border-radius: 0 0 10px 10px;
     padding:10px;
+    margin-bottom:0px;
+    box-shadow: none;
   }
 `;
 export const Changed = styled.div`
