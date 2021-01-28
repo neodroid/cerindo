@@ -2,11 +2,11 @@ import React from 'react'
 
 export const NewsLangTitle = (data, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{data.title_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{data.title_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{data.title_ch}</div> : null;
 
     return text;

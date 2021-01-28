@@ -2,11 +2,11 @@ import React from 'react'
 
 export const FerronickleLangTitle = (ferronicle, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{ferronicle.title_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{ferronicle.title_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{ferronicle.title_ch}</div> : null;
 
     return text
@@ -14,11 +14,11 @@ export const FerronickleLangTitle = (ferronicle, lang) => {
 
 export const FerronickleLangBody = (ferronicle, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{ferronicle.body_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{ferronicle.body_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{ferronicle.body_ch}</div> : null;
 
     return text

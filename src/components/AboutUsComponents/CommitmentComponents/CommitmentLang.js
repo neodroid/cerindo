@@ -2,11 +2,11 @@ import React from 'react'
 
 export const CommitmentLangTitle = (data, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{data.title_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{data.title_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{data.title_ch}</div> : null;
 
     return text
@@ -14,11 +14,11 @@ export const CommitmentLangTitle = (data, lang) => {
 
 export const CommitmentLangBody = (data, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{data.body_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{data.body_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{data.body_ch}</div> : null;
 
     return text
