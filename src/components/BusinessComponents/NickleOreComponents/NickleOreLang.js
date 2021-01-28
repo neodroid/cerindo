@@ -2,11 +2,11 @@ import React from 'react'
 
 export const NickleOreLangTitle = (nickelOre, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{nickelOre.title_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{nickelOre.title_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{nickelOre.title_ch}</div> : null;
 
     return text
@@ -14,11 +14,11 @@ export const NickleOreLangTitle = (nickelOre, lang) => {
 
 export const NickleOreLangBody = (nickelOre, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{nickelOre.body_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{nickelOre.body_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{nickelOre.body_ch}</div> : null;
 
     return text

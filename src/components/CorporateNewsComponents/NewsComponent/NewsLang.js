@@ -2,11 +2,11 @@ import React from 'react'
 
 export const DetailsNewsLangTitle = (detailsNews, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{detailsNews.title_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{detailsNews.title_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{detailsNews.title_ch}</div> : null;
 
     return text;
@@ -14,11 +14,11 @@ export const DetailsNewsLangTitle = (detailsNews, lang) => {
 
 export const DetailsNewsLangContent = (detailsNews, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{detailsNews.news_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{detailsNews.news_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{detailsNews.news_ch}</div> : null;
 
     return text;
@@ -26,11 +26,11 @@ export const DetailsNewsLangContent = (detailsNews, lang) => {
 
 export const NewsLangTitle = (data, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{data.title_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{data.title_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{data.title_ch}</div> : null;
 
     return text;

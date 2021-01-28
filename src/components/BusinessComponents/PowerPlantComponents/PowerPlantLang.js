@@ -2,11 +2,11 @@ import React from 'react'
 
 export const PowerPlantLangTitle = (powerPlant, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{powerPlant.title_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{powerPlant.title_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{powerPlant.title_ch}</div> : null;
 
     return text
@@ -14,11 +14,11 @@ export const PowerPlantLangTitle = (powerPlant, lang) => {
 
 export const PowerPlantLangBody = (powerPlant, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{powerPlant.body_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{powerPlant.body_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{powerPlant.body_ch}</div> : null;
 
     return text

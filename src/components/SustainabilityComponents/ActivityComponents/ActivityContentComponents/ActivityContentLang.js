@@ -4,11 +4,11 @@ import React from 'react'
 
 export const ActivityContentLangTitle = (data, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{data.title_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{data.title_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{data.title_ch}</div> : null;
 
     return text
@@ -16,11 +16,11 @@ export const ActivityContentLangTitle = (data, lang) => {
 
 export const ActivityContentDetailsLangTitle = (detailsCommunity, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{detailsCommunity.title_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{detailsCommunity.title_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{detailsCommunity.title_ch}</div> : null;
 
     return text
@@ -28,11 +28,11 @@ export const ActivityContentDetailsLangTitle = (detailsCommunity, lang) => {
 
 export const ActivityContentDetailsLangNews = (detailsCommunity, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{detailsCommunity.news_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{detailsCommunity.news_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{detailsCommunity.news_ch}</div> : null;
 
     return text

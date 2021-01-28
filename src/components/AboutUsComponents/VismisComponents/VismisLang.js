@@ -2,11 +2,11 @@ import React from 'react'
 
 export const BODlang = (data, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{data.description_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{data.description_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{data.description_ch}</div> : null;
 
     return text
