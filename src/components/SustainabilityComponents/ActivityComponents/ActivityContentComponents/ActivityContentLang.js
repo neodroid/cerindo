@@ -28,11 +28,11 @@ export const ActivityContentDetailsLangTitle = (detailsCommunity, lang) => {
 
 export const ActivityContentDetailsLangNews = (detailsCommunity, lang) => {
     var text = 
-    (lang == "en") ? 
+    (lang === "en") ? 
         <div>{detailsCommunity.news_en}</div> :
-    (lang == "id") ? 
+    (lang === "id") ? 
         <div>{detailsCommunity.news_id}</div> :
-    (lang == "cn") ? 
+    (lang === "cn") ? 
         <div>{detailsCommunity.news_ch}</div> : null;
 
     return text
