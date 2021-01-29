@@ -17,7 +17,7 @@ export const homeObjOne = {
 export const HeroData = [
   {
     "img" : require("../../images/Home_background1.png"),
-    "title" : ""
+    "title" : "Building a Shining Nickel and Cobalt Business"
   },
   {
     "img" : require("../../images/Rectangle318.png"),

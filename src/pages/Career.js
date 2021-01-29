@@ -7,7 +7,8 @@ const Career = () => {
   return (
     <>
       <Banner 
-      {...CareerHead}
+      lightText={true}
+      texted={true}
       place="Career"
       />
       <CareerComponents />

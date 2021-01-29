@@ -4,6 +4,9 @@ import { MdTrendingFlat } from "react-icons/md";
 import { FaPlayCircle } from "react-icons/fa";
 import { newsService } from "../../../service/News";
 import { NewsData } from "../../Data/News";
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import 'react-awesome-slider/dist/styles.css';
+import {HeroData} from "../../Data/HomeData"
 import {
   HeroContainer,
   HeroContent,
@@ -23,10 +26,12 @@ import {
   VideoTemptWrapped,
   VideoWrited,
   Angle,
-  BgColoring
+  BgColoring,Slider
 } from "./HeroElements";
 import { langContext } from "../../../langContext";
 import { NewsLangTitle } from "./HeroLang";
+
+const AutoplaySlider = withAutoplay(Slider);
 
 const HeroSection = () => {
   const { language } = useContext(langContext);
@@ -41,43 +46,55 @@ const HeroSection = () => {
   }, []);
   if (newsData.length === 0) return null;
   return (
-    <HeroContainer img={Bg}>
-      <BgColoring>
-        <HeroContent>
-          <HeroH1>Building a Shining Nickel and Cobalt Business</HeroH1>
-          <HeroNewsWrap>
-            <HeroNewsFlex>
-              <TitleNewsApart>
-                <HeroMediaH1>Recent Update</HeroMediaH1>
-              </TitleNewsApart>
-              <TitleNewsApart>
-                <ViewedAll to="/Press-Release">
-                  <MdTrendingFlat target="_blank" />
-                  View All
-                </ViewedAll>
-              </TitleNewsApart>
-            </HeroNewsFlex>
-            <HeroNewsFlex content>
-              {newsData.map((data, idx) => {
-                if (idx < 3) {
-                  return (
-                    <HeroNewsContent to={`/News/${data._id}`} key={idx}>
-                      <ImgWrap>
-                        <Img src={data.news_img.url} />
-                      </ImgWrap>
-                      <HeroNewsDesc>
-                        <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                        <HeroNewsTimeP>{data.news_date}</HeroNewsTimeP>
-                      </HeroNewsDesc>
-                    </HeroNewsContent>
-                  );
-                }
-              })}
-            </HeroNewsFlex>
-          </HeroNewsWrap>
-        </HeroContent>
-      </BgColoring>
-    </HeroContainer>
+    <AutoplaySlider
+    play={true}
+    cancelOnInteraction={false}
+    interval={6000}
+    className="aws-btn"
+    >
+      {HeroData.map((data,idx)=>{
+        return(
+          <>
+      <HeroContainer img={data.img} key={idx}>
+        <BgColoring>
+          <HeroContent>
+            <HeroH1>{data.title}</HeroH1>
+            <HeroNewsWrap>
+              <HeroNewsFlex>
+                <TitleNewsApart>
+                  <HeroMediaH1>Recent Update</HeroMediaH1>
+                </TitleNewsApart>
+                <TitleNewsApart>
+                  <ViewedAll to="/Press-Release">
+                    <MdTrendingFlat target="_blank" />
+                    View All
+                  </ViewedAll>
+                </TitleNewsApart>
+              </HeroNewsFlex>
+              <HeroNewsFlex content>
+                {newsData.map((data, idx) => {
+                  if (idx < 3) {
+                    return (
+                      <HeroNewsContent to={`/News/${data._id}`} key={idx}>
+                        <ImgWrap>
+                          <Img src={data.news_img.url} />
+                        </ImgWrap>
+                        <HeroNewsDesc>
+                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                          <HeroNewsTimeP>{data.news_date}</HeroNewsTimeP>
+                        </HeroNewsDesc>
+                      </HeroNewsContent>
+                    );
+                  }
+                })}
+              </HeroNewsFlex>
+            </HeroNewsWrap>
+          </HeroContent>
+        </BgColoring>
+      </HeroContainer>
+      </>
+      )})}
+    </AutoplaySlider>
   );
 };
 

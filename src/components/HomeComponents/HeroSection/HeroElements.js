@@ -2,15 +2,16 @@ import styled from "styled-components";
 import { MdArrowDownward, MdKeyboardArrowDown} from "react-icons/md";
 import {Link as LinkR} from "react-router-dom";
 import Carousel from "react-elastic-carousel";
+import AwesomeSlider from 'react-awesome-slider';
 
 export const HeroContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-image: url(${(props) => props.img});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  width: 100%;
+  height: 100%;
   /*margin-top:-80px;*/
   /* add before styles */
 `;
@@ -321,4 +322,36 @@ export const Angle = styled(Carousel)`
 export const BgColoring = styled.div`
   background-color: rgba(0,0,0,0.3);
   width: 100%;
+`;
+
+export const Slider = styled(AwesomeSlider)`
+  .awssld__wrapper{
+    margin: 0 auto !important;
+    display: block;
+    height: 650px;
+    @media screen and (max-width: 502px) {
+      height: 720px;
+    }
+    @media screen and (max-width: 434px) {
+      height: 820px;
+    }
+  }
+  .awssld__bullets{
+    bottom: 30px;
+    z-index: 5;
+  }
+  .awssld__content  {
+    background-color: transparent;
+    width: 100% !important;
+    position: static !important;
+  }
+  .awssld__content > div {
+    background-color: transparent;
+    width: 100%;
+    display: block;
+    height: 100%;
+  }
+  .awssld__container{
+    height: fit-content;
+  }
 `;
