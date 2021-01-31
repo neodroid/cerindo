@@ -1,8 +1,13 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { aboutUsService } from "../../../service/Aboutus";
+import { Link } from "react-router-dom";
 import { Aboutstyle, AboutMain } from "../AboutUsElements";
 import AboutSideBarComponents from "../index";
-import {GalleryData,GalleryPhotoData,VideoProfileData} from "../../Data/AboutusData/GalleryDatas"
+import {
+  GalleryData,
+  GalleryPhotoData,
+  VideoProfileData,
+} from "../../Data/AboutusData/GalleryDatas";
 import {
   GalleryAllContent,
   VideoGridOther,
@@ -10,10 +15,31 @@ import {
   VideoContentOther,
   VideoContentPartMain,
   Figured,
-  VideoContainerOther
-} from "./GalleryElements"
+  VideoContainerOther,
+} from "./GalleryElements";
 
 const GalleryComponents = () => {
+  const [videoGallery, setVideoGallery] = useState([]);
+  const [photoGallery, setPhotoGallery] = useState([]);
+  const fetchVideo = async () => {
+    const response = await aboutUsService.getVideoGallery();
+    const data = response.data;
+    setVideoGallery(data);
+  };
+
+  const fetchPhoto = async () => {
+    const response = await aboutUsService.getPhotoGallery();
+    const data = response.data;
+    setPhotoGallery(data);
+  };
+  useEffect(() => {
+    fetchVideo();
+    fetchPhoto();
+  }, []);
+
+  if (videoGallery.length === 0) return null;
+  if (photoGallery.length === 0) return null;
+  console.log(videoGallery[0]);
   return (
     <>
       <Aboutstyle>
@@ -22,37 +48,37 @@ const GalleryComponents = () => {
           <GalleryAllContent>
             <h2>Ceria Profile Video</h2>
             <VideoContentPartMain>
-                <VideoContentMain 
-                controls
-                src={VideoProfileData.video}
-                />
+              <VideoContentMain controls src={videoGallery[0].Video[0].url} />
             </VideoContentPartMain>
-              <h2>Other Video</h2>
-              <VideoGridOther>
-              {GalleryData.map((data,idx)=>{
-                return(
+            <h2>Other Video</h2>
+            <VideoGridOther>
+              {videoGallery.slice(1).map((data, idx) => {
+                return (
                   <VideoContainerOther>
-                  <VideoContentOther
-                  controls
-                  src={data.video}
-                  key={idx}
-                  />
-                  <p>{data.caption}</p>
+                    <VideoContentOther
+                      controls
+                      src={data.Video[0].url}
+                      key={idx}
+                    />
+                    <p>{data.title_en}</p>
                   </VideoContainerOther>
-                )
+                );
               })}
-              </VideoGridOther>
+            </VideoGridOther>
             <h2>Photo Gallery</h2>
             <VideoGridOther>
-              {GalleryPhotoData.map((data,idx)=>{
-                return(
-                  <Link style={{textDecoration:"none"}} to={`/Album/${data.caption}`}>
+              {photoGallery.map((data, idx) => {
+                return (
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/Album/${data._id}`}
+                  >
                     <Figured key={idx}>
-                      <img src={data.thumbnail} alt={data.thumbnail} />
-                      <figcaption>{data.caption}</figcaption>
+                      <img src={data.image[0].url} alt={data.title_en} />
+                      <figcaption>{data.title_en}</figcaption>
                     </Figured>
                   </Link>
-                )
+                );
               })}
             </VideoGridOther>
           </GalleryAllContent>

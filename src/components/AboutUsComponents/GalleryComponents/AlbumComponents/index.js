@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { aboutUsService } from "../../../../service/Aboutus";
 import { GalleryPhotoData } from "../../../Data/AboutusData/GalleryDatas";
+
 import {
   TitleContent,
   BoxContainer,
@@ -12,14 +14,11 @@ import {
   BlogImageArt,
   GlobalContent,
 } from "../../../CorporateNewsComponents/NewsComponent/NewsElements";
-import {
-    AlbumGrid,
-    Image
-} from "./AlbumElements"
+import { AlbumGrid, Image } from "./AlbumElements";
 
-const ManageOthArtData = ({ image, title, date }) => {
+const ManageOthArtData = ({ image, title, id, date }) => {
   return (
-    <Linked to={`/Album/${title}`}>
+    <Linked to={`/Album/${id}`}>
       <BlogApart art>
         <BlogDivApart imagart>
           <BlogImageArt src={image} />
@@ -37,49 +36,54 @@ const ManageOthArtData = ({ image, title, date }) => {
   );
 };
 
-const AlbumComponent = ({match}) => {
-    const photo = GalleryPhotoData.filter(x => x['caption'] == match.params.caption)
+const AlbumComponent = (props) => {
+  const [photoListGallery, setPhotoListGallery] = useState([]);
+  const [photoDetailedGallery, setPhotoDetailedGallery] = useState([]);
+  const fetchListPhoto = async () => {
+    const response = await aboutUsService.getPhotoGallery();
+    const data = response.data;
+    setPhotoListGallery(data);
+  };
+  const fetchDetailedPhoto = async () => {
+    const response = await aboutUsService.getDetailedPhotoGallery(
+      props.match.params.id
+    );
+    const data = response.data;
+    setPhotoDetailedGallery(data);
+  };
+  useEffect(() => {
+    fetchListPhoto();
+    fetchDetailedPhoto();
+  }, []);
+  console.log(photoDetailedGallery);
 
-    function shuffleArray(array){
-        array.sort(function(){
-            return 0.5-Math.random();
-        });
-    }
-    shuffleArray(GalleryPhotoData);
+  if (photoListGallery.length === 0) return null;
+  if (photoDetailedGallery.length === 0) return null;
   return (
     <>
       <GlobalContent>
         <BlogApart containe>
           <BlogDivApart contain>
-          {photo.map((data,idx)=>{
-              return(
-                <>
-                <TitleContent key={idx}>
-                {data.caption}
-                </TitleContent>
-                </>
-            )})}
+            <TitleContent>{photoDetailedGallery.title_en}</TitleContent>
             <AlbumGrid>
-            {photo.map(obj=>obj.album.map((data,idx)=>{
-                return(
-                <Image src={data.image}/>
-                )
-            }))}
+              {photoDetailedGallery.image.map((val) => {
+                return <Image src={val.url} />;
+              })}
             </AlbumGrid>
           </BlogDivApart>
           <BlogDivApart>
             <TitleContent art>Other Article</TitleContent>
             <ArticlePart>
-              {GalleryPhotoData.map((data, idx) => {
-                  if(idx < 4){
-                  return(
-                    <ManageOthArtData
+              {photoListGallery.map((data, idx) => {
+                return (
+                  <ManageOthArtData
+                    id={data._id}
                     key={idx}
-                    image={data.thumbnail}
-                    title={data.caption}
-                    date={data.date}
-                    />)}
-                })}
+                    image={data.image[0].url}
+                    title={data.title_en}
+                  />
+                );
+              })}
             </ArticlePart>
           </BlogDivApart>
         </BlogApart>

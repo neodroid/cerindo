@@ -31,7 +31,7 @@ import QHSE from "./pages/QHSE";
 import Activity from "./pages/Activity";
 import Reports from "./pages/Reports";
 import Award from "./pages/Award";
-import Gallery from "./pages/Gallery"
+import Gallery from "./pages/Gallery";
 import ActivityContentComponent from "./components/SustainabilityComponents/ActivityComponents/ActivityContentComponents";
 import { langContext } from "./langContext";
 
@@ -95,7 +95,7 @@ function App() {
               path="/Community-Activity/:id"
               component={ActivityContentComponent}
             />
-            <Route path="/Album/:caption" component={AlbumComponent} exact />
+            <Route path="/Album/:id" component={AlbumComponent} exact />
           </Switch>
         </langContext.Provider>
 
