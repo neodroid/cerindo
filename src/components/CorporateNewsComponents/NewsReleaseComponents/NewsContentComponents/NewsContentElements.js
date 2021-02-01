@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Link as LinkR} from "react-router-dom";
 import { AiFillWarning} from "react-icons/ai";
+import {FaSearch} from "react-icons/fa";
 
 export const NewsContent = styled.div`
 display: grid;
@@ -24,22 +25,22 @@ align-items: center;
 `;
 
 export const NewsBox = styled.div`
-width: 250px;
-height: 450px;
-border: 0.5px solid #B2B2B2;
+width: 100%;
+height: 127px;
+text-overflow: ellipsis;
+overflow: hidden;
+margin: 20px 0;
+border-bottom: 0.5px solid #B2B2B2;
 box-sizing: border-box;
-border-radius: 5px;
 transition: 0.5s ease-in-out;
 &:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     }
 @media screen and (max-width: 1015px) {
+    height: 270px;
     margin: 0 auto;
 }
 @media screen and (max-width: 610px) {
-    width: 150px;
-    height: 350px;
-    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.25);
     transition: 0.5s ease-in-out;
     &:hover {
         transform: scale(1.01);
@@ -50,7 +51,6 @@ transition: 0.5s ease-in-out;
 export const BoxWrapper = styled.div`
     display: flex;
     height: 100%;
-    align-self: center;
     justify-content: center;
     flex-direction: column;
     margin: 15px;
@@ -58,10 +58,15 @@ export const BoxWrapper = styled.div`
 
 export const BoxContainer = styled.p`
     font-weight: ${(props) => (props.titlee ? "bold" : "normal") };
-    font-size: ${(props) => (props.titlee ? "14px" : "12px") };
-    line-height: ${(props) => (props.titlee ? "28px" : "20px") };
-    @media screen and (max-width: 930px) {
-        line-height: ${(props) => (props.titlee ? "15px" : "15px") };
+    font-size: ${(props) => (props.titlee ? "24px" : "16px") };
+    line-height: ${(props) => (props.titlee ? "24px" : "24px") };
+    padding: 8px 0;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 100%;
+    height: ${(props) => (props.titlee ? "auto" : "20px") };
+    &:hover{
+        text-decoration: ${(props) => (props.titlee ? "underline" : "none") };
     }
 `;
 
@@ -192,5 +197,62 @@ export const ChoisenDesc = styled.div`
     @media screen and (max-width: 480px) {
         font-size: 14px;
         border-bottom: ${(props)=>(props.choose ? "8px solid #EFB401" : "8px solid #C4C4C4")};
+    }
+`;
+
+export const SearchBar = styled.div`
+    width: 100%;
+    background: #E0E0E0;
+    border-radius: 2px;
+    margin: 30px auto;
+    padding: 15px;
+`;
+export const ContentSearch = styled.div`
+    display: flex;
+    width: 100%;
+    align-items:center;
+    justify-content: center;
+    margin: 0 auto;
+    @media screen and (max-width: 568px) {
+        flex-direction: column;
+    }
+`;
+
+export const FlexContent = styled.div`
+    flex-basis: ${(props)=>(props.search ? "6%" : "70%")};
+    margin: 0 5px;
+    @media screen and (max-width: 568px) {
+        width: 100%;
+        margin: 5px;
+    }
+`;
+
+export const FlexDate = styled.div`
+    flex-basis: 40%;
+    margin: 0 5px;
+    @media screen and (max-width: 568px) {
+        width: 100%;
+        margin: 5px;
+    }
+`;
+
+export const InputNews = styled.input`
+border: 0.5px solid #E0E0E0;
+box-sizing: border-box;
+border-radius: 5px;
+padding: ${(props) => (props.date ? "14px" : "17px")};
+outline: none;
+width: 100%;
+`;
+
+export const SearchImage = styled(FaSearch)`
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  background: #EFB401;
+    border-radius: 2px;
+    @media screen and (max-width: 568px) {
+        width: 100%;
     }
 `;

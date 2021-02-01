@@ -13,18 +13,27 @@ export const AwardContent = {
 export const AwardImageContent = [
     {
         "image": require("../../../images/image621.png"),
-        "caption" : "ISO 45001:2018"
-    },
+        "title" : "ISO 45001:2018",
+        "date" : "10/28/2020",
+        "caption" : "PT Ceria Nugraha Indotama (CNI) as the holder of the Mining Business Permit Area (WIUP), operating in Wolo sub-district, has received a blue report card in the company performance rating assessment program (Proper)...",
+        "link":"https://www.google.com"},
     {
         "image": require("../../../images/image622.png"),
-        "caption" : "ISO 9001:2015"
-    },
+        "title" : "ISO 9001:2015",
+        "date" : "10/28/2020",
+        "caption" : "PT Ceria Nugraha Indotama (CNI) as the holder of the Mining Business Permit Area (WIUP), operating in Wolo sub-district, has received a blue report card in the company performance rating assessment program (Proper)...",    
+        "link":"https://www.google.com"},
     {
         "image": require("../../../images/image623.png"),
-        "caption" : "ISO 14001:2015"
-    },
+        "title" : "ISO 14001:2015",
+        "date" : "10/28/2020",
+        "caption" : "PT Ceria Nugraha Indotama (CNI) as the holder of the Mining Business Permit Area (WIUP), operating in Wolo sub-district, has received a blue report card in the company performance rating assessment program (Proper)...",
+        "link":"https://www.google.com"},
     {
         "image": require("../../../images/image631.png"),
-        "caption" : "Proper Blue Rating 2019-2020"
+        "title" : "Proper Blue Rating 2019-2020",
+        "date" : "10/28/2020",
+        "caption" : "PT Ceria Nugraha Indotama (CNI) as the holder of the Mining Business Permit Area (WIUP), operating in Wolo sub-district, has received a blue report card in the company performance rating assessment program (Proper)...",
+        "link":"https://www.google.com"
     },
 ]

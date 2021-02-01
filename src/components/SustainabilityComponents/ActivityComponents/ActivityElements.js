@@ -39,6 +39,7 @@ export const ActivityContainer = styled.div`
     grid-gap: 40px;
     padding: 10px;
     margin-left: 10px;
+    align-items:center;
     @media screen and (max-width: 1015px) {
         grid-template-columns: auto auto;
         grid-template-rows: auto auto;
@@ -47,7 +48,7 @@ export const ActivityContainer = styled.div`
         grid-template-columns: 50% 50%;
         grid-template-rows: auto;
         padding: 0;
-        grid-gap: 5px;
+        grid-gap: 10px;
         margin-left:0;
     }
 `;

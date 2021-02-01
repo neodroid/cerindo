@@ -4,6 +4,7 @@ import montserratwoff from "./montserrat-v15-latin-regular.woff";
 import montserratwoff2 from "./montserrat-v15-latin-regular.woff2";
 import montserratblackwoff from "./Montserrat-Black.woff";
 import montserratblackwoff2 from "./Montserrat-Black.woff2";
+import multicolore from "./Multicolore.woff"
 // import NameOfYourFontWoff2 from './nameOfYourFont.woff2';
 
 export default createGlobalStyle`
@@ -24,4 +25,11 @@ export default createGlobalStyle`
          font-weight: 300;
         font-style: normal; 
     }
+    @font-face {
+        font-family: 'Multicolore';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Multicolore'), 
+        url(${multicolore}) format('woff');
+        }
 `;

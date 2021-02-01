@@ -46,8 +46,8 @@ export const ValueWrite = styled.div`
     font-weight: 900;
     font-size: 50px;
     line-height: 40px;
-    text-align:center;
     margin-bottom: 30px;
+    letter-spacing: 0.1em;
     color: ${(props) => (props.choose ? "#EFB401" : "#e0e0e0")};
     margin: 30px 0;
     @media screen and (max-width: 820px) {

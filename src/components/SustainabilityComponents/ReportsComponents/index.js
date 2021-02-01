@@ -2,12 +2,16 @@ import React, { useState, useEffect, useContext } from "react";
 import { sustainService } from "../../../service/Sustainability";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
+import {ReportDownload} from "../../Data/SustainabilityData/ReportsDatas"
 import {
   ReportsFlex,
   ReportsContent,
   ReportWrited,
   ReportImage,
-  ImageB,
+  TabelDownload,
+  ApartContentTable,
+  ContentTable,
+  ButtonTable
 } from "./ReportsElements";
 import { langContext } from "../../../langContext";
 import { ReportsDataLangTitle, ReportsDataLangBody } from "./ReportsLang";
@@ -41,9 +45,32 @@ const ReportsComponents = () => {
               </ReportImage>
             </ReportsContent>
           </ReportsFlex>
-          {/* <ImageB>
-            <img src={ReportImageB.image} />
-          </ImageB> */}
+          <TabelDownload>
+          {ReportDownload.map((data,idx)=>{
+            if(idx%2 == 0) {
+            return(
+                <div key={idx} style={{background:"#FAFAFA"}}>
+                  <ApartContentTable content>
+                    <ContentTable>{data.title}</ContentTable>
+                  </ApartContentTable>
+                  <ApartContentTable>
+                    <ButtonTable href={data.link}>DOWNLOAD</ButtonTable>
+                  </ApartContentTable>
+                </div>
+            )} else {
+              return(
+                <div key={idx} style={{background:"#F5F5F5"}}>
+                  <ApartContentTable content>
+                    <ContentTable>{data.title}</ContentTable>
+                  </ApartContentTable>
+                  <ApartContentTable>
+                    <ButtonTable href={data.link}>DOWNLOAD</ButtonTable>
+                  </ApartContentTable>
+                </div>
+              )
+            }
+          })}
+          </TabelDownload>
         </AboutMain>
       </Aboutstyle>
     </>

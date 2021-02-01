@@ -6,7 +6,7 @@ export const FooterContainer = styled.footer`
 `;
 
 export const FooterWrap = styled.div`
-  padding: 48px 24px;
+  padding: 32px 24px;
   /* background: #333; */
   display: flex;
   flex-direction: column;
@@ -18,8 +18,8 @@ export const FooterWrap = styled.div`
 
 export const FooterLinksContainer = styled.div`
   display: flex;
-  justify-content: center;
-
+  width: 100%;
+  justify-content:center;
   @media screen and (max-width: 820px) {
     padding-top: 32px;
   }
@@ -53,7 +53,7 @@ export const FooterLinkItems = styled.div`
 
 export const FooterLinkTitle = styled.h1`
   font-size: 14px;
-  margin-bottom: 16px;
+  margin: 16px 0;
 `;
 
 export const FooterLink = styled(Link)`
@@ -61,6 +61,7 @@ export const FooterLink = styled(Link)`
   text-decoration: none;
   margin-bottom: 0.5rem;
   font-size: 14px;
+  line-height: 20px;
 
   &:hover {
     color: #111;
@@ -69,8 +70,10 @@ export const FooterLink = styled(Link)`
 `;
 
 export const SocialMedia = styled.section`
-  max-width: 1000px;
+  max-width: 600px;
+  margin: 0 auto;
   width: 100%;
+  border-top: 1px solid #111111;
 `;
 
 export const SocialMediaWrap = styled.div`
@@ -101,28 +104,28 @@ export const SocialLogo = styled(Link)`
 export const WebsiteRights = styled.small`
   color: #111;
   margin-bottom: 16px;
+  text-align:center;
 `;
 
 export const SocialIcons = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 240px;
+  width: 175px;
 `;
 
 export const SocialIconLink = styled.a`
   color: #111;
-  font-size: 24px;
+  font-size: 40px;
+  margin: 0 3px;
 `;
 
 export const Logo = styled.img`
   width: 175px;
   height: 61px;
-  margin-top: 20px;
 `;
 
 export const NavLogo = styled.div`
-  padding-top: 20px;
+  margin: 16px 0 26px 0;
   display: flex;
   justify-content: center;
   align-items: center;

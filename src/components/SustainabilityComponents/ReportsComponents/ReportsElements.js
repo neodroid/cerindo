@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ReportsFlex = styled.div`
     display: flex;
-    width: 90%;
+    width: 100%;
     margin: 20px auto;
     @media screen and (max-width: 679px) {
         flex-direction: column;
@@ -45,4 +45,42 @@ export const ImageB = styled.div`
     @media screen and (max-width: 818px) {
         overflow-x:auto;
     }
+`;
+
+export const TabelDownload = styled.div`
+    width: 90%;
+    margin: 20px 0;
+    div {
+        display: flex;
+        transition: 0.4s all linear;
+        &:hover{
+            transform:scale(1.02)
+        }
+    }
+`;
+
+export const ApartContentTable = styled.div`
+      flex-basis: ${(props)=>(props.content ? "80%" : "20%")}
+      padding: 20px;
+      width:100%;
+      flex-direction: ${(props)=>(props.content ? "row" : "row-reverse")}
+`;
+
+export const ContentTable = styled.p`
+    font-size: 14px;
+    line-height: 24px;
+    padding: 20px;
+`;
+
+export const ButtonTable = styled.a`
+display:flex;
+align-self:center;
+font-size: 10px;
+line-height: 24px;
+border: 1px solid #000000;
+box-sizing: border-box;
+background: #FFFFFF;
+padding: 0 8px;
+margin: 20px;
+color: black;
 `;

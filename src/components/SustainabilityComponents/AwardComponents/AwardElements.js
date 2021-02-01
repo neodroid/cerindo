@@ -1,19 +1,7 @@
 import styled from "styled-components";
 
 export const AwardsesContent=styled.div`
-    margin: 10px 20px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap-rows: 20px;
-    grid-gap-columns: 0px;
-    @media screen and (max-width: 740px) {
-        grid-template-columns: auto auto;
-        margin: 0 auto;
-    }
-    @media screen and (max-width: 740px) {
-        grid-template-columns: auto auto;
-        margin: 0 auto;
-    }
+    margin: 20px 0;
 `;
 
 export const Figured = styled.figure`
@@ -37,4 +25,24 @@ export const Figured = styled.figure`
     @media screen and (max-width: 461px) {
         width: 120px;
     }
+`;
+
+export const ContentAward = styled.div`
+border-bottom: 1px solid #E0E0E0;
+margin: 20px 0;
+padding: 20px 0;
+height: 400px;
+overflow: hidden;
+@media screen and (max-width: 550px) {
+    height: 450px;
+}
+`;
+
+export const ImageAward = styled.img`
+    height: 200px;
+    margin: 13px 0;
+`;
+
+export const Linked = styled.a`
+    color:black;
 `;

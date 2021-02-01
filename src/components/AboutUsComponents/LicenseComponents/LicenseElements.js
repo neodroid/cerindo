@@ -56,7 +56,7 @@ export const AwardContent=styled.div`
 `;
 
 export const ImageCentered = styled.img`
-    width: 711px;
+    width: 800px;
     @media screen and (max-width: 874px) {
         width: 100%;
         overflow-x:scroll;
@@ -82,6 +82,7 @@ export const ConcessionWrited = styled.div`
     line-height: 24px;
     white-space: pre-line;  
     vertical-align: bottom;
+    text-align: justify;
 `;
 
 export const ConcessionImage = styled.img`

@@ -10,6 +10,21 @@ export const ReportsData = {
     "img": require("../../../images/ugd.png"),
 };
 
-export const ReportImageB = {
-    "image": require("../../../images/image39.png"),
-}
+export const ReportDownload = [
+    {
+        "title":"Laporan Tahunan Realisasi Produksi",
+        "link":"https://www.google.com"
+    },
+    {
+        "title":"Laporan Realisasi Pengelolaan dan Pemantauan",
+        "link":"https://www.google.com"
+    },
+    {
+        "title":"Laporan RKL - RPL",
+        "link":"https://www.google.com"
+    },
+    {
+        "title":"Laporan Realisasi PPM",
+        "link":"https://www.google.com"
+    },
+]

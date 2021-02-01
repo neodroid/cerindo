@@ -46,13 +46,15 @@ const VismisComponents = () => {
           </VismisContent>
           <ValueContent>
             <h1>Value</h1>
-            <ValueWrite choose>C.E.R.I.A</ValueWrite>
+            <ValueWrite choose>C E R I A</ValueWrite>
             {MVV.ceriaValue.map((data, idx) => {
               return (
-                <ValuePartexp key={idx}>
-                  <ValuesWrited title>{data.value}</ValuesWrited>
-                  <ValuesWrited>{data.value_description}</ValuesWrited>
-                </ValuePartexp>
+                <>
+                  <ValuePartexp key={idx}>
+                    <ValuesWrited title>{data.value}</ValuesWrited>
+                    <ValuesWrited>{data.value_description}</ValuesWrited>
+                  </ValuePartexp>
+                </>
               );
             })}
           </ValueContent>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { NewsData,AnnouncementData } from "../../../Data/News";
+import {Link} from "react-router-dom";
 import {
   Aboutstyle,
   AboutMain,
@@ -15,9 +16,10 @@ import {
   BoxWrapper,
   NewsContainerPart,AnnounContent,
   Pagination,NewsWrapped,AnnounWrapped,
-  AnnounApart,
-  AnnounWrited,ChoisenDesc,
-  Warned,Nulity,ChoisenNews
+  AnnounApart,ContentSearch,FlexDate,
+  AnnounWrited,ChoisenDesc,FlexContent,
+  Warned,Nulity,ChoisenNews,SearchBar,InputNews,
+  SearchImage
 } from "./NewsContentElements";
 import { langContext } from "../../../../langContext";
 import { NewsLangContent, NewsLangContentSubstring, NewsLangTitle } from "./NewsContentLang";
@@ -46,6 +48,8 @@ const NewsContentComponents = () => {
   const { language } = useContext(langContext);
   const [selected, setSelected] = useState(false)
   const [newsData, setNewsData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchDate, setSearchDate] = useState("");
   
   function Clicked() {
     setSelected(!selected)
@@ -99,41 +103,66 @@ const NewsContentComponents = () => {
             </>
           )
         })}
-          <>
         {/*<ChoisenNews>
           <ChoisenDesc choose onClick={Clicked}>News</ChoisenDesc>
           <ChoisenDesc onClick={Clicked}>Ceria in Media</ChoisenDesc>
         </ChoisenNews>*/}
-        <NewsContent>
+        <SearchBar>
+          <ContentSearch>
+            <FlexContent>
+              <InputNews
+              type="search"
+              placeholder="Search..."
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}/>
+            </FlexContent>
+            <FlexDate>
+              <InputNews
+              date
+                type="date"
+                onChange={(e) => {
+                  setSearchDate(e.target.value);
+                }}/>
+            </FlexDate>
+            <FlexContent search>
+              <SearchImage/>
+            </FlexContent>
+          </ContentSearch>
+        </SearchBar>
+        {searchTerm ? (
+          <div style={{width:"100%"}}>
           {newsData.map((data,idx) => {
             return (
-              <NewsBox key={idx}>
-                <BoxWrapper>
-                  <NewsContainerPart>
-                    <NewsImage src={data.news_img.url} />
-                  </NewsContainerPart>
-                  <NewsContainerPart wrt>
-                    <BoxContainer titlee>
-                      {NewsLangTitle(data, language)}
-                    </BoxContainer>
-                    <BoxContainer>{NewsLangContentSubstring(data, language)}</BoxContainer>
-                  </NewsContainerPart>
-                  <NewsContainerPart btn>
-                    <Newsbtn to={`/News/${data._id}`}>Continue Reading</Newsbtn>
-                  </NewsContainerPart>
-                </BoxWrapper>
-              </NewsBox>
+              <Link to={`/News/${data._id}`} style={{textDecoration:"none",color:"black"}}>
+                <NewsBox key={idx}>
+                      <BoxContainer>{data.news_date}</BoxContainer>
+                      <BoxContainer titlee>
+                        {NewsLangTitle(data, language)}
+                      </BoxContainer>
+                      <BoxContainer>{NewsLangContentSubstring(data, language)}</BoxContainer>
+                </NewsBox>
+              </Link>
             );
           })}
-        </NewsContent>
-        {/*<Pagination>
-          <a>&laquo;</a>
-          <a>1</a>
-          <a>2</a>
-          <a>3</a>
-          <a>&raquo;</a>
-        </Pagination>*/}
-        </>
+          </div>
+        ) : (
+          <div style={{width:"100%"}}>
+          {newsData.map((data,idx) => {
+            return (
+              <Link to={`/News/${data._id}`} style={{textDecoration:"none",color:"black"}}>
+                <NewsBox key={idx}>
+                      <BoxContainer>{data.news_date}</BoxContainer>
+                      <BoxContainer titlee>
+                        {NewsLangTitle(data, language)}
+                      </BoxContainer>
+                      <BoxContainer>{NewsLangContentSubstring(data, language)}</BoxContainer>
+                </NewsBox>
+              </Link>
+            );
+          })}
+          </div>
+        )}
         </NewsWrapped>
       </AboutMain>
     </Aboutstyle>

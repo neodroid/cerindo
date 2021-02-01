@@ -3,7 +3,9 @@ import { sustainService } from "../../../service/Sustainability";
 import { BusinessWrited } from "../../BusinessComponents/BusinessElements";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
-import { AwardsesContent, Figured } from "./AwardElements";
+import {AwardImageContent} from "../../Data/SustainabilityData/AwardDatas"
+import { AwardsesContent, ContentAward, ImageAward,Linked } from "./AwardElements";
+import {BoxContainer} from "../../CorporateNewsComponents/NewsReleaseComponents/NewsContentComponents/NewsContentElements";
 import { langContext } from "../../../langContext";
 import { AwardContentLangTitle, AwardContentLangBody } from "./AwardLang";
 
@@ -28,12 +30,16 @@ const AwardComponents = () => {
           <BusinessWrited title>{AwardContentLangTitle(AwardContent, language)}</BusinessWrited>
           <BusinessWrited>{AwardContentLangBody(AwardContent, language)}</BusinessWrited>
           <AwardsesContent>
-            {AwardContent.awards_list.map((data, idx) => {
+            {AwardImageContent.map((data, idx) => {
               return (
-                <Figured key={idx}>
-                  <img src={data.image.url} alt={data.image} />
-                  <figcaption>{data.name}</figcaption>
-                </Figured>
+                <ContentAward key={idx}>
+                  <BoxContainer>{data.date}</BoxContainer>
+                  <Linked href={data.link}>
+                  <BoxContainer titlee>{data.title}</BoxContainer>
+                  </Linked>
+                  <ImageAward src={data.image}/>
+                  <BoxContainer>{data.caption}</BoxContainer>
+                </ContentAward>
               );
             })}
           </AwardsesContent>

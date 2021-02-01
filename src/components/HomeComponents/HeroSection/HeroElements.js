@@ -125,10 +125,10 @@ export const HeroNewsWrap = styled.div`
 export const HeroH1 = styled.h1`
   /* font-size: 48px;
   text-align: center; */
-  max-width: 500px;
+  max-width: 700px;
   font-size: 40px;
   line-height: 70px;
-  font-family: "Montserrat-black";
+  font-family: 'Multicolore', sans serif;
   color: white;
   @media screen and (max-width: 768px) {
     font-size: 40px;
@@ -328,12 +328,13 @@ export const Slider = styled(AwesomeSlider)`
   .awssld__wrapper{
     margin: 0 auto !important;
     display: block;
-    height: 650px;
+    min-height: 650px;
+    height: 720px;
     @media screen and (max-width: 502px) {
-      height: 720px;
+    min-height: 1100px;
     }
     @media screen and (max-width: 434px) {
-      height: 820px;
+      min-height: 1410px;
     }
   }
   .awssld__bullets{

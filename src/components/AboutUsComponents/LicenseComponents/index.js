@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import {ReportDownload} from "../../Data/SustainabilityData/ReportsDatas"
 import {
   Aboutstyle,
   AboutSideBar,
@@ -19,6 +20,12 @@ import {
   ConcessionContent,
   ImageCentered,
 } from "./LicenseElements";
+import {
+  TabelDownload,
+  ApartContentTable,
+  ContentTable,
+  ButtonTable
+} from "../../SustainabilityComponents/ReportsComponents/ReportsElements"
 
 import { langContext } from "../../../langContext";
 import { LicenseContent, LicenseTitle, LicenseBody } from "./LicenseLang";
@@ -56,6 +63,32 @@ const LicenseComponents = () => {
                 </LicContents>
               );
             })}
+            <TabelDownload>
+          {ReportDownload.map((data,idx)=>{
+            if(idx%2 == 0) {
+            return(
+                <div key={idx} style={{background:"#FAFAFA"}}>
+                  <ApartContentTable content>
+                    <ContentTable>{data.title}</ContentTable>
+                  </ApartContentTable>
+                  <ApartContentTable>
+                    <ButtonTable href={data.link}>DOWNLOAD</ButtonTable>
+                  </ApartContentTable>
+                </div>
+            )} else {
+              return(
+                <div key={idx} style={{background:"#F5F5F5"}}>
+                  <ApartContentTable content>
+                    <ContentTable>{data.title}</ContentTable>
+                  </ApartContentTable>
+                  <ApartContentTable>
+                    <ButtonTable href={data.link}>DOWNLOAD</ButtonTable>
+                  </ApartContentTable>
+                </div>
+              )
+            }
+          })}
+          </TabelDownload>
             <AwardContent>
               <h2>Concession Area</h2>
               {license.Concession.map((data, idx) => {

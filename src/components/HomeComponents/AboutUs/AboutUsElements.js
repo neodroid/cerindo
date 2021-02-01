@@ -16,7 +16,7 @@ export const InfoWrapper = styled.div`
   /* height: 600px; */
   /* height: 840px; */
   width: 100%;
-  max-width: 930px;
+  max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
   padding: 70px 0 60px;
