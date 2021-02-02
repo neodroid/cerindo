@@ -28,6 +28,7 @@ import {
   SearchLinked,
   Nulity,
   SearchTermed,
+  SearchedLinked,
 } from "./NavbarElements";
 
 import getFlagUrl from "./getFlagURL";
@@ -230,7 +231,7 @@ const Navbar = ({ toggle }) => {
                         to={"/News/" + val._id}
                         onClick={SearchedButton}
                       >
-                        <p>{val.title_en}</p>
+                        <SearchedLinked>{val.title_en}</SearchedLinked>
                       </SearchLinked>
                     );
                   })}

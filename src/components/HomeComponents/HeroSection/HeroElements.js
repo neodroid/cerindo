@@ -120,6 +120,10 @@ export const HeroNewsWrap = styled.div`
   @media screen and (max-width: 1065px) {
     width: 100%;
   }
+  @media screen and (max-width: 600px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 export const HeroH1 = styled.h1`
@@ -134,8 +138,10 @@ export const HeroH1 = styled.h1`
     font-size: 40px;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 502px) {
     font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -154,7 +160,7 @@ export const HeroMediaH1 = styled.h1`
   font-family: "Montserrat-black";
   margin-bottom: 10px;
   @media screen and (max-width: 480px) {
-    font-size: 12px;
+    font-size: 16px;
   }
 `;
 
@@ -240,7 +246,7 @@ export const HeroNewsContent = styled(LinkR)`
   @media screen and (max-width: 486px) {
     flex-direction: column;
     align-items:center;
-    text-align:center;
+    text-align:center !important;
     border-bottom: 2px solid #aaa;
     border-right: none;
     min-width: 0px;
@@ -258,6 +264,7 @@ export const HeroNewsDesc = styled.div`
     align-items:center;
     margin-left: 0px;
     padding: 10px;
+    text-align: center;
   }
 `;
 
@@ -330,11 +337,15 @@ export const Slider = styled(AwesomeSlider)`
     display: block;
     min-height: 650px;
     height: 720px;
-    @media screen and (max-width: 502px) {
-    min-height: 1100px;
+    @media screen and (max-width: 1000px) {
+      min-height: 900px;
+      height: auto;
     }
-    @media screen and (max-width: 434px) {
-      min-height: 1410px;
+    @media screen and (max-width: 960px) {
+      min-height: 1020px;
+    }
+    @media screen and (max-width: 502px) {
+      min-height: 1500px;
     }
   }
   .awssld__bullets{

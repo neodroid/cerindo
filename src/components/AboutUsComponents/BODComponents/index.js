@@ -11,6 +11,14 @@ import {
   BodBoxIntroTitle,
   BodDescriptionContent,
   Masonries,
+  TheKing,
+  ContentDiv,
+  KingBox,
+  DropDown,
+  Dropbtn,
+  DropDownContent,
+  ContentDiv2,
+  BodGrid
 } from "./BODElements";
 
 import { langContext } from "../../../langContext";
@@ -36,16 +44,16 @@ const BODComponents = () => {
         <AboutSideBarComponents page4={true} />
         <AboutMain>
           <Bodwrapped>
-            <Masonries>
-              {BOD.listBoardOfDirectors.map((data, idx) => {
+            <TheKing>
+          {BOD.listBoardOfDirectors.map((data, idx) => {
+                if(idx==0){
                 return (
-                  <Bodbox key={idx}>
+                  <KingBox key={idx}>
                     <BodBoxContent>
                       <BodBoxIntro>
                         <img
                           src={data.picture.url}
-                          width={`83px`}
-                          height={`125px`}
+                          width={`210px`}
                         />
                         <div>
                           <BodBoxIntroTitle title>
@@ -54,14 +62,56 @@ const BODComponents = () => {
                           <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
                         </div>
                       </BodBoxIntro>
-                      <BodDescriptionContent>
-                        {BODlang(data, language)}
-                      </BodDescriptionContent>
+                        <DropDown role="button" tabIndex={-1} key={idx}>
+                          <DropDownContent>
+                            <BodDescriptionContent>
+                              {BODlang(data, language)}
+                            </BodDescriptionContent>
+                          </DropDownContent>
+                          <Dropbtn>
+                            <ContentDiv>Read More</ContentDiv>
+                            <ContentDiv2>Read Less</ContentDiv2>
+                          </Dropbtn>
+                        </DropDown>
                     </BodBoxContent>
-                  </Bodbox>
-                );
+                  </KingBox>
+                );}})}
+            </TheKing>
+            <BodGrid>
+              {BOD.listBoardOfDirectors.map((data, idx) => {
+                if(idx>0){
+                  return (
+                    <Bodbox key={idx}>
+                      <BodBoxContent>
+                        <BodBoxIntro>
+                          <img
+                            src={data.picture.url}
+                            width={`149px`}
+                          />
+                          <div>
+                            <BodBoxIntroTitle title>
+                              {data.name}
+                            </BodBoxIntroTitle>
+                            <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
+                          </div>
+                        </BodBoxIntro>
+                        <DropDown role="button" tabIndex={-1} key={idx}>
+                          <DropDownContent>
+                            <BodDescriptionContent>
+                              {BODlang(data, language)}
+                            </BodDescriptionContent>
+                          </DropDownContent>
+                          <Dropbtn>
+                            <ContentDiv>Read More</ContentDiv>
+                            <ContentDiv2>Read Less</ContentDiv2>
+                          </Dropbtn>
+                        </DropDown>
+                      </BodBoxContent>
+                    </Bodbox>
+                  );
+                }
               })}
-            </Masonries>
+            </BodGrid>
           </Bodwrapped>
         </AboutMain>
       </Aboutstyle>

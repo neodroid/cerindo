@@ -59,6 +59,10 @@ export const JobcerImage = styled.div`
     }
 `;
 
+export const Nulity = styled.div`
+display:none;
+`
+
 export const JobvacContent = styled.div`
     display: flex;
     width: 100%;
@@ -77,7 +81,6 @@ export const Dropbtn = styled.div`
 `;
 
 export const TextButton = styled.p`
-  font-family:'Montserrat',sans-serif;
   width: 100%;
   text-align: left;
   font-weight: ${(props)=>(props.pos ? "500" : "bold")};

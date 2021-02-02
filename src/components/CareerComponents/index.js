@@ -24,7 +24,8 @@ import {
     InfoRow,
     Column1,
     Column2,
-    EmployImage
+    EmployImage,
+    Nulity
 } from "./CareerElements";
 
 const CareerComponents = () =>{
@@ -68,10 +69,9 @@ const CareerComponents = () =>{
                                 <ButtonLink><Arrowchild/></ButtonLink>
                             </Linkeda>
                             )}
-                            else{return(
-                            <Linkeda>
-                                <ContentWrited>{data.jobs}</ContentWrited>
-                                </Linkeda>)}
+                            else{
+                            return(
+                                <Nulity/>)}
                         })}
                         </DropDownContent>
                     </DropDown>
@@ -100,10 +100,10 @@ const CareerComponents = () =>{
                                     <ButtonLink><Arrowchild/></ButtonLink>
                                 </Linkeda>
                                 )}
-                                else{return(
-                                <Linkeda>
-                                    <ContentWrited>{data.jobs}</ContentWrited>
-                                    </Linkeda>)}
+                                else{
+                                return(
+                                <Nulity/>
+                                    )}
                             })}
                             </DropDownContent>
                         </DropDown>

@@ -327,6 +327,7 @@ export const SearchField = styled.div`
   margin-left:-200px;
   text-align:center;
   position: absolute;
+  transition: 0.3s all linear;
   top: 80px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 `;
@@ -359,7 +360,9 @@ export const SearchButton = styled.button`
   }
 `;
 
-export const Nulity = styled.div`display:none;`
+export const Nulity = styled.div`
+display:none;
+`
 
 export const SearchTermed = styled.div`
   background: #f9f9f9;
@@ -381,8 +384,13 @@ export const SearchTermed = styled.div`
 export const SearchLinked = styled(LinkR)`
 text-decoration: none;
 color: black;
-border-bottom: 1px solid black;
 &:hover {
   color: #04235c;
 }
+`;
+
+export const SearchedLinked = styled.div`
+border-bottom: 1px solid black;
+margin-bottom: 15px;
+padding: 8px 0;
 `;
