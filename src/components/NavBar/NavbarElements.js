@@ -112,7 +112,7 @@ export const NavbarDropdownContent = styled.div`
 `;
 
 export const NavLinks = styled(LinkR)`
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   color: #333;
   font-weight: bold;
   display: flex;

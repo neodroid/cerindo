@@ -36,6 +36,7 @@ export const ValueContent = styled.div`
         font-size: 26px;
         line-height: 50px;
         color: #333333;
+        font-family: 'Montserrat',sans-serif;
     }
     @media screen and (max-width: 820px) {
         margin: 15px 20px;
@@ -50,6 +51,7 @@ export const ValueWrite = styled.div`
     letter-spacing: 0.1em;
     color: ${(props) => (props.choose ? "#EFB401" : "#e0e0e0")};
     margin: 30px 0;
+    font-family: 'Montserrat',sans-serif;
     @media screen and (max-width: 820px) {
         font-size: 30px;
     }

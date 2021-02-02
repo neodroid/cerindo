@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Imageqhse = styled.img`
     width: 331px;
-    float: right;
     @media screen and (max-width: 638px) {
         width: 248px;
         float: none;
@@ -16,9 +15,17 @@ export const Images = styled.div`
     @media screen and (max-width: 638px) {
         padding: 20px;
         text-align:center;
+        width: 100%;
+        margin: 0 auto;
     }
 `;
-
+export const Apart = styled.div`
+    display: flex;
+    margin-top: 25px;
+    @media screen and (max-width: 638px) {
+        flex-direction: column;
+    }
+`;
 export const WritedPart = styled.div`
     margin-top: -26px;
     @media screen and (max-width: 638px) {

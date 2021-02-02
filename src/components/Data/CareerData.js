@@ -14,29 +14,64 @@ export const JobData = [
         "job":"Smelter Operation",
         "position":"2",
         "joblist": [
-            {"jobs":"Supervisor Furnace"},
-            {"jobs":"Control Room Operator"},
+            {
+                "jobs":"Supervisor Furnace",
+                "prerequisite":{
+                    "allpurpose":"1. Supervise the implementation of legal support to all departments\n2. Conducting government relations activities related to licensing arrangements\n3. Carry out legalization and legal drafting",
+                    "duties":"1. Comply with Company regulations through Company Regulations, Standard Procedures and other supporting regulations.\n2. Comply with and implement with regard to safety, health and environment (HSE) prevailing in the Company.\n3. Supervise the following legal service activities:\n- Bridging company legalization problems with third parties\n- Extending the HGB-HGU on company land assets and SHM for private ownership\n- Extending TDP, NPWP and making company API and related to other permits\n- Registering copyright (patent rights)\n- Oversee business development related to agreements\n- Provide input to the management regarding the application of the law\n- Applying legal principles to Company departments\n4. Ensure that all approvals, permits, licenses, acquisitions and land acquisitions are obtained on time in accordance with government regulations.",
+                    "quali":"1. Supervise the implementation of legal support to all departments\n2. Conducting government relations activities related to licensing arrangements\n3. Carry out legalization and legal drafting"
+                }
+            },
+            {
+                "jobs":"Control Room Operator",
+                "prerequisite":{
+                    "allpurpose":"1. Supervise the implementation of legal support to all departments\n2. Conducting government relations activities related to licensing arrangements\n3. Carry out legalization and legal drafting",
+                    "duties":"1. Comply with Company regulations through Company Regulations, Standard Procedures and other supporting regulations.\n2. Comply with and implement with regard to safety, health and environment (HSE) prevailing in the Company.\n3. Supervise the following legal service activities:\n- Bridging company legalization problems with third parties\n- Extending the HGB-HGU on company land assets and SHM for private ownership\n- Extending TDP, NPWP and making company API and related to other permits\n- Registering copyright (patent rights)\n- Oversee business development related to agreements\n- Provide input to the management regarding the application of the law\n- Applying legal principles to Company departments\n4. Ensure that all approvals, permits, licenses, acquisitions and land acquisitions are obtained on time in accordance with government regulations.",
+                    "quali":"1. Supervise the implementation of legal support to all departments\n2. Conducting government relations activities related to licensing arrangements\n3. Carry out legalization and legal drafting"
+                }
+            },
         ],
     },
     {
         "job":"Mine Operation",
         "position":"0",
         "joblist": [
-            {"jobs":null},
+            {
+                "jobs":null,
+                "prerequisite":{
+                    "allpurpose":"1. Supervise the implementation of legal support to all departments\n2. Conducting government relations activities related to licensing arrangements\n3. Carry out legalization and legal drafting",
+                    "duties":"1. Comply with Company regulations through Company Regulations, Standard Procedures and other supporting regulations.\n2. Comply with and implement with regard to safety, health and environment (HSE) prevailing in the Company.\n3. Supervise the following legal service activities:\n- Bridging company legalization problems with third parties\n- Extending the HGB-HGU on company land assets and SHM for private ownership\n- Extending TDP, NPWP and making company API and related to other permits\n- Registering copyright (patent rights)\n- Oversee business development related to agreements\n- Provide input to the management regarding the application of the law\n- Applying legal principles to Company departments\n4. Ensure that all approvals, permits, licenses, acquisitions and land acquisitions are obtained on time in accordance with government regulations.",
+                    "quali":"1. Supervise the implementation of legal support to all departments\n2. Conducting government relations activities related to licensing arrangements\n3. Carry out legalization and legal drafting"
+                }
+            },
         ],
     },
     {
         "job":"Finance & Support",
         "position":"0",
         "joblist": [
-            {"jobs":null},
+            {
+                "jobs":null,
+                "prerequisite":{
+                    "allpurpose":"1. Supervise the implementation of legal support to all departments\n2. Conducting government relations activities related to licensing arrangements\n3. Carry out legalization and legal drafting",
+                    "duties":"1. Comply with Company regulations through Company Regulations, Standard Procedures and other supporting regulations.\n2. Comply with and implement with regard to safety, health and environment (HSE) prevailing in the Company.\n3. Supervise the following legal service activities:\n- Bridging company legalization problems with third parties\n- Extending the HGB-HGU on company land assets and SHM for private ownership\n- Extending TDP, NPWP and making company API and related to other permits\n- Registering copyright (patent rights)\n- Oversee business development related to agreements\n- Provide input to the management regarding the application of the law\n- Applying legal principles to Company departments\n4. Ensure that all approvals, permits, licenses, acquisitions and land acquisitions are obtained on time in accordance with government regulations.",
+                    "quali":"1. Supervise the implementation of legal support to all departments\n2. Conducting government relations activities related to licensing arrangements\n3. Carry out legalization and legal drafting"
+                }
+            },
         ],
     },
     {
         "job":"Mine Operation",
         "position":"1",
         "joblist": [
-            {"jobs":"Supervisor Furnace"},
+            {
+                "jobs":"Supervisor",
+                "prerequisite":{
+                    "allpurpose":"1. Supervise the implementation of legal support to all departments\n2. Conducting government relations activities related to licensing arrangements\n3. Carry out legalization and legal drafting",
+                    "duties":"1. Comply with Company regulations through Company Regulations, Standard Procedures and other supporting regulations.\n2. Comply with and implement with regard to safety, health and environment (HSE) prevailing in the Company.\n3. Supervise the following legal service activities:\n- Bridging company legalization problems with third parties\n- Extending the HGB-HGU on company land assets and SHM for private ownership\n- Extending TDP, NPWP and making company API and related to other permits\n- Registering copyright (patent rights)\n- Oversee business development related to agreements\n- Provide input to the management regarding the application of the law\n- Applying legal principles to Company departments\n4. Ensure that all approvals, permits, licenses, acquisitions and land acquisitions are obtained on time in accordance with government regulations.",
+                    "quali":"1. Supervise the implementation of legal support to all departments\n2. Conducting government relations activities related to licensing arrangements\n3. Carry out legalization and legal drafting"
+                }
+            },
         ],
     },
 ]

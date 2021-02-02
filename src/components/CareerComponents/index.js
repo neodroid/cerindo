@@ -43,16 +43,16 @@ const CareerComponents = () =>{
             </Jobcer>
             <h2>Jobs Vacancies</h2>
             <div style={{width:"100%",margin:"0 auto 52px"}}>
-                {JobData.map((data,idx)=>{
-                    if(data.position > 1) {
+                {JobData.map((obj,idx)=>{
+                    if(obj.position > 1) {
                     return(
                     <DropDown role="button" tabIndex={-1} key={idx}>
                         <Dropbtn>
                             <ContentDiv job>
-                            <TextButton>{data.job}</TextButton>
+                            <TextButton>{obj.job}</TextButton>
                             </ContentDiv>
                             <ContentDiv>
-                                <TextButton pos>{data.position} Positions</TextButton>
+                                <TextButton pos>{obj.position} Positions</TextButton>
                             </ContentDiv>
                             <ArrowDiv>
                                 <ArrowBg>
@@ -61,10 +61,10 @@ const CareerComponents = () =>{
                             </ArrowDiv>
                         </Dropbtn>
                         <DropDownContent>
-                        {data.joblist.map((data)=>{
+                        {obj.joblist.map((data)=>{
                             if(data.jobs != null){
                             return(
-                            <Linkeda>
+                            <Linkeda to={`Jobs/${obj.job}/${data.jobs}`}>
                                 <ContentWrited>{data.jobs}</ContentWrited>
                                 <ButtonLink><Arrowchild/></ButtonLink>
                             </Linkeda>
@@ -80,10 +80,10 @@ const CareerComponents = () =>{
                         <DropDown role="button" tabIndex={-1} key={idx}>
                             <Dropbtn>
                                 <ContentDiv job>
-                                <TextButton>{data.job}</TextButton>
+                                <TextButton>{obj.job}</TextButton>
                                 </ContentDiv>
                                 <ContentDiv>
-                                    <TextButton pos>{data.position} Position</TextButton>
+                                    <TextButton pos>{obj.position} Position</TextButton>
                                 </ContentDiv>
                                 <ArrowDiv>
                                     <ArrowBg>
@@ -92,10 +92,10 @@ const CareerComponents = () =>{
                                 </ArrowDiv>
                             </Dropbtn>
                             <DropDownContent>
-                            {data.joblist.map((data)=>{
+                            {obj.joblist.map((data)=>{
                                 if(data.jobs != null){
                                 return(
-                                <Linkeda>
+                                <Linkeda to={`Jobs/${obj.job}/${data.jobs}`}>
                                     <ContentWrited>{data.jobs}</ContentWrited>
                                     <ButtonLink><Arrowchild/></ButtonLink>
                                 </Linkeda>

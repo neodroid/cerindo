@@ -10,6 +10,7 @@ export const CareerTempl = styled.div`
         line-height: 50px;
         color: black;
         margin-bottom: 15px;
+        font-family: 'Montserrat',sans-serif;
     }
     @media screen and (max-width: 420px) {
         width: 80% !important;
@@ -114,9 +115,9 @@ export const Linkeda = styled(Link)`
     width: 100%;
     border-bottom: 1px solid #D6D6D6;
     transition: 0.3s all linear;
-&:hover{
-    transform: scale(1.02);
-}
+    &:hover{
+        transform: scale(1.02);
+    }
 `;
 
 export const Arrowchild = styled(FaAngleRight)`

@@ -31,7 +31,7 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                         <TextButton page={page3}>Resource and Reserve</TextButton>
                         <TextButton page={page4}>Nickel-Cobalt HPAL</TextButton>
                         <TextButton page={page5}>Ore Export</TextButton>
-                        <TextButton page={page6}>Power Plants</TextButton>
+                        <TextButton page={page6}>Power Supply</TextButton>
 
                         <ArrowDiv>
                             {selected ? <ArrowDownLang style={{transform: "rotate(225deg)"}}/> : <ArrowDownLang/>}
@@ -54,8 +54,8 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                         <AboutSideBarContent page={page5} to="/Ore-Export">
                             Ore Export
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page6} to="/Power-Plant">
-                            Power Plants
+                        <AboutSideBarContent page={page6} to="/Power-Supply">
+                            Power Supply
                         </AboutSideBarContent>
                     </Contentt>
                     : 
@@ -76,8 +76,8 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                         <AboutSideBarContent page={page5} to="/Ore-Export">
                             Ore Export
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page6} to="/Power-Plant">
-                            Power Plants
+                        <AboutSideBarContent page={page6} to="/Power-Supply">
+                            Power Supply
                         </AboutSideBarContent>
                     </Contentt>
                     </Changed>
@@ -137,7 +137,7 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                         <TextButton page={page3}>Resource and Reserve</TextButton>
                         <TextButton page={page4}>Nickel-Cobalt HPAL</TextButton>
                         <TextButton page={page5}>Jetty Terminal</TextButton>
-                        <TextButton page={page6}>Power Plants</TextButton>
+                        <TextButton page={page6}>Power Supply</TextButton>
 
                         <ArrowDiv>
                             {selected ? <ArrowDownLang style={{transform: "rotate(225deg)"}}/> : <ArrowDownLang/>}
@@ -164,7 +164,7 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                         </BusinessSideBarImage>
                         <h1>Energy</h1>
                         <BusinessSideBarImage img={callImage(5)}>
-                            <BusinessSideBarContent page={page6} to="/Power-Plant">Power Plants</BusinessSideBarContent>
+                            <BusinessSideBarContent page={page6} to="/Power-Supply">Power Supply</BusinessSideBarContent>
                         </BusinessSideBarImage>
                     </Contentt>
                     : 
@@ -189,7 +189,7 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                         </BusinessSideBarImage>
                         <h1>Energy</h1>
                         <BusinessSideBarImage img={callImage(5)}>
-                            <BusinessSideBarContent page={page6} to="/Power-Plant">Power Plants</BusinessSideBarContent>
+                            <BusinessSideBarContent page={page6} to="/Power-Supply">Power Supply</BusinessSideBarContent>
                         </BusinessSideBarImage>
                     </Contentt>
                     </Changed>}

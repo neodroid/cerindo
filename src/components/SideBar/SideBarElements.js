@@ -9,8 +9,8 @@ export const SidebarContainer = styled.aside`
   width: 100%;
   height: 100%;
   background: #333333;
-  display: grid;
   align-items: center;
+  overflow-Y: scroll;
   top: 0;
   left: 0;
   transition: 0.3s ease-in-out;
@@ -24,28 +24,34 @@ export const CloseIcon = styled(FaTimes)`
 `;
 
 export const Icon = styled.div`
-  position: absolute;
-  top: 1.2rem;
-  right: 1.5rem;
   background: transparent;
   font-size: 2rem;
   cursor: pointer;
+  padding: 25px;
   outline: none;
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
 `;
 
 export const SidebarWrapper = styled.div`
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 `;
 
 export const SidebarMenu = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 80px);
+  display: flex;
+  flex-direction: column;
   text-align: center;
-
-  @media screen and (max-width: 480px) {
-    grid-template-rows: repeat(6, 60px);
-  }
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
 `;
 
 export const SidebarLink = styled(LinkR)`
@@ -76,6 +82,7 @@ list-style: none;
 transition: 0.2s ease-in-out;
 color: #fff;
 cursor: pointer;
+margin-bottom: 32px;
 `;
 
 export const SidebarRoute = styled(LinkR)`
@@ -114,3 +121,63 @@ export const SidebarDropContent = styled.div`
 `;
 
 export const Nulity = styled.div`display:none;`
+
+export const DropDownContent = styled.div`
+  width: 100%;
+  display: none;
+  z-index: 1;
+  padding: 16px 16px;
+  background: #424242;
+`;
+
+export const ContentDiv = styled.div`
+    display: block;
+    font-weight: 400;
+    font-family: 'Montserrat',sans-serif;
+    text-align: center;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 20px;
+    text-decoration: underline;
+`;
+export const DropDown = styled.div`
+  margin-bottom: 32px;
+  display: inline-block;
+  border-bottom: 1px solid #D6D6D6;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  > * {
+    cursor: pointer;
+  }
+
+  &:focus,
+  &:active {
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    border: none;
+  }
+  &:focus ${DropDownContent}, &:active ${DropDownContent} {
+    display: block;
+    max-width: 100vw;
+  }
+  &:hover {
+    color: #333;
+  }
+`;
+
+export const Dropbtn = styled.div`
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+text-decoration: none;
+list-style: none;
+transition: 0.2s ease-in-out;
+color: #fff;
+cursor: pointer;
+`;

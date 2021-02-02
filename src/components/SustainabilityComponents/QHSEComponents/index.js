@@ -3,7 +3,7 @@ import { sustainService } from "../../../service/Sustainability";
 import { BusinessWrited } from "../../BusinessComponents/BusinessElements";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
-import { Imageqhse, Images, WritedPart } from "./QHSEElements";
+import { Imageqhse, Images, WritedPart,Apart } from "./QHSEElements";
 import { langContext } from "../../../langContext";
 import { QHSEContentLangTitle, QHSEContentLangBody } from "./QHSELang";
 
@@ -25,13 +25,15 @@ const QHSEComponents = () => {
       <Aboutstyle>
         <BusinessSideBarComponents page1={true} />
         <AboutMain>
-          <Images>
-            <Imageqhse src={QHSEContent.image.url} />
-          </Images>
-          <WritedPart>
-            <BusinessWrited title>{QHSEContentLangTitle(QHSEContent, language)}</BusinessWrited>
-            <BusinessWrited>{QHSEContentLangBody(QHSEContent, language)}</BusinessWrited>
-          </WritedPart>
+          <Apart>
+            <WritedPart>
+              <BusinessWrited title>{QHSEContentLangTitle(QHSEContent, language)}</BusinessWrited>
+              <BusinessWrited>{QHSEContentLangBody(QHSEContent, language)}</BusinessWrited>
+            </WritedPart>
+            <Images>
+              <Imageqhse src={QHSEContent.image.url} />
+            </Images>
+          </Apart>
         </AboutMain>
       </Aboutstyle>
     </>

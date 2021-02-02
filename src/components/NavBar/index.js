@@ -115,11 +115,11 @@ const Navbar = ({ toggle }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="/">Home</NavLinks>
+              <NavLinks to="/">HOME</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks>
-                Business
+                BUSINESS
                 <NavbarDropdownContent>
                   <DropDiv>
                     <NavDropLinks to="/Nickle-Ore-Mining">
@@ -140,14 +140,14 @@ const Navbar = ({ toggle }) => {
                       Resource and Reserve
                     </NavDropLinks>
                     <NavDropLinks to="/Ore-Export">Ore Export</NavDropLinks>
-                    <NavDropLinks to="/Power-Plant">Power Plant</NavDropLinks>
+                    <NavDropLinks to="/Power-Supply">Power Supply</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks>
-                Global Sustainability
+                GLOBAL SUSTAINABILITY
                 <NavbarDropdownContent>
                   <DropDiv>
                     <NavDropLinks to="/QHSE">QHSE</NavDropLinks>
@@ -162,7 +162,7 @@ const Navbar = ({ toggle }) => {
             </NavItem>
             <NavItem>
               <NavLinks>
-                About Us
+                ABOUT US
                 <NavbarDropdownContent>
                   <DropDiv>
                     <NavDropLinks to="/Mission-Vision">
@@ -195,7 +195,7 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/Career">Career</NavLinks>
+              <NavLinks to="/Career">CAREER</NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>

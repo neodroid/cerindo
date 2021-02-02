@@ -19,6 +19,7 @@ import PowerPlant from "./pages/PowerPlant";
 import NewsRelease from "./pages/NewRelease";
 import NewsComponent from "./components/CorporateNewsComponents/NewsComponent";
 import AlbumComponent from "./components/AboutUsComponents/GalleryComponents/AlbumComponents";
+import JobComponents from "./components/CareerComponents/JobComponents"
 import Vismis from "./pages/Vismis";
 import Commitment from "./pages/Commitment";
 import Subsidiary from "./pages/Subsidiary";
@@ -71,7 +72,7 @@ function App() {
             />
             <Route path="/Resource-Reserve" component={ResourceReserve} exact />
             <Route path="/Ore-Export" component={OreExport} exact />
-            <Route path="/Power-Plant" component={PowerPlant} exact />
+            <Route path="/Power-Supply" component={PowerPlant} exact />
             <Route path="/Press-Release" component={NewsRelease} exact />
             <Route path="/News/:title" component={NewsComponent} exact />
             <Route path="/Mission-Vision" component={Vismis} exact />
@@ -96,6 +97,7 @@ function App() {
               component={ActivityContentComponent}
             />
             <Route path="/Album/:id" component={AlbumComponent} exact />
+            <Route path="/Jobs/:job/:jobs" component={JobComponents} exact />
           </Switch>
         </langContext.Provider>
 
