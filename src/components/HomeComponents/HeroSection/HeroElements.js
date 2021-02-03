@@ -337,7 +337,7 @@ export const Slider = styled(AwesomeSlider)`
     display: block;
     min-height: 650px;
     height: 720px;
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1064px) {
       min-height: 900px;
       height: auto;
     }
@@ -356,6 +356,10 @@ export const Slider = styled(AwesomeSlider)`
     background-color: transparent;
     width: 100% !important;
     position: static !important;
+  }
+  .awssld__timer {
+    background-color: transparent;
+    z-index: -1;
   }
   .awssld__content > div {
     background-color: transparent;

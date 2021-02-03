@@ -67,7 +67,7 @@ const JobComponents = ({match}) =>{
                 <input type="file" id="myfile" name="myfile"/>
                 <br/>
                 <Buttonscv>
-                <Buttons>Send <FaArrowRight style={{marginLeft:"8px"}}/></Buttons>
+                <Buttons type="submit">Send <FaArrowRight style={{marginLeft:"8px"}}/></Buttons>
                 </Buttonscv>
             </MainCareer>
         </>

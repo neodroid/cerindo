@@ -43,7 +43,7 @@ bottom: 0px;
   @media screen and (max-width: 865px) {
     position: static;
     align-items:center;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     width: 100%;
     text-align: left;
   }

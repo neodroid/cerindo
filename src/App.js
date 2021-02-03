@@ -34,6 +34,7 @@ import Reports from "./pages/Reports";
 import Award from "./pages/Award";
 import Gallery from "./pages/Gallery";
 import ActivityContentComponent from "./components/SustainabilityComponents/ActivityComponents/ActivityContentComponents";
+import ContactComponents from "./components/ContactComponents/index"
 import { langContext } from "./langContext";
 
 function App() {
@@ -98,6 +99,7 @@ function App() {
             />
             <Route path="/Album/:id" component={AlbumComponent} exact />
             <Route path="/Jobs/:job/:jobs" component={JobComponents} exact />
+            <Route path="/Contact-Us" component={ContactComponents} exact />
           </Switch>
         </langContext.Provider>
 

@@ -72,7 +72,10 @@ border-top:none;
 border-left:none;
 border-right:none;
 margin: 20px 15px 20px 0;
-@media screen and (max-width: 626px) {
+&:focus,&:active {
+    border-bottom: 2px solid #5C5C5C;
+}
+@media screen and (max-width: 707px) {
     width: 100%;
 }
 `;
@@ -80,7 +83,7 @@ margin: 20px 15px 20px 0;
 export const ApartInputan = styled.div`
     display: flex;
     width: 62%;
-    @media screen and (max-width: 626px) {
+    @media screen and (max-width: 707px) {
         flex-direction: column;
         width: 100%;
     }
@@ -92,7 +95,10 @@ border: 0.5px solid #5C5C5C;
 outline: none;
 padding: 16px;
 margin: 20px 15px 20px 0;
-@media screen and (max-width: 626px) {
+&:focus,&:active {
+    border: 2px solid #5C5C5C;
+}
+@media screen and (max-width: 707px) {
     width: 100%;
 }
 `;
