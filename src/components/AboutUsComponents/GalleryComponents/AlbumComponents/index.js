@@ -16,7 +16,7 @@ import {
 } from "../../../CorporateNewsComponents/NewsComponent/NewsElements";
 import { AlbumGrid, Image } from "./AlbumElements";
 import { langContext } from "../../../../langContext";
-import { GalleryLangTitle } from "../GalleryLang";
+import { GalleryLangTitle, GalleryLangTitlePhoto } from "../GalleryLang";
 
 const ManageOthArtData = ({ image, title, id, date }) => {
   return (
@@ -67,7 +67,7 @@ const AlbumComponent = (props) => {
       <GlobalContent>
         <BlogApart containe>
           <BlogDivApart contain>
-            <TitleContent>{photoDetailedGallery.title_en}</TitleContent>
+            <TitleContent>{GalleryLangTitlePhoto(photoDetailedGallery, language)}</TitleContent>
             <AlbumGrid>
               {photoDetailedGallery.image.map((val) => {
                 return <Image src={val.url} />;
