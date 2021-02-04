@@ -17,8 +17,11 @@ import {
   Figured,
   VideoContainerOther,
 } from "./GalleryElements";
+import { langContext } from "../../../langContext";
+import { GalleryLangTitle } from "./GalleryLang";
 
 const GalleryComponents = () => {
+  const { language } = useContext(langContext);
   const [videoGallery, setVideoGallery] = useState([]);
   const [photoGallery, setPhotoGallery] = useState([]);
   const fetchVideo = async () => {
@@ -60,7 +63,7 @@ const GalleryComponents = () => {
                       src={data.Video[0].url}
                       key={idx}
                     />
-                    <p>{data.title_en}</p>
+                    <p>{GalleryLangTitle(data, language)}</p>
                   </VideoContainerOther>
                 );
               })}
@@ -75,7 +78,7 @@ const GalleryComponents = () => {
                   >
                     <Figured key={idx}>
                       <img src={data.image[0].url} alt={data.title_en} />
-                      <figcaption>{data.title_en}</figcaption>
+                      <figcaption>{GalleryLangTitle(data, language)}</figcaption>
                     </Figured>
                   </Link>
                 );
