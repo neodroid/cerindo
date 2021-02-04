@@ -4,7 +4,7 @@ import { BusinessWrited } from "../../BusinessComponents/BusinessElements";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import {AwardImageContent} from "../../Data/SustainabilityData/AwardDatas"
-import { AwardsesContent, ContentAward, ImageAward,Linked } from "./AwardElements";
+import { AwardsesContent, ContentAward, ImageAward,Linked,Containerrs } from "./AwardElements";
 import {BoxContainer} from "../../CorporateNewsComponents/NewsReleaseComponents/NewsContentComponents/NewsContentElements";
 import { langContext } from "../../../langContext";
 import { AwardContentLangTitle, AwardContentLangBody } from "./AwardLang";
@@ -37,8 +37,10 @@ const AwardComponents = () => {
                   <Linked href={data.link}>
                   <BoxContainer titlee>{data.title}</BoxContainer>
                   </Linked>
-                  <ImageAward src={data.image}/>
-                  <BoxContainer>{data.caption}</BoxContainer>
+                  <Containerrs>
+                    <ImageAward src={data.image}/>
+                    <BoxContainer>{data.caption}</BoxContainer>
+                  </Containerrs>
                 </ContentAward>
               );
             })}

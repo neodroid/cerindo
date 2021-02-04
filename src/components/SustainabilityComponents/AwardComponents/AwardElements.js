@@ -31,7 +31,6 @@ export const ContentAward = styled.div`
 border-bottom: 1px solid #E0E0E0;
 margin: 20px 0;
 padding: 20px 0;
-height: 400px;
 overflow: hidden;
 @media screen and (max-width: 550px) {
     height: 450px;
@@ -39,10 +38,21 @@ overflow: hidden;
 `;
 
 export const ImageAward = styled.img`
-    height: 200px;
-    margin: 13px 0;
+    width: 124px;
+    margin: 13px 15px 13px 0;
+    @media screen and (max-width: 550px) {
+        margin: 13px auto;
+    }
 `;
 
 export const Linked = styled.a`
     color:black;
+`;
+
+export const Containerrs = styled.div`
+    display: flex;
+    width: 100%;
+    @media screen and (max-width: 550px) {
+        flex-direction: column;
+    }
 `;

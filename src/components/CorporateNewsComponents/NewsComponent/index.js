@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { NewsData } from "../../Data/News";
 import { newsService } from "../../../service/News";
 import {
-  TitleContent,
+  TitleContent,DateWrapped,
   BoxContainer,
   BlogImage,
   BlogWrapped,
@@ -12,13 +12,23 @@ import {
   Linked,
   BlogImageArt,
   GlobalContent,
+  ButtonNext,
+  OtherNews
 } from "./NewsElements";
+import Banner from "../../Banner";
+import {
+  Aboutstyle,
+  AboutMain,
+} from "../../AboutUsComponents/AboutUsElements";
+import AboutSideBarComponents from "../../AboutUsComponents/index";
 import { langContext } from "../../../langContext";
+import { aboutUsService } from "../../../service/Aboutus";
 import {
   DetailsNewsLangTitle,
   DetailsNewsLangContent,
   NewsLangTitle,
 } from "./NewsLang";
+import { FaArrowRight } from "react-icons/fa";
 
 const ManageOthArtData = ({ image, title, date }) => {
   return (
@@ -44,6 +54,8 @@ const NewsComponent = (props) => {
   const { language } = useContext(langContext);
   const [detailsNews, setDetailsNews] = useState([]);
   const [listNews, setListNews] = useState([]);
+  const [press, setPress] = useState([]);
+
   const fetchDataDetails = async () => {
     const response = await newsService.getDetailNews(props.match.params.title);
     const data = response.data;
@@ -56,18 +68,40 @@ const NewsComponent = (props) => {
   };
 
   useEffect(() => {
+    const fetchData = async () => {
+      const response = await aboutUsService.getListAboutUs();
+      const data = response.data;
+      setPress(data.press_release);
+    };
+    fetchData();
     fetchDataDetails();
     fetchDataList();
   }, []);
   if (detailsNews.length === 0) return null;
   if (listNews.length === 0) return null;
+  if (press.length === 0) return null;
 
   console.log(detailsNews.news_en);
   return (
     <>
-      <GlobalContent>
-        <BlogApart containe>
-          <BlogDivApart contain>
+    {press.banner.map((data, idx) => {
+        return (
+          <Banner
+            img={data.url}
+            texted={true}            
+            key={idx}
+            place="About Us"
+          />
+        );
+      })}
+      <Aboutstyle>
+        <AboutSideBarComponents page8={true}/>
+          <AboutMain>
+            <DateWrapped>
+              <BoxContainer>
+              {detailsNews.news_date}
+              </BoxContainer>
+            </DateWrapped>
             <TitleContent>
               {DetailsNewsLangTitle(detailsNews, language)}
             </TitleContent>
@@ -79,24 +113,13 @@ const NewsComponent = (props) => {
                 {DetailsNewsLangContent(detailsNews, language)}
               </BoxContainer>
             </BlogWrapped>
-          </BlogDivApart>
-          <BlogDivApart>
-            <TitleContent art>Other Article</TitleContent>
-            <ArticlePart>
-              {listNews.map((data, idx) => {
-                if(idx < 4){
-                return(
-                <ManageOthArtData
-                  key={idx}
-                  image={data.news_img.url}
-                  title={NewsLangTitle(data, language)}
-                  date={data.news_date}
-                />)}
-              })}
-            </ArticlePart>
-          </BlogDivApart>
-        </BlogApart>
-      </GlobalContent>
+            <OtherNews href="https://www.google.com">
+              <ButtonNext>
+                View Source <FaArrowRight style={{marginLeft:"10px"}}/>
+              </ButtonNext>
+            </OtherNews>
+          </AboutMain>
+      </Aboutstyle>
     </>
   );
 };

@@ -7,7 +7,7 @@ import {
 } from "../AboutUsElements";
 import { aboutUsService } from "../../../service/Aboutus";
 import AboutSideBarComponents from "../index";
-import { OrgWrapped,Imagess } from "./OrganizationElements";
+import { OrgWrapped,Imagess,ImagePart } from "./OrganizationElements";
 import { OrgData } from "../../Data/AboutusData/OrganizationDatas";
 
 const OrganizationComponents = () => {
@@ -28,11 +28,12 @@ const OrganizationComponents = () => {
         <AboutSideBarComponents page5={true}/>
         <AboutMain>
           <OrgWrapped>
+            <ImagePart>
             <Imagess
               src={organization.Structure_image.url}
               alt="structure"
-              width={`782px`}
             />
+            </ImagePart>
           </OrgWrapped>
         </AboutMain>
       </Aboutstyle>

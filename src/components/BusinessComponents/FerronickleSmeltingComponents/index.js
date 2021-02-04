@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import {
   Businessstyle,
-  BusinessMain,
+  ImageBusiness,
   BusinessWrited,
 } from "../BusinessElements";
 import {
@@ -36,6 +36,7 @@ const FerronickleSmeltingComponents = () => {
           <BusinessWrited>
             {FerronickleLangBody(ferronicle, language)}
           </BusinessWrited>
+          <ImageBusiness/>
         </AboutMain>
       </Aboutstyle>
     </>

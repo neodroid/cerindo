@@ -22,13 +22,13 @@ export const VismisWrited = styled.div`
     line-height: ${(props) => (props.title ? "50px" : "24px")};
     color: ${(props) => (props.title ? "#333333" : "#111111")};
     margin-bottom: ${(props) => (props.title ? "13px" : "0")};
+    margin-top: ${(props) => (props.misi ? "30px" : "0")};
 `;
 
 export const VismisImagePart = styled.div`
     flex-direction: row-reverse;
     margin: ${(props) => (props.misi ? "20px 10px 0" : "20px 10px")};
 `;
-
 export const ValueContent = styled.div`
     margin: 15px 40px;
     h1 {
@@ -49,6 +49,7 @@ export const ValueWrite = styled.div`
     line-height: 40px;
     margin-bottom: 30px;
     letter-spacing: 0.1em;
+    text-align: center;
     color: ${(props) => (props.choose ? "#EFB401" : "#e0e0e0")};
     margin: 30px 0;
     font-family: 'Montserrat',sans-serif;
@@ -88,6 +89,20 @@ export const Valuexpwrited = styled.div`
     @media screen and (max-width: 820px) {
         font-size: ${(props) => (props.title ? "16px" : "10px")};
     }
+`;
+
+export const Image = styled.img`
+    max-width: 50px;
+    margin-right: 8px;
+`;
+
+export const FlexValue = styled.div`
+    display: flex;
+    margin: 0 auto;
+`;
+export const ValueApart = styled.div`
+    flex-basis: ${(props)=>(props.image ? "10%" : "90%")};
+    align-self: center;
 `;
 
 export const Angle = styled(Carousel)`

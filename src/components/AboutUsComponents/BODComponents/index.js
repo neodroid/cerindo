@@ -86,7 +86,7 @@ const BODComponents = () => {
                         <BodBoxIntro>
                           <img
                             src={data.picture.url}
-                            width={`149px`}
+                            width={`208px`}
                           />
                           <div>
                             <BodBoxIntroTitle title>

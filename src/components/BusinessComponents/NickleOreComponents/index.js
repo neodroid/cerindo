@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import {
   Businessstyle,
-  BusinessMain,
+  ImageBusiness,
   BusinessWrited,
 } from "../BusinessElements";
 import {
@@ -36,6 +36,7 @@ const NickleOreComponents = () => {
           <BusinessWrited>
             {NickleOreLangBody(nickelOre, language)}
           </BusinessWrited>
+          <ImageBusiness/>
         </AboutMain>
       </Aboutstyle>
     </>

@@ -49,7 +49,7 @@ const HeroSection = () => {
     <AutoplaySlider
     play={true}
     cancelOnInteraction={false}
-    interval={10000}
+    interval={5000}
     className="aws-btn"
     >
       {HeroData.map((data,idx)=>{
