@@ -30,7 +30,7 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                         <TextButton page={page2}>Ferronickel Smelting</TextButton>
                         <TextButton page={page3}>Resource and Reserve</TextButton>
                         <TextButton page={page4}>Nickel-Cobalt HPAL</TextButton>
-                        <TextButton page={page5}>Ore Export</TextButton>
+                        <TextButton page={page5}>Direct Ore Shipping</TextButton>
                         <TextButton page={page6}>Power Supply</TextButton>
 
                         <ArrowDiv>
@@ -52,7 +52,7 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                             Nickel-Cobalt HPAL
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page5} to="/Ore-Export">
-                            Ore Export
+                            Direct Ore Shipping
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page6} to="/Power-Supply">
                             Power Supply
@@ -74,7 +74,7 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                             Nickel-Cobalt HPAL
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page5} to="/Ore-Export">
-                            Ore Export
+                            Direct Ore Shipping
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page6} to="/Power-Supply">
                             Power Supply

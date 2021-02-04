@@ -196,4 +196,19 @@ export const Changed = styled.div`
 @media screen and (max-width: 810px) {
     display: none;
   }
-`
+`;
+
+export const ImageBusiness = styled.img`
+  margin: 17px auto 40px;
+  width: 100%;
+`;
+
+export const Resve = styled.div`
+  width: 100%;
+  overflow-x: scroll;
+`;
+
+export const ResveImage = styled.img`
+  min-width: 500px;
+  max-width: 700px;
+`;

@@ -83,7 +83,7 @@ const BODComponents = () => {
                     <Bodbox key={idx}>
                       <BodBoxContent>
                         <BodBoxIntro>
-                          <img src={data.picture.url} width={`149px`} />
+                          <img src={data.picture.url} width={`208px`} />
                           <div>
                             <BodBoxIntroTitle title>
                               {data.name}

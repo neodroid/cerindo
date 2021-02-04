@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { sustainService } from "../service/Sustainability";
-import { ActivityHead } from "../components/Data/SustainabilityData/ActivityDatas";
 import Banner from "../components/Banner";
 import ActivityComponents from "../components/SustainabilityComponents/ActivityComponents";
+import {BannerSlider} from "../components/BannerSlider";
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import 'react-awesome-slider/dist/styles.css';
+
+const AutoplaySlider = withAutoplay(BannerSlider);
 
 const Activity = () => {
   const [activity, setActivity] = useState([]);
@@ -18,9 +22,19 @@ const Activity = () => {
   if (activity.length === 0) return null;
   return (
     <>
+    <AutoplaySlider
+    play={true}
+    cancelOnInteraction={false}
+    interval={5000}
+    className="aws-btn"
+    >
       {activity.banner.map((data, idx) => {
-        return <Banner img={data.url} texted={true} key={idx} place="Global Sustainability"/>;
-      })}
+        return(
+          <>
+          <Banner img={data.url} texted={true} key={idx} place="Global Sustainability"/>
+          </>
+      )})}
+      </AutoplaySlider>
       <ActivityComponents />
     </>
   );

@@ -13,9 +13,11 @@ import {
   ValuePartexp,
   Valuexp,
   ValuesWrited,
-  Valuexpwrited,
-  Angle,
+  FlexValue,
+  Image,
+  ValueApart
 } from "./VismisElements";
+import testing from "../../../images/Group 535.png"
 
 const VismisComponents = () => {
   const [MVV, setMVV] = useState([]);
@@ -38,10 +40,11 @@ const VismisComponents = () => {
             <VismisApart>
               <VismisWrited title>Vision</VismisWrited>
               <VismisWrited>{MVV.Vision_Description}</VismisWrited>
+              <VismisWrited title misi>Mission</VismisWrited>
+              <VismisWrited>{MVV.Mission_description}</VismisWrited>
             </VismisApart>
             <VismisApart>
-              <VismisWrited title>Mission</VismisWrited>
-              <VismisWrited>{MVV.Mission_description}</VismisWrited>
+              <img width="245px"/> {/* Foto yang di vismis */}
             </VismisApart>
           </VismisContent>
           <ValueContent>
@@ -49,12 +52,17 @@ const VismisComponents = () => {
             <ValueWrite choose>C E R I A</ValueWrite>
             {MVV.ceriaValue.map((data, idx) => {
               return (
-                <>
-                  <ValuePartexp key={idx}>
-                    <ValuesWrited title>{data.value}</ValuesWrited>
-                    <ValuesWrited>{data.value_description}</ValuesWrited>
-                  </ValuePartexp>
-                </>
+                <FlexValue>
+                  <ValueApart image>
+                  <Image src={testing}/> {/* Isinya Foto yang di kanan */}
+                  </ValueApart>
+                  <ValueApart>
+                    <ValuePartexp key={idx}>
+                      <ValuesWrited title>{data.value}</ValuesWrited>
+                      <ValuesWrited>{data.value_description}</ValuesWrited>
+                    </ValuePartexp>
+                  </ValueApart>
+                </FlexValue>
               );
             })}
           </ValueContent>

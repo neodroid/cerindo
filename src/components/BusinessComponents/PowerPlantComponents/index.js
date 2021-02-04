@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import {
   Businessstyle,
-  BusinessMain,
+  ImageBusiness,
   BusinessWrited,
 } from "../BusinessElements";
 import {
@@ -36,6 +36,8 @@ const PowerPlantComponents = () => {
           <BusinessWrited>
             {PowerPlantLangBody(powerPlant, language)}
           </BusinessWrited>
+          <ImageBusiness src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Pemandangan_Kaldera_Gunung_Bromo_dari_Viewpoint_Pananjakan_1%2C_Jawa_Timur%2C_25052017.jpg"/>
+          {/*Gambar Ganti */}
         </AboutMain>
       </Aboutstyle>
     </>

@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import {
-  Businessstyle,
-  BusinessMain,
+  Resve,
+  ImageBusiness,
   BusinessWrited,
+  ResveImage
 } from "../BusinessElements";
+import testing1 from "../../../images/driling2017a.png"
 import {
   Aboutstyle,
   AboutMain,
@@ -33,6 +35,19 @@ const ResourceReserveComponents = () => {
         <BusinessSideBarComponents page3={true} />
         <AboutMain>
           <BusinessWrited title>{ResourceReserveLangTitle(resourceReserve, language)}</BusinessWrited>
+          <BusinessWrited>
+            {ResourceReserveLangBody(resourceReserve, language)}
+          </BusinessWrited>
+          <BusinessWrited><b>Table Drilling Data before 2017</b></BusinessWrited>
+          <Resve>
+          <ResveImage src={testing1}/>
+          </Resve>
+          <BusinessWrited><b>Table Drilling Data before 2017 - 2020</b></BusinessWrited>
+          <Resve>
+          <ResveImage src={testing1}/>
+          </Resve>
+          <BusinessWrited><b>IUP Ceria Drilling Distribution Map</b></BusinessWrited>
+          <ImageBusiness/>
           <BusinessWrited>
             {ResourceReserveLangBody(resourceReserve, language)}
           </BusinessWrited>

@@ -15,7 +15,7 @@ export const TitleContent = styled.div`
     font-weight: bold;
     font-size: ${(props)=>(props.art ? "18px" : "26px")};
     line-height: ${(props)=>(props.art ? "25px" : "50px")};
-    margin: ${(props)=>(props.art ? "150px 0 15px" : "22px 0")};
+    margin: ${(props)=>(props.art ? "150px 0 15px" : "8px 0")};
     @media screen and (max-width: 740px) {
         font-weight: 700;
         text-align:center;
@@ -24,10 +24,13 @@ export const TitleContent = styled.div`
 
 export const BlogWrapped = styled.div`
     text-align: ${props => props.image ? "center" : "left"};
-    margin: ${props => props.image ? "30px 21px 0 15px" : "50px 21px 50px 21px"};
+    margin: ${props => props.image ? "30px 21px 0 15px" : "50px 0"};
     @media screen and (max-width: 740px) {
         text-align: ${props => props.image ? "left" : "left"};
     }
+`;
+export const DateWrapped = styled.div`
+    margin-top: 50px;
 `;
 export const BoxContainer = styled.div`
     white-space: pre-line;  
@@ -56,10 +59,8 @@ export const BoxContainer = styled.div`
 export const BlogImage = styled.img`
     z-index: 3;
     width: 599px;
-    height: 419px;
     @media screen and (max-width: 565px) {
         max-width: 100%;
-        max-height: 300px;
     }
 `;
 
@@ -116,4 +117,22 @@ export const ShareBtn = styled.button`
         transition:0.2s ease-in-out;
         transform:scale(1.1);
     }
+`;
+
+export const ButtonNext = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    width: 100%;
+    background: #EFB401;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 50px;
+    color: white;
+`;
+
+export const OtherNews = styled.a`
+    text-decoration: none
 `;

@@ -8,6 +8,7 @@ import {
   FooterLinkItems,
   FooterLinksContainer,
   FooterLinkTitle,
+  FooterLinked,
   FooterLinkWrapper,
   FooterWrap,
   SocialIconLink,
@@ -31,12 +32,12 @@ const Footer = () => {
                 <Logo src={image} />
               </NavLogo>
               <FooterLinkTitle>Jakarta Office</FooterLinkTitle>
-              <FooterLink>
+              <FooterLinked>
                 South Quarter Tower A 5th Floor Jl. RA Kartini Kav 8 Cilandak
                 Jakarta 12430 Indonesia
-              </FooterLink>
-              <FooterLink>Phone +62 21 2276 9324</FooterLink>
-              <FooterLink>Fax +62 21 291 25827</FooterLink>
+              </FooterLinked>
+              <FooterLinked>Phone +62 21 2276 9324</FooterLinked>
+              <FooterLinked>Fax +62 21 291 25827</FooterLinked>
             </FooterLinkItems>
             <FooterLinkItems>
             <FooterLinkTitle>Social Networks</FooterLinkTitle>
@@ -71,12 +72,12 @@ const Footer = () => {
                 </SocialIconLink>
               </SocialIcons>
               <FooterLinkTitle>Makassar Office</FooterLinkTitle>
-              <FooterLink>
+              <FooterLinked>
                 Jl. Kima 12 Kav. N-1a, Kawasan Industrial Makassar Makassar
                 90245
-              </FooterLink>
-              <FooterLink>Phone +62 (411) 4720747</FooterLink>
-              <FooterLink>Fax +62 (411) 4720748</FooterLink>
+              </FooterLinked>
+              <FooterLinked>Phone +62 (411) 4720747</FooterLinked>
+              <FooterLinked>Fax +62 (411) 4720748</FooterLinked>
             </FooterLinkItems>
           </FooterLinkWrapper>
 
@@ -103,9 +104,9 @@ const Footer = () => {
                 <FooterLinkTitle>Contact Us</FooterLinkTitle>
               </Link>
               <FooterLinkTitle>For inquiries, email to:</FooterLinkTitle>
-              <FooterLink>
+              <FooterLinked>
                 <MdEmail /> info@cerindocorp.com
-              </FooterLink>
+              </FooterLinked>
             </FooterLinkItems>
 
           </FooterLinkWrapper>

@@ -12,7 +12,7 @@ export const Nav = styled.nav`
   font-size: 1 rem;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 50;
   transition: 0.8s all ease;
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
@@ -124,6 +124,7 @@ export const NavLinks = styled(LinkR)`
   transition: 0.5s all ease;
   font-size: 14px;
   line-height: 17px;
+  transition: 0.3s linear;
   color: ${({ bottom }) => (bottom ? "#efb401" : "none")};
 
   &.active {
@@ -134,7 +135,6 @@ export const NavLinks = styled(LinkR)`
   &:hover {
     color: #efb401;
     font-weight: bold;
-    transition: 0.2s ease-in-out;
     border-bottom: 3px solid #efb401;
   }
 
