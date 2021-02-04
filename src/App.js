@@ -19,7 +19,7 @@ import PowerPlant from "./pages/PowerPlant";
 import NewsRelease from "./pages/NewRelease";
 import NewsComponent from "./components/CorporateNewsComponents/NewsComponent";
 import AlbumComponent from "./components/AboutUsComponents/GalleryComponents/AlbumComponents";
-import JobComponents from "./components/CareerComponents/JobComponents"
+import JobComponents from "./components/CareerComponents/JobComponents";
 import Vismis from "./pages/Vismis";
 import Commitment from "./pages/Commitment";
 import Subsidiary from "./pages/Subsidiary";

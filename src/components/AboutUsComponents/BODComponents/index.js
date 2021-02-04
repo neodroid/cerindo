@@ -18,7 +18,7 @@ import {
   Dropbtn,
   DropDownContent,
   ContentDiv2,
-  BodGrid
+  BodGrid,
 } from "./BODElements";
 
 import { langContext } from "../../../langContext";
@@ -45,23 +45,20 @@ const BODComponents = () => {
         <AboutMain>
           <Bodwrapped>
             <TheKing>
-          {BOD.listBoardOfDirectors.map((data, idx) => {
-                if(idx==0){
-                return (
-                  <KingBox key={idx}>
-                    <BodBoxContent>
-                      <BodBoxIntro>
-                        <img
-                          src={data.picture.url}
-                          width={`210px`}
-                        />
-                        <div>
-                          <BodBoxIntroTitle title>
-                            {data.name}
-                          </BodBoxIntroTitle>
-                          <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
-                        </div>
-                      </BodBoxIntro>
+              {BOD.listBoardOfDirectors.map((data, idx) => {
+                if (idx == 0) {
+                  return (
+                    <KingBox key={idx}>
+                      <BodBoxContent>
+                        <BodBoxIntro>
+                          <img src={data.picture.url} width={`210px`} />
+                          <div>
+                            <BodBoxIntroTitle title>
+                              {data.name}
+                            </BodBoxIntroTitle>
+                            <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
+                          </div>
+                        </BodBoxIntro>
                         <DropDown role="button" tabIndex={-1} key={idx}>
                           <DropDownContent>
                             <BodDescriptionContent>
@@ -73,21 +70,20 @@ const BODComponents = () => {
                             <ContentDiv2>Read Less</ContentDiv2>
                           </Dropbtn>
                         </DropDown>
-                    </BodBoxContent>
-                  </KingBox>
-                );}})}
+                      </BodBoxContent>
+                    </KingBox>
+                  );
+                }
+              })}
             </TheKing>
             <BodGrid>
               {BOD.listBoardOfDirectors.map((data, idx) => {
-                if(idx>0){
+                if (idx > 0) {
                   return (
                     <Bodbox key={idx}>
                       <BodBoxContent>
                         <BodBoxIntro>
-                          <img
-                            src={data.picture.url}
-                            width={`149px`}
-                          />
+                          <img src={data.picture.url} width={`149px`} />
                           <div>
                             <BodBoxIntroTitle title>
                               {data.name}

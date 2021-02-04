@@ -220,7 +220,7 @@ const Navbar = ({ toggle }) => {
                     if (
                       val.title_en
                         .toLowerCase()
-                        .includes(searchTerm.toLowerCase())
+                        .startsWith(searchTerm.toLowerCase())
                     ) {
                       return val;
                     }

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { sustainService } from "../../../service/Sustainability";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
-import {ReportDownload} from "../../Data/SustainabilityData/ReportsDatas"
+import { ReportDownload } from "../../Data/SustainabilityData/ReportsDatas";
 import {
   ReportsFlex,
   ReportsContent,
@@ -11,7 +11,7 @@ import {
   TabelDownload,
   ApartContentTable,
   ContentTable,
-  ButtonTable
+  ButtonTable,
 } from "./ReportsElements";
 import { langContext } from "../../../langContext";
 import { ReportsDataLangTitle, ReportsDataLangBody } from "./ReportsLang";
@@ -36,8 +36,12 @@ const ReportsComponents = () => {
         <AboutMain>
           <ReportsFlex>
             <ReportsContent>
-              <ReportWrited title>{ReportsDataLangTitle(ReportsData, language)}</ReportWrited>
-              <ReportWrited>{ReportsDataLangBody(ReportsData, language)}</ReportWrited>
+              <ReportWrited title>
+                {ReportsDataLangTitle(ReportsData, language)}
+              </ReportWrited>
+              <ReportWrited>
+                {ReportsDataLangBody(ReportsData, language)}
+              </ReportWrited>
             </ReportsContent>
             <ReportsContent>
               <ReportImage>
@@ -46,30 +50,31 @@ const ReportsComponents = () => {
             </ReportsContent>
           </ReportsFlex>
           <TabelDownload>
-          {ReportDownload.map((data,idx)=>{
-            if(idx%2 == 0) {
-            return(
-                <div key={idx} style={{background:"#FAFAFA"}}>
-                  <ApartContentTable content>
-                    <ContentTable>{data.title}</ContentTable>
-                  </ApartContentTable>
-                  <ApartContentTable>
-                    <ButtonTable href={data.link}>DOWNLOAD</ButtonTable>
-                  </ApartContentTable>
-                </div>
-            )} else {
-              return(
-                <div key={idx} style={{background:"#F5F5F5"}}>
-                  <ApartContentTable content>
-                    <ContentTable>{data.title}</ContentTable>
-                  </ApartContentTable>
-                  <ApartContentTable>
-                    <ButtonTable href={data.link}>DOWNLOAD</ButtonTable>
-                  </ApartContentTable>
-                </div>
-              )
-            }
-          })}
+            {ReportsData.files.map((data, idx) => {
+              if (idx % 2 == 0) {
+                return (
+                  <div key={idx} style={{ background: "#FAFAFA" }}>
+                    <ApartContentTable content>
+                      <ContentTable>{data.title_en}</ContentTable>
+                    </ApartContentTable>
+                    <ApartContentTable>
+                      <ButtonTable href={data.file.url}>DOWNLOAD</ButtonTable>
+                    </ApartContentTable>
+                  </div>
+                );
+              } else {
+                return (
+                  <div key={idx} style={{ background: "#F5F5F5" }}>
+                    <ApartContentTable content>
+                      <ContentTable>{data.title_en}</ContentTable>
+                    </ApartContentTable>
+                    <ApartContentTable>
+                      <ButtonTable href={data.file.url}>DOWNLOAD</ButtonTable>
+                    </ApartContentTable>
+                  </div>
+                );
+              }
+            })}
           </TabelDownload>
         </AboutMain>
       </Aboutstyle>

@@ -41,7 +41,7 @@ export const VideoGridOther = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 20px;
-  justify-content: center;
+  justify-content: start;
   @media screen and (max-width: 884px) {
     grid-template-columns: auto auto;
   }
