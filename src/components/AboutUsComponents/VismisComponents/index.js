@@ -15,9 +15,9 @@ import {
   ValuesWrited,
   FlexValue,
   Image,
-  ValueApart
+  ValueApart,
 } from "./VismisElements";
-import testing from "../../../images/Group 535.png"
+import testing from "../../../images/Group 535.png";
 
 const VismisComponents = () => {
   const [MVV, setMVV] = useState([]);
@@ -40,11 +40,13 @@ const VismisComponents = () => {
             <VismisApart>
               <VismisWrited title>Vision</VismisWrited>
               <VismisWrited>{MVV.Vision_Description}</VismisWrited>
-              <VismisWrited title misi>Mission</VismisWrited>
+              <VismisWrited title misi>
+                Mission
+              </VismisWrited>
               <VismisWrited>{MVV.Mission_description}</VismisWrited>
             </VismisApart>
             <VismisApart>
-              <img width="245px"/> {/* Foto yang di vismis */}
+              <img width="245px" src={MVV.image.url} />
             </VismisApart>
           </VismisContent>
           <ValueContent>
@@ -54,7 +56,8 @@ const VismisComponents = () => {
               return (
                 <FlexValue>
                   <ValueApart image>
-                  <Image src={testing}/> {/* Isinya Foto yang di kanan */}
+                    <Image src={data.logo.url} />{" "}
+                    {/* Isinya Foto yang di kanan */}
                   </ValueApart>
                   <ValueApart>
                     <ValuePartexp key={idx}>

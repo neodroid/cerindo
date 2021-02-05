@@ -4,10 +4,7 @@ import {
   ImageBusiness,
   BusinessWrited,
 } from "../BusinessElements";
-import {
-  Aboutstyle,
-  AboutMain,
-} from "../../AboutUsComponents/AboutUsElements";
+import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { JettyTerminalContent } from "../../Data/BusinessData/JettyTerminalDatas";
 import { businessService } from "../../../service/Business";
@@ -27,16 +24,21 @@ const OreExportComponents = () => {
     };
     fetchData();
   }, []);
+  if (oreExport.length === 0) return null;
   return (
     <>
       <Aboutstyle>
         <BusinessSideBarComponents page5={true} />
         <AboutMain>
-          <BusinessWrited title>{OreExportLangTitle(oreExport, language)}</BusinessWrited>
+          <BusinessWrited title>
+            {OreExportLangTitle(oreExport, language)}
+          </BusinessWrited>
           <BusinessWrited>
             {OreExportLangBody(oreExport, language)}
           </BusinessWrited>
-          <ImageBusiness/>
+          {oreExport.images.map((data) => {
+            return <ImageBusiness src={data.url} />;
+          })}
         </AboutMain>
       </Aboutstyle>
     </>

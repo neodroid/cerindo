@@ -97,7 +97,7 @@ const NewsContentComponents = () => {
           }
         })
         .filter((news) => {
-          if (news.news_date === searchDate) {
+          if (news.date === searchDate) {
             return news;
           }
         });
@@ -111,7 +111,7 @@ const NewsContentComponents = () => {
     }
     if (!searchTerm && searchDate) {
       newsShown = newsData.filter((news) => {
-        if (news.news_date === searchDate) {
+        if (news.date === searchDate) {
           return news;
         }
       });

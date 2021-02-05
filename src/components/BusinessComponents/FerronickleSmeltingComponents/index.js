@@ -4,15 +4,15 @@ import {
   ImageBusiness,
   BusinessWrited,
 } from "../BusinessElements";
-import {
-  Aboutstyle,
-  AboutMain,
-} from "../../AboutUsComponents/AboutUsElements";
+import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { FerronickleSmeltingContent } from "../../Data/BusinessData/FerronickleSmeltingDatas";
 import { businessService } from "../../../service/Business";
 import { langContext } from "../../../langContext";
-import { FerronickleLangTitle, FerronickleLangBody } from "./FerronickleSmeltingLang";
+import {
+  FerronickleLangTitle,
+  FerronickleLangBody,
+} from "./FerronickleSmeltingLang";
 
 const FerronickleSmeltingComponents = () => {
   const { language } = useContext(langContext);
@@ -27,16 +27,21 @@ const FerronickleSmeltingComponents = () => {
     };
     fetchData();
   }, []);
+  if (ferronicle.length === 0) return null;
   return (
     <>
       <Aboutstyle>
         <BusinessSideBarComponents page2={true} />
         <AboutMain>
-          <BusinessWrited title>{FerronickleLangTitle(ferronicle, language)}</BusinessWrited>
+          <BusinessWrited title>
+            {FerronickleLangTitle(ferronicle, language)}
+          </BusinessWrited>
           <BusinessWrited>
             {FerronickleLangBody(ferronicle, language)}
           </BusinessWrited>
-          <ImageBusiness/>
+          {ferronicle.images.map((data) => {
+            return <ImageBusiness src={data.url} />;
+          })}
         </AboutMain>
       </Aboutstyle>
     </>

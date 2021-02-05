@@ -4,15 +4,15 @@ import {
   ImageBusiness,
   BusinessWrited,
 } from "../BusinessElements";
-import {
-  Aboutstyle,
-  AboutMain,
-} from "../../AboutUsComponents/AboutUsElements";
+import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { HPALContent } from "../../Data/BusinessData/HPALDatas";
 import { businessService } from "../../../service/Business";
 import { langContext } from "../../../langContext";
-import { NickleCobaltLangBody, NickleCobaltLangTitle } from "./NickleCobaltHPALLang";
+import {
+  NickleCobaltLangBody,
+  NickleCobaltLangTitle,
+} from "./NickleCobaltHPALLang";
 
 const NickelCobaltHPALComponents = () => {
   const { language } = useContext(langContext);
@@ -27,16 +27,21 @@ const NickelCobaltHPALComponents = () => {
     };
     fetchData();
   }, []);
+  if (nickelCobalt.length === 0) return null;
   return (
     <>
       <Aboutstyle>
         <BusinessSideBarComponents page4={true} />
         <AboutMain>
-          <BusinessWrited title>{NickleCobaltLangTitle(nickelCobalt, language)}</BusinessWrited>
+          <BusinessWrited title>
+            {NickleCobaltLangTitle(nickelCobalt, language)}
+          </BusinessWrited>
           <BusinessWrited>
             {NickleCobaltLangBody(nickelCobalt, language)}
           </BusinessWrited>
-          <ImageBusiness/>
+          {nickelCobalt.images.map((data) => {
+            return <ImageBusiness src={data.url} />;
+          })}
         </AboutMain>
       </Aboutstyle>
     </>

@@ -4,10 +4,7 @@ import {
   ImageBusiness,
   BusinessWrited,
 } from "../BusinessElements";
-import {
-  Aboutstyle,
-  AboutMain,
-} from "../../AboutUsComponents/AboutUsElements";
+import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { NickleOreMiningContent } from "../../Data/BusinessData/NickleOreMiningDatas";
 import { businessService } from "../../../service/Business";
@@ -27,16 +24,21 @@ const NickleOreComponents = () => {
     };
     fetchData();
   }, []);
+  if (nickelOre.length === 0) return null;
   return (
     <>
       <Aboutstyle>
         <BusinessSideBarComponents page1={true} />
         <AboutMain>
-          <BusinessWrited title>{NickleOreLangTitle(nickelOre, language)}</BusinessWrited>
+          <BusinessWrited title>
+            {NickleOreLangTitle(nickelOre, language)}
+          </BusinessWrited>
           <BusinessWrited>
             {NickleOreLangBody(nickelOre, language)}
           </BusinessWrited>
-          <ImageBusiness/>
+          {nickelOre.images.map((data) => {
+            return <ImageBusiness src={data.url} />;
+          })}
         </AboutMain>
       </Aboutstyle>
     </>

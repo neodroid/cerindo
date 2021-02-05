@@ -4,10 +4,7 @@ import {
   ImageBusiness,
   BusinessWrited,
 } from "../BusinessElements";
-import {
-  Aboutstyle,
-  AboutMain,
-} from "../../AboutUsComponents/AboutUsElements";
+import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import { PowerPlantContent } from "../../Data/BusinessData/PowerPlantDatas";
 import { businessService } from "../../../service/Business";
@@ -27,17 +24,21 @@ const PowerPlantComponents = () => {
     };
     fetchData();
   }, []);
+  if (powerPlant.length === 0) return null;
   return (
     <>
       <Aboutstyle>
         <BusinessSideBarComponents page6={true} />
         <AboutMain>
-          <BusinessWrited title>{PowerPlantLangTitle(powerPlant, language)}</BusinessWrited>
+          <BusinessWrited title>
+            {PowerPlantLangTitle(powerPlant, language)}
+          </BusinessWrited>
           <BusinessWrited>
             {PowerPlantLangBody(powerPlant, language)}
           </BusinessWrited>
-          <ImageBusiness src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Pemandangan_Kaldera_Gunung_Bromo_dari_Viewpoint_Pananjakan_1%2C_Jawa_Timur%2C_25052017.jpg"/>
-          {/*Gambar Ganti */}
+          {powerPlant.images.map((data) => {
+            return <ImageBusiness src={data.url} />;
+          })}
         </AboutMain>
       </Aboutstyle>
     </>

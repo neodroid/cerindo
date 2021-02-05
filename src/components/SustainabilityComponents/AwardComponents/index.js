@@ -44,12 +44,10 @@ const AwardComponents = () => {
               return (
                 <ContentAward key={idx}>
                   <BoxContainer>{data.date}</BoxContainer>
-                  <Linked href={data.file.url} target="_blank">
-                    <BoxContainer titlee>{data.name}</BoxContainer>
-                  </Linked>
+                  <BoxContainer titlee>{data.name}</BoxContainer>
                   <Containerrs>
-                    <ImageAward src={data.image} />
-                    <BoxContainer>{data.caption}</BoxContainer>
+                    <ImageAward src={data.image.url} />
+                    <BoxContainer>{data.description}</BoxContainer>
                   </Containerrs>
                 </ContentAward>
               );

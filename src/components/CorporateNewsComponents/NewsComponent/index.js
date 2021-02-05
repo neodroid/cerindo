@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { NewsData } from "../../Data/News";
 import { newsService } from "../../../service/News";
 import {
-  TitleContent,DateWrapped,
+  TitleContent,
+  DateWrapped,
   BoxContainer,
   BlogImage,
   BlogWrapped,
@@ -13,13 +14,10 @@ import {
   BlogImageArt,
   GlobalContent,
   ButtonNext,
-  OtherNews
+  OtherNews,
 } from "./NewsElements";
 import Banner from "../../Banner";
-import {
-  Aboutstyle,
-  AboutMain,
-} from "../../AboutUsComponents/AboutUsElements";
+import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import AboutSideBarComponents from "../../AboutUsComponents/index";
 import { langContext } from "../../../langContext";
 import { aboutUsService } from "../../../service/Aboutus";
@@ -84,41 +82,34 @@ const NewsComponent = (props) => {
   console.log(detailsNews.news_en);
   return (
     <>
-    {press.banner.map((data, idx) => {
+      {press.banner.map((data, idx) => {
         return (
-          <Banner
-            img={data.url}
-            texted={true}            
-            key={idx}
-            place="About Us"
-          />
+          <Banner img={data.url} texted={true} key={idx} place="About Us" />
         );
       })}
       <Aboutstyle>
-        <AboutSideBarComponents page8={true}/>
-          <AboutMain>
-            <DateWrapped>
-              <BoxContainer>
-              {detailsNews.news_date}
-              </BoxContainer>
-            </DateWrapped>
-            <TitleContent>
-              {DetailsNewsLangTitle(detailsNews, language)}
-            </TitleContent>
-            <BlogWrapped image>
-              <BlogImage src={detailsNews.news_img.url} />
-            </BlogWrapped>
-            <BlogWrapped>
-              <BoxContainer>
-                {DetailsNewsLangContent(detailsNews, language)}
-              </BoxContainer>
-            </BlogWrapped>
-            <OtherNews href="https://www.google.com">
-              <ButtonNext>
-                View Source <FaArrowRight style={{marginLeft:"10px"}}/>
-              </ButtonNext>
-            </OtherNews>
-          </AboutMain>
+        <AboutSideBarComponents page8={true} />
+        <AboutMain>
+          <DateWrapped>
+            <BoxContainer>{detailsNews.date}</BoxContainer>
+          </DateWrapped>
+          <TitleContent>
+            {DetailsNewsLangTitle(detailsNews, language)}
+          </TitleContent>
+          <BlogWrapped image>
+            <BlogImage src={detailsNews.news_img.url} />
+          </BlogWrapped>
+          <BlogWrapped>
+            <BoxContainer>
+              {DetailsNewsLangContent(detailsNews, language)}
+            </BoxContainer>
+          </BlogWrapped>
+          <OtherNews href={detailsNews.source_link}>
+            <ButtonNext>
+              View Source <FaArrowRight style={{ marginLeft: "10px" }} />
+            </ButtonNext>
+          </OtherNews>
+        </AboutMain>
       </Aboutstyle>
     </>
   );
