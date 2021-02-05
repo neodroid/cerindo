@@ -65,7 +65,10 @@ const JobComponents = (props) => {
     );
     formData.append("files.cv", cv, cv.name);
 
-    const upload_res = await axios.post("http://localhost:1337/cvs", formData);
+    const upload_res = await axios.post(
+      "http://54.251.78.10/api/cvs",
+      formData
+    );
     console.log(upload_res);
   };
 
