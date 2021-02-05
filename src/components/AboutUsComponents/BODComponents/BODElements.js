@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Masonry from "react-masonry-component";
-
+import { AiFillCloseCircle } from "react-icons/ai";
 
 export const Bodwrapped = styled.div`
     margin: 50px 5px 10px 10px;
@@ -57,13 +57,30 @@ export const BodBoxIntro = styled.div`
     display: flex;
     flex-direction: column;
     margin: 5px 32px;
-    align-items:center;
-    text-align: center;
+    align-items:${(props)=>(props.change ? "left" : "center")};
+    text-align: ${(props)=>(props.change ? "left" : "center")};
     @media screen and (max-width: 650px) {
         margin: 0 auto;
     }
 `;
-
+export const FlexBod = styled.div`
+display: flex;
+margin-bottom: 20px;
+@media screen and (max-width: 528px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+`;
+export const WritedFlex = styled.div`
+display: flex;
+flex-direction: column;
+align-self: center;
+margin-left: 10px;
+@media screen and (max-width: 528px) {
+    margin-left: 0;
+}
+`;
 export const BodBoxIntroTitle = styled.p`
     font-family: 'Montserrat', sans-serif;
     margin: 0 10px;
@@ -90,11 +107,33 @@ display: block !important;
     width: 100% !important;
 }
 `;
+
+export const ButtonCloser = styled(AiFillCloseCircle)`
+    font-size: 26px;
+    color: #EB5757;
+`;
+
+export const ContentDrop = styled.div`
+margin: 20px auto;
+max-width: 686px;
+border-radius: 10px;
+border-radius: 10px;
+border: 1px solid #ccc;
+padding: 16px 16px;
+z-index: 52;
+background-color: rgba(255,255,255);`;
+
 export const DropDownContent = styled.div`
-  width: 100%;
-  display: none;
-  z-index: 1;
-  padding: 16px 16px;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0,0,0,0.5);
+display: none;
+z-index: 51;
+padding: 15px;
+overflow-y: scroll;
 `;
 export const ContentDiv2 = styled.button`
     display: none;
@@ -102,17 +141,15 @@ export const ContentDiv2 = styled.button`
     font-family: 'Montserrat',sans-serif;
     text-align: center;
     font-style: italic;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 20px;
     text-decoration: underline;
+    background: none;
+    outline: none;
     border: none;
-    background: transparent;
     cursor: pointer;
-    &:focus ${DropDownContent}, &:active ${DropDownContent} {
-        display: none;
-    }
+    width: fit-content;
 `;
-
 export const ContentDiv = styled.div`
     display: block;
     font-weight: 400;
@@ -122,6 +159,13 @@ export const ContentDiv = styled.div`
     font-size: 13px;
     line-height: 20px;
     text-decoration: underline;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+    width: fit-content !important;
+
 `;
 export const DropDown = styled.div`
   margin-bottom: 32px;
@@ -129,7 +173,6 @@ export const DropDown = styled.div`
   border-bottom: 1px solid #D6D6D6;
   border: none;
   cursor: pointer;
-  width: 100%;
   outline: none;
   > * {
     cursor: pointer;
@@ -147,7 +190,9 @@ export const DropDown = styled.div`
     cursor: auto;
   }
   &:focus ${ContentDiv2}, &:active${ContentDiv2} {
-      display: block;
+      display: flex;
+      width: 100%;
+      flex-direction: row-reverse;
   }
   &:focus ${ContentDiv}, &:active${ContentDiv} {
     display: none;
@@ -161,7 +206,7 @@ export const Dropbtn = styled.div`
   display: flex;
   text-align: center;
   flex-direction: row;
-  width: 100%;
+  margin: 0 auto;
   justify-content: center;
   align-items:center;
 `;

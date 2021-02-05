@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CommitmentWrited = styled.div`
     font-weight: ${(props) => (props.title ? "bold" : "normal")};
-    font-size: ${(props) => (props.title ? "26px" : "14px")};
+    font-size: ${(props) => (props.title ? "16px" : "14px")};
     line-height: ${(props) => (props.title ? "50px" : "24px")};
     color: ${(props) => (props.title ? "#333333" : "#111111")};
     margin-bottom: ${(props) => (props.title ? "5px" : "0")};

@@ -19,6 +19,10 @@ import {
   DropDownContent,
   ContentDiv2,
   BodGrid,
+  ContentDrop,
+  ButtonCloser,
+  FlexBod,
+  WritedFlex
 } from "./BODElements";
 
 import { langContext } from "../../../langContext";
@@ -61,13 +65,26 @@ const BODComponents = () => {
                         </BodBoxIntro>
                         <DropDown role="button" tabIndex={-1} key={idx}>
                           <DropDownContent>
-                            <BodDescriptionContent>
-                              {BODlang(data, language)}
-                            </BodDescriptionContent>
+                            <ContentDrop>
+                            <ContentDiv2><ButtonCloser/></ContentDiv2>
+                              <BodBoxIntro change>
+                                <FlexBod>
+                                  <img src={data.picture.url} width={`210px`} />
+                                  <WritedFlex>
+                                    <BodBoxIntroTitle title>
+                                      {data.name}
+                                    </BodBoxIntroTitle>
+                                    <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
+                                  </WritedFlex>
+                                </FlexBod>
+                              </BodBoxIntro>
+                              <BodDescriptionContent>
+                                {BODlang(data, language)}
+                              </BodDescriptionContent>
+                            </ContentDrop>
                           </DropDownContent>
                           <Dropbtn>
                             <ContentDiv>Read More</ContentDiv>
-                            <ContentDiv2>Read Less</ContentDiv2>
                           </Dropbtn>
                         </DropDown>
                       </BodBoxContent>
@@ -93,13 +110,26 @@ const BODComponents = () => {
                         </BodBoxIntro>
                         <DropDown role="button" tabIndex={-1} key={idx}>
                           <DropDownContent>
-                            <BodDescriptionContent>
-                              {BODlang(data, language)}
-                            </BodDescriptionContent>
+                            <ContentDrop>
+                            <ContentDiv2><ButtonCloser/></ContentDiv2>
+                              <BodBoxIntro change>
+                                <FlexBod>
+                                  <img src={data.picture.url} width={`208px`} />
+                                  <WritedFlex>
+                                    <BodBoxIntroTitle title>
+                                      {data.name}
+                                    </BodBoxIntroTitle>
+                                    <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
+                                  </WritedFlex>
+                                </FlexBod>
+                              </BodBoxIntro>
+                              <BodDescriptionContent>
+                                {BODlang(data, language)}
+                              </BodDescriptionContent>
+                            </ContentDrop>
                           </DropDownContent>
                           <Dropbtn>
                             <ContentDiv>Read More</ContentDiv>
-                            <ContentDiv2>Read Less</ContentDiv2>
                           </Dropbtn>
                         </DropDown>
                       </BodBoxContent>

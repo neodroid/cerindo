@@ -362,7 +362,7 @@ export const SearchButton = styled.button`
 
 export const Nulity = styled.div`
 display:none;
-`
+`;
 
 export const SearchTermed = styled.div`
   background: #f9f9f9;

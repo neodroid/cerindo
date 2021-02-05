@@ -133,7 +133,7 @@ export const HeroH1 = styled.h1`
   font-size: 40px;
   line-height: 70px;
   font-family: 'Multicolore', sans serif;
-  color: white;
+  color: #EFB401;
   @media screen and (max-width: 768px) {
     font-size: 40px;
   }
