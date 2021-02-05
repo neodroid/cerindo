@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { aboutUsService } from "../../../../service/Aboutus";
 import { GalleryPhotoData } from "../../../Data/AboutusData/GalleryDatas";
 
@@ -15,6 +15,8 @@ import {
   GlobalContent,
 } from "../../../CorporateNewsComponents/NewsComponent/NewsElements";
 import { AlbumGrid, Image } from "./AlbumElements";
+import { langContext } from "../../../../langContext";
+import { GalleryLangTitle, GalleryLangTitlePhoto } from "../GalleryLang";
 
 const ManageOthArtData = ({ image, title, id, date }) => {
   return (
@@ -37,6 +39,7 @@ const ManageOthArtData = ({ image, title, id, date }) => {
 };
 
 const AlbumComponent = (props) => {
+  const { language } = useContext(langContext);
   const [photoListGallery, setPhotoListGallery] = useState([]);
   const [photoDetailedGallery, setPhotoDetailedGallery] = useState([]);
   const fetchListPhoto = async () => {
@@ -64,7 +67,7 @@ const AlbumComponent = (props) => {
       <GlobalContent>
         <BlogApart containe>
           <BlogDivApart contain>
-            <TitleContent>{photoDetailedGallery.title_en}</TitleContent>
+            <TitleContent>{GalleryLangTitlePhoto(photoDetailedGallery, language)}</TitleContent>
             <AlbumGrid>
               {photoDetailedGallery.image.map((val) => {
                 return <Image src={val.url} />;
@@ -80,7 +83,7 @@ const AlbumComponent = (props) => {
                     id={data._id}
                     key={idx}
                     image={data.image[0].url}
-                    title={data.title_en}
+                    title={GalleryLangTitle(data, language)}
                   />
                 );
               })}

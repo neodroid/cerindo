@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { careerService } from "../../service/Career";
 import { CareerJobCerData, EmployeProfileData } from "../Data/CareerData";
 import { JobData } from "../Data/CareerData";
@@ -28,8 +28,11 @@ import {
   EmployImage,
   Nulity,
 } from "./CareerElements";
+import { langContext } from "../../langContext";
+import { CareerLangTitle, CareerLangBody, CareerLangEmployeeBody } from "./CareerLang";
 
 const CareerComponents = () => {
+  const { language } = useContext(langContext);
   const [career, setCareer] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -45,9 +48,9 @@ const CareerComponents = () => {
     <CareerTempl>
       <Jobcer>
         <JobcerContent>
-          <h2>{career.Title.title_en}</h2>
+          <h2>{CareerLangTitle(career, language)}</h2>
           <JobcerBoard />
-          <p>{career.Title.body_en}</p>
+          <p>{CareerLangBody(career, language)}</p>
         </JobcerContent>
         <JobcerImage>
           <img src={career.Title.image.url} />
@@ -139,7 +142,7 @@ const CareerComponents = () => {
                     <WritedEmploy name>{data.name}</WritedEmploy>
                   </Column1>
                   <Column2>
-                    <WritedEmploy>{data.body_en}</WritedEmploy>
+                    <WritedEmploy>{CareerLangEmployeeBody(career, language)}</WritedEmploy>
                   </Column2>
                 </InfoRow>
               </EmployContent>
@@ -153,7 +156,7 @@ const CareerComponents = () => {
                     <WritedEmploy name>{data.name}</WritedEmploy>
                   </Column1>
                   <Column2>
-                    <WritedEmploy>{data.body_en}</WritedEmploy>
+                    <WritedEmploy>{CareerLangEmployeeBody(career, language)}</WritedEmploy>
                   </Column2>
                 </InfoRow>
               </EmployContent>
