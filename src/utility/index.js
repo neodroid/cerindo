@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = "http://54.251.78.10/api";
+const BASE_URL = "http://localhost:1337";
 
-async function http(method, endpoint, body = null) {
+async function http(method, endpoint, body = null, data) {
   const headers = {
     "Content-Type": "application/json",
     "Cache-Control": "no-cache",
@@ -16,6 +16,7 @@ async function http(method, endpoint, body = null) {
       method: method.toUpperCase(),
       headers,
       params: body,
+      data: data,
     });
   }
 

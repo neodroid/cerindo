@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { careerService } from "../../../service/Career";
 import { FaAngleLeft } from "react-icons/fa";
+import { CVService } from "../../../service/SendCV";
+
 import {
   BannerStyle,
   MainCareer,
@@ -14,9 +16,17 @@ import {
   Buttons,
 } from "./JobElements";
 import { FaArrowRight } from "react-icons/fa";
+import axios from "axios";
 
 const JobComponents = (props) => {
   const [career, setCareer] = useState([]);
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phoneNumber, setPhoneNumber] = useState();
+  const [subject, setSubject] = useState();
+  const [message, setMessage] = useState();
+  const [cv, setCV] = useState();
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await careerService.getCareer();
@@ -39,7 +49,26 @@ const JobComponents = (props) => {
     }
   })[0];
 
-  console.log(shownData);
+  const submit = async (e) => {
+    e.preventDefault();
+    console.log(cv);
+    const formData = new FormData();
+    formData.append(
+      "data",
+      JSON.stringify({
+        name,
+        email,
+        phone_number: phoneNumber,
+        subject,
+        message,
+      })
+    );
+    formData.append("files.cv", cv, cv.name);
+
+    const upload_res = await axios.post("http://localhost:1337/cvs", formData);
+    console.log(upload_res);
+  };
+
   return (
     <>
       <BannerStyle>{shownData.name}</BannerStyle>
@@ -63,37 +92,82 @@ const JobComponents = (props) => {
           Back to Career
         </ArrowLeft>
         <h1>Upload CV</h1>
-        <Inputan type="text" placeholder="Your Name" required />
-        <ApartInputan>
-          <Inputan type="text" placeholder="Your Phone Number" required />
-          <Inputan type="email" placeholder="Your Email" required />
-        </ApartInputan>
-        <Inputan type="text" placeholder="Subject" required />
-        <InputanArea
-          rows="20"
-          required
-          placeholder="Type your message"
-          style={{ marginTop: "20px", padding: "16px" }}
-        />
-        <br />
-        <label
-          for="myfile"
-          style={{
-            color: "#A5A3A3",
-            fontSize: "14px",
-            lineHeight: "30px",
-            margin: "20px 0",
-          }}
-        >
-          Upload PDF max 2 mb{" "}
-        </label>
-        <input type="file" id="myfile" name="myfile" />
-        <br />
-        <Buttonscv>
-          <Buttons>
-            Send <FaArrowRight style={{ marginLeft: "8px" }} />
-          </Buttons>
-        </Buttonscv>
+        <form onSubmit={submit}>
+          <Inputan
+            type="text"
+            placeholder="Your Name"
+            required
+            name="name"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+          <ApartInputan>
+            <Inputan
+              type="number"
+              placeholder="Your Phone Number"
+              required
+              name="phone_number"
+              onChange={(e) => {
+                setPhoneNumber(e.target.value);
+              }}
+            />
+            <Inputan
+              type="email"
+              placeholder="Your Email"
+              required
+              name="email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+          </ApartInputan>
+          <Inputan
+            type="text"
+            placeholder="Subject"
+            required
+            name="subject"
+            onChange={(e) => {
+              setSubject(e.target.value);
+            }}
+          />
+          <InputanArea
+            rows="20"
+            required
+            name="message"
+            placeholder="Type your message"
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+            style={{ marginTop: "20px", padding: "16px" }}
+          />
+          <br />
+          <label
+            for="myfile"
+            style={{
+              color: "#A5A3A3",
+              fontSize: "14px",
+              lineHeight: "30px",
+              margin: "20px 0",
+            }}
+          >
+            Upload PDF max 2 mb{" "}
+          </label>
+          <input
+            type="file"
+            id="cv"
+            name="cv"
+            onChange={(e) => {
+              setCV(e.target.files[0]);
+            }}
+          />
+          <br />
+          <Buttonscv type="submit">
+            <Buttons>
+              Send <FaArrowRight style={{ marginLeft: "8px" }} />
+            </Buttons>
+          </Buttonscv>
+        </form>
       </MainCareer>
     </>
   );

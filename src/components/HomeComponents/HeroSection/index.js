@@ -38,10 +38,8 @@ const HeroSection = () => {
   const { language } = useContext(langContext);
   const [newsData, setNewsData] = useState([]);
   const [communityData, setCommunityData] = useState([]);
-  const [allData, setAlldata] = useState({
-    newsData: [],
-    communityData: [],
-  });
+  const [type, setType] = useState("news");
+
   useEffect(() => {
     const fetchNews = async () => {
       const response = await newsService.getListNews();
@@ -70,7 +68,6 @@ const HeroSection = () => {
   }
 
   const sortedContent = joinedData.sort(compareDate);
-
   return (
     <AutoplaySlider
       play={true}
@@ -98,10 +95,27 @@ const HeroSection = () => {
                       </TitleNewsApart>
                     </HeroNewsFlex>
                     <HeroNewsFlex content>
-                      {sortedContent.map((data, idx) => {
-                        if (idx < 3) {
+                      {sortedContent.slice(0, 3).map((data, idx) => {
+                        if (newsData.indexOf(data) !== -1) {
                           return (
                             <HeroNewsContent to={`/News/${data._id}`} key={idx}>
+                              <ImgWrap>
+                                <Img src={data.image.url} />
+                              </ImgWrap>
+                              <HeroNewsDesc>
+                                <HeroNewsP>
+                                  {NewsLangTitle(data, language)}
+                                </HeroNewsP>
+                                <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                              </HeroNewsDesc>
+                            </HeroNewsContent>
+                          );
+                        } else {
+                          return (
+                            <HeroNewsContent
+                              to={`/Community-Activity/${data._id}`}
+                              key={idx}
+                            >
                               <ImgWrap>
                                 <Img src={data.image.url} />
                               </ImgWrap>

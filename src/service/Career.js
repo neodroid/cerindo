@@ -9,12 +9,3 @@ async function getCareer() {
   const response = await gatewayHelper.http("GET", "career", body);
   return response;
 }
-// async function getDetailBusiness(businessId) {
-//   const body = {};
-//   const response = await gatewayHelper.http(
-//     "GET",
-//     "businesses/" + businessId,
-//     body
-//   );
-//   return response;
-// }

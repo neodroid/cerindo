@@ -97,7 +97,7 @@ const NewsComponent = (props) => {
             {DetailsNewsLangTitle(detailsNews, language)}
           </TitleContent>
           <BlogWrapped image>
-            <BlogImage src={detailsNews.news_img.url} />
+            <BlogImage src={detailsNews.image.url} />
           </BlogWrapped>
           <BlogWrapped>
             <BoxContainer>
