@@ -15,13 +15,12 @@ const Banner = ({ img, heading,lightText, texted, place }) => {
     <>
       <BannerContainer img={img}>
         <BannerWrapper texted={texted}>
-          <Heading lightText={lightText}>{heading}</Heading>
           <BannerBottom>
             <BannerBottomContent>
-              <BannerBotTop>
+              {/*<BannerBotTop>
                 Home
                 <FaAngleDoubleRight style={{paddingLeft:"5px"}}/>
-              </BannerBotTop>
+              </BannerBotTop>*/}
               <BannerPlace>
                   {place}
               </BannerPlace>

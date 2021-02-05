@@ -35,9 +35,9 @@ export const Heading = styled.h1`
 export const BannerBottom = styled.div`
 height: 100%;
 bottom: 0px;
-  right: 200px;
+left: 200px;
   position: relative;
-  align-self: flex-end !important;
+  align-self: flex-start !important;
   flex-direction: column-reverse !important;
   display: flex !important;
   @media screen and (max-width: 865px) {
@@ -50,18 +50,20 @@ bottom: 0px;
 
 `
 export const BannerBottomContent = styled.div`
-  background: rgba(0,0,0,0.7);
-  border-radius: 5px;
-  color: white; 
+  background: #FBFF47;
+  border-radius: 3px;
+  color: black; 
   padding: 15px;
   margin: 0 30px 20px 0;
   transition: 0.4s all ease;
+  border-left: 10px solid #EFB401;
   &:hover{
     transform: scale(1.06)
   }
   @media screen and (max-width: 865px) {
     margin: 10px;
     width: 100%;
+    border-right: 10px solid #EFB401;
   }
 `;
 
@@ -77,5 +79,5 @@ export const BannerPlace = styled.p`
   font-weight: bold;
   font-size: 26px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: black;
 `;
