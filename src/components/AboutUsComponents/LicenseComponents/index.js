@@ -28,7 +28,14 @@ import {
 } from "../../SustainabilityComponents/ReportsComponents/ReportsElements";
 
 import { langContext } from "../../../langContext";
-import { LicenseContent, LicenseTitle, LicenseBody } from "./LicenseLang";
+import { 
+  LicenseContent, 
+  LicenseTitle, 
+  LicenseBody, 
+  LicenseDataLangFile, 
+  LicenseDataLangButton,
+  ConcessionTitle 
+} from "./LicenseLang";
 
 const LicenseComponents = () => {
   const { language } = useContext(langContext);
@@ -73,10 +80,12 @@ const LicenseComponents = () => {
                   return (
                     <div key={idx} style={{ background: "#FAFAFA" }}>
                       <ApartContentTable content>
-                        <ContentTable>{data.name_en}</ContentTable>
+                        <ContentTable>
+                          {LicenseDataLangFile(data, language)}
+                        </ContentTable>
                       </ApartContentTable>
                       <ApartContentTable>
-                        <ButtonTable href={data.file.url}>DOWNLOAD</ButtonTable>
+                        <ButtonTable href={data.file.url}>{LicenseDataLangButton(data, language)}</ButtonTable>
                       </ApartContentTable>
                     </div>
                   );
@@ -84,10 +93,12 @@ const LicenseComponents = () => {
                   return (
                     <div key={idx} style={{ background: "#F5F5F5" }}>
                       <ApartContentTable content>
-                        <ContentTable>{data.name_en}</ContentTable>
+                        <ContentTable>
+                          {LicenseDataLangFile(data, language)}
+                        </ContentTable>
                       </ApartContentTable>
                       <ApartContentTable>
-                        <ButtonTable href={data.file.url}>DOWNLOAD</ButtonTable>
+                        <ButtonTable href={data.file.url}>{LicenseDataLangButton(data, language)}</ButtonTable>
                       </ApartContentTable>
                     </div>
                   );
@@ -95,7 +106,7 @@ const LicenseComponents = () => {
               })}
             </TabelDownload>
             <AwardContent>
-              <h2>Concession Area</h2>
+              <h2>{ConcessionTitle(license, language)}</h2>
               {license.Concession.map((data, idx) => {
                 return (
                   <>
