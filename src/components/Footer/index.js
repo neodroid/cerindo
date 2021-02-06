@@ -32,6 +32,8 @@ const Footer = () => {
     };
     fetchData();
   }, []);
+
+  console.log(footerData);
   return (
     <FooterContainer>
       <FooterWrap>
