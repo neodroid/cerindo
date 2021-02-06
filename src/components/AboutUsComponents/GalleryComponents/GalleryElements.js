@@ -73,6 +73,7 @@ export const VideoContentOther = styled.video`
 
 export const Figured = styled.figure`
   margin: 10px 0;
+  max-width: 226px;
   transition: 0.5s all ease;
   &:hover {
     transform: scale(1.08);
