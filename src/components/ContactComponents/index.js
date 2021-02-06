@@ -1,55 +1,77 @@
-import React from "react"
+import React from "react";
+import emailjs from "emailjs-com";
 import {
-    Inputan,
-    ApartInputan,
-    InputanArea,
-    Buttonscv,
-    Buttons
+  Inputan,
+  ApartInputan,
+  InputanArea,
+  Buttonscv,
+  Buttons,
 } from "../CareerComponents/JobComponents/JobElements";
 import { FaArrowRight } from "react-icons/fa";
-import {
-    ContactContent,
-    BannerStyle,
-    BannerContent
-} from "./ContactElements"
+import { ContactContent, BannerStyle, BannerContent } from "./ContactElements";
 
-const ContactComponents = () =>{
-    return(
-        <>
-        <BannerStyle>
-            <BannerContent>Contact Us</BannerContent>
-        </BannerStyle>
-            <ContactContent>
-                <Inputan
-                type="text"
-                placeholder="Your Name"
-                required/>
-                <ApartInputan>
-                    <Inputan
-                    type="text"
-                    placeholder="Your Phone Number"
-                    required/>
-                    <Inputan
-                    type="email"
-                    placeholder="Your Email"
-                    required/>
-                </ApartInputan>
-                <Inputan
-                type="text"
-                placeholder="Subject"
-                required/>
-                <InputanArea  
-                rows="20"
-                required 
-                placeholder="Type your message"
-                style={{marginTop:"20px",padding:"16px"}}/>
-                <br/>
-                <Buttonscv>
-                <Buttons type="submit">Send <FaArrowRight style={{marginLeft:"8px"}}/></Buttons>
-                </Buttonscv>
-            </ContactContent>
-        </>
-    )
+const ContactComponents = (props) => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "gmail",
+        "template-cerindo",
+        e.target,
+        "user_4ymuHD2iaroOz9FHrvNRJ"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
+  return (
+    <>
+      <BannerStyle>
+        <BannerContent>Contact Us</BannerContent>
+      </BannerStyle>
+      <form onSubmit={sendEmail}>
+        <ContactContent>
+          <Inputan type="text" placeholder="Your Name" required name="name" />
+          <ApartInputan>
+            <Inputan
+              type="text"
+              placeholder="Your Phone Number"
+              required
+              name="phone_number"
+            />
+            <Inputan
+              type="email"
+              placeholder="Your Email"
+              required
+              name="email"
+            />
+          </ApartInputan>
+          <Inputan type="text" placeholder="Subject" required name="subject" />
+          <InputanArea
+            rows="20"
+            required
+            placeholder="Type your message"
+            style={{ marginTop: "20px", padding: "16px" }}
+            name="message"
+          />
+          <br />
+          <Buttonscv>
+            <Buttons type="submit">
+              Send <FaArrowRight style={{ marginLeft: "8px" }} />
+            </Buttons>
+          </Buttonscv>
+        </ContactContent>
+      </form>
+    </>
+  );
 };
 
-export default ContactComponents
+export default ContactComponents;
