@@ -69,6 +69,7 @@ const JobComponents = (props) => {
       "http://54.251.78.10/api/cvs",
       formData
     );
+
     console.log(upload_res);
   };
 

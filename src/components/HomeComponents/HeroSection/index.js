@@ -87,12 +87,12 @@ const HeroSection = () => {
                       <TitleNewsApart>
                         <HeroMediaH1>Recent Update</HeroMediaH1>
                       </TitleNewsApart>
-                      <TitleNewsApart>
+                      {/* <TitleNewsApart>
                         <ViewedAll to="/Press-Release">
                           <MdTrendingFlat target="_blank" />
                           View All
                         </ViewedAll>
-                      </TitleNewsApart>
+                      </TitleNewsApart> */}
                     </HeroNewsFlex>
                     <HeroNewsFlex content>
                       {sortedContent.slice(0, 3).map((data, idx) => {
