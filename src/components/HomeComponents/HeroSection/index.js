@@ -4,6 +4,7 @@ import { MdTrendingFlat } from "react-icons/md";
 import { FaPlayCircle } from "react-icons/fa";
 import { newsService } from "../../../service/News";
 import { communityService } from "../../../service/Community";
+import { homeService } from "../../../service/Homepage";
 
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 import "react-awesome-slider/dist/styles.css";
@@ -38,6 +39,7 @@ const HeroSection = () => {
   const { language } = useContext(langContext);
   const [newsData, setNewsData] = useState([]);
   const [communityData, setCommunityData] = useState([]);
+  const [homeData, setHomeData] = useState([]);
   const [type, setType] = useState("news");
 
   useEffect(() => {
@@ -47,6 +49,12 @@ const HeroSection = () => {
       setNewsData(data);
     };
 
+    const fetchHome = async () => {
+      const response = await homeService.getListHome();
+      const data = response.data;
+      setHomeData(data);
+    };
+
     const fetchCommunity = async () => {
       const response = await communityService.getListCommunity();
       const data = response.data;
@@ -54,7 +62,10 @@ const HeroSection = () => {
     };
     fetchNews();
     fetchCommunity();
+    fetchHome();
   }, []);
+
+  console.log(homeData);
 
   const joinedData = newsData.concat(communityData);
 
@@ -66,6 +77,7 @@ const HeroSection = () => {
     }
     return 0;
   }
+  if (homeData.length === 0) return null;
 
   const sortedContent = joinedData.sort(compareDate);
   return (
@@ -75,13 +87,13 @@ const HeroSection = () => {
       interval={5000}
       className="aws-btn"
     >
-      {HeroData.map((data, idx) => {
+      {homeData.hero_banner.map((data, idx) => {
         return (
           <>
-            <HeroContainer img={data.img} key={idx}>
+            <HeroContainer img={data.banner.url} key={idx}>
               <BgColoring>
                 <HeroContent>
-                  <HeroH1>{data.title}</HeroH1>
+                  <HeroH1>{data.title_en}</HeroH1>
                   <HeroNewsWrap>
                     <HeroNewsFlex>
                       <TitleNewsApart>

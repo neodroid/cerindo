@@ -3,7 +3,7 @@ import { Link as LinkR } from "react-router-dom";
 import { Button } from "../../ButtonElement";
 import { AboutUsDatas } from "../../Data/HomeData/AboutUsElementsDatas";
 import { homeService } from "../../../service/Homepage";
-import {VideoProfileData} from "../../Data/AboutusData/GalleryDatas"
+import { VideoProfileData } from "../../Data/AboutusData/GalleryDatas";
 import {
   InfoContainer,
   InfoWrapper,
@@ -17,7 +17,7 @@ import {
   VideoContent,
 } from "./AboutUsElements";
 import { langContext } from "../../../langContext";
-import { HomeLangTitle, HomeLangBody, HomeLangButton } from '../HomeLang';
+import { HomeLangTitle, HomeLangBody, HomeLangButton } from "../HomeLang";
 
 const AboutUs = ({
   lightText,
@@ -47,8 +47,12 @@ const AboutUs = ({
           <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <Heading lightText={lightText}>{HomeLangTitle(homeData, language)}</Heading>
-                <Subtitle darktext={darktext}>{HomeLangBody(homeData, language)}</Subtitle>
+                <Heading lightText={lightText}>
+                  {HomeLangTitle(homeData, language)}
+                </Heading>
+                <Subtitle darktext={darktext}>
+                  {HomeLangBody(homeData, language)}
+                </Subtitle>
                 <BtnWrap button={button}>
                   <Button
                     primary="true"
@@ -65,10 +69,7 @@ const AboutUs = ({
               </TextWrapper>
             </Column1>
             <Column2>
-              <VideoContent
-                controls
-                src={VideoProfileData.video}
-              ></VideoContent>
+              <VideoContent controls src={homeData.video.url}></VideoContent>
             </Column2>
           </InfoRow>
         </InfoWrapper>

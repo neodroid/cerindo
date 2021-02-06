@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { footerService } from "../../service/Footer";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   FooterContainer,
   FooterLink,
@@ -22,6 +23,15 @@ import {
 import image from "../../images/logo.png";
 
 const Footer = () => {
+  const [footerData, setFooterData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await footerService.getFooter();
+      const data = response.data;
+      setFooterData(data);
+    };
+    fetchData();
+  }, []);
   return (
     <FooterContainer>
       <FooterWrap>
@@ -40,31 +50,31 @@ const Footer = () => {
               <FooterLinked>Fax +62 21 291 25827</FooterLinked>
             </FooterLinkItems>
             <FooterLinkItems>
-            <FooterLinkTitle>Social Networks</FooterLinkTitle>
+              <FooterLinkTitle>Social Networks</FooterLinkTitle>
               <SocialIcons>
                 <SocialIconLink
-                  href="https://www.facebook.com/"
+                  href={footerData.facebook}
                   target="_blank"
                   aria-label="Facebook"
                 >
                   <FaFacebook />
                 </SocialIconLink>
                 <SocialIconLink
-                  href="https://www.instagram.com/"
+                  href={footerData.instagram}
                   target="_blank"
                   aria-label="Instagram"
                 >
                   <FaInstagram />
                 </SocialIconLink>
                 <SocialIconLink
-                  href="https://www.youtube.com/"
+                  href={footerData.youtube}
                   target="_blank"
                   aria-label="Youtube"
                 >
                   <FaYoutube />
                 </SocialIconLink>
                 <SocialIconLink
-                  href="https://www.linkedin.com/"
+                  href={footerData.linkedin}
                   target="_blank"
                   aria-label="Linkedin"
                 >
@@ -85,22 +95,37 @@ const Footer = () => {
             <FooterLinkItems>
               <FooterLinkTitle>Business</FooterLinkTitle>
               <FooterLink to="/Nickle-Ore-Mining">Nickle Ore Mining</FooterLink>
-              <FooterLink to="/Nickle-Cobalt-HPAL">Nickle - Cobalt HPAL</FooterLink>
-              <FooterLink to="/Ferronickle-Smelting">Ferronickle Smelting</FooterLink>
+              <FooterLink to="/Nickle-Cobalt-HPAL">
+                Nickle - Cobalt HPAL
+              </FooterLink>
+              <FooterLink to="/Ferronickle-Smelting">
+                Ferronickle Smelting
+              </FooterLink>
               <FooterLink to="/Ore-Export">Ore Export</FooterLink>
               <FooterLinkTitle>Global Sustainability</FooterLinkTitle>
               <FooterLink to="/QHSE">QHSE</FooterLink>
               <FooterLink to="/Report">Report</FooterLink>
-              <FooterLink to="/Community-Activities">Community Activities</FooterLink>
+              <FooterLink to="/Community-Activities">
+                Community Activities
+              </FooterLink>
             </FooterLinkItems>
-         
+
             <FooterLinkItems>
               <FooterLinkTitle>About Us</FooterLinkTitle>
-              <FooterLink to="/Mission-Vision">Vision, Mission, Value</FooterLink>
+              <FooterLink to="/Mission-Vision">
+                Vision, Mission, Value
+              </FooterLink>
               <FooterLink to="/Commitment">Commitment</FooterLink>
-              <FooterLink to="/Board-of-Director">Board of Directors</FooterLink>
-              <FooterLink to="/Organization-Structure">Organizational Structure</FooterLink>
-              <Link style={{textDecoration:"none", color:"black"}} to="/Contact-Us">
+              <FooterLink to="/Board-of-Director">
+                Board of Directors
+              </FooterLink>
+              <FooterLink to="/Organization-Structure">
+                Organizational Structure
+              </FooterLink>
+              <Link
+                style={{ textDecoration: "none", color: "black" }}
+                to="/Contact-Us"
+              >
                 <FooterLinkTitle>Contact Us</FooterLinkTitle>
               </Link>
               <FooterLinkTitle>For inquiries, email to:</FooterLinkTitle>
@@ -108,7 +133,6 @@ const Footer = () => {
                 <MdEmail /> info@cerindocorp.com
               </FooterLinked>
             </FooterLinkItems>
-
           </FooterLinkWrapper>
         </FooterLinksContainer>
 

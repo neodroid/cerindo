@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import {ReportDownload} from "../../Data/SustainabilityData/ReportsDatas"
+import { ReportDownload } from "../../Data/SustainabilityData/ReportsDatas";
 import {
   Aboutstyle,
   AboutSideBar,
@@ -24,8 +24,8 @@ import {
   TabelDownload,
   ApartContentTable,
   ContentTable,
-  ButtonTable
-} from "../../SustainabilityComponents/ReportsComponents/ReportsElements"
+  ButtonTable,
+} from "../../SustainabilityComponents/ReportsComponents/ReportsElements";
 
 import { langContext } from "../../../langContext";
 import { LicenseContent, LicenseTitle, LicenseBody } from "./LicenseLang";
@@ -56,39 +56,44 @@ const LicenseComponents = () => {
                 <LicContents wrap key={idx}>
                   <LicContent>
                     <LicContent wrap>
-                      <LicBoxWrited title>{LicenseTitle(data, language)}</LicBoxWrited>
-                      <LicBoxWrited>{LicenseContent(data, language)}</LicBoxWrited>
+                      <LicBoxWrited title>
+                        {LicenseTitle(data, language)}
+                      </LicBoxWrited>
+                      <LicBoxWrited>
+                        {LicenseContent(data, language)}
+                      </LicBoxWrited>
                     </LicContent>
                   </LicContent>
                 </LicContents>
               );
             })}
             <TabelDownload>
-          {ReportDownload.map((data,idx)=>{
-            if(idx%2 == 0) {
-            return(
-                <div key={idx} style={{background:"#FAFAFA"}}>
-                  <ApartContentTable content>
-                    <ContentTable>{data.title}</ContentTable>
-                  </ApartContentTable>
-                  <ApartContentTable>
-                    <ButtonTable href={data.link}>DOWNLOAD</ButtonTable>
-                  </ApartContentTable>
-                </div>
-            )} else {
-              return(
-                <div key={idx} style={{background:"#F5F5F5"}}>
-                  <ApartContentTable content>
-                    <ContentTable>{data.title}</ContentTable>
-                  </ApartContentTable>
-                  <ApartContentTable>
-                    <ButtonTable href={data.link}>DOWNLOAD</ButtonTable>
-                  </ApartContentTable>
-                </div>
-              )
-            }
-          })}
-          </TabelDownload>
+              {license.license_list.map((data, idx) => {
+                if (idx % 2 == 0) {
+                  return (
+                    <div key={idx} style={{ background: "#FAFAFA" }}>
+                      <ApartContentTable content>
+                        <ContentTable>{data.name_en}</ContentTable>
+                      </ApartContentTable>
+                      <ApartContentTable>
+                        <ButtonTable href={data.file.url}>DOWNLOAD</ButtonTable>
+                      </ApartContentTable>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div key={idx} style={{ background: "#F5F5F5" }}>
+                      <ApartContentTable content>
+                        <ContentTable>{data.name_en}</ContentTable>
+                      </ApartContentTable>
+                      <ApartContentTable>
+                        <ButtonTable href={data.file.url}>DOWNLOAD</ButtonTable>
+                      </ApartContentTable>
+                    </div>
+                  );
+                }
+              })}
+            </TabelDownload>
             <AwardContent>
               <h2>Concession Area</h2>
               {license.Concession.map((data, idx) => {
@@ -97,7 +102,9 @@ const LicenseComponents = () => {
                     <ImageCentered src={data.concession_images[0].url} />
                     <ConcessionExp>
                       <ConcessionContent>
-                        <ConcessionWrited>{LicenseBody(data, language)}</ConcessionWrited>
+                        <ConcessionWrited>
+                          {LicenseBody(data, language)}
+                        </ConcessionWrited>
                       </ConcessionContent>
                       <ConcessionContent>
                         <ConcessionImage src={data.concession_images[1].url} />
