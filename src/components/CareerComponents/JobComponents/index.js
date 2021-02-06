@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { careerService } from "../../../service/Career";
 import { FaAngleLeft } from "react-icons/fa";
 import { CVService } from "../../../service/SendCV";
+import {Link} from "react-router-dom"
 
 import {
   BannerStyle,
@@ -14,6 +15,13 @@ import {
   InputanArea,
   Buttonscv,
   Buttons,
+  DropDown,
+  Dropbtn,
+  DropDownContent,
+  ContentDiv2,
+  ContentDrop,
+  Buttonscvs,
+  Nulity
 } from "./JobElements";
 import { FaArrowRight } from "react-icons/fa";
 import axios from "axios";
@@ -70,6 +78,10 @@ const JobComponents = (props) => {
       formData
     );
     console.log(upload_res);
+    setTimeout(()=>{
+      alert("Data has been sent")
+      props.history.push('/Career');
+    }, 2000)
   };
 
   return (
@@ -167,7 +179,7 @@ const JobComponents = (props) => {
           <br />
           <Buttonscv type="submit">
             <Buttons>
-              Send <FaArrowRight style={{ marginLeft: "8px" }} />
+            Send <FaArrowRight style={{ marginLeft: "8px" }} />
             </Buttons>
           </Buttonscv>
         </form>

@@ -126,7 +126,10 @@ const NewsContentComponents = () => {
       <AboutMain>
         <NewsWrapped>
           <h2>Announcement</h2>
-          {AnnouncementData.map((data, idx) => {
+          {AnnouncementData.length == 0 ? 
+          (<Nulity/>) :
+           (<>
+            {AnnouncementData.map((data, idx) => {
             return (
               <>
                 <AnnounWrapped key={idx}>
@@ -146,6 +149,8 @@ const NewsContentComponents = () => {
               </>
             );
           })}
+          </>) }
+          
           {/*<ChoisenNews>
           <ChoisenDesc choose onClick={Clicked}>News</ChoisenDesc>
           <ChoisenDesc onClick={Clicked}>Ceria in Media</ChoisenDesc>
