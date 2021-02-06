@@ -81,7 +81,7 @@ const JobComponents = (props) => {
     setTimeout(()=>{
       alert("Data has been sent")
       props.history.push('/Career');
-    }, 2000)
+    }, 20)
   };
 
   return (
