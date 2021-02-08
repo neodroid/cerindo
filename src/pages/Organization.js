@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Banner from "../components/Banner";
 import { OrganizationHead } from "../components/Data/AboutusData/OrganizationDatas";
 import OrganizationComponents from "../components/AboutUsComponents/OrganizationComponents";
 import { aboutUsService } from "../service/Aboutus";
+import { langContext } from '../langContext';
+import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
+
 const Organization = () => {
+  const { language } = useContext(langContext);
   const [organization, setOrganization] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +26,7 @@ const Organization = () => {
             img={data.url}
             texted={true}
             key={idx}
-            place="About Us"
+            place={AboutUsTitle(language)}
           />
         );
       })}

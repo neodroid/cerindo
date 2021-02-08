@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Banner from "../components/Banner";
 import { BODHead } from "../components/Data/AboutusData/BODDatas";
 import BODComponents from "../components/AboutUsComponents/BODComponents";
 import { aboutUsService } from "../service/Aboutus";
+import { langContext } from '../langContext';
+import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
+
 const BOD = () => {
+  const { language } = useContext(langContext);
   const [BOD, setBOD] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +28,7 @@ const BOD = () => {
             lightText={true}
             texted={true}
             key={idx}
-            place="About Us"
+            place={AboutUsTitle(language)}
           />
         );
       })}

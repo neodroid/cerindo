@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Banner from "../components/Banner";
 import { LicenseHead } from "../components/Data/AboutusData/LicenseDatas";
 import LicenseComponents from "../components/AboutUsComponents/LicenseComponents";
 import { aboutUsService } from "../service/Aboutus";
+import { langContext } from '../langContext';
+import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
+
 const License = () => {
+  const { language } = useContext(langContext);
   const [license, setLicense] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -22,8 +26,8 @@ const License = () => {
             img={data.url}
             lightText={true}
             texted={true}
-            place="About Us"
             key={idx}
+            place={AboutUsTitle(language)}
           />
         );
       })}

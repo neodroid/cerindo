@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Banner from "../components/Banner";
 import { VismisHead } from "../components/Data/AboutusData/VismisDatas";
 import VismisComponents from "../components/AboutUsComponents/VismisComponents";
 import { aboutUsService } from "../service/Aboutus";
+import { langContext } from '../langContext';
+import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
+
 const Vismis = () => {
+  const { language } = useContext(langContext);
   const [MVV, setMVV] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +28,7 @@ const Vismis = () => {
             lightText={true}
             texted={true}
             key={idx}
-            place="About Us"
+            place={AboutUsTitle(language)}
           />
         );
       })}

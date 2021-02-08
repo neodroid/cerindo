@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { sustainService } from "../service/Sustainability";
 import { AwardHead } from "../components/Data/SustainabilityData/AwardDatas";
 import Banner from "../components/Banner";
 import AwardComponents from "../components/SustainabilityComponents/AwardComponents";
 import {BannerSlider} from "../components/BannerSlider";
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import { langContext } from '../langContext';
+import { SustainabilityTitle } from '../components/SustainabilityComponents/SustainabilityLang';
 import 'react-awesome-slider/dist/styles.css';
 
 const AutoplaySlider = withAutoplay(BannerSlider);
 
 const Award = () => {
+  const { language } = useContext(langContext);
   const [award, setAward] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +33,7 @@ const Award = () => {
     className="aws-btn"
     >
       {award.banner.map((data, idx) => {
-        return(<> <Banner img={data.url} texted={true} key={idx} place="Global Sustainability"/></>)
+        return(<> <Banner img={data.url} texted={true} key={idx} place={SustainabilityTitle(language)}/></>)
       })}</AutoplaySlider>
       <AwardComponents />
     </>

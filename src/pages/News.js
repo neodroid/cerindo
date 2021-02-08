@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Banner from "../components/Banner";
 import NewsComponent from "../components/CorporateNewsComponents/NewsComponent";
 import { aboutUsService } from "../service/Aboutus";
+import { langContext } from '../langContext';
+import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
 
 const News = () => {
+  const { language } = useContext(langContext);
   const [press, setPress] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +25,7 @@ const News = () => {
             img={data.url}
             texted={true}            
             key={idx}
-            place="About Us"
+            place={AboutUsTitle(language)}  
           />
         );
       })}

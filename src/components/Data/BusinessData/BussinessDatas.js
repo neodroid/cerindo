@@ -13,3 +13,9 @@ export const BusinessAllImage = {
   image5: jettyimg,
   image6: pplantimg,
 };
+
+export const BusinessBannerIntl = {
+  "en" : "Business",
+  "id" : "Bisnis",
+  "ch" : "CBusiness"
+}
