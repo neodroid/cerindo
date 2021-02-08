@@ -17,8 +17,8 @@ export const BusinessOne = [
         "ch" : "镍矿开采"
     },
     {
-        "en" : "Nickel - Cobalt HPAL",
-        "id" : "Nikel - Cobalt HPAL",
+        "en" : "Nickel-Cobalt HPAL",
+        "id" : "Nikel-Cobalt HPAL",
         "ch" : "镍-钴HPAL"
     },
     {
@@ -42,7 +42,7 @@ export const BusinessTwo = [
     {
         "en" : "Power Supply",
         "id" : "Sumber Daya listrik",
-        "ch" : "电源供应    "
+        "ch" : "电源供应"
     }
 ]
 export const Sustainibility = {

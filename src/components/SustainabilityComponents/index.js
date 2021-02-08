@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React,{ useState, useEffect, useContext } from "react";
 import {
     AboutSideBar,
     AboutSideBarContent,
@@ -10,8 +10,13 @@ import {
     Contentt,
     Changed
 } from "../AboutUsComponents/AboutUsElements";
+import { langContext } from '../../langContext';
+import { SustainabilitySideBarIntl } from '../Data/SustainabilityData/SustainabilityData';
+import { SustainabilitySidebar } from './SustainabilityLang';
 
 const SustainabilitySideBarComponents = ({page1,page2,page3,page4,page5,page6,page7}) => {
+    const { language } = useContext(langContext);
+
     const [selected, setSelected] = useState(true);
 
     const Clickit = ()=>{
@@ -38,32 +43,32 @@ const SustainabilitySideBarComponents = ({page1,page2,page3,page4,page5,page6,pa
                     { selected ?
                     <Contentt>
                         <AboutSideBarContent page={page1} to="/QHSE">
-                            QHSE
+                            {SustainabilitySidebar(SustainabilitySideBarIntl, language, 0)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page2} to="/Community-Activities">
-                            Community Activities
+                            {SustainabilitySidebar(SustainabilitySideBarIntl, language, 1)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page3} to="/Reports">
-                            Reports
+                            {SustainabilitySidebar(SustainabilitySideBarIntl, language, 2)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page4} to="/Awards">
-                            Awards
+                            {SustainabilitySidebar(SustainabilitySideBarIntl, language, 3)}
                         </AboutSideBarContent>
                     </Contentt>
                     : 
                     <Changed>
                         <Contentt>
                         <AboutSideBarContent page={page1} to="/QHSE">
-                        QHSE
+                            {SustainabilitySidebar(SustainabilitySideBarIntl, language, 0)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page2} to="/Community-Activities">
-                        Community Activities
+                            {SustainabilitySidebar(SustainabilitySideBarIntl, language, 1)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page3} to="/Reports">
-                        Reports
+                            {SustainabilitySidebar(SustainabilitySideBarIntl, language, 2)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page4} to="/Awards">
-                            Awards
+                            {SustainabilitySidebar(SustainabilitySideBarIntl, language, 3)}
                         </AboutSideBarContent>
                     </Contentt>
                     </Changed>

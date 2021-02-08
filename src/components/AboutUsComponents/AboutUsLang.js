@@ -11,3 +11,15 @@ export const AboutUsTitle = (lang) => {
 
     return text
 }
+
+export const AboutUsSidebar = (data, lang, index) => {
+    var text = 
+    (lang === "en") ? 
+        <>{data[index].en}</> :
+    (lang === "id") ? 
+        <>{data[index].id}</> :
+    (lang === "cn") ? 
+        <>{data[index].ch}</> : null;
+
+    return text
+}

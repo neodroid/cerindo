@@ -11,3 +11,15 @@ export const BusinessTitle = (lang) => {
 
     return text
 }
+
+export const BusinessSidebar = (data, lang, index) => {
+    var text = 
+    (lang === "en") ? 
+        <>{data[index].en}</> :
+    (lang === "id") ? 
+        <>{data[index].id}</> :
+    (lang === "cn") ? 
+        <>{data[index].ch}</> : null;
+
+    return text
+}

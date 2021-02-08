@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React,{ useState, useEffect, useContext } from "react";
 import {
     AboutSideBar,
     AboutSideBarContent,
@@ -10,8 +10,12 @@ import {
     Contentt,
     Changed
 } from "../AboutUsComponents/AboutUsElements";
+import { langContext } from '../../langContext';
+import { BusinessSideBarIntl } from '../Data/BusinessData/BussinessDatas';
+import { BusinessSidebar } from './BusinessLang';
 
 const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
+    const { language } = useContext(langContext);
     const [selected, setSelected] = useState(true);
 
     const Clickit = ()=>{
@@ -40,44 +44,44 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                     { selected ?
                     <Contentt>
                         <AboutSideBarContent page={page1} to="/Nickle-Ore-Mining">
-                            Nickel Ore Mining
+                            {BusinessSidebar(BusinessSideBarIntl, language, 0)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page2} to="/Ferronickle-Smelting">
-                            Ferronickel Smelting
+                            {BusinessSidebar(BusinessSideBarIntl, language, 1)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page3} to="/Resource-Reserve">
-                            Resource and Reserve
+                            {BusinessSidebar(BusinessSideBarIntl, language, 2)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page4} to="/Nickle-Cobalt-HPAL">
-                            Nickel-Cobalt HPAL
+                            {BusinessSidebar(BusinessSideBarIntl, language, 3)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page5} to="/Ore-Export">
-                            Direct Ore Shipping
+                            {BusinessSidebar(BusinessSideBarIntl, language, 4)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page6} to="/Power-Supply">
-                            Power Supply
+                            {BusinessSidebar(BusinessSideBarIntl, language, 5)}
                         </AboutSideBarContent>
                     </Contentt>
                     : 
                     <Changed>
                         <Contentt>
                         <AboutSideBarContent page={page1} to="/Nickle-Ore-Mining">
-                        Nickel Ore Mining
+                            {BusinessSidebar(BusinessSideBarIntl, language, 0)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page2} to="/Ferronickle-Smelting">
-                        Ferronickel Smelting
+                            {BusinessSidebar(BusinessSideBarIntl, language, 1)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page3} to="/Resource-Reserve">
-                        Resource and Reserve
+                            {BusinessSidebar(BusinessSideBarIntl, language, 2)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page4} to="/Nickle-Cobalt-HPAL">
-                            Nickel-Cobalt HPAL
+                            {BusinessSidebar(BusinessSideBarIntl, language, 3)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page5} to="/Ore-Export">
-                            Direct Ore Shipping
+                            {BusinessSidebar(BusinessSideBarIntl, language, 4)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page6} to="/Power-Supply">
-                            Power Supply
+                            {BusinessSidebar(BusinessSideBarIntl, language, 5)}
                         </AboutSideBarContent>
                     </Contentt>
                     </Changed>

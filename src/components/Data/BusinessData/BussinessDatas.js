@@ -19,3 +19,42 @@ export const BusinessBannerIntl = {
   "id" : "Bisnis",
   "ch" : "CBusiness"
 }
+
+export const BusinessSideBarIntl = [
+  {
+    "en" : "Nickle Ore Mining",
+    "id" : "Penambangan Bijih Nikel",
+    "ch" : "镍矿开采",
+    to : "page1"
+  },
+  {
+    "en" : "Ferronickel Smelting",
+    "id" : "Peleburan Feronikel",
+    "ch" : "镍铁冶炼",
+    to : "page3"
+  },
+  {
+    "en" : "Resource and Reserve",
+    "id" : "Sumber Daya dan Cadangan",
+    "ch" : "资源储备",
+    to : "page1"
+  },
+  {
+    "en" : "Nickel-Cobalt HPAL",
+    "id" : "Nikel-Cobalt HPAL",
+    "ch" : "镍-钴HPAL",
+    to : "page2"
+  },
+  {
+    "en" : "Ore Export",
+    "id" : "Ekspor Bijih",
+    "ch" : "矿石出口",
+    to : "page1"
+  },
+  {
+    "en" : "Power Supply",
+    "id" : "Sumber Daya listrik",
+    "ch" : "电源供应",
+    to : "/"
+  },
+]
