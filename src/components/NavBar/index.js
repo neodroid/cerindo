@@ -59,7 +59,6 @@ function Menu({ items, value, onChange, placeholder, showFlag }) {
     <DropDown role="button" tabIndex={-1}>
       <Dropbtn>
         {showFlag ? value ? <Flag src={getFlagUrl(value)} /> : null : null}
-        {value || placeholder || ""}
         <ArrowDownLang />
       </Dropbtn>
 
@@ -71,7 +70,6 @@ function Menu({ items, value, onChange, placeholder, showFlag }) {
             onClick={() => setSelected(row)}
           >
             {showFlag && <Flag src={getFlagUrl(row)} />}
-            {row}
           </Item>
         ))}
       </DropDownContent>

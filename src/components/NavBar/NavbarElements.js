@@ -241,7 +241,7 @@ export const ArrowDownLang = styled.div`
 export const DropDown = styled.div`
   display: inline-block;
   cursor: pointer;
-  width: 80px;
+  width: 70px;
   > * {
     cursor: pointer;
   }
@@ -281,12 +281,12 @@ export const Dropbtn = styled.div`
 `;
 
 export const Item = styled.a`
+  text-align: center;
   max-width: 100vw;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;
   outline: none;
   font-family: "Montserrat";
   /* border: 1px solid; */
