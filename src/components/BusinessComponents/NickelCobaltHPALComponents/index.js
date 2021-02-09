@@ -12,6 +12,7 @@ import { langContext } from "../../../langContext";
 import {
   NickleCobaltLangBody,
   NickleCobaltLangTitle,
+  NickleCobaltLangBody2,
 } from "./NickleCobaltHPALLang";
 
 const NickelCobaltHPALComponents = () => {
@@ -42,6 +43,9 @@ const NickelCobaltHPALComponents = () => {
           {nickelCobalt.images.map((data) => {
             return <ImageBusiness src={data.url} />;
           })}
+          <BusinessWrited>
+            {NickleCobaltLangBody2(nickelCobalt, language)}
+          </BusinessWrited>
         </AboutMain>
       </Aboutstyle>
     </>

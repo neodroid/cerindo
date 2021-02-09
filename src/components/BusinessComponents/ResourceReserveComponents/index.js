@@ -13,6 +13,7 @@ import { businessService } from "../../../service/Business";
 import { langContext } from "../../../langContext";
 import {
   ResourceReserveLangBody,
+  ResourceReserveLangBody2,
   ResourceReserveLangTitle,
 } from "./ResourceReserverLang";
 
@@ -59,7 +60,7 @@ const ResourceReserveComponents = () => {
           </BusinessWrited>
           <ImageBusiness src={resourceReserve.images[2].url} />
           <BusinessWrited>
-            {ResourceReserveLangBody(resourceReserve, language)}
+            {ResourceReserveLangBody2(resourceReserve, language)}
           </BusinessWrited>
         </AboutMain>
       </Aboutstyle>

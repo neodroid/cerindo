@@ -17,9 +17,9 @@ const ContactComponents = (props) => {
     emailjs
       .sendForm(
         "gmail",
-        "template-cerindo",
+        "template-contact-us",
         e.target,
-        "user_4ymuHD2iaroOz9FHrvNRJ"
+        "user_GcBQRE4MNsYiRCBj6Z52d"
       )
       .then(
         (result) => {
@@ -30,6 +30,10 @@ const ContactComponents = (props) => {
         }
       );
     e.target.reset();
+    setTimeout(() => {
+      alert("Data has been sent");
+      props.history.push("/");
+    }, 10);
   };
 
   return (
