@@ -93,7 +93,14 @@ const HeroSection = () => {
             <HeroContainer img={data.banner.url} key={idx}>
               <BgColoring>
                 <HeroContent>
-                  <HeroH1>{NewsLangBanner(data, language)}</HeroH1>
+                  {NewsLangBanner(data, language).length > 8 ? 
+                  (
+                  <HeroH1 size={true}>{NewsLangBanner(data, language)}</HeroH1>
+                  )
+                :
+                (
+                <HeroH1 size={false}>{NewsLangBanner(data, language)}</HeroH1>
+                )}
                   <HeroNewsWrap>
                     <HeroNewsFlex>
                       <TitleNewsApart>

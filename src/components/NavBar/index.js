@@ -110,7 +110,7 @@ const Navbar = ({ toggle }) => {
 
   let [val1, setValue1] = useState("en");
   const { language, setLanguage } = useContext(langContext);
-  if(window.innerWidth < 960){
+  if(window.innerWidth < 1080){
     val1 = setLangMobile;
   }
   else{

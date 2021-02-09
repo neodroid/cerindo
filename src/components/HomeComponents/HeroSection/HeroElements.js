@@ -43,12 +43,13 @@ height: 100%;
   /* position: absolute; */
   padding: 8px 24px;
   display: flex;
-  margin: 100px auto 0;
+  margin: 150px auto 0;
   flex-direction: column;
   align-self: center;
   /* margin-top: 80px; */
   @media screen and (max-width: 577px) {
     text-align:center;
+    margin: 50px auto 0;
   }
 `;
 
@@ -116,14 +117,14 @@ export const HeroNewsWrap = styled.div`
   padding: 8px 24px;
   display: flex;
   flex-direction: column;
-  margin: 60px 0 50px;
+  margin: 80px 0 50px;
   /* align-items: center; */
   @media screen and (max-width: 1065px) {
     width: 100%;
   }
   @media screen and (max-width: 600px) {
     width: 90%;
-    margin: 0 auto;
+    margin: 10px auto 0;
   }
 `;
 
@@ -131,7 +132,7 @@ export const HeroH1 = styled.div`
   /* font-size: 48px;
   text-align: center; */
   max-width: 800px;
-  font-size: 40px;
+  font-size: ${({ size }) => (size ? "32px" : "40px")};
   line-height: 50px;
   font-family: 'Multicolore', sans serif;
   color: #EFB401;
@@ -232,7 +233,7 @@ export const HeroNewsContent = styled(LinkR)`
   cursor: pointer;
   min-width: 295px;
   margin: 15px;
-
+  height: 140px;
   display: flex;
   flex-direction: row;
   padding-bottom: 10px;
@@ -251,6 +252,7 @@ export const HeroNewsContent = styled(LinkR)`
     border-bottom: 2px solid #aaa;
     border-right: none;
     min-width: 0px;
+    height: fit-content;
   }
 `;
 export const HeroNewsDesc = styled.div`
@@ -273,7 +275,7 @@ export const HeroNewsP = styled.p`
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 18px;
 `;
 
 export const HeroNewsTimeP = styled.p`
@@ -337,7 +339,7 @@ export const Slider = styled(AwesomeSlider)`
   .awssld__wrapper{
     margin: 0 auto !important;
     display: block !important;
-    height: 630px;
+    height: 730px;
     @media screen and (max-width: 1164px) {
       min-height: 950px;
     }
