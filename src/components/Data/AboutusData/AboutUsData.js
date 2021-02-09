@@ -10,7 +10,7 @@ export const AboutUsIntl = [
         "ch" : "承诺"
     },
     {
-        "en" : "Company Subsidiaries",
+        "en" : "Company's Subsidiaries",
         "id" : "Anak Perusahaan",
         "ch" : "公司子公司"
     },
@@ -20,7 +20,7 @@ export const AboutUsIntl = [
         "ch" : "董事会"
     },
     {
-        "en" : "Organization Structures",
+        "en" : "Organizational Structures",
         "id" : "Struktur Organisasi",
         "ch" : "组织架构"
     },
