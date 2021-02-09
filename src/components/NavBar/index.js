@@ -48,7 +48,7 @@ import { langContext } from "../../langContext";
 import { Link } from "react-router-dom";
 export let lang;
 
-function Menu({ items, value, onChange, placeholder, showFlag }) {
+function Menu ({ items, value, onChange, placeholder, showFlag }) {
   const [selected, setSelected] = useState(value || null);
 
   useEffect(() => {

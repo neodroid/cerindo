@@ -35,9 +35,9 @@ export const BusinessTwo = [
         "ch" : "资源储备"
     },
     {
-        "en" : "Ore Export",
-        "id" : "Ekspor Bijih",
-        "ch" : "矿石出口"
+        "en" : "Direct Ore Shipping",
+        "id" : "Pengiriman Bijih Langsung",
+        "ch" : "矿石直接运输"
     },
     {
         "en" : "Power Supply",
