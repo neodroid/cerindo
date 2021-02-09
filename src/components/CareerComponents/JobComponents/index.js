@@ -28,6 +28,12 @@ import axios from "axios";
 
 const JobComponents = (props) => {
   const [career, setCareer] = useState([]);
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phoneNumber, setPhoneNumber] = useState();
+  const [subject, setSubject] = useState();
+  const [message, setMessage] = useState();
+  const [cv, setCV] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,27 +59,30 @@ const JobComponents = (props) => {
 
   const submit = async (e) => {
     e.preventDefault();
+    console.log(cv);
+    const formData = new FormData();
+    formData.append(
+      "data",
+      JSON.stringify({
+        name,
+        email,
+        phone_number: phoneNumber,
+        subject,
+        message,
+      })
+    );
+    formData.append("files.cv", cv, cv.name);
 
-    emailjs
-      .sendForm(
-        "gmail",
-        "template-contact-us",
-        e.target,
-        "user_GcBQRE4MNsYiRCBj6Z52d"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset();
+    const upload_res = await axios.post(
+      "http://13.250.45.21/api/cvs",
+      formData
+    );
+
+    console.log(upload_res);
     setTimeout(() => {
       alert("Data has been sent");
       props.history.push("/Career");
-    }, 10);
+    }, 20);
   };
 
   return (
@@ -100,27 +109,52 @@ const JobComponents = (props) => {
         </ArrowLeft>
         <h1>Upload CV</h1>
         <form onSubmit={submit}>
-          <Inputan type="text" placeholder="Your Name" required name="name" />
+          <Inputan
+            type="text"
+            placeholder="Your Name"
+            required
+            name="name"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
           <ApartInputan>
             <Inputan
               type="number"
               placeholder="Your Phone Number"
               required
               name="phone_number"
+              onChange={(e) => {
+                setPhoneNumber(e.target.value);
+              }}
             />
             <Inputan
               type="email"
               placeholder="Your Email"
               required
               name="email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             />
           </ApartInputan>
-          <Inputan type="text" placeholder="Subject" required name="subject" />
+          <Inputan
+            type="text"
+            placeholder="Subject"
+            required
+            name="subject"
+            onChange={(e) => {
+              setSubject(e.target.value);
+            }}
+          />
           <InputanArea
             rows="20"
             required
             name="message"
             placeholder="Type your message"
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
             style={{ marginTop: "20px", padding: "16px" }}
           />
           <br />
@@ -135,7 +169,14 @@ const JobComponents = (props) => {
           >
             Upload PDF max 2 mb{" "}
           </label>
-          <input type="file" id="cv" name="cv" />
+          <input
+            type="file"
+            id="cv"
+            name="cv"
+            onChange={(e) => {
+              setCV(e.target.files[0]);
+            }}
+          />
           <br />
           <Buttonscv type="submit">
             <Buttons>

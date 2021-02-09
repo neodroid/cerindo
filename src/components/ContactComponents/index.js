@@ -30,10 +30,6 @@ const ContactComponents = (props) => {
         }
       );
     e.target.reset();
-    setTimeout(() => {
-      alert("Data has been sent");
-      props.history.push("/");
-    }, 10);
   };
 
   return (

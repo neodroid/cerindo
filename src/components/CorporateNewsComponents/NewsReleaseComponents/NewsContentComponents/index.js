@@ -63,6 +63,7 @@ const NewsContentComponents = () => {
   const { language } = useContext(langContext);
   const [selected, setSelected] = useState(false);
   const [newsData, setNewsData] = useState([]);
+  const [announcement, setAnnouncement] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [searchTerm, setSearchTerm] = useState();
   const [searchDate, setSearchDate] = useState();
@@ -77,8 +78,14 @@ const NewsContentComponents = () => {
       setNewsData(data);
       setFiltered(data);
     };
+    const fetchAnnouncement = async () => {
+      const response = await newsService.getListAnnouncement();
+      const data = response.data;
+      setAnnouncement(data);
+    };
     Clicked();
     fetchData();
+    fetchAnnouncement();
   }, []);
 
   const handleClick = (e) => {
@@ -126,31 +133,33 @@ const NewsContentComponents = () => {
       <AboutMain>
         <NewsWrapped>
           <h2>Announcement</h2>
-          {AnnouncementData.length == 0 ? 
-          (<Nulity/>) :
-           (<>
-            {AnnouncementData.map((data, idx) => {
-            return (
-              <>
-                <AnnounWrapped key={idx}>
-                  <AnnounContent>
-                    <AnnounApart>
-                      <AnnounWrited>{data.content}</AnnounWrited>
-                    </AnnounApart>
-                    {data.warning ? (
-                      <AnnounApart warned>
-                        <Warned alt="warned" />
-                      </AnnounApart>
-                    ) : (
-                      <Nulity></Nulity>
-                    )}
-                  </AnnounContent>
-                </AnnounWrapped>
-              </>
-            );
-          })}
-          </>) }
-          
+          {announcement.length == 0 ? (
+            <AnnounWrited>No Announcement</AnnounWrited>
+          ) : (
+            <>
+              {announcement.map((data, idx) => {
+                return (
+                  <>
+                    <AnnounWrapped key={idx}>
+                      <AnnounContent>
+                        <AnnounApart>
+                          <AnnounWrited>{data.content}</AnnounWrited>
+                        </AnnounApart>
+                        {data.warning ? (
+                          <AnnounApart warned>
+                            <Warned alt="warned" />
+                          </AnnounApart>
+                        ) : (
+                          <Nulity></Nulity>
+                        )}
+                      </AnnounContent>
+                    </AnnounWrapped>
+                  </>
+                );
+              })}
+            </>
+          )}
+
           {/*<ChoisenNews>
           <ChoisenDesc choose onClick={Clicked}>News</ChoisenDesc>
           <ChoisenDesc onClick={Clicked}>Ceria in Media</ChoisenDesc>
