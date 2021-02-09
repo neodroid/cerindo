@@ -109,8 +109,8 @@ const Navbar = ({ toggle }) => {
 
   const [val1, setValue1] = useState("en");
   const { language, setLanguage } = useContext(langContext);
-  setLanguage(val1);
   setLang = val1;
+  setLanguage(val1);
   if (newsList.length === 0) return null;
   return (
     <>

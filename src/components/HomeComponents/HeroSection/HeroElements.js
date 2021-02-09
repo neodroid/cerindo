@@ -12,6 +12,8 @@ export const HeroContainer = styled.div`
   background-size: cover;
   width: 100%;
   height: 100%;
+  align-self: center;
+  justify-content: center;
   /*margin-top:-80px;*/
   /* add before styles */
 `;
@@ -35,16 +37,15 @@ export const HeroBg = styled.div`
 // `;
 
 export const HeroContent = styled.div`
+height: 100%;
   z-index: 3;
   max-width: 1000px;
   /* position: absolute; */
   padding: 8px 24px;
   display: flex;
-  margin-top: 100px;
+  margin: 100px auto 0;
   flex-direction: column;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  align-self: center;
   /* margin-top: 80px; */
   @media screen and (max-width: 577px) {
     text-align:center;
@@ -115,7 +116,7 @@ export const HeroNewsWrap = styled.div`
   padding: 8px 24px;
   display: flex;
   flex-direction: column;
-  margin: 50px 0;
+  margin: 60px 0 50px;
   /* align-items: center; */
   @media screen and (max-width: 1065px) {
     width: 100%;
@@ -126,12 +127,12 @@ export const HeroNewsWrap = styled.div`
   }
 `;
 
-export const HeroH1 = styled.h1`
+export const HeroH1 = styled.div`
   /* font-size: 48px;
   text-align: center; */
-  max-width: 700px;
+  max-width: 800px;
   font-size: 40px;
-  line-height: 70px;
+  line-height: 50px;
   font-family: 'Multicolore', sans serif;
   color: #EFB401;
   @media screen and (max-width: 768px) {
@@ -139,9 +140,9 @@ export const HeroH1 = styled.h1`
   }
 
   @media screen and (max-width: 502px) {
-    font-size: 32px;
-    line-height: 40px;
-    margin-bottom: 10px;
+    font-size: 29px;
+    line-height: 35px;
+    margin-bottom: 15px;
   }
 `;
 
@@ -329,23 +330,25 @@ export const Angle = styled(Carousel)`
 export const BgColoring = styled.div`
   background-color: rgba(0,0,0,0.3);
   width: 100%;
+  height: 100%;
 `;
 
 export const Slider = styled(AwesomeSlider)`
   .awssld__wrapper{
     margin: 0 auto !important;
-    display: block;
-    min-height: 650px;
-    height: 720px;
+    display: block !important;
+    height: 630px;
+    @media screen and (max-width: 1164px) {
+      min-height: 950px;
+    }
     @media screen and (max-width: 1064px) {
-      min-height: 900px;
-      height: auto;
+      min-height: 1050px;
     }
     @media screen and (max-width: 960px) {
-      min-height: 1020px;
+      min-height: 1120px;
     }
     @media screen and (max-width: 502px) {
-      min-height: 1500px;
+      min-height: 1400px;
     }
   }
   .awssld__bullets{
