@@ -8,7 +8,7 @@ export const FerronickleLangTitle = (ferronicle, lang) => {
       <div>{ferronicle.title_id}</div>
     ) : lang === "cn" ? (
       <div>{ferronicle.title_ch}</div>
-    ) : null;
+    ) : <></>;
 
   return text;
 };
@@ -21,7 +21,7 @@ export const FerronickleLangBody = (ferronicle, lang) => {
       <div>{ferronicle.body_id}</div>
     ) : lang === "cn" ? (
       <div>{ferronicle.body_ch}</div>
-    ) : null;
+    ) : <></>;
 
   return text;
 };
@@ -34,7 +34,7 @@ export const FerronickleLangBody2 = (ferronicle, lang) => {
       <div>{ferronicle.body2_id}</div>
     ) : lang === "cn" ? (
       <div>{ferronicle.body2_ch}</div>
-    ) : null;
+    ) : <></>;
 
   return text;
 };

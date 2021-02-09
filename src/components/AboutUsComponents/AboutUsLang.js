@@ -7,7 +7,7 @@ export const AboutUsTitle = (lang) => {
     (lang === "id") ? 
         <>Tentang Kami</> :
     (lang === "cn") ? 
-        <>关于我们</> : null;
+        <>关于我们</> : <></>;
 
     return text
 }
@@ -19,7 +19,7 @@ export const AboutUsSidebar = (data, lang, index) => {
     (lang === "id") ? 
         <>{data[index].id}</> :
     (lang === "cn") ? 
-        <>{data[index].ch}</> : null;
+        <>{data[index].ch}</> : <></>;
 
     return text
 }

@@ -7,7 +7,7 @@ export const BusinessTitle = (lang) => {
     (lang === "id") ? 
         <>Bisnis</> :
     (lang === "cn") ? 
-        <>商业</> : null;
+        <>商业</> : <></>;
 
     return text
 }
@@ -19,7 +19,7 @@ export const BusinessSidebar = (data, lang, index) => {
     (lang === "id") ? 
         <>{data[index].id}</> :
     (lang === "cn") ? 
-        <>{data[index].ch}</> : null;
+        <>{data[index].ch}</> : <></>;
 
     return text
 }

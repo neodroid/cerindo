@@ -7,7 +7,7 @@ export const QHSEContentLangTitle = (QHSEContent, lang) => {
     (lang === "id") ? 
         <div>{QHSEContent.title_id}</div> :
     (lang === "cn") ? 
-        <div>{QHSEContent.title_ch}</div> : null;
+        <div>{QHSEContent.title_ch}</div> : <></>;
 
     return text
 }
@@ -19,7 +19,7 @@ export const QHSEContentLangBody = (QHSEContent, lang) => {
     (lang === "id") ? 
         <div>{QHSEContent.body_id}</div> :
     (lang === "cn") ? 
-        <div>{QHSEContent.body_ch}</div> : null;
+        <div>{QHSEContent.body_ch}</div> : <></>;
 
     return text
 }

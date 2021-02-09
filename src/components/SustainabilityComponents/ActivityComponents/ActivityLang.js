@@ -15,11 +15,11 @@ export const ActivityLangTitle = (data, lang) => {
 export const ActivityLangBody = (data, lang) => {
     var text = 
     (lang === "en") ? 
-        <div>{`${data.news_en.substring(0, 100)}...`}</div> :
+        <>{`${data.news_en.substring(0, 100)}...`}</> :
     (lang === "id") ? 
-        <div>{`${data.news_id.substring(0, 100)}...`}</div> :
+        <>{`${data.news_id.substring(0, 100)}...`}</> :
     (lang === "cn") ? 
-        <div>{`${data.news_ch.substring(0, 100)}...`}</div> : null;
+        <>{`${data.news_ch.substring(0, 100)}...`}</> : <></>;
 
     return text
 }

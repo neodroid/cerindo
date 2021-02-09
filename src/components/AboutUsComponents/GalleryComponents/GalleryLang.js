@@ -7,7 +7,7 @@ export const GalleryLangTitle = (data, lang) => {
     (lang === "id") ? 
         <div>{data.title_id}</div> :
     (lang === "cn") ? 
-        <div>{data.title_ch}</div> : null;
+        <div>{data.title_ch}</div> : <></>;
 
     return text
 }
@@ -19,7 +19,7 @@ export const GalleryLangTitlePhoto = (photoDetailedGallery, lang) => {
     (lang === "id") ? 
         <div>{photoDetailedGallery.title_id}</div> :
     (lang === "cn") ? 
-        <div>{photoDetailedGallery.title_ch}</div> : null;
+        <div>{photoDetailedGallery.title_ch}</div> : <></>;
 
     return text
 }

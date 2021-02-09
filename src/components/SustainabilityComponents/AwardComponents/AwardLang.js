@@ -7,7 +7,7 @@ export const AwardContentLangTitle = (AwardContent, lang) => {
     (lang === "id") ? 
         <div>{AwardContent.title_id}</div> :
     (lang === "cn") ? 
-        <div>{AwardContent.title_ch}</div> : null;
+        <div>{AwardContent.title_ch}</div> : <></>;
 
     return text
 }
@@ -19,7 +19,7 @@ export const AwardContentLangBody = (AwardContent, lang) => {
     (lang === "id") ? 
         <div>{AwardContent.body_id}</div> :
     (lang === "cn") ? 
-        <div>{AwardContent.body_ch}</div> : null;
+        <div>{AwardContent.body_ch}</div> : <></>;
 
     return text
 }

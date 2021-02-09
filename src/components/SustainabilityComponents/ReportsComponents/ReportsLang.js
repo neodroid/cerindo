@@ -7,7 +7,7 @@ export const ReportsDataLangTitle = (ReportsData, lang) => {
     (lang === "id") ? 
         <div>{ReportsData.title_id}</div> :
     (lang === "cn") ? 
-        <div>{ReportsData.title_ch}</div> : null;
+        <div>{ReportsData.title_ch}</div> : <></>;
 
     return text
 }
@@ -19,7 +19,7 @@ export const ReportsDataLangBody = (ReportsData, lang) => {
     (lang === "id") ? 
         <div>{ReportsData.body_id}</div> :
     (lang === "cn") ? 
-        <div>{ReportsData.body_ch}</div> : null;
+        <div>{ReportsData.body_ch}</div> : <></>;
 
     return text
 }
@@ -31,7 +31,7 @@ export const ReportsDataLangFile = (data, lang) => {
     (lang === "id") ? 
         <>{data.title_id}</> :
     (lang === "cn") ? 
-        <>{data.title_ch}</> : null;
+        <>{data.title_ch}</> : <></>;
 
     return text
 }
@@ -43,7 +43,7 @@ export const ReportsDataLangButton = (data, lang) => {
     (lang === "id") ? 
         <>UNDUH</> :
     (lang === "cn") ? 
-        <>下载</> : null;
+        <>下载</> : <></>;
 
     return text
 }

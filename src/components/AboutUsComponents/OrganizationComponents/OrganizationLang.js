@@ -8,7 +8,7 @@ export const OrganizationLangTitle = (data, lang) => {
       <div>{data.title_id}</div>
     ) : lang === "cn" ? (
       <div>{data.title_ch}</div>
-    ) : null;
+    ) : <></>;
 
   return text;
 };
@@ -21,7 +21,7 @@ export const OrganizationLangBody = (data, lang) => {
       <div>{data.body_id}</div>
     ) : lang === "cn" ? (
       <div>{data.body_ch}</div>
-    ) : null;
+    ) : <></>;
 
   return text;
 };
