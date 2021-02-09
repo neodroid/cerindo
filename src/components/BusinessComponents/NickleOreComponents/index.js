@@ -9,7 +9,11 @@ import BusinessSideBarComponents from "../index";
 import { NickleOreMiningContent } from "../../Data/BusinessData/NickleOreMiningDatas";
 import { businessService } from "../../../service/Business";
 import { langContext } from "../../../langContext";
-import { NickleOreLangBody, NickleOreLangTitle } from "./NickleOreLang";
+import {
+  NickleOreLangBody,
+  NickleOreLangTitle,
+  NickleOreLangBody2,
+} from "./NickleOreLang";
 
 const NickleOreComponents = () => {
   const { language } = useContext(langContext);
@@ -39,6 +43,9 @@ const NickleOreComponents = () => {
           {nickelOre.images.map((data) => {
             return <ImageBusiness src={data.url} />;
           })}
+          <BusinessWrited>
+            {NickleOreLangBody2(nickelOre, language)}
+          </BusinessWrited>
         </AboutMain>
       </Aboutstyle>
     </>

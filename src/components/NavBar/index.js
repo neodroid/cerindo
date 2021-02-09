@@ -48,7 +48,7 @@ import { langContext } from "../../langContext";
 import { Link } from "react-router-dom";
 export let setLang = null;
 
-function Menu({ items, value, onChange, placeholder, showFlag }) {
+function Menu ({ items, value, onChange, placeholder, showFlag }) {
   const [selected, setSelected] = useState(value || null);
   useEffect(() => {
     if (onChange) onChange(selected);
@@ -58,7 +58,6 @@ function Menu({ items, value, onChange, placeholder, showFlag }) {
     <DropDown role="button" tabIndex={-1}>
       <Dropbtn>
         {showFlag ? value ? <Flag src={getFlagUrl(value)} /> : null : null}
-        {value || placeholder || ""}
         <ArrowDownLang />
       </Dropbtn>
 
@@ -70,7 +69,6 @@ function Menu({ items, value, onChange, placeholder, showFlag }) {
             onClick={() => setSelected(row)}
           >
             {showFlag && <Flag src={getFlagUrl(row)} />}
-            {row}
           </Item>
         ))}
       </DropDownContent>

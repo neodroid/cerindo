@@ -12,6 +12,7 @@ import { langContext } from "../../../langContext";
 import {
   FerronickleLangTitle,
   FerronickleLangBody,
+  FerronickleLangBody2,
 } from "./FerronickleSmeltingLang";
 
 const FerronickleSmeltingComponents = () => {
@@ -42,6 +43,9 @@ const FerronickleSmeltingComponents = () => {
           {ferronicle.images.map((data) => {
             return <ImageBusiness src={data.url} />;
           })}
+          <BusinessWrited>
+            {FerronickleLangBody2(ferronicle, language)}
+          </BusinessWrited>
         </AboutMain>
       </Aboutstyle>
     </>

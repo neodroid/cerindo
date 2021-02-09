@@ -45,7 +45,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                 Resource and Reserve
               </SidebarLink>
               <SidebarLink to="/Ore-Export" onClick={toggle}>
-                Ore Export
+                Direct Ore Shipping
               </SidebarLink>
               <SidebarLink to="/Power-Supply" onClick={toggle}>
                 Power Supply
@@ -64,10 +64,10 @@ const Sidebar = ({ isOpen, toggle }) => {
               <SidebarLink to="/Community-Activities" onClick={toggle}>
               Community Activities
               </SidebarLink>
-              <SidebarLink to="/Report" onClick={toggle}>
+              <SidebarLink to="/Reports" onClick={toggle}>
               Report
               </SidebarLink>
-              <SidebarLink to="/Award" onClick={toggle}>
+              <SidebarLink to="/Awards" onClick={toggle}>
               Award
             </SidebarLink>
             </DropDownContent>

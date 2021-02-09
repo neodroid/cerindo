@@ -3,6 +3,7 @@ import { gatewayHelper } from "../utility";
 export const newsService = {
   getListNews,
   getDetailNews,
+  getListAnnouncement,
 };
 
 async function getListNews() {
@@ -18,5 +19,11 @@ async function getDetailNews(newsId) {
     "press-news/" + newsId,
     body
   );
+  return response;
+}
+
+async function getListAnnouncement() {
+  const body = {};
+  const response = await gatewayHelper.http("GET", "announcements", body);
   return response;
 }

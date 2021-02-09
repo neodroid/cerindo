@@ -9,7 +9,11 @@ import BusinessSideBarComponents from "../index";
 import { JettyTerminalContent } from "../../Data/BusinessData/JettyTerminalDatas";
 import { businessService } from "../../../service/Business";
 import { langContext } from "../../../langContext";
-import { OreExportLangTitle, OreExportLangBody } from "./OreExportLang";
+import {
+  OreExportLangTitle,
+  OreExportLangBody,
+  OreExportLangBody2,
+} from "./OreExportLang";
 
 const OreExportComponents = () => {
   const { language } = useContext(langContext);
@@ -39,6 +43,9 @@ const OreExportComponents = () => {
           {oreExport.images.map((data) => {
             return <ImageBusiness src={data.url} />;
           })}
+          <BusinessWrited>
+            {OreExportLangBody2(oreExport, language)}
+          </BusinessWrited>
         </AboutMain>
       </Aboutstyle>
     </>
