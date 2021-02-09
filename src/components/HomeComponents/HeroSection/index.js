@@ -32,7 +32,7 @@ import {
   Slider,
 } from "./HeroElements";
 import { langContext } from "../../../langContext";
-import { NewsLangTitle } from "./HeroLang";
+import { NewsLangTitle, NewsLangBanner } from "./HeroLang";
 const AutoplaySlider = withAutoplay(Slider);
 
 const HeroSection = () => {
@@ -93,7 +93,7 @@ const HeroSection = () => {
             <HeroContainer img={data.banner.url} key={idx}>
               <BgColoring>
                 <HeroContent>
-                  <HeroH1>{data.title_en}</HeroH1>
+                  <HeroH1>{NewsLangBanner(data, language)}</HeroH1>
                   <HeroNewsWrap>
                     <HeroNewsFlex>
                       <TitleNewsApart>

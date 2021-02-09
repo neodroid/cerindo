@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { aboutUsService } from "../service/Aboutus";
 import Banner from "../components/Banner";
 import { SubsidiaryHead } from "../components/Data/AboutusData/SubsidiaryDatas";
 import SubsidiaryComponents from "../components/AboutUsComponents/SubsidiaryComponents";
+import { langContext } from '../langContext';
+import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
 
 const Subsidiary = () => {
+  const { language } = useContext(langContext);
   const [subsidiary, setSubsidiary] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +28,7 @@ const Subsidiary = () => {
             lightText={true}
             texted={true}
             key={idx}
-            place="About Us"
+            place={AboutUsTitle(language)}
           />
         );
       })}

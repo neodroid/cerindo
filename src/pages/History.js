@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Banner from "../components/Banner";
 import { HistoryHead } from "../components/Data/AboutusData/HistoryDatas";
 import HistoryComponents from "../components/AboutUsComponents/HistoryComponents";
 import { aboutUsService } from "../service/Aboutus";
+import { langContext } from '../langContext';
+import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
+
 const History = () => {
+  const { language } = useContext(langContext);
   const [history, setHistory] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +27,7 @@ const History = () => {
             lightText={true}
             texted={true}
             key={idx}
-            place="About Us"
+            place={AboutUsTitle(language)}
           />
         );
       })}

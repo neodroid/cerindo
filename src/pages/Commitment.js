@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Banner from "../components/Banner";
 import CommitmentComponents from "../components/AboutUsComponents/CommitmentComponents";
 import { aboutUsService } from "../service/Aboutus";
+import { langContext } from '../langContext';
+import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
+
 const Commitment = () => {
+  const { language } = useContext(langContext);
   const [commitment, setCommitment] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +27,7 @@ const Commitment = () => {
             lightText={true}
             texted={true}
             key={idx}
-            place="About Us"
+            place={AboutUsTitle(language)}
           />
         );
       })}

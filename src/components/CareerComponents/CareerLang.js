@@ -35,3 +35,15 @@ export const CareerLangEmployeeBody = (career, lang) => {
 
     return text	
 }
+
+export const CareerTitle = (lang) => {
+    var text = 
+    (lang === "en") ? 
+        <>Career</> :
+    (lang === "id") ? 
+        <>Karir</> :
+    (lang === "cn") ? 
+        <>事业</> : null;
+
+    return text
+}

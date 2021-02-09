@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React,{ useState, useEffect, useContext } from "react";
 import {
     AboutSideBar,
     AboutSideBarContent,
@@ -10,8 +10,13 @@ import {
     Contentt,
     Changed
 } from "./AboutUsElements";
+import { langContext } from '../../langContext';
+import { AboutUsSidebar } from './AboutUsLang';
+import { AboutUsIntl } from '../Data/AboutusData/AboutUsData';
 
 const AboutSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7,page8,page9}) => {
+    const { language } = useContext(langContext);
+
     const [selected, setSelected] = useState(true);
 
     const Clickit = ()=>{
@@ -43,62 +48,62 @@ const AboutSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7,page8
                     { selected ?
                     <Contentt>
                         <AboutSideBarContent page={page1} to="/Mission-Vision">
-                            Mission, Vision and Value
+                            {AboutUsSidebar(AboutUsIntl, language, 0)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page2} to="/Commitment">
-                            Commitment
+                            {AboutUsSidebar(AboutUsIntl, language, 1)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page3} to="/Subsidiary">
-                            Company Subsidiary
+                            {AboutUsSidebar(AboutUsIntl, language, 2)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page4} to="/Board-of-Director">
-                            Board of Director
+                            {AboutUsSidebar(AboutUsIntl, language, 3)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page5} to="/Organization-Structure">
-                            Organization Structure
+                            {AboutUsSidebar(AboutUsIntl, language, 4)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page6} to="/History-Milestone">
-                            History and Milestone
+                            {AboutUsSidebar(AboutUsIntl, language, 5)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page7} to="/Licenses-Concession">
-                            Licenses and Concession
+                            {AboutUsSidebar(AboutUsIntl, language, 6)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page8} to="/Press-Release">
-                            Press Release
+                            {AboutUsSidebar(AboutUsIntl, language, 7)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page9} to="/Gallery">
-                            Gallery
+                            {AboutUsSidebar(AboutUsIntl, language, 8)}
                         </AboutSideBarContent>
                     </Contentt>
                     : 
                     <Changed>
                         <Contentt>
                         <AboutSideBarContent page={page1} to="/Mission-Vision">
-                            Mission, Vision and Value
+                            {AboutUsSidebar(AboutUsIntl, language, 0)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page2} to="/Commitment">
-                            Commitment
+                            {AboutUsSidebar(AboutUsIntl, language, 1)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page3} to="/Subsidiary">
-                            Company Subsidiary
+                            {AboutUsSidebar(AboutUsIntl, language, 2)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page4} to="/Board-of-Director">
-                            Board of Director
+                            {AboutUsSidebar(AboutUsIntl, language, 3)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page5} to="/Organization-Structure">
-                            Organization Structure
+                            {AboutUsSidebar(AboutUsIntl, language, 4)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page6} to="/History-Milestone">
-                            History and Milestone
+                            {AboutUsSidebar(AboutUsIntl, language, 5)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page7} to="/Licenses-Concession">
-                            Licenses and Concession
+                            {AboutUsSidebar(AboutUsIntl, language, 6)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page8} to="/Press-Release">
-                            Press Release
+                            {AboutUsSidebar(AboutUsIntl, language, 7)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page9} to="/Gallery">
-                            Gallery
+                            {AboutUsSidebar(AboutUsIntl, language, 8)}
                         </AboutSideBarContent>
                     </Contentt>
                     </Changed>

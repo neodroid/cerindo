@@ -14,7 +14,12 @@ import {
   ButtonTable,
 } from "./ReportsElements";
 import { langContext } from "../../../langContext";
-import { ReportsDataLangTitle, ReportsDataLangBody } from "./ReportsLang";
+import { 
+  ReportsDataLangTitle, 
+  ReportsDataLangBody, 
+  ReportsDataLangFile,
+  ReportsDataLangButton 
+} from "./ReportsLang";
 
 const ReportsComponents = () => {
   const { language } = useContext(langContext);
@@ -55,10 +60,12 @@ const ReportsComponents = () => {
                 return (
                   <div key={idx} style={{ background: "#FAFAFA" }}>
                     <ApartContentTable content>
-                      <ContentTable>{data.title_en}</ContentTable>
+                      <ContentTable>
+                        {ReportsDataLangFile(data, language)}
+                      </ContentTable>
                     </ApartContentTable>
                     <ApartContentTable>
-                      <ButtonTable href={data.file.url}>DOWNLOAD</ButtonTable>
+                      <ButtonTable href={data.file.url}>{ReportsDataLangButton(data, language)}</ButtonTable>
                     </ApartContentTable>
                   </div>
                 );
@@ -66,10 +73,12 @@ const ReportsComponents = () => {
                 return (
                   <div key={idx} style={{ background: "#F5F5F5" }}>
                     <ApartContentTable content>
-                      <ContentTable>{data.title_en}</ContentTable>
+                      <ContentTable>
+                        {ReportsDataLangFile(data, language)}
+                      </ContentTable>
                     </ApartContentTable>
                     <ApartContentTable>
-                      <ButtonTable href={data.file.url}>DOWNLOAD</ButtonTable>
+                      <ButtonTable href={data.file.url}>{ReportsDataLangButton(data, language)}</ButtonTable>
                     </ApartContentTable>
                   </div>
                 );

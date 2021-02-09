@@ -11,3 +11,15 @@ export const NewsLangTitle = (data, lang) => {
 
     return text;
 }
+
+export const NewsLangBanner = (data, lang) => {
+    var text = 
+    (lang === "en") ? 
+        <>{data.title_en}</> :
+    (lang === "id") ? 
+        <>{data.title_id}</> :
+    (lang === "cn") ? 
+        <>{data.title_ch}</> : null;
+
+    return text;
+}

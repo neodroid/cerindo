@@ -20,6 +20,7 @@ import Banner from "../../Banner";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import AboutSideBarComponents from "../../AboutUsComponents/index";
 import { langContext } from "../../../langContext";
+import { AboutUsTitle } from '../../AboutUsComponents/AboutUsLang';
 import { aboutUsService } from "../../../service/Aboutus";
 import {
   DetailsNewsLangTitle,
@@ -84,7 +85,7 @@ const NewsComponent = (props) => {
     <>
       {press.banner.map((data, idx) => {
         return (
-          <Banner img={data.url} texted={true} key={idx} place="About Us" />
+          <Banner img={data.url} texted={true} key={idx} place={AboutUsTitle(language)} />
         );
       })}
       <Aboutstyle>

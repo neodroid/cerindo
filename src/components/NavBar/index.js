@@ -1,5 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
 import { FaBars } from "react-icons/fa";
+import { 
+  Home, 
+  Business,  
+  Sustainibility, 
+  AboutUs, 
+  Career, 
+  BusinessOne, 
+  BusinessTwo,
+  SustainabilityDropdown,
+  AboutUsDropdown
+ } from '../Data/NavbarData/NavbarData';
+import { NavbarLang, NavbarDropDown } from './NavbarLang';
 import image from "../../images/logo.png";
 import { newsService } from "../../service/News";
 import {
@@ -36,7 +48,7 @@ import { langContext } from "../../langContext";
 import { Link } from "react-router-dom";
 export let lang;
 
-function Menu({ items, value, onChange, placeholder, showFlag }) {
+function Menu ({ items, value, onChange, placeholder, showFlag }) {
   const [selected, setSelected] = useState(value || null);
 
   useEffect(() => {
@@ -47,7 +59,6 @@ function Menu({ items, value, onChange, placeholder, showFlag }) {
     <DropDown role="button" tabIndex={-1}>
       <Dropbtn>
         {showFlag ? value ? <Flag src={getFlagUrl(value)} /> : null : null}
-        {value || placeholder || ""}
         <ArrowDownLang />
       </Dropbtn>
 
@@ -59,7 +70,6 @@ function Menu({ items, value, onChange, placeholder, showFlag }) {
             onClick={() => setSelected(row)}
           >
             {showFlag && <Flag src={getFlagUrl(row)} />}
-            {row}
           </Item>
         ))}
       </DropDownContent>
@@ -115,87 +125,94 @@ const Navbar = ({ toggle }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="/">HOME</NavLinks>
+              <NavLinks to="/">{NavbarLang(Home, language)}</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks>
-                BUSINESS
+                {NavbarLang(Business, language)}
                 <NavbarDropdownContent>
-                  <DropDiv>
+                  <DropDiv>                
                     <NavDropLinks to="/Nickle-Ore-Mining">
-                      Nickle Ore Mining
+                      {NavbarDropDown(BusinessOne, 0, language)}
                     </NavDropLinks>
                     <NavDropLinks to="/Nickle-Cobalt-HPAL">
-                      Nickle - Cobalt HPAL
+                      {NavbarDropDown(BusinessOne, 1, language)}
                     </NavDropLinks>
                     <NavDropLinks to="/Ferronickle-Smelting">
-                      Ferronickle Smelting
-                    </NavDropLinks>
-                    <NavDropLinks to="/Resource-Reserve">
-                      Resource and Reserve
+                      {NavbarDropDown(BusinessOne, 2, language)}
                     </NavDropLinks>
                   </DropDiv>
                   <DropDiv>
                     <NavDropLinks to="/Resource-Reserve">
-                      Resource and Reserve
+                      {NavbarDropDown(BusinessTwo, 0, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Ore-Export">Ore Export</NavDropLinks>
-                    <NavDropLinks to="/Power-Supply">Power Supply</NavDropLinks>
+                    <NavDropLinks to="/Ore-Export">
+                      {NavbarDropDown(BusinessTwo, 1, language)}
+                    </NavDropLinks>
+                    <NavDropLinks to="/Power-Supply">
+                      {NavbarDropDown(BusinessTwo, 2, language)}
+                  </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks>
-                GLOBAL SUSTAINABILITY
+                {NavbarLang(Sustainibility, language)}
                 <NavbarDropdownContent>
                   <DropDiv>
-                    <NavDropLinks to="/QHSE">QHSE</NavDropLinks>
-                    <NavDropLinks to="/Community-Activities">
-                      Community Activities
+                    <NavDropLinks to="/QHSE">
+                      {NavbarDropDown(SustainabilityDropdown, 0, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Reports">Reports</NavDropLinks>
-                    <NavDropLinks to="/Awards">Awards</NavDropLinks>
+                    <NavDropLinks to="/Community-Activities">
+                      {NavbarDropDown(SustainabilityDropdown, 1, language)}
+                    </NavDropLinks>
+                    <NavDropLinks to="/Reports">{NavbarDropDown(SustainabilityDropdown, 2, language)}</NavDropLinks>
+                    <NavDropLinks to="/Awards">{NavbarDropDown(SustainabilityDropdown, 3, language)}</NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks>
-                ABOUT US
+                {NavbarLang(AboutUs, language)}
                 <NavbarDropdownContent>
                   <DropDiv>
                     <NavDropLinks to="/Mission-Vision">
-                      Mission, Vision and Value
+                      {NavbarDropDown(AboutUsDropdown, 0, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Commitment">Commitment</NavDropLinks>
+                    <NavDropLinks to="/Commitment">
+                      {NavbarDropDown(AboutUsDropdown, 1, language)}
+                    </NavDropLinks>
                     <NavDropLinks to="/Subsidiary">
-                      Company's Subsidiaries
+                      {NavbarDropDown(AboutUsDropdown, 2, language)}
                     </NavDropLinks>
                     <NavDropLinks to="/Board-of-Director">
-                      Board of Directors
+                      {NavbarDropDown(AboutUsDropdown, 3, language)}
                     </NavDropLinks>
                     <NavDropLinks to="/Organization-Structure">
-                      Organization Structures
+                      {NavbarDropDown(AboutUsDropdown, 4, language)}
                     </NavDropLinks>
                   </DropDiv>
                   <DropDiv>
                     <NavDropLinks to="/History-Milestone">
-                      History and Milestone
+                      {NavbarDropDown(AboutUsDropdown, 5, language)}
                     </NavDropLinks>
                     <NavDropLinks to="/Licenses-Concession">
-                      Licenses and Concession
+                      {NavbarDropDown(AboutUsDropdown, 6, language)}
                     </NavDropLinks>
                     <NavDropLinks to="/Press-Release">
-                      Press Release
+                      {NavbarDropDown(AboutUsDropdown, 7, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Gallery">Gallery</NavDropLinks>
+                    <NavDropLinks to="/Gallery">
+                      {NavbarDropDown(AboutUsDropdown, 8, language)}
+                    </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/Career">CAREER</NavLinks>
+              <NavLinks to="/Career">{NavbarLang(Career, language)}</NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>

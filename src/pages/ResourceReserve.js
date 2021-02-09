@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { businessService } from "../service/Business";
 import { ResourceReserveHead } from "../components/Data/BusinessData/ResourceReserveDatas";
 import Banner from "../components/Banner";
@@ -6,9 +6,12 @@ import ResourceReserveComponents from "../components/BusinessComponents/Resource
 import {BannerSlider} from "../components/BannerSlider";
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
+import { langContext } from '../langContext';
+import { BusinessTitle } from '../components/BusinessComponents/BusinessLang';
 const AutoplaySlider = withAutoplay(BannerSlider);
 
 const ResourceReserve = () => {
+  const { language } = useContext(langContext);
   const [businessList, setBusinessList] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +36,7 @@ const ResourceReserve = () => {
         img={data.url} 
         texted={true} 
         key={idx} 
-        place="Business"
+        place={BusinessTitle(language)}
         /></>);
       })}</AutoplaySlider>
       <ResourceReserveComponents />

@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { aboutUsService } from "../service/Aboutus";
 import Banner from "../components/Banner";
 import GalleryComponents from "../components/AboutUsComponents/GalleryComponents";
+import { langContext } from '../langContext';
+import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
 
 const Gallery = () => {
+  const { language } = useContext(langContext);
   const [gallery, setGallery] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +22,7 @@ const Gallery = () => {
     <>
       {gallery.banner.map((data, idx) => {
         return (
-          <Banner img={data.url} texted={true} key={idx} place="About Us" />
+          <Banner img={data.url} texted={true} key={idx} place={AboutUsTitle(language)} />
         );
       })}
       <GalleryComponents />

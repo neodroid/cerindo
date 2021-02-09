@@ -35,3 +35,39 @@ export const LicenseBody = (data, lang) => {
 
     return text
 }
+
+export const LicenseDataLangFile = (data, lang) => {
+    var text = 
+    (lang === "en") ? 
+        <>{data.name_en}</> :
+    (lang === "id") ? 
+        <>{data.name_id}</> :
+    (lang === "cn") ? 
+        <>{data.name_ch}</> : null;
+
+    return text
+}
+
+export const LicenseDataLangButton = (data, lang) => {
+    var text = 
+    (lang === "en") ? 
+        <>DOWNLOAD</> :
+    (lang === "id") ? 
+        <>UNDUH</> :
+    (lang === "cn") ? 
+        <>下载</> : null;
+
+    return text
+}
+
+export const ConcessionTitle = (data, lang) =>{
+    var text = 
+    (lang === "en") ? 
+        <>Concession Area</> :
+    (lang === "id") ? 
+        <>Area Konsesi</> :
+    (lang === "cn") ? 
+        <>特许区</> : null;
+
+    return text  
+}
