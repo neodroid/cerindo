@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Aboutstyle,
   AboutSideBar,
@@ -7,10 +7,20 @@ import {
 } from "../AboutUsElements";
 import { aboutUsService } from "../../../service/Aboutus";
 import AboutSideBarComponents from "../index";
-import { OrgWrapped,Imagess,ImagePart } from "./OrganizationElements";
+import { OrgWrapped, Imagess, ImagePart } from "./OrganizationElements";
 import { OrgData } from "../../Data/AboutusData/OrganizationDatas";
+import {
+  CommitmentContent,
+  CommitmentWrited,
+} from "../CommitmentComponents/CommitmentElements";
+import { langContext } from "../../../langContext";
+import {
+  OrganizationLangBody,
+  OrganizationLangTitle,
+} from "./OrganizationLang";
 
 const OrganizationComponents = () => {
+  const { language } = useContext(langContext);
   const [organization, setOrganization] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -25,14 +35,17 @@ const OrganizationComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page5={true}/>
+        <AboutSideBarComponents page5={true} />
         <AboutMain>
           <OrgWrapped>
+            <CommitmentWrited>
+              {OrganizationLangTitle(organization, language)}
+            </CommitmentWrited>
+            <CommitmentWrited>
+              {OrganizationLangBody(organization, language)}
+            </CommitmentWrited>
             <ImagePart>
-            <Imagess
-              src={organization.Structure_image.url}
-              alt="structure"
-            />
+              <Imagess src={organization.Structure_image.url} alt="structure" />
             </ImagePart>
           </OrgWrapped>
         </AboutMain>
