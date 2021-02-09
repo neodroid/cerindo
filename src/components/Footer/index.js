@@ -23,9 +23,23 @@ import {
 import image from "../../images/logo.png";
 import { langContext } from '../../langContext'
 import { FooterData, FooterDataSingle } from './FooterLang';
-import { BusinessTwo, Inquiry, ContactUs, SocialNetworks, AboutUsFooter, BusinessFooter, SustainabilityFooter,JakartaOffice, MakassarOffice, AboutUsDropdown, BusinessOne, SustainabilityDropdown, Copyright } from '../Data/NavbarData/NavbarData';
-import {setLang} from '../NavBar/index';
-import {setLangMobile} from '../SideBar/index';
+import { 
+  BusinessTwo, 
+  Inquiry, 
+  ContactUs, 
+  SocialNetworks, 
+  AboutUsFooter,
+  BusinessFooter, 
+  SustainabilityFooter,
+  JakartaOffice, 
+  MakassarOffice, 
+  AboutUsDropdown, 
+  BusinessOne, 
+  SustainabilityDropdown, 
+  Copyright
+ } from '../Data/NavbarData/NavbarData';
+import { setLang } from '../NavBar/index';
+import { setLangMobile } from '../SideBar/index';
 
 
 const Footer = () => {
@@ -46,7 +60,6 @@ const Footer = () => {
   else{
     footerLang = setLang;
   }
-  console.log(" hi aku " + footerLang);
   return (
     <FooterContainer>
       <FooterWrap>
@@ -56,7 +69,9 @@ const Footer = () => {
               <NavLogo>
                 <Logo src={image} />
               </NavLogo>
-              <FooterLinkTitle>{FooterDataSingle(JakartaOffice, footerLang)}</FooterLinkTitle>
+              <FooterLinkTitle>
+                {FooterDataSingle(JakartaOffice, footerLang)}
+              </FooterLinkTitle>
               <FooterLinked>
                 South Quarter Tower A 5th Floor Jl. RA Kartini Kav 8 Cilandak
                 Jakarta 12430 Indonesia
@@ -65,7 +80,9 @@ const Footer = () => {
               <FooterLinked>Fax +62 21 291 25827</FooterLinked>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>{FooterDataSingle(SocialNetworks, footerLang)}</FooterLinkTitle>
+              <FooterLinkTitle>
+                {FooterDataSingle(SocialNetworks, footerLang)}
+              </FooterLinkTitle>
               <SocialIcons>
                 <SocialIconLink
                   href={footerData.facebook}
@@ -96,7 +113,9 @@ const Footer = () => {
                   <FaLinkedin />
                 </SocialIconLink>
               </SocialIcons>
-              <FooterLinkTitle>{FooterDataSingle(MakassarOffice, footerLang)}</FooterLinkTitle>
+              <FooterLinkTitle>
+                {FooterDataSingle(MakassarOffice, footerLang)}
+              </FooterLinkTitle>
               <FooterLinked>
                 Jl. Kima 12 Kav. N-1a, Kawasan Industrial Makassar Makassar
                 90245
@@ -108,7 +127,9 @@ const Footer = () => {
 
           <FooterLinkWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>{FooterDataSingle(BusinessFooter, footerLang)}</FooterLinkTitle>
+              <FooterLinkTitle>
+                {FooterDataSingle(BusinessFooter, footerLang)}
+              </FooterLinkTitle>
               <FooterLink to="/Nickle-Ore-Mining">
                 {FooterData(BusinessOne, 0, footerLang)}
               </FooterLink>
