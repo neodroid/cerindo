@@ -46,7 +46,7 @@ export const BusinessSideBarIntl = [
     to : "page2"
   },
   {
-    "en" : "Ore Export",
+    "en" : "Direct Ore Shipping",
     "id" : "Ekspor Bijih",
     "ch" : "矿石出口",
     to : "page1"

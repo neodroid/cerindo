@@ -46,11 +46,10 @@ import {
 import getFlagUrl from "./getFlagURL";
 import { langContext } from "../../langContext";
 import { Link } from "react-router-dom";
-export let lang;
+export let setLang = null;
 
 function Menu({ items, value, onChange, placeholder, showFlag }) {
   const [selected, setSelected] = useState(value || null);
-
   useEffect(() => {
     if (onChange) onChange(selected);
   }, [selected, onChange]);
@@ -113,8 +112,8 @@ const Navbar = ({ toggle }) => {
   const [val1, setValue1] = useState("en");
   const { language, setLanguage } = useContext(langContext);
   setLanguage(val1);
+  setLang = val1;
   if (newsList.length === 0) return null;
-
   return (
     <>
       <Nav scrollNav={scrollNav}>

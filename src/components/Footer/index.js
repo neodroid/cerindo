@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { footerService } from "../../service/Footer";
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLanguage, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import {
@@ -21,6 +21,10 @@ import {
   WebsiteRights,
 } from "./FooterElements";
 import image from "../../images/logo.png";
+import { langContext } from '../../langContext'
+import { FooterData, FooterDataSingle } from './FooterLang';
+import { BusinessTwo, Inquiry, ContactUs, SocialNetworks, AboutUsFooter, BusinessFooter, SustainabilityFooter,JakartaOffice, MakassarOffice, AboutUsDropdown, BusinessOne, SustainabilityDropdown, Copyright } from '../Data/NavbarData/NavbarData';
+import {setLang} from '../NavBar/index';
 
 const Footer = () => {
   const [footerData, setFooterData] = useState([]);
@@ -31,9 +35,7 @@ const Footer = () => {
       setFooterData(data);
     };
     fetchData();
-  }, []);
-
-  console.log(footerData);
+  }, []); 
   return (
     <FooterContainer>
       <FooterWrap>
@@ -43,7 +45,7 @@ const Footer = () => {
               <NavLogo>
                 <Logo src={image} />
               </NavLogo>
-              <FooterLinkTitle>Jakarta Office</FooterLinkTitle>
+              <FooterLinkTitle>{FooterDataSingle(JakartaOffice, setLang)}</FooterLinkTitle>
               <FooterLinked>
                 South Quarter Tower A 5th Floor Jl. RA Kartini Kav 8 Cilandak
                 Jakarta 12430 Indonesia
@@ -52,7 +54,7 @@ const Footer = () => {
               <FooterLinked>Fax +62 21 291 25827</FooterLinked>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>Social Networks</FooterLinkTitle>
+              <FooterLinkTitle>{FooterDataSingle(SocialNetworks, setLang)}</FooterLinkTitle>
               <SocialIcons>
                 <SocialIconLink
                   href={footerData.facebook}
@@ -83,7 +85,7 @@ const Footer = () => {
                   <FaLinkedin />
                 </SocialIconLink>
               </SocialIcons>
-              <FooterLinkTitle>Makassar Office</FooterLinkTitle>
+              <FooterLinkTitle>{FooterDataSingle(MakassarOffice, setLang)}</FooterLinkTitle>
               <FooterLinked>
                 Jl. Kima 12 Kav. N-1a, Kawasan Industrial Makassar Makassar
                 90245
@@ -95,42 +97,52 @@ const Footer = () => {
 
           <FooterLinkWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>Business</FooterLinkTitle>
-              <FooterLink to="/Nickle-Ore-Mining">Nickle Ore Mining</FooterLink>
+              <FooterLinkTitle>{FooterDataSingle(BusinessFooter, setLang)}</FooterLinkTitle>
+              <FooterLink to="/Nickle-Ore-Mining">
+                {FooterData(BusinessOne, 0, setLang)}
+              </FooterLink>
               <FooterLink to="/Nickle-Cobalt-HPAL">
-                Nickle - Cobalt HPAL
+                {FooterData(BusinessOne, 1, setLang)}
               </FooterLink>
               <FooterLink to="/Ferronickle-Smelting">
-                Ferronickle Smelting
+                {FooterData(BusinessOne, 2, setLang)}
               </FooterLink>
-              <FooterLink to="/Ore-Export">Ore Export</FooterLink>
-              <FooterLinkTitle>Global Sustainability</FooterLinkTitle>
-              <FooterLink to="/QHSE">QHSE</FooterLink>
-              <FooterLink to="/Report">Report</FooterLink>
+              <FooterLink to="/Ore-Export">
+                {FooterData(BusinessTwo, 1, setLang)}
+              </FooterLink>
+              <FooterLinkTitle>
+                {FooterDataSingle(SustainabilityFooter, setLang)}
+              </FooterLinkTitle>
+              <FooterLink to="/QHSE">
+                {FooterData(SustainabilityDropdown, 0, setLang)}
+              </FooterLink>
+              <FooterLink to="/Report">
+                {FooterData(SustainabilityDropdown, 2, setLang)}
+              </FooterLink>
               <FooterLink to="/Community-Activities">
-                Community Activities
+                {FooterData(SustainabilityDropdown, 1, setLang)}
               </FooterLink>
             </FooterLinkItems>
 
             <FooterLinkItems>
-              <FooterLinkTitle>About Us</FooterLinkTitle>
+              <FooterLinkTitle>{FooterDataSingle(AboutUsFooter, setLang)}</FooterLinkTitle>
               <FooterLink to="/Mission-Vision">
-                Vision, Mission, Value
+                {FooterData(AboutUsDropdown, 0, setLang)}
               </FooterLink>
-              <FooterLink to="/Commitment">Commitment</FooterLink>
+              <FooterLink to="/Commitment">{FooterData(AboutUsDropdown, 1, setLang)}</FooterLink>
               <FooterLink to="/Board-of-Director">
-                Board of Directors
+              {FooterData(AboutUsDropdown, 3, setLang)}
               </FooterLink>
               <FooterLink to="/Organization-Structure">
-                Organizational Structure
+              {FooterData(AboutUsDropdown, 4, setLang)}
               </FooterLink>
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to="/Contact-Us"
               >
-                <FooterLinkTitle>Contact Us</FooterLinkTitle>
+                <FooterLinkTitle>{FooterDataSingle(ContactUs, setLang)}</FooterLinkTitle>
               </Link>
-              <FooterLinkTitle>For inquiries, email to:</FooterLinkTitle>
+              <FooterLinkTitle>{FooterDataSingle(Inquiry, setLang)}</FooterLinkTitle>
               <FooterLinked>
                 <MdEmail /> info@cerindocorp.com
               </FooterLinked>
@@ -141,7 +153,7 @@ const Footer = () => {
         <SocialMedia>
           <SocialMediaWrap>
             <WebsiteRights>
-              ©2021 Copyright PT. Ceria Nugraha Indotama All rights reserved
+              {FooterDataSingle(Copyright, setLang)}
             </WebsiteRights>
           </SocialMediaWrap>
         </SocialMedia>

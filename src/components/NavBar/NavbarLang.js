@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import {NavDropLinks} from './NavbarElements';
+import React, { useContext } from 'react';
 
 export const NavbarLang = (data, lang) => {
     var text = 

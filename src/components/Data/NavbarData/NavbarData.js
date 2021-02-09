@@ -10,6 +10,12 @@ export const Business = {
     "ch" : "商业 "
 };
 
+export const BusinessFooter = {
+    "en" : "Business",
+    "id" : "Bisnis",
+    "ch" : "商业 "
+};
+
 export const BusinessOne = [
     {
         "en" : "Nickle Ore Mining",
@@ -35,7 +41,7 @@ export const BusinessTwo = [
         "ch" : "资源储备"
     },
     {
-        "en" : "Ore Export",
+        "en" : "Direct Ore Shipping",
         "id" : "Ekspor Bijih",
         "ch" : "矿石出口"
     },
@@ -45,9 +51,16 @@ export const BusinessTwo = [
         "ch" : "电源供应"
     }
 ]
+
 export const Sustainibility = {
     "en" : "GLOBAL SUSTAINABILITY",
     "id" : "KEBERLANGSUNGAN GLOBAL",
+    "ch" : "全球可持续发展"
+};
+
+export const SustainabilityFooter = {
+    "en" : "Global Sustainability",
+    "id" : "Keberlangsungan Global",
     "ch" : "全球可持续发展"
 };
 
@@ -80,6 +93,12 @@ export const AboutUs = {
     "ch" : "关于我们 "
 };
 
+export const AboutUsFooter = {
+    "en" : "About Us",
+    "id" : "Tentang Kami",
+    "ch" : "关于我们 "
+};
+
 export const AboutUsDropdown = [
     {
         "en" : "Mission, Vision, Value",
@@ -102,7 +121,7 @@ export const AboutUsDropdown = [
         "ch" : "董事会"
     },
     {
-        "en" : "Organization Structures",
+        "en" : "Organizational Structures",
         "id" : "Struktur Organisasi",
         "ch" : "组织架构"
     },
@@ -133,3 +152,39 @@ export const Career = {
     "id" : "KARIR",
     "ch" : "事业"
 };
+
+export const JakartaOffice = {
+    "en" : "Jakarta Office",
+    "id" : "Kantor Jakarta",
+    "ch" : "雅加达办事处"
+};
+
+export const MakassarOffice = {
+    "en" : "Makassar Office",
+    "id" : "Kantor Makassar",
+    "ch" : "望加锡办事处"
+}
+
+export const SocialNetworks = {
+    "en" : "Social Networks",
+    "id" : "Media Sosial",
+    "ch" : "社交网络" 
+}
+
+export const ContactUs = {
+    "en" : "Contact Us",
+    "id" : "Hubungi Kami",
+    "ch" : "联系我们" 
+}
+
+export const Inquiry = {
+    "en" : "For inquiries, email to:",
+    "id" : "Untuk pertanyaan, email ke:",
+    "ch" : "如有查询，请发送电子邮件至：" 
+}
+
+export const Copyright = {
+    "en" : "©2021 Copyright PT. Ceria Nugraha Indotama. All rights reserved.",
+    "id" : "© 2021 Hak Cipta PT. Ceria Nugraha Indotama. Semua Hak Dilindungi Undang-Undang.",
+    "ch" : "©2021版权所有PT。 Ceria Nugraha Indotama。 版权所有。" 
+}
