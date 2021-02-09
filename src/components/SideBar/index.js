@@ -1,4 +1,22 @@
-import React from "react";
+import React,{useState,useContext,useEffect} from "react";
+import { 
+  Home, 
+  Business,  
+  Sustainibility, 
+  AboutUs, 
+  Career, 
+  BusinessOne, 
+  BusinessTwo,
+  SustainabilityDropdown,
+  AboutUsDropdown
+ } from '../Data/NavbarData/NavbarData';
+import { SideBarLang, SideBarDropDown } from './SideBarLang';
+import getFlagUrl from "../NavBar/getFlagURL";
+import {setLang} from "../NavBar";
+import {
+  Item,
+  Flag,
+} from "../NavBar/NavbarElements"
 import {
   SidebarContainer,
   Icon,
@@ -8,12 +26,42 @@ import {
   SidebarLink,
   SideBtnWrap,
   SidebarRoute,
+  ArrowDownLang,
     DropDown,
     Dropbtn,
     DropDownContent,
 } from "./SideBarElements";
+import { langContext } from "../../langContext";
 
+function Menu ({ items, value, onChange, placeholder, showFlag }) {
+  const [selected, setSelected] = useState(value || null);
+  useEffect(() => {
+    if (onChange) onChange(selected);
+  }, [selected, onChange]);
+
+  return (
+    <DropDown role="button" tabIndex={-1}>
+      <Dropbtn>
+        {showFlag ? value ? <Flag src={getFlagUrl(value)} /> : null : null}
+        <ArrowDownLang/>
+      </Dropbtn>
+
+      <DropDownContent>
+        {items.map((row, idx) => (
+          <Item
+            role="button"
+            tabIndex={idx + 1}
+            onClick={() => setSelected(row)}
+          >
+            {showFlag && <Flag src={getFlagUrl(row)} />}
+          </Item>
+        ))}
+      </DropDownContent>
+    </DropDown>
+  );
+}
 const Sidebar = ({ isOpen, toggle }) => {
+  const [val2, setVal2] = useState("en");
   return (
     <SidebarContainer isOpen={isOpen}>
       <Icon onClick={toggle}>
@@ -23,94 +71,94 @@ const Sidebar = ({ isOpen, toggle }) => {
         <SidebarMenu>
           <SidebarLink to="/" onClick={toggle}>
             <SideBtnWrap>
-            Home
+            {SideBarLang(Home, setLang)}
             </SideBtnWrap>
           </SidebarLink>
 
           <DropDown role="button" tabIndex={-1}>
             <Dropbtn>
-            Business
+            {SideBarLang(Business, setLang)}
             </Dropbtn>
             <DropDownContent>
               <SidebarLink to="/Nickle-Ore-Mining" onClick={toggle}>
-                Nickle Ore Mining
+              {SideBarDropDown(BusinessOne, 0, setLang)}
               </SidebarLink>
               <SidebarLink to="/Nickle-Cobalt-HPAL" onClick={toggle}>
-                Nickle - Cobalt HPAL
+              {SideBarDropDown(BusinessOne, 1, setLang)}
               </SidebarLink>
               <SidebarLink to="/Ferronickle-Smelting" onClick={toggle}>
-                Ferronickle Smelting
+              {SideBarDropDown(BusinessOne, 2, setLang)}
               </SidebarLink>
               <SidebarLink to="/Resource-Reserve" onClick={toggle}>
-                Resource and Reserve
+              {SideBarDropDown(BusinessTwo, 0, setLang)}
               </SidebarLink>
               <SidebarLink to="/Ore-Export" onClick={toggle}>
-                Direct Ore Shipping
+              {SideBarDropDown(BusinessTwo, 1, setLang)}
               </SidebarLink>
               <SidebarLink to="/Power-Supply" onClick={toggle}>
-                Power Supply
+              {SideBarDropDown(BusinessTwo, 2, setLang)}
               </SidebarLink>
             </DropDownContent>
           </DropDown>
 
           <DropDown role="button" tabIndex={-1}>
             <Dropbtn>
-            Global Sustainability
+            {SideBarLang(Sustainibility, setLang)}
             </Dropbtn>
             <DropDownContent>
             <SidebarLink to="/QHSE" onClick={toggle}>
-              QHSE
+            {SideBarDropDown(SustainabilityDropdown, 0, setLang)}
               </SidebarLink>
               <SidebarLink to="/Community-Activities" onClick={toggle}>
-              Community Activities
+              {SideBarDropDown(SustainabilityDropdown, 1, setLang)}
               </SidebarLink>
               <SidebarLink to="/Reports" onClick={toggle}>
-              Report
+              {SideBarDropDown(SustainabilityDropdown, 2, setLang)}
               </SidebarLink>
               <SidebarLink to="/Awards" onClick={toggle}>
-              Award
+              {SideBarDropDown(SustainabilityDropdown, 3, setLang)}
             </SidebarLink>
             </DropDownContent>
           </DropDown>
 
           <DropDown role="button" tabIndex={-1}>
             <Dropbtn>
-            About Us
+            {SideBarLang(AboutUs, setLang)}
             </Dropbtn>
             <DropDownContent>
             <SidebarLink to="/Mission-Vision" onClick={toggle}>
-               Mission, Vision and Value
+            {SideBarDropDown(AboutUsDropdown, 0, setLang)}
             </SidebarLink>
             <SidebarLink to="/Commitment" onClick={toggle}>
-              Commitment
+            {SideBarDropDown(AboutUsDropdown, 1, setLang)}
             </SidebarLink>
             <SidebarLink to="/Subsidiary" onClick={toggle}>
-              Subsidiary
+            {SideBarDropDown(AboutUsDropdown, 2, setLang)}
             </SidebarLink>
             <SidebarLink to="/Board-of-Director" onClick={toggle}>
-              Board of Director
+            {SideBarDropDown(AboutUsDropdown, 3, setLang)}
             </SidebarLink>
             <SidebarLink to="/Organization-Structure" onClick={toggle}>
-              Organization Structure
+            {SideBarDropDown(AboutUsDropdown, 4, setLang)}
             </SidebarLink>
             <SidebarLink to="/History-Milestone" onClick={toggle}>
-              History and Milestone
+            {SideBarDropDown(AboutUsDropdown, 5, setLang)}
             </SidebarLink>
             <SidebarLink to="/Licenses-Concession" onClick={toggle}>
-              Licenses and Concession
+            {SideBarDropDown(AboutUsDropdown, 6, setLang)}
             </SidebarLink>
             <SidebarLink to="/Press-Release" onClick={toggle}>
-              Press Release
+            {SideBarDropDown(AboutUsDropdown, 7, setLang)}
             </SidebarLink>
             <SidebarLink to="/Gallery" onClick={toggle}>
-              Gallery
+            {SideBarDropDown(AboutUsDropdown, 8, setLang)}
             </SidebarLink>
             </DropDownContent>
           </DropDown>
           
           <SidebarLink to="/Career" onClick={toggle}>
           <SideBtnWrap>
-            Career
+          {SideBarLang(Career, setLang)}
             </SideBtnWrap>
           </SidebarLink>
         </SidebarMenu>
@@ -120,6 +168,13 @@ const Sidebar = ({ isOpen, toggle }) => {
           </SidebarRoute>
         </SideBtnWrap> */}
       </SidebarWrapper>
+      <Menu
+              value={val2}
+              onChange={setVal2}
+              showFlag
+              placeholder="select language"
+              items={["en", "cn", "id"]}
+            />
     </SidebarContainer>
   );
 };

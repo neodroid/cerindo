@@ -12,7 +12,7 @@ import {
   ArticlePart,
   Linked,
   BlogImageArt,
-  GlobalContent,
+  Nulity,
   ButtonNext,
   OtherNews,
 } from "./NewsElements";
@@ -79,8 +79,6 @@ const NewsComponent = (props) => {
   if (detailsNews.length === 0) return null;
   if (listNews.length === 0) return null;
   if (press.length === 0) return null;
-
-  console.log(detailsNews.news_en);
   return (
     <>
       {press.banner.map((data, idx) => {
@@ -97,9 +95,12 @@ const NewsComponent = (props) => {
           <TitleContent>
             {DetailsNewsLangTitle(detailsNews, language)}
           </TitleContent>
+          {detailsNews.image.url.length==0?(
+            <Nulity></Nulity>
+          ):(
           <BlogWrapped image>
             <BlogImage src={detailsNews.image.url} />
-          </BlogWrapped>
+          </BlogWrapped>)}
           <BlogWrapped>
             <BoxContainer>
               {DetailsNewsLangContent(detailsNews, language)}

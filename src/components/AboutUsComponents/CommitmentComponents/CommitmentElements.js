@@ -5,7 +5,6 @@ export const CommitmentWrited = styled.div`
     font-size: ${(props) => (props.title ? "16px" : "14px")};
     line-height: ${(props) => (props.title ? "50px" : "24px")};
     color: ${(props) => (props.title ? "#333333" : "#111111")};
-    margin-bottom: ${(props) => (props.title ? "5px" : "0")};
     white-space: pre-line;  
     vertical-align: bottom;
     text-align: ${(props) => (props.title ? "left" : "justify")};

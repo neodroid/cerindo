@@ -140,6 +140,17 @@ export const ContentDiv = styled.div`
     line-height: 20px;
     text-decoration: underline;
 `;
+export const ArrowDownLang = styled.div`
+  border: solid white;
+
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  position: relative;
+  left: 6px;
+  top: -2px;
+  transition: all 0.6s;
+`;
 export const DropDown = styled.div`
   margin-bottom: 32px;
   display: inline-block;
@@ -156,6 +167,13 @@ export const DropDown = styled.div`
   &:active {
     /* background-color: rgba(0, 0, 0, 0.1); */
     border: none;
+  }
+  & ${ArrowDownLang} {
+    transform: rotate(45deg);
+  }
+
+  &:focus ${ArrowDownLang}, &:active ${ArrowDownLang} {
+    transform: rotate(225deg);
   }
   &:focus ${DropDownContent}, &:active ${DropDownContent} {
     display: block;

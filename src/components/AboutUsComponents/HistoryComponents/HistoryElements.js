@@ -41,10 +41,10 @@ export const HisImage = styled.img`
 
 export const HisBoxWrited = styled.div`
     font-weight: ${(props)=>(props.title ? "bold":"normal")};
-    font-size: ${(props)=>(props.title ? "26px":"13px")};
-    line-height: ${(props)=>(props.title ? "50px":"20px")};
+    font-size: ${(props)=>(props.title ? "23px":"13px")};
+    line-height: ${(props)=>(props.title ? "30px":"20px")};
     text-align: ${(props)=>(props.title ? "left":"justify")};
-    margin: 0 20px;
+    margin: ${(props)=>(props.title ? "0 20px 20px":"0 20px")};
     white-space: pre-line;  
     vertical-align: bottom;
 `;

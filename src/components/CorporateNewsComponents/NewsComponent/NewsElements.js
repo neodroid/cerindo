@@ -63,7 +63,9 @@ export const BlogImage = styled.img`
         max-width: 100%;
     }
 `;
-
+export const Nulity = styled.div`
+display:none;
+`;
 export const BlogImageArt = styled.img`
     width: 123px;
     height: 96px;

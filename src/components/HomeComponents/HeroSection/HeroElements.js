@@ -217,7 +217,7 @@ export const ArrowDown = styled(MdKeyboardArrowDown)`
 `;
 
 export const ImgWrap = styled.div`
-  width: 124px;
+  width: 96px;
   height: 96px;
   box-shadow: 5px 5px 2px #aaaaaa;
 `;
@@ -253,7 +253,7 @@ export const HeroNewsContent = styled(LinkR)`
   }
 `;
 export const HeroNewsDesc = styled.div`
-  max-width: 70%;
+max-width: 50%;
   z-index: 3;
   margin-left: 10px;
   display: flex;
