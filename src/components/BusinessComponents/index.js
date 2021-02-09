@@ -30,12 +30,12 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
             <AboutSideBar>
                 <DropDown tabIndex={-1}>
                     <Dropbtn onClick={Clickit}>
-                        <TextButton page={page1}>Nickel Ore Mining</TextButton>
-                        <TextButton page={page2}>Ferronickel Smelting</TextButton>
-                        <TextButton page={page3}>Resource and Reserve</TextButton>
-                        <TextButton page={page4}>Nickel-Cobalt HPAL</TextButton>
-                        <TextButton page={page5}>Direct Ore Shipping</TextButton>
-                        <TextButton page={page6}>Power Supply</TextButton>
+                        <TextButton page={page1}>{BusinessSidebar(BusinessSideBarIntl, language, 0)}</TextButton>
+                        <TextButton page={page2}>{BusinessSidebar(BusinessSideBarIntl, language, 1)}</TextButton>
+                        <TextButton page={page3}>{BusinessSidebar(BusinessSideBarIntl, language, 2)}</TextButton>
+                        <TextButton page={page4}>{BusinessSidebar(BusinessSideBarIntl, language, 3)}</TextButton>
+                        <TextButton page={page5}>{BusinessSidebar(BusinessSideBarIntl, language, 4)}</TextButton>
+                        <TextButton page={page6}>{BusinessSidebar(BusinessSideBarIntl, language, 5)}</TextButton>
 
                         <ArrowDiv>
                             {selected ? <ArrowDownLang style={{transform: "rotate(225deg)"}}/> : <ArrowDownLang/>}

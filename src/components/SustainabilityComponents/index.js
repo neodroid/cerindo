@@ -31,10 +31,10 @@ const SustainabilitySideBarComponents = ({page1,page2,page3,page4,page5,page6,pa
             <AboutSideBar>
                 <DropDown tabIndex={-1}>
                     <Dropbtn onClick={Clickit}>
-                        <TextButton page={page1}>QHSE</TextButton>
-                        <TextButton page={page2}>Community Activities</TextButton>
-                        <TextButton page={page3}>Reports</TextButton>
-                        <TextButton page={page4}>Awards</TextButton>
+                        <TextButton page={page1}>{SustainabilitySidebar(SustainabilitySideBarIntl, language, 0)}</TextButton>
+                        <TextButton page={page2}>{SustainabilitySidebar(SustainabilitySideBarIntl, language, 1)}</TextButton>
+                        <TextButton page={page3}>{SustainabilitySidebar(SustainabilitySideBarIntl, language, 2)}</TextButton>
+                        <TextButton page={page4}>{SustainabilitySidebar(SustainabilitySideBarIntl, language, 3)}</TextButton>
 
                         <ArrowDiv>
                             {selected ? <ArrowDownLang style={{transform: "rotate(225deg)"}}/> : <ArrowDownLang/>}

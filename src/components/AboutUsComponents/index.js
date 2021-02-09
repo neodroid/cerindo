@@ -31,15 +31,15 @@ const AboutSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7,page8
             <AboutSideBar>
                 <DropDown tabIndex={-1}>
                     <Dropbtn onClick={Clickit}>
-                        <TextButton page={page1}>Mission, Vision and Value</TextButton>
-                        <TextButton page={page2}>Commitment</TextButton>
-                        <TextButton page={page3}>Company's Subsidiary</TextButton>
-                        <TextButton page={page4}>Board of Director</TextButton>
-                        <TextButton page={page5}>Organization Structure</TextButton>
-                        <TextButton page={page6}>History and Milestone</TextButton>
-                        <TextButton page={page7}>Licenses and Concession Area</TextButton>
-                        <TextButton page={page8}>Press Release</TextButton>
-                        <TextButton page={page9}>Gallery</TextButton>
+                        <TextButton page={page1}>{AboutUsSidebar(AboutUsIntl, language, 0)}</TextButton>
+                        <TextButton page={page2}>{AboutUsSidebar(AboutUsIntl, language, 1)}</TextButton>
+                        <TextButton page={page3}>{AboutUsSidebar(AboutUsIntl, language, 2)}</TextButton>
+                        <TextButton page={page4}>{AboutUsSidebar(AboutUsIntl, language, 3)}</TextButton>
+                        <TextButton page={page5}>{AboutUsSidebar(AboutUsIntl, language, 4)}</TextButton>
+                        <TextButton page={page6}>{AboutUsSidebar(AboutUsIntl, language, 5)}</TextButton>
+                        <TextButton page={page7}>{AboutUsSidebar(AboutUsIntl, language, 6)}</TextButton>
+                        <TextButton page={page8}>{AboutUsSidebar(AboutUsIntl, language, 7)}</TextButton>
+                        <TextButton page={page9}>{AboutUsSidebar(AboutUsIntl, language, 8)}</TextButton>
 
                         <ArrowDiv>
                             {selected ? <ArrowDownLang style={{transform: "rotate(225deg)"}}/> : <ArrowDownLang/>}

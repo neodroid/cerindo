@@ -12,7 +12,7 @@ import {
  } from '../Data/NavbarData/NavbarData';
 import { SideBarLang, SideBarDropDown } from './SideBarLang';
 import getFlagUrl from "../NavBar/getFlagURL";
-import {setLang} from "../NavBar";
+import { setLang } from "../NavBar";
 import {
   Item,
   Flag,
@@ -31,13 +31,16 @@ import {
     Dropbtn,
     DropDownContent,
 } from "./SideBarElements";
+
 import { langContext } from "../../langContext";
+export let setLangMobile = null;
 
 function Menu ({ items, value, onChange, placeholder, showFlag }) {
   const [selected, setSelected] = useState(value || null);
   useEffect(() => {
     if (onChange) onChange(selected);
   }, [selected, onChange]);
+  console.log(setLangMobile);
 
   return (
     <DropDown role="button" tabIndex={-1}>
@@ -62,6 +65,8 @@ function Menu ({ items, value, onChange, placeholder, showFlag }) {
 }
 const Sidebar = ({ isOpen, toggle }) => {
   const [val2, setVal2] = useState("en");
+  const { language, setLanguage } = useContext(langContext);
+  setLangMobile = val2;
   return (
     <SidebarContainer isOpen={isOpen}>
       <Icon onClick={toggle}>
@@ -71,94 +76,94 @@ const Sidebar = ({ isOpen, toggle }) => {
         <SidebarMenu>
           <SidebarLink to="/" onClick={toggle}>
             <SideBtnWrap>
-            {SideBarLang(Home, setLang)}
+            {SideBarLang(Home, val2)}
             </SideBtnWrap>
           </SidebarLink>
 
           <DropDown role="button" tabIndex={-1}>
             <Dropbtn>
-            {SideBarLang(Business, setLang)}
+            {SideBarLang(Business, val2)}
             </Dropbtn>
             <DropDownContent>
               <SidebarLink to="/Nickle-Ore-Mining" onClick={toggle}>
-              {SideBarDropDown(BusinessOne, 0, setLang)}
+              {SideBarDropDown(BusinessOne, 0, val2)}
               </SidebarLink>
               <SidebarLink to="/Nickle-Cobalt-HPAL" onClick={toggle}>
-              {SideBarDropDown(BusinessOne, 1, setLang)}
+              {SideBarDropDown(BusinessOne, 1, val2)}
               </SidebarLink>
               <SidebarLink to="/Ferronickle-Smelting" onClick={toggle}>
-              {SideBarDropDown(BusinessOne, 2, setLang)}
+              {SideBarDropDown(BusinessOne, 2, val2)}
               </SidebarLink>
               <SidebarLink to="/Resource-Reserve" onClick={toggle}>
-              {SideBarDropDown(BusinessTwo, 0, setLang)}
+              {SideBarDropDown(BusinessTwo, 0, val2)}
               </SidebarLink>
               <SidebarLink to="/Ore-Export" onClick={toggle}>
-              {SideBarDropDown(BusinessTwo, 1, setLang)}
+              {SideBarDropDown(BusinessTwo, 1, val2)}
               </SidebarLink>
               <SidebarLink to="/Power-Supply" onClick={toggle}>
-              {SideBarDropDown(BusinessTwo, 2, setLang)}
+              {SideBarDropDown(BusinessTwo, 2, val2)}
               </SidebarLink>
             </DropDownContent>
           </DropDown>
 
           <DropDown role="button" tabIndex={-1}>
             <Dropbtn>
-            {SideBarLang(Sustainibility, setLang)}
+            {SideBarLang(Sustainibility, val2)}
             </Dropbtn>
             <DropDownContent>
             <SidebarLink to="/QHSE" onClick={toggle}>
-            {SideBarDropDown(SustainabilityDropdown, 0, setLang)}
+            {SideBarDropDown(SustainabilityDropdown, 0, val2)}
               </SidebarLink>
               <SidebarLink to="/Community-Activities" onClick={toggle}>
-              {SideBarDropDown(SustainabilityDropdown, 1, setLang)}
+              {SideBarDropDown(SustainabilityDropdown, 1, val2)}
               </SidebarLink>
               <SidebarLink to="/Reports" onClick={toggle}>
-              {SideBarDropDown(SustainabilityDropdown, 2, setLang)}
+              {SideBarDropDown(SustainabilityDropdown, 2, val2)}
               </SidebarLink>
               <SidebarLink to="/Awards" onClick={toggle}>
-              {SideBarDropDown(SustainabilityDropdown, 3, setLang)}
+              {SideBarDropDown(SustainabilityDropdown, 3, val2)}
             </SidebarLink>
             </DropDownContent>
           </DropDown>
 
           <DropDown role="button" tabIndex={-1}>
             <Dropbtn>
-            {SideBarLang(AboutUs, setLang)}
+            {SideBarLang(AboutUs, val2)}
             </Dropbtn>
             <DropDownContent>
             <SidebarLink to="/Mission-Vision" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 0, setLang)}
+            {SideBarDropDown(AboutUsDropdown, 0, val2)}
             </SidebarLink>
             <SidebarLink to="/Commitment" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 1, setLang)}
+            {SideBarDropDown(AboutUsDropdown, 1, val2)}
             </SidebarLink>
             <SidebarLink to="/Subsidiary" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 2, setLang)}
+            {SideBarDropDown(AboutUsDropdown, 2, val2)}
             </SidebarLink>
             <SidebarLink to="/Board-of-Director" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 3, setLang)}
+            {SideBarDropDown(AboutUsDropdown, 3, val2)}
             </SidebarLink>
             <SidebarLink to="/Organization-Structure" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 4, setLang)}
+            {SideBarDropDown(AboutUsDropdown, 4, val2)}
             </SidebarLink>
             <SidebarLink to="/History-Milestone" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 5, setLang)}
+            {SideBarDropDown(AboutUsDropdown, 5, val2)}
             </SidebarLink>
             <SidebarLink to="/Licenses-Concession" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 6, setLang)}
+            {SideBarDropDown(AboutUsDropdown, 6, val2)}
             </SidebarLink>
             <SidebarLink to="/Press-Release" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 7, setLang)}
+            {SideBarDropDown(AboutUsDropdown, 7, val2)}
             </SidebarLink>
             <SidebarLink to="/Gallery" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 8, setLang)}
+            {SideBarDropDown(AboutUsDropdown, 8, val2)}
             </SidebarLink>
             </DropDownContent>
           </DropDown>
           
           <SidebarLink to="/Career" onClick={toggle}>
           <SideBtnWrap>
-          {SideBarLang(Career, setLang)}
+          {SideBarLang(Career, val2)}
             </SideBtnWrap>
           </SidebarLink>
         </SidebarMenu>

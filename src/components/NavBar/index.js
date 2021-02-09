@@ -46,6 +46,7 @@ import {
 import getFlagUrl from "./getFlagURL";
 import { langContext } from "../../langContext";
 import { Link } from "react-router-dom";
+import { setLangMobile } from '../SideBar/index';
 export let setLang = null;
 
 export function Menu ({ items, value, onChange, placeholder, showFlag }) {
@@ -107,9 +108,14 @@ const Navbar = ({ toggle }) => {
     fetchData();
   }, []);
 
-  const [val1, setValue1] = useState("en");
+  let [val1, setValue1] = useState("en");
   const { language, setLanguage } = useContext(langContext);
-  setLang = val1;
+  if(window.innerWidth < 960){
+    val1 = setLangMobile;
+  }
+  else{
+    setLang = val1;
+  } 
   setLanguage(val1);
   if (newsList.length === 0) return null;
   return (
