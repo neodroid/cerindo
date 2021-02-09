@@ -242,6 +242,8 @@ export const HeroNewsContent = styled(LinkR)`
   color: black;
   transition: all 0.5s ease-in-out;
 
+  text-overflow: ellipsis;
+  overflow-y: hidden;
   &:hover {
     transform: scale(1.02);
   }
@@ -271,14 +273,20 @@ max-width: 50%;
   }
 `;
 
-export const HeroNewsP = styled.p`
+export const HeroNewsP = styled.div`
+  overflow: hidden;
+  text-overflow: ellipsis;
+flex-basis: 57%;
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 14px;
   line-height: 18px;
 `;
 
-export const HeroNewsTimeP = styled.p`
+export const HeroNewsTimeP = styled.div`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-basis: 33%;
   font-family: "Montserrat";
   font-weight: normal;
   font-size: 10px;
