@@ -19,7 +19,7 @@ import {
   InfoWrapper,
 } from "../AboutUs/AboutUsElements";
 import { langContext } from "../../../langContext";
-import { HomeLangTitle, HomeLangBody, HomeLangButton } from '../HomeLang';
+import { HomeLangTitle, HomeLangBody, HomeLangButton } from "../HomeLang";
 
 const Business = () => {
   const { language } = useContext(langContext);
@@ -34,7 +34,7 @@ const Business = () => {
   }, []);
   if (homeData.length === 0) return null;
   return (
-    <InfoBg img={BusinessElementsDatas.background}>
+    <InfoBg img={homeData.background_image.url}>
       <InfoWrappered>
         <InfoWrapper>
           <InfoRow imgStart={false}>
