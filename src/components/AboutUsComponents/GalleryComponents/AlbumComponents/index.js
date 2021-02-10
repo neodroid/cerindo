@@ -14,9 +14,10 @@ import {
   BlogImageArt,
   GlobalContent,
 } from "../../../CorporateNewsComponents/NewsComponent/NewsElements";
-import { AlbumGrid,
-   Image,
-   DropDown,
+import {
+  AlbumGrid,
+  Image,
+  DropDown,
   Dropbtn,
   DropDownContent,
   ContentDiv2,
@@ -28,10 +29,7 @@ import { GalleryLangTitle, GalleryLangTitlePhoto } from "../GalleryLang";
 
 const ManageOthArtData = ({ image, title, id, date }) => {
   return (
-    <Linked to={`/Album/${id}`}
-    onClick={(()=>{
-      window.location.replace(`/Album/${id}`);
-    })}>
+    <Linked to={`/Album/${id}`}>
       <BlogApart art>
         <BlogDivApart imagart>
           <BlogImageArt src={image} />
@@ -68,7 +66,7 @@ const AlbumComponent = (props) => {
   useEffect(() => {
     fetchListPhoto();
     fetchDetailedPhoto();
-  }, []);
+  }, [props.match.params.id]);
   console.log(photoDetailedGallery);
 
   if (photoListGallery.length === 0) return null;
@@ -78,21 +76,26 @@ const AlbumComponent = (props) => {
       <GlobalContent>
         <BlogApart containe>
           <BlogDivApart contain>
-            <TitleContent>{GalleryLangTitlePhoto(photoDetailedGallery, language)}</TitleContent>
+            <TitleContent>
+              {GalleryLangTitlePhoto(photoDetailedGallery, language)}
+            </TitleContent>
             <AlbumGrid>
               {photoDetailedGallery.image.map((val) => {
                 return (
-                <DropDown role="button" tabIndex={-1}>
+                  <DropDown role="button" tabIndex={-1}>
                     <Dropbtn>
-                    <Image src={val.url} />
+                      <Image src={val.url} />
                     </Dropbtn>
                     <DropDownContent>
-                      <ContentDiv2><ButtonCloser/></ContentDiv2>
+                      <ContentDiv2>
+                        <ButtonCloser />
+                      </ContentDiv2>
                       <ContentDrop>
                         <img src={val.url} width="100%" />
                       </ContentDrop>
                     </DropDownContent>
-                </DropDown>);
+                  </DropDown>
+                );
               })}
             </AlbumGrid>
           </BlogDivApart>

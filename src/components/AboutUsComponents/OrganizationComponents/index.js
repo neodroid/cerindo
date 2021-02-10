@@ -18,6 +18,7 @@ import {
   OrganizationLangBody,
   OrganizationLangTitle,
 } from "./OrganizationLang";
+import { VismisWrited } from "../VismisComponents/VismisElements";
 
 const OrganizationComponents = () => {
   const { language } = useContext(langContext);
@@ -38,9 +39,9 @@ const OrganizationComponents = () => {
         <AboutSideBarComponents page5={true} />
         <AboutMain>
           <OrgWrapped>
-            <CommitmentWrited>
+            <VismisWrited title>
               {OrganizationLangTitle(organization, language)}
-            </CommitmentWrited>
+            </VismisWrited>
             <CommitmentWrited>
               {OrganizationLangBody(organization, language)}
             </CommitmentWrited>

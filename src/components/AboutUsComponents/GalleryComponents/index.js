@@ -78,7 +78,9 @@ const GalleryComponents = () => {
                   >
                     <Figured key={idx}>
                       <img src={data.image[0].url} alt={data.title_en} />
-                      <figcaption>{GalleryLangTitle(data, language)}</figcaption>
+                      <figcaption>
+                        {GalleryLangTitle(data, language)}
+                      </figcaption>
                     </Figured>
                   </Link>
                 );
