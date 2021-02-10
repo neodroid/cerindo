@@ -43,7 +43,7 @@ height: 100%;
   /* position: absolute; */
   padding: 8px 24px;
   display: flex;
-  margin: 150px auto 0;
+  margin: 280px auto 0;
   flex-direction: column;
   align-self: center;
   /* margin-top: 80px; */
