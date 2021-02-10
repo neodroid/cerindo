@@ -56,9 +56,13 @@ export const BoxContainer = styled.div`
     }
 `;
 
-export const BlogImage = styled.img`
+export const BlogImage = styled.div`
     z-index: 3;
     width: 599px;
+    background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
     @media screen and (max-width: 565px) {
         max-width: 100%;
     }
@@ -66,9 +70,13 @@ export const BlogImage = styled.img`
 export const Nulity = styled.div`
 display:none;
 `;
-export const BlogImageArt = styled.img`
+export const BlogImageArt = styled.div`
     width: 123px;
     height: 96px;
+    background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
     filter: drop-shadow(0px 7px 20px rgba(0, 0, 0, 0.25));
     @media screen and (max-width: 565px) {
         max-width: 125px;
