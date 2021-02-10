@@ -14,7 +14,15 @@ import {
   BlogImageArt,
   GlobalContent,
 } from "../../../CorporateNewsComponents/NewsComponent/NewsElements";
-import { AlbumGrid, Image } from "./AlbumElements";
+import { AlbumGrid,
+   Image,
+   DropDown,
+  Dropbtn,
+  DropDownContent,
+  ContentDiv2,
+  ContentDrop,
+  ButtonCloser,
+} from "./AlbumElements";
 import { langContext } from "../../../../langContext";
 import { GalleryLangTitle, GalleryLangTitlePhoto } from "../GalleryLang";
 
@@ -70,7 +78,18 @@ const AlbumComponent = (props) => {
             <TitleContent>{GalleryLangTitlePhoto(photoDetailedGallery, language)}</TitleContent>
             <AlbumGrid>
               {photoDetailedGallery.image.map((val) => {
-                return <Image src={val.url} />;
+                return (
+                <DropDown role="button" tabIndex={-1}>
+                    <Dropbtn>
+                    <Image src={val.url} />
+                    </Dropbtn>
+                    <DropDownContent>
+                      <ContentDiv2><ButtonCloser/></ContentDiv2>
+                      <ContentDrop>
+                        <img src={val.url} width="100%" />
+                      </ContentDrop>
+                    </DropDownContent>
+                </DropDown>);
               })}
             </AlbumGrid>
           </BlogDivApart>

@@ -81,6 +81,7 @@ const HeroSection = () => {
 
   const sortedContent = joinedData.sort(compareDate);
   return (
+    <>
     <AutoplaySlider
       play={true}
       cancelOnInteraction={false}
@@ -101,55 +102,6 @@ const HeroSection = () => {
                 (
                 <HeroH1 size={false}>{NewsLangBanner(data, language)}</HeroH1>
                 )}
-                  <HeroNewsWrap>
-                    <HeroNewsFlex>
-                      <TitleNewsApart>
-                        <HeroMediaH1>Recent Update</HeroMediaH1>
-                      </TitleNewsApart>
-                      {/* <TitleNewsApart>
-                        <ViewedAll to="/Press-Release">
-                          <MdTrendingFlat target="_blank" />
-                          View All
-                        </ViewedAll>
-                      </TitleNewsApart> */}
-                    </HeroNewsFlex>
-                    <HeroNewsFlex content>
-                      {sortedContent.slice(0, 3).map((data, idx) => {
-                        if (newsData.indexOf(data) !== -1) {
-                          return (
-                            <HeroNewsContent to={`/News/${data._id}`} key={idx}>
-                              <ImgWrap>
-                                <Img src={data.image.url} />
-                              </ImgWrap>
-                              <HeroNewsDesc>
-                                <HeroNewsP>
-                                  {NewsLangTitle(data, language)}
-                                </HeroNewsP>
-                                <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
-                              </HeroNewsDesc>
-                            </HeroNewsContent>
-                          );
-                        } else {
-                          return (
-                            <HeroNewsContent
-                              to={`/Community-Activity/${data._id}`}
-                              key={idx}
-                            >
-                              <ImgWrap>
-                                <Img src={data.image.url} />
-                              </ImgWrap>
-                              <HeroNewsDesc>
-                                <HeroNewsP>
-                                  {NewsLangTitle(data, language)}
-                                </HeroNewsP>
-                                <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
-                              </HeroNewsDesc>
-                            </HeroNewsContent>
-                          );
-                        }
-                      })}
-                    </HeroNewsFlex>
-                  </HeroNewsWrap>
                 </HeroContent>
               </BgColoring>
             </HeroContainer>
@@ -157,6 +109,50 @@ const HeroSection = () => {
         );
       })}
     </AutoplaySlider>
+    <HeroNewsWrap>
+    <HeroNewsFlex>
+      <TitleNewsApart>
+        <HeroMediaH1>Recent Update</HeroMediaH1>
+      </TitleNewsApart>
+    </HeroNewsFlex>
+    <HeroNewsFlex content>
+      {sortedContent.slice(0, 3).map((data, idx) => {
+        if (newsData.indexOf(data) !== -1) {
+          return (
+            <HeroNewsContent to={`/News/${data._id}`} key={idx}>
+              <ImgWrap>
+                <Img src={data.image.url} />
+              </ImgWrap>
+              <HeroNewsDesc>
+                <HeroNewsP>
+                  {NewsLangTitle(data, language)}
+                </HeroNewsP>
+                <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+              </HeroNewsDesc>
+            </HeroNewsContent>
+          );
+        } else {
+          return (
+            <HeroNewsContent
+              to={`/Community-Activity/${data._id}`}
+              key={idx}
+            >
+              <ImgWrap>
+                <Img src={data.image.url} />
+              </ImgWrap>
+              <HeroNewsDesc>
+                <HeroNewsP>
+                  {NewsLangTitle(data, language)}
+                </HeroNewsP>
+                <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+              </HeroNewsDesc>
+            </HeroNewsContent>
+          );
+        }
+      })}
+    </HeroNewsFlex>
+  </HeroNewsWrap>
+  </>
   );
 };
 

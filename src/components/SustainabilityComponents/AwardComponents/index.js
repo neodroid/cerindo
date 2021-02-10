@@ -61,7 +61,7 @@ const AwardComponents = () => {
                         <img src={data.image.url} width="100%" />
                       </ContentDrop>
                     </DropDownContent>
-                  </DropDown>
+                    </DropDown>
                     <BoxContainer>{data.description}</BoxContainer>
                   </Containerrs>
                 </ContentAward>
