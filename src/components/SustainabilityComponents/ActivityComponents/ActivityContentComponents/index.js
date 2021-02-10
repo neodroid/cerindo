@@ -15,10 +15,14 @@ import {
 import { langContext } from "../../../../langContext";
 import { ActivityContentLangTitle, ActivityContentDetailsLangTitle, ActivityContentDetailsLangNews } from './ActivityContentLang';
 import { ActivityLangTitle } from "../ActivityLang";
+import {Redirect} from "react-router-dom"
 
 const ManageOthArtData = ({ image, id, date, title }) => {
   return (
-    <Linked to={`/Community-Activity/${id}`}>
+    <Linked to={`/Community-Activity/${id}`} 
+    onClick={(()=>{
+        window.location.replace(`/Community-Activity/${id}`);
+      })}>
       <BlogApart art>
         <BlogDivApart imagart>
           <BlogImageArt src={image} />
@@ -84,6 +88,7 @@ const ActivityContentComponent = (props) => {
                   id={data._id}
                   date={data.date}
                   title={ActivityLangTitle(data, language)}
+                  
                 />
               ))}
             </ArticlePart>
