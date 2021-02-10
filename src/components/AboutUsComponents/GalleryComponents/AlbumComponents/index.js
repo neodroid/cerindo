@@ -28,7 +28,10 @@ import { GalleryLangTitle, GalleryLangTitlePhoto } from "../GalleryLang";
 
 const ManageOthArtData = ({ image, title, id, date }) => {
   return (
-    <Linked to={`/Album/${id}`}>
+    <Linked to={`/Album/${id}`}
+    onClick={(()=>{
+      window.location.replace(`/Album/${id}`);
+    })}>
       <BlogApart art>
         <BlogDivApart imagart>
           <BlogImageArt src={image} />
