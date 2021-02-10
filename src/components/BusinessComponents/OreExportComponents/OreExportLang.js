@@ -8,7 +8,7 @@ export const OreExportLangTitle = (oreExport, lang) => {
       <div>{oreExport.title_id}</div>
     ) : lang === "cn" ? (
       <div>{oreExport.title_ch}</div>
-    ) : <></>;
+    ) : <> </>;
 
   return text;
 };
@@ -21,7 +21,7 @@ export const OreExportLangBody = (oreExport, lang) => {
       <div>{oreExport.body_id}</div>
     ) : lang === "cn" ? (
       <div>{oreExport.body_ch}</div>
-    ) : <></>;
+    ) : <> </>;
 
   return text;
 };
@@ -34,7 +34,7 @@ export const OreExportLangBody2 = (oreExport, lang) => {
       <div>{oreExport.body2_id}</div>
     ) : lang === "cn" ? (
       <div>{oreExport.body2_ch}</div>
-    ) : <></>;
+    ) : <> </>;
 
   return text;
 };

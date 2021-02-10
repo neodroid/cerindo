@@ -7,7 +7,7 @@ export const ConcessionLangTitle = (data, lang) => {
     (lang === "id") ? 
         <div>{data.title_id}</div> :
     (lang === "cn") ? 
-        <div>{data.title_ch}</div> : <></>;
+        <div>{data.title_ch}</div> : <> </>;
 
     return text
 }
@@ -19,7 +19,7 @@ export const ConcessionLangBody = (data, lang) => {
     (lang === "id") ? 
         <div>{data.body_id}</div> :
     (lang === "cn") ? 
-        <div>{data.body_ch}</div> : <></>;
+        <div>{data.body_ch}</div> : <> </>;
 
     return text
 }

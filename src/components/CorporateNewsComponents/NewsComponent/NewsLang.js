@@ -7,7 +7,7 @@ export const DetailsNewsLangTitle = (detailsNews, lang) => {
     (lang === "id") ? 
         <div>{detailsNews.title_id}</div> :
     (lang === "cn") ? 
-        <div>{detailsNews.title_ch}</div> : null;
+        <div>{detailsNews.title_ch}</div> : <> </>;
 
     return text;
 }
@@ -19,7 +19,7 @@ export const DetailsNewsLangContent = (detailsNews, lang) => {
     (lang === "id") ? 
         <div>{detailsNews.news_id}</div> :
     (lang === "cn") ? 
-        <div>{detailsNews.news_ch}</div> : <></>;
+        <div>{detailsNews.news_ch}</div> : <> </>;
 
     return text;
 }
@@ -31,7 +31,7 @@ export const NewsLangTitle = (data, lang) => {
     (lang === "id") ? 
         <div>{data.title_id}</div> :
     (lang === "cn") ? 
-        <div>{data.title_ch}</div> : <></>;
+        <div>{data.title_ch}</div> : <> </>;
 
     return text;
 }

@@ -55,7 +55,7 @@ export const LicenseDataLangButton = (data, lang) => {
     (lang === "id") ? 
         <>UNDUH</> :
     (lang === "cn") ? 
-        <>下载</> : <></>;
+        <>下载</> : <> </>;
 
     return text
 }
@@ -67,7 +67,7 @@ export const ConcessionTitle = (data, lang) =>{
     (lang === "id") ? 
         <>Area Konsesi</> :
     (lang === "cn") ? 
-        <>特许区</> : <></>;
+        <>特许区</> : <> </>;
 
     return text  
 }

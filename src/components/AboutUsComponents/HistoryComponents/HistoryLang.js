@@ -7,7 +7,7 @@ export const HistoryLangTitle = (data, lang) => {
     (lang === "id") ? 
         <div>{data.title_id}</div> :
     (lang === "cn") ? 
-        <div>{data.title_ch}</div> : <></>;
+        <div>{data.title_ch}</div> : <> </>;
 
     return text;
 }
@@ -19,7 +19,7 @@ export const HistoryLangDesc = (data, lang) => {
     (lang === "id") ? 
         <div>{data.description_id}</div> :
     (lang === "cn") ? 
-        <div>{data.description_ch}</div> : <></>;
+        <div>{data.description_ch}</div> : <> </>;
 
     return text;
 }
@@ -31,7 +31,7 @@ export const HistoryLangMilestone = (historyMileStone, lang) => {
     (lang === "id") ? 
         <div>{historyMileStone.Timeline[0].title_id}</div> :
     (lang === "cn") ? 
-        <div>{historyMileStone.Timeline[0].title_ch}</div> : <></>;
+        <div>{historyMileStone.Timeline[0].title_ch}</div> : <> </>;
 
     return text; 
 }

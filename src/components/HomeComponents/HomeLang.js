@@ -7,7 +7,7 @@ export const HomeLangTitle = (homeData, lang) => {
     (lang === "id") ? 
         <div>{homeData.title_id}</div> :
     (lang === "cn") ? 
-        <div>{homeData.title_ch}</div> : <></>;
+        <div>{homeData.title_ch}</div> : <> </>;
 
     return text
 }
@@ -18,7 +18,7 @@ export const HomeLangBody = (homeData, lang) => {
     (lang === "id") ? 
         <div>{homeData.body_id}</div> :
     (lang === "cn") ? 
-        <div>{homeData.body_ch}</div> : <></>;
+        <div>{homeData.body_ch}</div> : <> </>;
 
     return text
 }
@@ -30,7 +30,7 @@ export const HomeLangButton = (homeData, lang) => {
     (lang === "id") ? 
         <div>{homeData.button_id}</div> :
     (lang === "cn") ? 
-        <div>{homeData.button_ch}</div> : <></>;
+        <div>{homeData.button_ch}</div> : <> </>;
 
     return text
 }

@@ -7,7 +7,7 @@ export const SubsidiaryLang = (detailSubsidiary, lang) => {
     (lang === "id") ? 
         <div>{detailSubsidiary.description_id}</div> :
     (lang === "cn") ? 
-        <div>{detailSubsidiary.description_ch}</div> : <></>;
+        <div>{detailSubsidiary.description_ch}</div> : <> </>;
 
     return text
 }
