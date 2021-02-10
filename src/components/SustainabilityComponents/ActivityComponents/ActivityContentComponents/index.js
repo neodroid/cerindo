@@ -69,7 +69,7 @@ const ActivityContentComponent = (props) => {
 
   return (
     <>
-      <GlobalContent key={changed}>
+      <GlobalContent>
         <BlogApart containe>
           <BlogDivApart contain>
             <TitleContent>
