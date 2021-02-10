@@ -7,7 +7,7 @@ export const SideBarLang = (data, lang) => {
     (lang === "id") ? 
         <div>{data.id}</div> :
     (lang === "cn") ? 
-        <div>{data.ch}</div> : <></>;
+        <div>{data.ch}</div> : <> </>;
 
     return text
 };
@@ -19,7 +19,7 @@ export const SideBarDropDown = (data, index, lang) => {
         (lang === "id") ? 
             <>{data[index].id}</> :
         (lang === "cn") ? 
-            <>{data[index].ch}</> : <></>;
+            <>{data[index].ch}</> : <> </>;
 
         return text   
 };

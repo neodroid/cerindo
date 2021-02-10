@@ -21,7 +21,7 @@ export const NickleCobaltLangBody = (nickelCobalt, lang) => {
       <div>{nickelCobalt.body_id}</div>
     ) : lang === "cn" ? (
       <div>{nickelCobalt.body_ch}</div>
-    ) : <></>;
+    ) : <> </>;
 
   return text;
 };
@@ -34,7 +34,7 @@ export const NickleCobaltLangBody2 = (nickelCobalt, lang) => {
       <div>{nickelCobalt.body2_id}</div>
     ) : lang === "cn" ? (
       <div>{nickelCobalt.body2_ch}</div>
-    ) : <></>;
+    ) : <> </>;
 
   return text;
 };

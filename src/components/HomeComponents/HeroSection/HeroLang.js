@@ -7,7 +7,7 @@ export const NewsLangTitle = (data, lang) => {
     (lang === "id") ? 
         <div>{data.title_id}</div> :
     (lang === "cn") ? 
-        <div>{data.title_ch}</div> : <></>;
+        <div>{data.title_ch}</div> : <> </>;
 
     return text;
 }
@@ -19,7 +19,7 @@ export const NewsLangBanner = (data, lang) => {
     (lang === "id") ? 
         <>{data.title_id}</> :
     (lang === "cn") ? 
-        <>{data.title_ch}</> : <></>;
+        <>{data.title_ch}</> : <> </>;
 
     return text;
 }

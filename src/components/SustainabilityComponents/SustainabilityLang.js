@@ -7,7 +7,7 @@ export const SustainabilityTitle = (lang) => {
     (lang === "id") ? 
         <>Keberlangsungan Global</> :
     (lang === "cn") ? 
-        <>全球可持续发展</> : <></>;
+        <>全球可持续发展</> : <> </>;
 
     return text
 }
@@ -19,7 +19,7 @@ export const SustainabilitySidebar = (data, lang, index) => {
     (lang === "id") ? 
         <>{data[index].id}</> :
     (lang === "cn") ? 
-        <>{data[index].ch}</> : <></>;
+        <>{data[index].ch}</> : <> </>;
 
     return text
 }

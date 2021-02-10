@@ -8,7 +8,7 @@ export const NickleOreLangTitle = (nickelOre, lang) => {
       <div>{nickelOre.title_id}</div>
     ) : lang === "cn" ? (
       <div>{nickelOre.title_ch}</div>
-    ) : <></>;
+    ) : <> </>;
 
   return text;
 };
@@ -21,7 +21,7 @@ export const NickleOreLangBody = (nickelOre, lang) => {
       <div>{nickelOre.body_id}</div>
     ) : lang === "cn" ? (
       <div>{nickelOre.body_ch}</div>
-    ) : <></>;
+    ) : <> </>;
 
   return text;
 };
@@ -34,7 +34,7 @@ export const NickleOreLangBody2 = (nickelOre, lang) => {
       <div>{nickelOre.body2_id}</div>
     ) : lang === "cn" ? (
       <div>{nickelOre.body2_ch}</div>
-    ) : <></>;
+    ) : <> </>;
 
   return text;
 };

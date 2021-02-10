@@ -7,7 +7,7 @@ export const FooterData = (data, index, lang) => {
         (lang === "id") ? 
             <>{data[index].id}</> :
         (lang === "cn") ? 
-            <>{data[index].ch}</> : <></>;
+            <>{data[index].ch}</> : <> </>;
 
         return text   
 };
@@ -19,7 +19,7 @@ export const FooterDataSingle = (data, lang) => {
         (lang === "id") ? 
             <>{data.id}</> :
         (lang === "cn") ? 
-            <>{data.ch}</> : <></>;
+            <>{data.ch}</> : <> </>;
 
         return text   
 };
