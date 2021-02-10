@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { communityService } from "../../../../service/Community";
 import {
   TitleContent,
@@ -13,16 +13,17 @@ import {
   GlobalContent,
 } from "../../../CorporateNewsComponents/NewsComponent/NewsElements";
 import { langContext } from "../../../../langContext";
-import { ActivityContentLangTitle, ActivityContentDetailsLangTitle, ActivityContentDetailsLangNews } from './ActivityContentLang';
+import {
+  ActivityContentLangTitle,
+  ActivityContentDetailsLangTitle,
+  ActivityContentDetailsLangNews,
+} from "./ActivityContentLang";
 import { ActivityLangTitle } from "../ActivityLang";
-import {Redirect} from "react-router-dom"
+import { Redirect } from "react-router-dom";
 
 const ManageOthArtData = ({ image, id, date, title }) => {
   return (
-    <Linked to={`/Community-Activity/${id}`} 
-    onClick={(()=>{
-        window.location.replace(`/Community-Activity/${id}`);
-      })}>
+    <Linked to={`/Community-Activity/${id}`}>
       <BlogApart art>
         <BlogDivApart imagart>
           <BlogImageArt src={image} />
@@ -44,6 +45,8 @@ const ActivityContentComponent = (props) => {
   const { language } = useContext(langContext);
   const [detailsCommunity, setDetailsCommunity] = useState([]);
   const [listCommunity, setListCommunity] = useState([]);
+  const [changed, setChanged] = useState();
+
   const fetchDataDetails = async () => {
     const response = await communityService.getDetailCommunity(
       props.match.params.id
@@ -56,26 +59,30 @@ const ActivityContentComponent = (props) => {
     const data = response.data;
     setListCommunity(data);
   };
-  console.log(props);
 
   useEffect(() => {
     fetchDataDetails();
     fetchDataList();
-  }, []);
+  }, [props.match.params.id]);
+
   if (detailsCommunity.length === 0) return null;
   if (listCommunity.length === 0) return null;
 
   return (
     <>
-      <GlobalContent>
+      <GlobalContent key={changed}>
         <BlogApart containe>
           <BlogDivApart contain>
-            <TitleContent>{ActivityContentDetailsLangTitle(detailsCommunity, language)}</TitleContent>
+            <TitleContent>
+              {ActivityContentDetailsLangTitle(detailsCommunity, language)}
+            </TitleContent>
             <BlogWrapped image>
               <BlogImage src={detailsCommunity.image.url} />
             </BlogWrapped>
             <BlogWrapped>
-              <BoxContainer>{ActivityContentDetailsLangNews(detailsCommunity, language)}</BoxContainer>
+              <BoxContainer>
+                {ActivityContentDetailsLangNews(detailsCommunity, language)}
+              </BoxContainer>
             </BlogWrapped>
           </BlogDivApart>
           <BlogDivApart>
@@ -88,7 +95,6 @@ const ActivityContentComponent = (props) => {
                   id={data._id}
                   date={data.date}
                   title={ActivityLangTitle(data, language)}
-                  
                 />
               ))}
             </ArticlePart>
