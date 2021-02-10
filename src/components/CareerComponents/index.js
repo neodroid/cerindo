@@ -59,7 +59,7 @@ const CareerComponents = () => {
       <h2>Jobs Vacancies</h2>
       <div style={{ width: "100%", margin: "0 auto 52px" }}>
         {career.LowonganPekerjaan.map((obj, idx) => {
-          if (obj.position > 1) {
+          if (obj.availability > 1) {
             return (
               <DropDown role="button" tabIndex={-1} key={idx}>
                 <Dropbtn>
