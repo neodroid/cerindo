@@ -56,13 +56,9 @@ export const BoxContainer = styled.div`
     }
 `;
 
-export const BlogImage = styled.div`
+export const BlogImage = styled.img`
     z-index: 3;
     width: 599px;
-    background-image: url(${(props) => props.src});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
     @media screen and (max-width: 565px) {
         max-width: 100%;
     }
