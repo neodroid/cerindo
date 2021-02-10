@@ -45,7 +45,6 @@ const ActivityContentComponent = (props) => {
   const { language } = useContext(langContext);
   const [detailsCommunity, setDetailsCommunity] = useState([]);
   const [listCommunity, setListCommunity] = useState([]);
-  const [changed, setChanged] = useState();
 
   const fetchDataDetails = async () => {
     const response = await communityService.getDetailCommunity(
