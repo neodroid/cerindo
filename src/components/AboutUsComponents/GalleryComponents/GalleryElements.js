@@ -78,9 +78,13 @@ export const Figured = styled.figure`
   &:hover {
     transform: scale(1.08);
   }
-  img {
+  div {
     width: 226px;
     height: 127px;
+    background-image: url(${(props) => props.src});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     margin-left: auto;
     margin-right: auto;
     @media screen and (max-width: 609px) {

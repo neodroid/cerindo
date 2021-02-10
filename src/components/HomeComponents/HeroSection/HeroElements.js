@@ -223,8 +223,12 @@ export const ImgWrap = styled.div`
   box-shadow: 5px 5px 2px #aaaaaa;
 `;
 
-export const Img = styled.img`
+export const Img = styled.div`
   width: 100%;
+  background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 100%;
 `;
 

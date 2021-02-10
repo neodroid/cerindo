@@ -14,9 +14,13 @@ export const AlbumGrid = styled.div`
     }
 `;
 
-export const Image = styled.img`
+export const Image = styled.div`
     width: 150px;
     height: 150px;
+    background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
 
 export const ButtonCloser = styled(AiOutlineClose)`

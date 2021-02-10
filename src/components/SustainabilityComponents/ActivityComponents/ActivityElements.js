@@ -71,9 +71,13 @@ export const BoxContainer = styled.p`
     }
 `;
 
-export const ActivityImage = styled.img`
+export const ActivityImage = styled.div`
     z-index: 3;
     width: 216px;
+    background-image: url(${(props) => props.src});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 216px;
     @media screen and (max-width: 610px) {
         width: 120px;
