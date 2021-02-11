@@ -133,6 +133,7 @@ const CareerComponents = () => {
       <h2>Employees’ Stories</h2>
       <div style={{ width: "100%", margin: "0 auto 52px" }}>
         {career.EmployeeStory.map((data, idx) => {
+          console.log(data);
           if (idx % 2 != 0) {
             return (
               <EmployContent key={idx}>
@@ -142,7 +143,7 @@ const CareerComponents = () => {
                     <WritedEmploy name>{data.name}</WritedEmploy>
                   </Column1>
                   <Column2>
-                    <WritedEmploy>{CareerLangEmployeeBody(career, language)}</WritedEmploy>
+                    <WritedEmploy>{CareerLangEmployeeBody(data, language)}</WritedEmploy>
                   </Column2>
                 </InfoRow>
               </EmployContent>
@@ -156,7 +157,7 @@ const CareerComponents = () => {
                     <WritedEmploy name>{data.name}</WritedEmploy>
                   </Column1>
                   <Column2>
-                    <WritedEmploy>{CareerLangEmployeeBody(career, language)}</WritedEmploy>
+                    <WritedEmploy>{CareerLangEmployeeBody(data, language)}</WritedEmploy>
                   </Column2>
                 </InfoRow>
               </EmployContent>

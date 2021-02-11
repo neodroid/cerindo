@@ -27,11 +27,11 @@ export const CareerLangBody = (career, lang) => {
 export const CareerLangEmployeeBody = (career, lang) => {
     var text = 
     (lang === "en") ? 
-        <div>{career.Title.body_en}</div> :
+        <div>{career.body_en}</div> :
     (lang === "id") ? 
-        <div>{career.Title.body_id}</div> :
+        <div>{career.body_id}</div> :
     (lang === "cn") ? 
-        <div>{career.Title.body_ch}</div> : <> </>;
+        <div>{career.body_ch}</div> : <> </>;
 
     return text	
 }
