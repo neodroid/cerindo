@@ -18,7 +18,11 @@ import {
 } from "./AwardElements";
 import { BoxContainer } from "../../CorporateNewsComponents/NewsReleaseComponents/NewsContentComponents/NewsContentElements";
 import { langContext } from "../../../langContext";
-import { AwardContentLangTitle, AwardContentLangBody } from "./AwardLang";
+import {
+  AwardContentLangTitle,
+  AwardContentLangBody,
+  AwardContentLangDescription,
+} from "./AwardLang";
 
 const AwardComponents = () => {
   const { language } = useContext(langContext);
@@ -52,17 +56,21 @@ const AwardComponents = () => {
                   <BoxContainer titlee>{data.name}</BoxContainer>
                   <Containerrs>
                     <DropDown role="button" tabIndex={-1} key={idx}>
-                    <Dropbtn>
-                      <ImageAward src={data.image.url} />
-                    </Dropbtn>
-                    <DropDownContent>
-                      <ContentDiv2><ButtonCloser/></ContentDiv2>
-                      <ContentDrop>
-                        <img src={data.image.url} width="100%" />
-                      </ContentDrop>
-                    </DropDownContent>
+                      <Dropbtn>
+                        <ImageAward src={data.image.url} />
+                      </Dropbtn>
+                      <DropDownContent>
+                        <ContentDiv2>
+                          <ButtonCloser />
+                        </ContentDiv2>
+                        <ContentDrop>
+                          <img src={data.image.url} width="100%" />
+                        </ContentDrop>
+                      </DropDownContent>
                     </DropDown>
-                    <BoxContainer>{data.description}</BoxContainer>
+                    <BoxContainer>
+                      {AwardContentLangDescription(data, language)}
+                    </BoxContainer>
                   </Containerrs>
                 </ContentAward>
               );
