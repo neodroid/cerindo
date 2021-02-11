@@ -87,7 +87,6 @@ const HistoryComponents = () => {
                     <Birght />
                     <MilesBoxApart>
                       <MilesImage img={data.image.url}>
-                        <Opac />
                         <MilesImageDesc>
                           {HistoryLangTitle(data, language)}
                         </MilesImageDesc>

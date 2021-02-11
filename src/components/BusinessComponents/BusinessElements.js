@@ -199,8 +199,8 @@ export const Changed = styled.div`
 `;
 
 export const ImageBusiness = styled.img`
-  margin: 17px auto 40px;
-  width: 100%;
+  margin: 17px auto 20px;
+  max-width: 90%;
 `;
 
 export const Resve = styled.div`

@@ -69,7 +69,7 @@ export const MilesBoxContent = styled.div`
     height: 300px;
     @media screen and (max-width: 579px) {
         margin: 0 auto;
-        height: 160px;
+        height: 300px;
     }
 `;
 
@@ -89,7 +89,7 @@ export const MilesYearContent = styled.div`
     color: #111111;
     box-sizing:border-box;
     @media screen and (max-width: 579px) {
-        padding: 80px 5px;
+        padding: 150px 5px;
     }
 `;
 
@@ -120,7 +120,6 @@ export const MilesImage = styled.div`
     }
     @media screen and (max-width: 579px) {
         width: 180px;
-        height: 120px;
     }
 `;
 
@@ -135,8 +134,6 @@ export const MilesImageDesc = styled.div`
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
-    bottom:0;
-    flex-basis: 50%;
     padding: 27px;
 `;
 
