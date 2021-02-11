@@ -133,7 +133,6 @@ const CareerComponents = () => {
       <h2>Employees’ Stories</h2>
       <div style={{ width: "100%", margin: "0 auto 52px" }}>
         {career.EmployeeStory.map((data, idx) => {
-          console.log(data);
           if (idx % 2 != 0) {
             return (
               <EmployContent key={idx}>
