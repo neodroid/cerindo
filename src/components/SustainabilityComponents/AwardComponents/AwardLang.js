@@ -35,9 +35,9 @@ export const AwardContentLangDescription = (data, lang) => {
     lang === "en" ? (
       <div>{data.description_en}</div>
     ) : lang === "id" ? (
-      <div>{data.description_en}</div>
+      <div>{data.description_id}</div>
     ) : lang === "cn" ? (
-      <div>{data.description_en}</div>
+      <div>{data.description_ch}</div>
     ) : (
       <> </>
     );
