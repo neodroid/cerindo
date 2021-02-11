@@ -30,6 +30,21 @@ export const AwardContentLangBody = (AwardContent, lang) => {
   return text;
 };
 
+export const AwardContentLangName = (data, lang) => {
+  var text =
+    lang === "en" ? (
+      <div>{data.name_en}</div>
+    ) : lang === "id" ? (
+      <div>{data.name_id}</div>
+    ) : lang === "cn" ? (
+      <div>{data.name_ch}</div>
+    ) : (
+      <> </>
+    );
+
+  return text;
+};
+
 export const AwardContentLangDescription = (data, lang) => {
   var text =
     lang === "en" ? (

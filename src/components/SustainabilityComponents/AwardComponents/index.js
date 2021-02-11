@@ -22,6 +22,7 @@ import {
   AwardContentLangTitle,
   AwardContentLangBody,
   AwardContentLangDescription,
+  AwardContentLangName,
 } from "./AwardLang";
 
 const AwardComponents = () => {
@@ -53,7 +54,9 @@ const AwardComponents = () => {
               return (
                 <ContentAward key={idx}>
                   <BoxContainer>{data.date}</BoxContainer>
-                  <BoxContainer titlee>{data.name}</BoxContainer>
+                  <BoxContainer titlee>
+                    {AwardContentLangName(data, language)}
+                  </BoxContainer>
                   <Containerrs>
                     <DropDown role="button" tabIndex={-1} key={idx}>
                       <Dropbtn>
