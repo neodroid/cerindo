@@ -131,6 +131,8 @@ export const HeroH1 = styled.div`
   /* font-size: 48px;
   text-align: center; */
   max-width: 550px;
+  white-space: pre-line;  
+    vertical-align: bottom;
   font-size: ${({ size }) => (size ? "32px" : "40px")};
   line-height: 50px;
   font-family: 'Multicolore', sans serif;
