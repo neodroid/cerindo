@@ -47,7 +47,7 @@ export const BusinessSideBarIntl = [
   },
   {
     en: "Direct Ore Shipping",
-    id: "Ekspor Bijih",
+    id: "Pengiriman Bijih Langsung",
     ch: "矿石出口",
     to: "page1",
   },
