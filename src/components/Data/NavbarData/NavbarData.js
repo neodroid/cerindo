@@ -42,7 +42,7 @@ export const BusinessTwo = [
   },
   {
     en: "Direct Ore Shipping",
-    id: "Ekspor Bijih",
+    id: "Pengiriman Bijih Langsung",
     ch: "矿石出口",
   },
   {
@@ -81,7 +81,7 @@ export const SustainabilityDropdown = [
     ch: "报告书",
   },
   {
-    en: "Awards",
+    en: "Awards and Certifications",
     id: "Penghargaan",
     ch: "获奖情况",
   },
