@@ -1,6 +1,6 @@
 export const AboutUsIntl = [
   {
-    en: "Vission, Mission, Value",
+    en: "Vision, Mission, Value",
     id: "Visi, Misi, Nilai",
     ch: "愿景, 使命, 价值",
   },
