@@ -320,7 +320,7 @@ export const SearchImage = styled(FaSearch)`
 
 export const SearchField = styled.div`
   background: ${({ scrollNav }) => (scrollNav ? "#f9f9f9" : "transparent")};
-  width: 334px;
+  width: 320px;
   padding: 15px;
   display:block;
   border-radius: 0 0 8px 8px;
@@ -366,7 +366,7 @@ display:none;
 
 export const SearchTermed = styled.div`
   background: #f9f9f9;
-  max-width: 334px;
+  max-width: 320px;
   padding: 15px;
   display:block;
   border-radius: 0 0 8px 8px;

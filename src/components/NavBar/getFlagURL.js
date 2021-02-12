@@ -10,7 +10,7 @@ export default function getFlagUrl(language, type = "png") {
 
   switch (language) {
     case "en":
-      return getter("us");
+      return getter("gb");
     case "pt-BR":
       return getter("br");
     case "zh":
