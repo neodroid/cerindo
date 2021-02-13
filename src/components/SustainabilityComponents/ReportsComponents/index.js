@@ -3,6 +3,7 @@ import { sustainService } from "../../../service/Sustainability";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 import {
   ReportsFlex,
   ReportsContent,
@@ -42,17 +43,15 @@ const ReportsComponents = () => {
           <ReportsFlex>
             <ReportsContent>
               <ReportWrited title>
-                <ReactMarkdown
-                  children={
-                    ReportsDataLangTitle(ReportsData, language).props.children
-                  }
-                />
+                {ReportsDataLangTitle(ReportsData, language).props.children}
               </ReportWrited>
               <ReportWrited>
                 <ReactMarkdown
                   children={
                     ReportsDataLangBody(ReportsData, language).props.children
                   }
+                  plugins={[[gfm, { singleTilde: false }]]}
+                  allowDangerousHtml={true}
                 />
               </ReportWrited>
             </ReportsContent>

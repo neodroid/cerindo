@@ -15,7 +15,7 @@ import {
   FerronickleLangBody2,
 } from "./FerronickleSmeltingLang";
 import ReactMarkdown from "react-markdown";
-
+import gfm from "remark-gfm";
 const FerronickleSmeltingComponents = () => {
   const { language } = useContext(langContext);
   const [ferronicle, setFerronicle] = useState([]);
@@ -43,6 +43,8 @@ const FerronickleSmeltingComponents = () => {
               children={
                 FerronickleLangBody(ferronicle, language).props.children
               }
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
           {ferronicle.images.map((data) => {
@@ -53,6 +55,8 @@ const FerronickleSmeltingComponents = () => {
               children={
                 FerronickleLangBody2(ferronicle, language).props.children
               }
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
         </AboutMain>

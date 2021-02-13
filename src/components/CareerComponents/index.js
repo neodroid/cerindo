@@ -3,6 +3,7 @@ import { careerService } from "../../service/Career";
 import { CareerJobCerData, EmployeProfileData } from "../Data/CareerData";
 import { JobData } from "../Data/CareerData";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 import {
   CareerTempl,
   Jobcer,
@@ -59,6 +60,8 @@ const CareerComponents = () => {
           <JobcerBoard />
           <ReactMarkdown
             children={CareerLangBody(career, language).props.children}
+            plugins={[[gfm, { singleTilde: false }]]}
+            allowDangerousHtml={true}
           />
         </JobcerContent>
         <JobcerImage>

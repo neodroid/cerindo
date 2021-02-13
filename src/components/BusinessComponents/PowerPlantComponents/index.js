@@ -15,6 +15,7 @@ import {
   PowerPlantLangBody2,
 } from "./PowerPlantLang";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 const PowerPlantComponents = () => {
   const { language } = useContext(langContext);
@@ -41,6 +42,8 @@ const PowerPlantComponents = () => {
           <BusinessWrited>
             <ReactMarkdown
               children={PowerPlantLangBody(powerPlant, language).props.children}
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
           {powerPlant.images.map((data) => {
@@ -51,6 +54,8 @@ const PowerPlantComponents = () => {
               children={
                 PowerPlantLangBody2(powerPlant, language).props.children
               }
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
         </AboutMain>

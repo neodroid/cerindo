@@ -15,6 +15,7 @@ import {
   NickleOreLangBody2,
 } from "./NickleOreLang";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 const NickleOreComponents = () => {
   const { language } = useContext(langContext);
@@ -41,6 +42,8 @@ const NickleOreComponents = () => {
           <BusinessWrited>
             <ReactMarkdown
               children={NickleOreLangBody(nickelOre, language).props.children}
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
           {nickelOre.images.map((data) => {
@@ -49,6 +52,8 @@ const NickleOreComponents = () => {
           <BusinessWrited>
             <ReactMarkdown
               children={NickleOreLangBody2(nickelOre, language).props.children}
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
         </AboutMain>

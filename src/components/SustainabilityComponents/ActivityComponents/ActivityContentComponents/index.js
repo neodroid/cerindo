@@ -21,6 +21,7 @@ import {
 import { ActivityLangTitle } from "../ActivityLang";
 import { Redirect } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 const ManageOthArtData = ({ image, id, date, title }) => {
   return (
@@ -86,6 +87,8 @@ const ActivityContentComponent = (props) => {
                     ActivityContentDetailsLangNews(detailsCommunity, language)
                       .props.children
                   }
+                  plugins={[[gfm, { singleTilde: false }]]}
+                  allowDangerousHtml={true}
                 />
               </BoxContainer>
             </BlogWrapped>

@@ -7,7 +7,7 @@ import { Imageqhse, Images, WritedPart, Apart } from "./QHSEElements";
 import { langContext } from "../../../langContext";
 import { QHSEContentLangTitle, QHSEContentLangBody } from "./QHSELang";
 import ReactMarkdown from "react-markdown";
-
+import gfm from "remark-gfm";
 const QHSEComponents = () => {
   const { language } = useContext(langContext);
   const [QHSEContent, setQHSEContent] = useState([]);
@@ -29,17 +29,15 @@ const QHSEComponents = () => {
           <Apart>
             <WritedPart>
               <BusinessWrited title>
-                <ReactMarkdown
-                  children={
-                    QHSEContentLangTitle(QHSEContent, language).props.children
-                  }
-                />
+                {QHSEContentLangTitle(QHSEContent, language)}
               </BusinessWrited>
               <BusinessWrited>
                 <ReactMarkdown
                   children={
                     QHSEContentLangBody(QHSEContent, language).props.children
                   }
+                  plugins={[[gfm, { singleTilde: false }]]}
+                  allowDangerousHtml={true}
                 />
               </BusinessWrited>
             </WritedPart>

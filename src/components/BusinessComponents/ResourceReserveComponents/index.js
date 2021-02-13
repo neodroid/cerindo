@@ -17,6 +17,7 @@ import {
   ResourceReserveLangTitle,
 } from "./ResourceReserverLang";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 const ResourceReserveComponents = () => {
   const { language } = useContext(langContext);
@@ -47,6 +48,8 @@ const ResourceReserveComponents = () => {
                 ResourceReserveLangBody(resourceReserve, language).props
                   .children
               }
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
           <BusinessWrited>
@@ -71,6 +74,8 @@ const ResourceReserveComponents = () => {
                 ResourceReserveLangBody2(resourceReserve, language).props
                   .children
               }
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
         </AboutMain>

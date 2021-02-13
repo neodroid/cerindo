@@ -15,6 +15,7 @@ import {
   OreExportLangBody2,
 } from "./OreExportLang";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 const OreExportComponents = () => {
   const { language } = useContext(langContext);
@@ -30,6 +31,7 @@ const OreExportComponents = () => {
     fetchData();
   }, []);
   if (oreExport.length === 0) return null;
+
   return (
     <>
       <Aboutstyle>
@@ -41,6 +43,8 @@ const OreExportComponents = () => {
           <BusinessWrited>
             <ReactMarkdown
               children={OreExportLangBody(oreExport, language).props.children}
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
           {oreExport.images.map((data) => {
@@ -49,6 +53,8 @@ const OreExportComponents = () => {
           <BusinessWrited>
             <ReactMarkdown
               children={OreExportLangBody2(oreExport, language).props.children}
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
         </AboutMain>

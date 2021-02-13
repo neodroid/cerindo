@@ -15,6 +15,7 @@ import {
 import { langContext } from "../../../langContext";
 import { ActivityLangTitle, ActivityLangBody } from "./ActivityLang";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 const ActivityComponents = () => {
   const { language } = useContext(langContext);
@@ -52,6 +53,8 @@ const ActivityComponents = () => {
                           children={
                             ActivityLangBody(data, language).props.children
                           }
+                          plugins={[[gfm, { singleTilde: false }]]}
+                          allowDangerousHtml={true}
                         />
                       </BoxContainer>
                     </ActivityContainerPart>

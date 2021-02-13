@@ -29,6 +29,7 @@ import {
 } from "./NewsLang";
 import { FaArrowRight } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 const ManageOthArtData = ({ image, title, date }) => {
   return (
@@ -114,6 +115,8 @@ const NewsComponent = (props) => {
                 children={
                   DetailsNewsLangContent(detailsNews, language).props.children
                 }
+                plugins={[[gfm, { singleTilde: false }]]}
+                allowDangerousHtml={true}
               />
             </BoxContainer>
           </BlogWrapped>

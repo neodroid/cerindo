@@ -24,6 +24,7 @@ import {
   AwardContentLangDescription,
   AwardContentLangName,
 } from "./AwardLang";
+import gfm from "remark-gfm";
 
 const AwardComponents = () => {
   const { language } = useContext(langContext);
@@ -51,6 +52,8 @@ const AwardComponents = () => {
               children={
                 AwardContentLangBody(AwardContent, language).props.children
               }
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
           <AwardsesContent>
@@ -81,6 +84,8 @@ const AwardComponents = () => {
                           AwardContentLangDescription(data, language).props
                             .children
                         }
+                        plugins={[[gfm, { singleTilde: false }]]}
+                        allowDangerousHtml={true}
                       />
                     </BoxContainer>
                   </Containerrs>

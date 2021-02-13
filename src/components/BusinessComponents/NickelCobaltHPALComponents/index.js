@@ -15,6 +15,7 @@ import {
   NickleCobaltLangBody2,
 } from "./NickleCobaltHPALLang";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 const NickelCobaltHPALComponents = () => {
   const { language } = useContext(langContext);
@@ -43,6 +44,8 @@ const NickelCobaltHPALComponents = () => {
               children={
                 NickleCobaltLangBody(nickelCobalt, language).props.children
               }
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
           {nickelCobalt.images.map((data) => {
@@ -53,6 +56,8 @@ const NickelCobaltHPALComponents = () => {
               children={
                 NickleCobaltLangBody2(nickelCobalt, language).props.children
               }
+              plugins={[[gfm, { singleTilde: false }]]}
+              allowDangerousHtml={true}
             />
           </BusinessWrited>
         </AboutMain>
