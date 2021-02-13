@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { careerService } from "../../../service/Career";
 import { FaAngleLeft } from "react-icons/fa";
-import emailjs from "emailjs-com";
-import { Link } from "react-router-dom";
+import {
+  JobLangDuties,
+  JobLangName,
+  JobLangPurpose,
+  JobLangQual,
+} from "./JobLang";
 
 import {
   BannerStyle,
@@ -25,6 +29,7 @@ import {
 } from "./JobElements";
 import { FaArrowRight } from "react-icons/fa";
 import axios from "axios";
+import { langContext } from "../../../langContext";
 
 const JobComponents = (props) => {
   const [career, setCareer] = useState([]);
@@ -34,6 +39,7 @@ const JobComponents = (props) => {
   const [subject, setSubject] = useState();
   const [message, setMessage] = useState();
   const [cv, setCV] = useState();
+  const { language } = useContext(langContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -87,14 +93,14 @@ const JobComponents = (props) => {
 
   return (
     <>
-      <BannerStyle>{shownData.name}</BannerStyle>
+      <BannerStyle>{JobLangName(shownData, language)}</BannerStyle>
       <MainCareer>
         <h1>Main Purpose of Position</h1>
-        <p>{shownData.purpose_of_position}</p>
+        <p>{JobLangPurpose(shownData, language)}</p>
         <h1>Main Duties & Responsibilities</h1>
-        <p>{shownData.duties_and_responsibilities}</p>
+        <p>{JobLangDuties(shownData, language)}</p>
         <h1>Qualification</h1>
-        <p>{shownData.qualifications}</p>
+        <p>{JobLangQual(shownData, language)}</p>
         <Upsiv>
           Please send your CV to <Mail>recruitment@cerindocorp.co.id</Mail>{" "}
           <br />

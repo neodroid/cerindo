@@ -12,6 +12,7 @@ import {
   HistoryData,
   MilestoneData,
   ComplianceData,
+  MilestoneTitle,
 } from "../../Data/AboutusData/HistoryDatas";
 import {
   HisWrapped,
@@ -34,7 +35,12 @@ import {
 } from "./HistoryElements";
 
 import { langContext } from "../../../langContext";
-import { HistoryLangTitle, HistoryLangDesc, HistoryLangMilestone } from "./HistoryLang";
+import {
+  HistoryLangTitle,
+  HistoryLangDesc,
+  HistoryLangMilestone,
+  HistoryLangTitleMilestone,
+} from "./HistoryLang";
 
 const HistoryComponents = () => {
   const { language } = useContext(langContext);
@@ -77,7 +83,7 @@ const HistoryComponents = () => {
               <ImagePart>
                 <Images src={historyMileStone.Timeline[0].Timeline.url} />
           </ImagePart>*/}
-              <h2>Milestone</h2>
+              <h2>{HistoryLangTitleMilestone(MilestoneTitle, language)}</h2>
               {historyMileStone.milestone.map((data, idx) => {
                 return (
                   <MilesBoxContent key={idx}>

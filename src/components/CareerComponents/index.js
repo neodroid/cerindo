@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { careerService } from "../../service/Career";
 import { CareerJobCerData, EmployeProfileData } from "../Data/CareerData";
 import { JobData } from "../Data/CareerData";
+import ReactMarkdown from "react-markdown";
 import {
   CareerTempl,
   Jobcer,
@@ -29,7 +30,12 @@ import {
   Nulity,
 } from "./CareerElements";
 import { langContext } from "../../langContext";
-import { CareerLangTitle, CareerLangBody, CareerLangEmployeeBody } from "./CareerLang";
+import {
+  CareerLangTitle,
+  CareerLangBody,
+  CareerLangEmployeeBody,
+  CareerVacancies,
+} from "./CareerLang";
 
 const CareerComponents = () => {
   const { language } = useContext(langContext);
@@ -44,13 +50,16 @@ const CareerComponents = () => {
   }, []);
 
   if (career.length === 0) return null;
+
   return (
     <CareerTempl>
       <Jobcer>
         <JobcerContent>
           <h2>{CareerLangTitle(career, language)}</h2>
           <JobcerBoard />
-          <p>{CareerLangBody(career, language)}</p>
+          <ReactMarkdown
+            children={CareerLangBody(career, language).props.children}
+          />
         </JobcerContent>
         <JobcerImage>
           <img src={career.Title.image.url} />
@@ -77,18 +86,16 @@ const CareerComponents = () => {
                 </Dropbtn>
                 <DropDownContent>
                   {obj.jobVacancy.map((data) => {
-                    if (data.name != null) {
-                      return (
-                        <Linkeda to={`Jobs/${obj._id}/${data.id}`}>
-                          <ContentWrited>{data.name}</ContentWrited>
-                          <ButtonLink>
-                            <Arrowchild />
-                          </ButtonLink>
-                        </Linkeda>
-                      );
-                    } else {
-                      return <Nulity />;
-                    }
+                    return (
+                      <Linkeda to={`Jobs/${obj._id}/${data.id}`}>
+                        <ContentWrited>
+                          {CareerVacancies(data, language)}
+                        </ContentWrited>
+                        <ButtonLink>
+                          <Arrowchild />
+                        </ButtonLink>
+                      </Linkeda>
+                    );
                   })}
                 </DropDownContent>
               </DropDown>
@@ -111,18 +118,16 @@ const CareerComponents = () => {
                 </Dropbtn>
                 <DropDownContent>
                   {obj.jobVacancy.map((data) => {
-                    if (data.name != null) {
-                      return (
-                        <Linkeda to={`Jobs/${obj._id}/${data._id}`}>
-                          <ContentWrited>{data.name}</ContentWrited>
-                          <ButtonLink>
-                            <Arrowchild />
-                          </ButtonLink>
-                        </Linkeda>
-                      );
-                    } else {
-                      return <Nulity />;
-                    }
+                    return (
+                      <Linkeda to={`Jobs/${obj._id}/${data._id}`}>
+                        <ContentWrited>
+                          {CareerVacancies(data, language)}
+                        </ContentWrited>
+                        <ButtonLink>
+                          <Arrowchild />
+                        </ButtonLink>
+                      </Linkeda>
+                    );
                   })}
                 </DropDownContent>
               </DropDown>
@@ -142,7 +147,9 @@ const CareerComponents = () => {
                     <WritedEmploy name>{data.name}</WritedEmploy>
                   </Column1>
                   <Column2>
-                    <WritedEmploy>{CareerLangEmployeeBody(data, language)}</WritedEmploy>
+                    <WritedEmploy>
+                      {CareerLangEmployeeBody(data, language)}
+                    </WritedEmploy>
                   </Column2>
                 </InfoRow>
               </EmployContent>
@@ -156,7 +163,9 @@ const CareerComponents = () => {
                     <WritedEmploy name>{data.name}</WritedEmploy>
                   </Column1>
                   <Column2>
-                    <WritedEmploy>{CareerLangEmployeeBody(data, language)}</WritedEmploy>
+                    <WritedEmploy>
+                      {CareerLangEmployeeBody(data, language)}
+                    </WritedEmploy>
                   </Column2>
                 </InfoRow>
               </EmployContent>
