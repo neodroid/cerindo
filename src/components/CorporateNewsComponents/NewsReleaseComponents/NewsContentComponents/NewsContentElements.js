@@ -26,7 +26,6 @@ align-items: center;
 
 export const NewsBox = styled.div`
 width: 100%;
-height: 127px;
 text-overflow: ellipsis;
 overflow: hidden;
 margin: 20px 0;
@@ -36,10 +35,6 @@ transition: 0.5s ease-in-out;
 &:hover {
     transform: scale(1.03);
     }
-@media screen and (max-width: 1015px) {
-    height: 270px;
-    margin: 0 auto;
-}
 @media screen and (max-width: 610px) {
     transition: 0.5s ease-in-out;
     &:hover {
@@ -56,15 +51,15 @@ export const BoxWrapper = styled.div`
     margin: 15px;
 `;
 
-export const BoxContainer = styled.p`
+export const BoxContainer = styled.div`
     font-weight: ${(props) => (props.titlee ? "bold" : "normal") };
     font-size: ${(props) => (props.titlee ? "24px" : "16px") };
-    line-height: ${(props) => (props.titlee ? "24px" : "24px") };
+    line-height: ${(props) => (props.titlee ? "25px" : "24px") };
     padding: 8px 0;
     text-overflow: ellipsis;
     display: inline-block;
+    text-align: ${(props) => (props.titlee ? "left" : "justify") };
     width: 100%;
-    height: ${(props) => (props.titlee ? "auto" : "20px") };
     &:hover{
         text-decoration: ${(props) => (props.titlee ? "underline" : "none") };
     }

@@ -32,10 +32,6 @@ export const ContentAward = styled.div`
 border-bottom: 1px solid #E0E0E0;
 margin: 20px 0;
 padding: 20px 0;
-overflow: hidden;
-@media screen and (max-width: 550px) {
-    height: 450px;
-}
 `;
 
 export const ImageAward = styled.img`
