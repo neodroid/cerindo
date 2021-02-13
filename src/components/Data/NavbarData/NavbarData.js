@@ -82,8 +82,8 @@ export const SustainabilityDropdown = [
   },
   {
     en: "Awards and Certifications",
-    id: "Penghargaan",
-    ch: "获奖情况",
+    id: "Penghargaan dan Sertifikasi",
+    ch: "奖项与认证",
   },
 ];
 
