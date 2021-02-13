@@ -39,26 +39,6 @@ import {
   NewsLangTitle,
 } from "./NewsContentLang";
 
-/* const Pagination = ({ postPerPage, totalPost }) =>{
-    const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(totalPost/postPerPage); i++){
-        pageNumbers.push(i);
-    }
-    return (
-        <nav>
-            <ul>
-                {pageNumbers.map(number => {
-                    <li key={number}>
-                        <a href="!#">
-                            {number}
-                        </a>
-                    </li>
-                })}
-            </ul>
-        </nav>
-    )
-} */
-
 const NewsContentComponents = () => {
   const { language } = useContext(langContext);
   const [selected, setSelected] = useState(false);
@@ -143,15 +123,8 @@ const NewsContentComponents = () => {
                     <AnnounWrapped key={idx}>
                       <AnnounContent>
                         <AnnounApart>
-                          <AnnounWrited>{data.content}</AnnounWrited>
+                          <AnnounWrited>{data.title_en}</AnnounWrited>
                         </AnnounApart>
-                        {data.warning ? (
-                          <AnnounApart warned>
-                            <Warned alt="warned" />
-                          </AnnounApart>
-                        ) : (
-                          <Nulity></Nulity>
-                        )}
                       </AnnounContent>
                     </AnnounWrapped>
                   </>
@@ -160,10 +133,6 @@ const NewsContentComponents = () => {
             </>
           )}
 
-          {/*<ChoisenNews>
-          <ChoisenDesc choose onClick={Clicked}>News</ChoisenDesc>
-          <ChoisenDesc onClick={Clicked}>Ceria in Media</ChoisenDesc>
-        </ChoisenNews>*/}
           <SearchBar>
             <ContentSearch>
               <FlexContent>

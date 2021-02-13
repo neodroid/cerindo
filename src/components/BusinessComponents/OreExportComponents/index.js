@@ -14,6 +14,7 @@ import {
   OreExportLangBody,
   OreExportLangBody2,
 } from "./OreExportLang";
+import ReactMarkdown from "react-markdown";
 
 const OreExportComponents = () => {
   const { language } = useContext(langContext);
@@ -38,13 +39,17 @@ const OreExportComponents = () => {
             {OreExportLangTitle(oreExport, language)}
           </BusinessWrited>
           <BusinessWrited>
-            {OreExportLangBody(oreExport, language)}
+            <ReactMarkdown
+              children={OreExportLangBody(oreExport, language).props.children}
+            />
           </BusinessWrited>
           {oreExport.images.map((data) => {
             return <ImageBusiness src={data.url} />;
           })}
           <BusinessWrited>
-            {OreExportLangBody2(oreExport, language)}
+            <ReactMarkdown
+              children={OreExportLangBody2(oreExport, language).props.children}
+            />
           </BusinessWrited>
         </AboutMain>
       </Aboutstyle>

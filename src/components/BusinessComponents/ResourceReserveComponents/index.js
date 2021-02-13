@@ -16,6 +16,7 @@ import {
   ResourceReserveLangBody2,
   ResourceReserveLangTitle,
 } from "./ResourceReserverLang";
+import ReactMarkdown from "react-markdown";
 
 const ResourceReserveComponents = () => {
   const { language } = useContext(langContext);
@@ -41,7 +42,12 @@ const ResourceReserveComponents = () => {
             {ResourceReserveLangTitle(resourceReserve, language)}
           </BusinessWrited>
           <BusinessWrited>
-            {ResourceReserveLangBody(resourceReserve, language)}
+            <ReactMarkdown
+              children={
+                ResourceReserveLangBody(resourceReserve, language).props
+                  .children
+              }
+            />
           </BusinessWrited>
           <BusinessWrited>
             <b>Table Drilling Data before 2017</b>
@@ -60,7 +66,12 @@ const ResourceReserveComponents = () => {
           </BusinessWrited>
           <ImageBusiness src={resourceReserve.images[2].url} />
           <BusinessWrited>
-            {ResourceReserveLangBody2(resourceReserve, language)}
+            <ReactMarkdown
+              children={
+                ResourceReserveLangBody2(resourceReserve, language).props
+                  .children
+              }
+            />
           </BusinessWrited>
         </AboutMain>
       </Aboutstyle>

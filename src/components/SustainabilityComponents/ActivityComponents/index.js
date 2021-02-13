@@ -14,6 +14,7 @@ import {
 } from "./ActivityElements";
 import { langContext } from "../../../langContext";
 import { ActivityLangTitle, ActivityLangBody } from "./ActivityLang";
+import ReactMarkdown from "react-markdown";
 
 const ActivityComponents = () => {
   const { language } = useContext(langContext);
@@ -47,7 +48,11 @@ const ActivityComponents = () => {
                         {ActivityLangTitle(data, language)}
                       </BoxContainer>
                       <BoxContainer>
-                        {ActivityLangBody(data, language)}
+                        <ReactMarkdown
+                          children={
+                            ActivityLangBody(data, language).props.children
+                          }
+                        />
                       </BoxContainer>
                     </ActivityContainerPart>
                     <ActivityContainerPart btn>

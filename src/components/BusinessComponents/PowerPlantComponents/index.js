@@ -14,6 +14,7 @@ import {
   PowerPlantLangTitle,
   PowerPlantLangBody2,
 } from "./PowerPlantLang";
+import ReactMarkdown from "react-markdown";
 
 const PowerPlantComponents = () => {
   const { language } = useContext(langContext);
@@ -38,13 +39,19 @@ const PowerPlantComponents = () => {
             {PowerPlantLangTitle(powerPlant, language)}
           </BusinessWrited>
           <BusinessWrited>
-            {PowerPlantLangBody(powerPlant, language)}
+            <ReactMarkdown
+              children={PowerPlantLangBody(powerPlant, language).props.children}
+            />
           </BusinessWrited>
           {powerPlant.images.map((data) => {
             return <ImageBusiness src={data.url} />;
           })}
           <BusinessWrited>
-            {PowerPlantLangBody2(powerPlant, language)}
+            <ReactMarkdown
+              children={
+                PowerPlantLangBody2(powerPlant, language).props.children
+              }
+            />
           </BusinessWrited>
         </AboutMain>
       </Aboutstyle>

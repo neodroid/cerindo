@@ -20,7 +20,7 @@ import Banner from "../../Banner";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import AboutSideBarComponents from "../../AboutUsComponents/index";
 import { langContext } from "../../../langContext";
-import { AboutUsTitle } from '../../AboutUsComponents/AboutUsLang';
+import { AboutUsTitle } from "../../AboutUsComponents/AboutUsLang";
 import { aboutUsService } from "../../../service/Aboutus";
 import {
   DetailsNewsLangTitle,
@@ -28,6 +28,7 @@ import {
   NewsLangTitle,
 } from "./NewsLang";
 import { FaArrowRight } from "react-icons/fa";
+import ReactMarkdown from "react-markdown";
 
 const ManageOthArtData = ({ image, title, date }) => {
   return (
@@ -83,7 +84,12 @@ const NewsComponent = (props) => {
     <>
       {press.banner.map((data, idx) => {
         return (
-          <Banner img={data.url} texted={true} key={idx} place={AboutUsTitle(language)} />
+          <Banner
+            img={data.url}
+            texted={true}
+            key={idx}
+            place={AboutUsTitle(language)}
+          />
         );
       })}
       <Aboutstyle>
@@ -95,15 +101,20 @@ const NewsComponent = (props) => {
           <TitleContent>
             {DetailsNewsLangTitle(detailsNews, language)}
           </TitleContent>
-          {detailsNews.image.url.length==0?(
+          {detailsNews.image.url.length == 0 ? (
             <Nulity></Nulity>
-          ):(
-          <BlogWrapped image>
-            <BlogImage src={detailsNews.image.url} />
-          </BlogWrapped>)}
+          ) : (
+            <BlogWrapped image>
+              <BlogImage src={detailsNews.image.url} />
+            </BlogWrapped>
+          )}
           <BlogWrapped>
             <BoxContainer>
-              {DetailsNewsLangContent(detailsNews, language)}
+              <ReactMarkdown
+                children={
+                  DetailsNewsLangContent(detailsNews, language).props.children
+                }
+              />
             </BoxContainer>
           </BlogWrapped>
           <OtherNews href={detailsNews.source_link}>

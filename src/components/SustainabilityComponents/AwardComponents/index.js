@@ -3,7 +3,7 @@ import { sustainService } from "../../../service/Sustainability";
 import { BusinessWrited } from "../../BusinessComponents/BusinessElements";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
-import { AwardImageContent } from "../../Data/SustainabilityData/AwardDatas";
+import ReactMarkdown from "react-markdown";
 import {
   AwardsesContent,
   ContentAward,
@@ -47,7 +47,11 @@ const AwardComponents = () => {
             {AwardContentLangTitle(AwardContent, language)}
           </BusinessWrited>
           <BusinessWrited>
-            {AwardContentLangBody(AwardContent, language)}
+            <ReactMarkdown
+              children={
+                AwardContentLangBody(AwardContent, language).props.children
+              }
+            />
           </BusinessWrited>
           <AwardsesContent>
             {AwardContent.awards_list.map((data, idx) => {
@@ -72,7 +76,12 @@ const AwardComponents = () => {
                       </DropDownContent>
                     </DropDown>
                     <BoxContainer>
-                      {AwardContentLangDescription(data, language)}
+                      <ReactMarkdown
+                        children={
+                          AwardContentLangDescription(data, language).props
+                            .children
+                        }
+                      />
                     </BoxContainer>
                   </Containerrs>
                 </ContentAward>

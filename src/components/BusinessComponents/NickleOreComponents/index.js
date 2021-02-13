@@ -14,6 +14,7 @@ import {
   NickleOreLangTitle,
   NickleOreLangBody2,
 } from "./NickleOreLang";
+import ReactMarkdown from "react-markdown";
 
 const NickleOreComponents = () => {
   const { language } = useContext(langContext);
@@ -38,13 +39,17 @@ const NickleOreComponents = () => {
             {NickleOreLangTitle(nickelOre, language)}
           </BusinessWrited>
           <BusinessWrited>
-            {NickleOreLangBody(nickelOre, language)}
+            <ReactMarkdown
+              children={NickleOreLangBody(nickelOre, language).props.children}
+            />
           </BusinessWrited>
           {nickelOre.images.map((data) => {
             return <ImageBusiness src={data.url} />;
           })}
           <BusinessWrited>
-            {NickleOreLangBody2(nickelOre, language)}
+            <ReactMarkdown
+              children={NickleOreLangBody2(nickelOre, language).props.children}
+            />
           </BusinessWrited>
         </AboutMain>
       </Aboutstyle>

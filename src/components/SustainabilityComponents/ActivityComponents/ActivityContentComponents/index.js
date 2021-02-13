@@ -20,6 +20,7 @@ import {
 } from "./ActivityContentLang";
 import { ActivityLangTitle } from "../ActivityLang";
 import { Redirect } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 
 const ManageOthArtData = ({ image, id, date, title }) => {
   return (
@@ -80,7 +81,12 @@ const ActivityContentComponent = (props) => {
             </BlogWrapped>
             <BlogWrapped>
               <BoxContainer>
-                {ActivityContentDetailsLangNews(detailsCommunity, language)}
+                <ReactMarkdown
+                  children={
+                    ActivityContentDetailsLangNews(detailsCommunity, language)
+                      .props.children
+                  }
+                />
               </BoxContainer>
             </BlogWrapped>
           </BlogDivApart>

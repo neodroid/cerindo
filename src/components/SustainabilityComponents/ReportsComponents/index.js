@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { sustainService } from "../../../service/Sustainability";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import BusinessSideBarComponents from "../index";
-import { ReportDownload } from "../../Data/SustainabilityData/ReportsDatas";
+import ReactMarkdown from "react-markdown";
 import {
   ReportsFlex,
   ReportsContent,
@@ -14,11 +14,11 @@ import {
   ButtonTable,
 } from "./ReportsElements";
 import { langContext } from "../../../langContext";
-import { 
-  ReportsDataLangTitle, 
-  ReportsDataLangBody, 
+import {
+  ReportsDataLangTitle,
+  ReportsDataLangBody,
   ReportsDataLangFile,
-  ReportsDataLangButton 
+  ReportsDataLangButton,
 } from "./ReportsLang";
 
 const ReportsComponents = () => {
@@ -42,10 +42,18 @@ const ReportsComponents = () => {
           <ReportsFlex>
             <ReportsContent>
               <ReportWrited title>
-                {ReportsDataLangTitle(ReportsData, language)}
+                <ReactMarkdown
+                  children={
+                    ReportsDataLangTitle(ReportsData, language).props.children
+                  }
+                />
               </ReportWrited>
               <ReportWrited>
-                {ReportsDataLangBody(ReportsData, language)}
+                <ReactMarkdown
+                  children={
+                    ReportsDataLangBody(ReportsData, language).props.children
+                  }
+                />
               </ReportWrited>
             </ReportsContent>
             <ReportsContent>
@@ -65,7 +73,9 @@ const ReportsComponents = () => {
                       </ContentTable>
                     </ApartContentTable>
                     <ApartContentTable>
-                      <ButtonTable href={data.file.url}>{ReportsDataLangButton(data, language)}</ButtonTable>
+                      <ButtonTable href={data.file.url}>
+                        {ReportsDataLangButton(data, language)}
+                      </ButtonTable>
                     </ApartContentTable>
                   </div>
                 );
@@ -78,7 +88,9 @@ const ReportsComponents = () => {
                       </ContentTable>
                     </ApartContentTable>
                     <ApartContentTable>
-                      <ButtonTable href={data.file.url}>{ReportsDataLangButton(data, language)}</ButtonTable>
+                      <ButtonTable href={data.file.url}>
+                        {ReportsDataLangButton(data, language)}
+                      </ButtonTable>
                     </ApartContentTable>
                   </div>
                 );

@@ -14,6 +14,7 @@ import {
   FerronickleLangBody,
   FerronickleLangBody2,
 } from "./FerronickleSmeltingLang";
+import ReactMarkdown from "react-markdown";
 
 const FerronickleSmeltingComponents = () => {
   const { language } = useContext(langContext);
@@ -38,13 +39,21 @@ const FerronickleSmeltingComponents = () => {
             {FerronickleLangTitle(ferronicle, language)}
           </BusinessWrited>
           <BusinessWrited>
-            {FerronickleLangBody(ferronicle, language)}
+            <ReactMarkdown
+              children={
+                FerronickleLangBody(ferronicle, language).props.children
+              }
+            />
           </BusinessWrited>
           {ferronicle.images.map((data) => {
             return <ImageBusiness src={data.url} />;
           })}
           <BusinessWrited>
-            {FerronickleLangBody2(ferronicle, language)}
+            <ReactMarkdown
+              children={
+                FerronickleLangBody2(ferronicle, language).props.children
+              }
+            />
           </BusinessWrited>
         </AboutMain>
       </Aboutstyle>

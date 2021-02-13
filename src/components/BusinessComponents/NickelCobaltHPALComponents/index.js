@@ -14,6 +14,7 @@ import {
   NickleCobaltLangTitle,
   NickleCobaltLangBody2,
 } from "./NickleCobaltHPALLang";
+import ReactMarkdown from "react-markdown";
 
 const NickelCobaltHPALComponents = () => {
   const { language } = useContext(langContext);
@@ -38,13 +39,21 @@ const NickelCobaltHPALComponents = () => {
             {NickleCobaltLangTitle(nickelCobalt, language)}
           </BusinessWrited>
           <BusinessWrited>
-            {NickleCobaltLangBody(nickelCobalt, language)}
+            <ReactMarkdown
+              children={
+                NickleCobaltLangBody(nickelCobalt, language).props.children
+              }
+            />
           </BusinessWrited>
           {nickelCobalt.images.map((data) => {
             return <ImageBusiness src={data.url} />;
           })}
           <BusinessWrited>
-            {NickleCobaltLangBody2(nickelCobalt, language)}
+            <ReactMarkdown
+              children={
+                NickleCobaltLangBody2(nickelCobalt, language).props.children
+              }
+            />
           </BusinessWrited>
         </AboutMain>
       </Aboutstyle>
