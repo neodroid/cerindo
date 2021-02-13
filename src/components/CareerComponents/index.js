@@ -151,7 +151,13 @@ const CareerComponents = () => {
                   </Column1>
                   <Column2>
                     <WritedEmploy>
-                      {CareerLangEmployeeBody(data, language)}
+                      <ReactMarkdown
+                        children={
+                          CareerLangEmployeeBody(data, language).props.children
+                        }
+                        plugins={[[gfm, { singleTilde: false }]]}
+                        allowDangerousHtml={true}
+                      />
                     </WritedEmploy>
                   </Column2>
                 </InfoRow>
@@ -167,7 +173,13 @@ const CareerComponents = () => {
                   </Column1>
                   <Column2>
                     <WritedEmploy>
-                      {CareerLangEmployeeBody(data, language)}
+                      <ReactMarkdown
+                        children={
+                          CareerLangEmployeeBody(data, language).props.children
+                        }
+                        plugins={[[gfm, { singleTilde: false }]]}
+                        allowDangerousHtml={true}
+                      />
                     </WritedEmploy>
                   </Column2>
                 </InfoRow>
