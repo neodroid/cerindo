@@ -31,6 +31,7 @@ import Career from "./pages/Career";
 import QHSE from "./pages/QHSE";
 import Activity from "./pages/Activity";
 import Reports from "./pages/Reports";
+import NotFoundPage from "./pages/404Page";
 import Award from "./pages/Award";
 import Gallery from "./pages/Gallery";
 import ActivityContentComponent from "./components/SustainabilityComponents/ActivityComponents/ActivityContentComponents";
@@ -100,6 +101,7 @@ function App() {
             <Route path="/Album/:id" component={AlbumComponent} exact />
             <Route path="/Jobs/:job/:jobs" component={JobComponents} exact />
             <Route path="/Contact-Us" component={ContactComponents} exact />
+            <Route component={NotFoundPage} />
           </Switch>
         </langContext.Provider>
 
