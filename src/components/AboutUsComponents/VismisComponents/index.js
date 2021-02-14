@@ -1,8 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Aboutstyle, AboutMain } from "../AboutUsElements";
 import AboutSideBarComponents from "../index";
 import { aboutUsService } from "../../../service/Aboutus";
-import { ValuesData, VismisData } from "../../Data/AboutusData/VismisDatas";
+import {
+  VisionTitle,
+  MissionTitle,
+  ValueTitle,
+} from "../../Data/AboutusData/VismisDatas";
+
+import {
+  VisMisTitleLang,
+  VisionDescriptionLang,
+  MissionDescriptionLang,
+  ValueTitleLang,
+  ValueDescriptionLang,
+} from "./VismisLang";
+import { langContext } from "../../../langContext";
 import {
   VismisContent,
   VismisWrited,
@@ -17,10 +30,10 @@ import {
   Image,
   ValueApart,
 } from "./VismisElements";
-import testing from "../../../images/Group 535.png";
 
 const VismisComponents = () => {
   const [MVV, setMVV] = useState([]);
+  const { language } = useContext(langContext);
   useEffect(() => {
     const fetchData = async () => {
       const response = await aboutUsService.getListAboutUs();
@@ -38,31 +51,40 @@ const VismisComponents = () => {
         <AboutMain>
           <VismisContent>
             <VismisApart>
-              <VismisWrited title>Vision</VismisWrited>
-              <VismisWrited>{MVV.Vision_Description}</VismisWrited>
-              <VismisWrited title misi>
-                Mission
+              <VismisWrited title>
+                {VisMisTitleLang(VisionTitle, language)}
               </VismisWrited>
-              <VismisWrited>{MVV.Mission_description}</VismisWrited>
+              <VismisWrited>
+                {VisionDescriptionLang(MVV, language)}
+              </VismisWrited>
+              <VismisWrited title misi>
+                {VisMisTitleLang(MissionTitle, language)}
+              </VismisWrited>
+              <VismisWrited>
+                {MissionDescriptionLang(MVV, language)}
+              </VismisWrited>
             </VismisApart>
             <VismisApart>
               <img width="245px" src={MVV.image.url} />
             </VismisApart>
           </VismisContent>
           <ValueContent>
-            <h1>Value</h1>
+            <h1>{VisMisTitleLang(ValueTitle, language)}</h1>
             <ValueWrite choose>C E R I A</ValueWrite>
             {MVV.ceriaValue.map((data, idx) => {
               return (
                 <FlexValue>
                   <ValueApart image>
-                    <Image src={data.logo.url} />{" "}
-                    {/* Isinya Foto yang di kanan */}
+                    <Image src={data.logo.url} />
                   </ValueApart>
                   <ValueApart>
                     <ValuePartexp key={idx}>
-                      <ValuesWrited title>{data.value}</ValuesWrited>
-                      <ValuesWrited>{data.value_description}</ValuesWrited>
+                      <ValuesWrited title>
+                        {ValueTitleLang(data, language)}
+                      </ValuesWrited>
+                      <ValuesWrited>
+                        {ValueDescriptionLang(data, language)}
+                      </ValuesWrited>
                     </ValuePartexp>
                   </ValueApart>
                 </FlexValue>

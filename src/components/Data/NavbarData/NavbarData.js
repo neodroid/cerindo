@@ -101,9 +101,9 @@ export const AboutUsFooter = {
 
 export const AboutUsDropdown = [
   {
-    en: "Mission, Vision, Value",
-    id: "Misi, Visi, Nilai",
-    ch: "使命，愿景，价值",
+    en: "Vision, Mission, Value",
+    id: "Visi, Misi, Nilai",
+    ch: "愿景, 使命, 价值",
   },
   {
     en: "Commitment",
