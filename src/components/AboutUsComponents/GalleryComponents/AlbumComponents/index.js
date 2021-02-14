@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { aboutUsService } from "../../../../service/Aboutus";
-import { GalleryPhotoData } from "../../../Data/AboutusData/GalleryDatas";
+import { GalleryTitle } from "../../../Data/AboutusData/GalleryDatas";
 
 import {
   TitleContent,
@@ -30,7 +30,11 @@ import {
   Imagees,
 } from "./AlbumElements";
 import { langContext } from "../../../../langContext";
-import { GalleryLangTitle, GalleryLangTitlePhoto } from "../GalleryLang";
+import {
+  GalleryLangTitle,
+  GalleryLangTitlePhoto,
+  AlbumLangOther,
+} from "../GalleryLang";
 
 const ManageOthArtData = ({ image, title, id, date }) => {
   return (
@@ -140,7 +144,9 @@ const AlbumComponent = (props) => {
             </AlbumGrid>
           </BlogDivApart>
           <BlogDivApart>
-            <TitleContent art>Other Article</TitleContent>
+            <TitleContent art>
+              {AlbumLangOther(GalleryTitle.otherArticle, language)}
+            </TitleContent>
             <ArticlePart>
               {photoListGallery.slice(0, 3).map((data, idx) => {
                 return (

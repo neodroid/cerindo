@@ -9,4 +9,9 @@ export const GalleryTitle = {
     id: "Video Lainnya",
     ch: "其他影片",
   },
+  otherArticle: {
+    en: "Other Article",
+    id: "Artikel Lainnya",
+    ch: "其他文章",
+  },
 };
