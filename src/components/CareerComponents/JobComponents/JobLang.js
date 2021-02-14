@@ -57,3 +57,18 @@ export const JobLangQual = (data, lang) => {
 
   return text;
 };
+
+export const JobLangTitle = (data, lang) => {
+  var text =
+    lang === "en" ? (
+      <div>{data.en}</div>
+    ) : lang === "id" ? (
+      <div>{data.id}</div>
+    ) : lang === "cn" ? (
+      <div>{data.ch}</div>
+    ) : (
+      <> </>
+    );
+
+  return text;
+};

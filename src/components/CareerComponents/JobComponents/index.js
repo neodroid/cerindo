@@ -6,6 +6,7 @@ import {
   JobLangName,
   JobLangPurpose,
   JobLangQual,
+  JobLangTitle,
 } from "./JobLang";
 
 import {
@@ -30,6 +31,7 @@ import {
 import { FaArrowRight } from "react-icons/fa";
 import axios from "axios";
 import { langContext } from "../../../langContext";
+import { JobParams } from "../../Data/CareerData";
 
 const JobComponents = (props) => {
   const [career, setCareer] = useState([]);
@@ -95,11 +97,11 @@ const JobComponents = (props) => {
     <>
       <BannerStyle>{JobLangName(shownData, language)}</BannerStyle>
       <MainCareer>
-        <h1>Main Purpose of Position</h1>
+        <h1>{JobLangTitle(JobParams.purpose, language)}</h1>
         <p>{JobLangPurpose(shownData, language)}</p>
-        <h1>Main Duties & Responsibilities</h1>
+        <h1>{JobLangTitle(JobParams.duties, language)}</h1>
         <p>{JobLangDuties(shownData, language)}</p>
-        <h1>Qualification</h1>
+        <h1>{JobLangTitle(JobParams.qualification, language)}</h1>
         <p>{JobLangQual(shownData, language)}</p>
         <Upsiv>
           Please send your CV to <Mail>recruitment@cerindocorp.co.id</Mail>{" "}
