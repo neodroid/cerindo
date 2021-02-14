@@ -57,6 +57,7 @@ const AlbumComponent = (props) => {
   const [photoListGallery, setPhotoListGallery] = useState([]);
   const [photoDetailedGallery, setPhotoDetailedGallery] = useState([]);
   const [indexing, setIndexing] = useState();
+  const [clicked,setClicked] = useState(false);
   const [current,setCurrent] = useState(0);
   
   const fetchListPhoto = async () => {
@@ -72,15 +73,28 @@ const AlbumComponent = (props) => {
     setPhotoDetailedGallery(data);
   };
 
+  const Clickedin = (index) => {
+    setCurrent(index)
+    setClicked(!clicked)
+  };
+
+  const ClickedOut = () => {
+    setCurrent(0)
+    setClicked(!clicked)
+  };
+
   useEffect(() => {
     fetchListPhoto();
     fetchDetailedPhoto();
+    Clickedin();
+    ClickedOut();
   }, [props.match.params.id]);
+
   if (photoListGallery.length === 0) return null;
   if (photoDetailedGallery.length === 0) return null;
   const lengths = photoDetailedGallery.image.length;
   const carouseleft = () => {
-    setCurrent(current === lengths - 1? 0 : current+1);
+    setCurrent(current === lengths - 1 ? 0 : current+1);
   }
   const carouseright = () => {
     setCurrent(current === 0 ? lengths - 1 : current-1);
@@ -95,25 +109,25 @@ const AlbumComponent = (props) => {
             </TitleContent>
             <AlbumGrid>
               {photoDetailedGallery.image.map((val,idx) => {
-                console.log(current)
+                console.log(indexing);
                 return (
-                  <DropDown role="button" tabIndex={-1} 
-                  onClick={()=>{setIndexing(idx)}}
-                  >
-                    <Dropbtn>
-                      <Image src={val.url} />
-                    </Dropbtn>
+                  <>
+                  {clicked ? (
+                    <Dropbtn onClick={()=>{
+                      Clickedin(idx)
+                      }}>
+                      <Image 
+                      src={val.url}/>
+                    </Dropbtn>) : (
                     <DropDownContent>
                       <ContentDiv2
                       onClick={()=>{
-                        setCurrent(0)
-                      }}>
+                        ClickedOut()}}>
                         <ButtonCloser />
                       </ContentDiv2>
                       <SliderRel>
                       <AngleLeft role="button" onClick={carouseright}/>
                       <AngleRight role="button" onClick={carouseleft}/>
-                      <ContentDropped>
                       {photoDetailedGallery.image.map((dats,index) => {
                         return (
                         <ContentDrop 
@@ -125,10 +139,10 @@ const AlbumComponent = (props) => {
                         </ContentDrop>
                         );
                       })}
-                      </ContentDropped>
                       </SliderRel>
                     </DropDownContent>
-                  </DropDown>
+                    )}
+                  </>
                 );
               })}
             </AlbumGrid>

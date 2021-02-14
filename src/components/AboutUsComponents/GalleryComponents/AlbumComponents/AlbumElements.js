@@ -54,26 +54,28 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-background-color: rgba(0,0,0,0.5);
-display: none;
+background-color: rgba(0,0,0);
 z-index: 51;
 padding: 15px;
 overflow-y: scroll;
 `;
-export const ContentDiv2 = styled.button`
-    display: none;
+export const ContentDiv2 = styled.div`
+    display: block;
     font-weight: 400;
     font-family: 'Montserrat',sans-serif;
     text-align: center;
     font-style: italic;
     font-size: 13px;
     line-height: 20px;
-    text-decoration: underline;
     background: none;
     outline: none;
     border: none;
     cursor: pointer;
     width: fit-content;
+    z-index: 60;
+    &:focus ${DropDownContent}, &:active ${DropDownContent} {
+      display: none;
+    }
 `;
 
 export const ContentDiv = styled.div`
@@ -95,8 +97,8 @@ export const ContentDiv = styled.div`
 export const AngleRight = styled(FaAngleDoubleRight)`
 position: absolute;
 top: 50%;
-z-index: 53;
-right: 10px;
+z-index: 60;
+right: 5px;
 font-weight:bold;
 background-color: transparent;
 color : #EFB401;
@@ -107,8 +109,8 @@ user-select: none;
 export const AngleLeft = styled(FaAngleDoubleLeft)`
 position: absolute;
 top: 50%;
-z-index: 53;
-left: 10px;
+z-index: 60;
+left: 5px;
 font-weight:bold;
 background-color: transparent;
 color : #EFB401;
@@ -148,7 +150,11 @@ export const Angle = styled(Carousel)`
         display:none;
     };
 `;
-
+export const Dropbtn = styled.div`
+display: block;
+  outline: none;
+  cursor: pointer;
+`;
 export const DropDown = styled.div`
   margin-bottom: 32px;
   display: inline-block;
@@ -174,6 +180,7 @@ export const DropDown = styled.div`
   &:focus ${ContentDiv2}, &:active${ContentDiv2} {
       display: block;
   }
+  
   &:focus ${Angle}, &:active${Angle} {
     display: block;
 }
@@ -185,12 +192,7 @@ export const DropDown = styled.div`
   }
 `;
 
-export const Dropbtn = styled.div`
-  flex-basis: 10%;
-`;
-
 export const SliderRel = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
