@@ -56,7 +56,6 @@ const AlbumComponent = (props) => {
   const { language } = useContext(langContext);
   const [photoListGallery, setPhotoListGallery] = useState([]);
   const [photoDetailedGallery, setPhotoDetailedGallery] = useState([]);
-  const [indexing, setIndexing] = useState();
   const [clicked,setClicked] = useState(false);
   const [current,setCurrent] = useState(0);
   
@@ -72,22 +71,14 @@ const AlbumComponent = (props) => {
     const data = response.data;
     setPhotoDetailedGallery(data);
   };
-
-  const Clickedin = (index) => {
-    setCurrent(index)
-    setClicked(!clicked)
-  };
-
-  const ClickedOut = () => {
+  const Clickedout = () =>{
     setCurrent(0)
-    setClicked(!clicked)
-  };
-
+    setClicked(true)
+  }
   useEffect(() => {
     fetchListPhoto();
     fetchDetailedPhoto();
-    Clickedin();
-    ClickedOut();
+    Clickedout();
   }, [props.match.params.id]);
 
   if (photoListGallery.length === 0) return null;
@@ -109,20 +100,19 @@ const AlbumComponent = (props) => {
             </TitleContent>
             <AlbumGrid>
               {photoDetailedGallery.image.map((val,idx) => {
-                console.log(indexing);
                 return (
                   <>
-                  {clicked ? (
+                  {clicked ? 
                     <Dropbtn onClick={()=>{
-                      Clickedin(idx)
+                      setCurrent(idx)
+                      setClicked(!clicked)
                       }}>
                       <Image 
                       src={val.url}/>
-                    </Dropbtn>) : (
+                    </Dropbtn> : 
                     <DropDownContent>
                       <ContentDiv2
-                      onClick={()=>{
-                        ClickedOut()}}>
+                      onClick={Clickedout}>
                         <ButtonCloser />
                       </ContentDiv2>
                       <SliderRel>
@@ -141,7 +131,7 @@ const AlbumComponent = (props) => {
                       })}
                       </SliderRel>
                     </DropDownContent>
-                    )}
+                    }
                   </>
                 );
               })}
