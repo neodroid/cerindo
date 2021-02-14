@@ -56,9 +56,9 @@ const AlbumComponent = (props) => {
   const { language } = useContext(langContext);
   const [photoListGallery, setPhotoListGallery] = useState([]);
   const [photoDetailedGallery, setPhotoDetailedGallery] = useState([]);
-  const [clicked,setClicked] = useState(false);
-  const [current,setCurrent] = useState(0);
-  
+  const [clicked, setClicked] = useState(false);
+  const [current, setCurrent] = useState(0);
+
   const fetchListPhoto = async () => {
     const response = await aboutUsService.getPhotoGallery();
     const data = response.data;
@@ -71,10 +71,10 @@ const AlbumComponent = (props) => {
     const data = response.data;
     setPhotoDetailedGallery(data);
   };
-  const Clickedout = () =>{
-    setCurrent(0)
-    setClicked(true)
-  }
+  const Clickedout = () => {
+    setCurrent(0);
+    setClicked(true);
+  };
   useEffect(() => {
     fetchListPhoto();
     fetchDetailedPhoto();
@@ -85,11 +85,11 @@ const AlbumComponent = (props) => {
   if (photoDetailedGallery.length === 0) return null;
   const lengths = photoDetailedGallery.image.length;
   const carouseleft = () => {
-    setCurrent(current === lengths - 1 ? 0 : current+1);
-  }
+    setCurrent(current === lengths - 1 ? 0 : current + 1);
+  };
   const carouseright = () => {
-    setCurrent(current === 0 ? lengths - 1 : current-1);
-  }
+    setCurrent(current === 0 ? lengths - 1 : current - 1);
+  };
   return (
     <>
       <GlobalContent>
@@ -99,39 +99,41 @@ const AlbumComponent = (props) => {
               {GalleryLangTitlePhoto(photoDetailedGallery, language)}
             </TitleContent>
             <AlbumGrid>
-              {photoDetailedGallery.image.map((val,idx) => {
+              {photoDetailedGallery.image.map((val, idx) => {
                 return (
                   <>
-                  {clicked ? 
-                    <Dropbtn onClick={()=>{
-                      setCurrent(idx)
-                      setClicked(!clicked)
-                      }}>
-                      <Image 
-                      src={val.url}/>
-                    </Dropbtn> : 
-                    <DropDownContent>
-                      <ContentDiv2
-                      onClick={Clickedout}>
-                        <ButtonCloser />
-                      </ContentDiv2>
-                      <SliderRel>
-                      <AngleLeft role="button" onClick={carouseright}/>
-                      <AngleRight role="button" onClick={carouseleft}/>
-                      {photoDetailedGallery.image.map((dats,index) => {
-                        return (
-                        <ContentDrop 
-                        played={index===current}
-                        key={index}>
-                          {index===current && (
-                            <Imagees src={dats.url}/>
-                        )}
-                        </ContentDrop>
-                        );
-                      })}
-                      </SliderRel>
-                    </DropDownContent>
-                    }
+                    {clicked ? (
+                      <Dropbtn
+                        onClick={() => {
+                          setCurrent(idx);
+                          setClicked(!clicked);
+                        }}
+                      >
+                        <Image src={val.url} />
+                      </Dropbtn>
+                    ) : (
+                      <DropDownContent>
+                        <ContentDiv2 onClick={Clickedout}>
+                          <ButtonCloser />
+                        </ContentDiv2>
+                        <SliderRel>
+                          <AngleLeft role="button" onClick={carouseright} />
+                          <AngleRight role="button" onClick={carouseleft} />
+                          {photoDetailedGallery.image.map((dats, index) => {
+                            return (
+                              <ContentDrop
+                                played={index === current}
+                                key={index}
+                              >
+                                {index === current && (
+                                  <Imagees src={dats.url} />
+                                )}
+                              </ContentDrop>
+                            );
+                          })}
+                        </SliderRel>
+                      </DropDownContent>
+                    )}
                   </>
                 );
               })}
@@ -140,7 +142,7 @@ const AlbumComponent = (props) => {
           <BlogDivApart>
             <TitleContent art>Other Article</TitleContent>
             <ArticlePart>
-              {photoListGallery.map((data, idx) => {
+              {photoListGallery.slice(0, 3).map((data, idx) => {
                 return (
                   <ManageOthArtData
                     id={data._id}
