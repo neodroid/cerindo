@@ -78,6 +78,10 @@ export const Figured = styled.figure`
   &:hover {
     transform: scale(1.08);
   }
+  img {
+    max-width: 226px;
+    max-height: 128px;
+  }
   div {
     width: 226px;
     height: 127px;
