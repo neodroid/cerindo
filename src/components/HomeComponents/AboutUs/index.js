@@ -17,7 +17,12 @@ import {
   VideoContent,
 } from "./AboutUsElements";
 import { langContext } from "../../../langContext";
-import { HomeLangTitle, HomeLangBody, HomeLangButton } from "../HomeLang";
+import {
+  HomeLangTitle,
+  HomeLangBody,
+  HomeLangButton,
+  HomeLangVideo,
+} from "../HomeLang";
 
 const AboutUs = ({
   lightText,
@@ -69,7 +74,10 @@ const AboutUs = ({
               </TextWrapper>
             </Column1>
             <Column2>
-              <VideoContent controls src={homeData.video.url}></VideoContent>
+              <VideoContent
+                controls
+                src={HomeLangVideo(homeData, language).props.children}
+              ></VideoContent>
             </Column2>
           </InfoRow>
         </InfoWrapper>
