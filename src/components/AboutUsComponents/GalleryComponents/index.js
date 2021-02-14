@@ -3,11 +3,7 @@ import { aboutUsService } from "../../../service/Aboutus";
 import { Link } from "react-router-dom";
 import { Aboutstyle, AboutMain } from "../AboutUsElements";
 import AboutSideBarComponents from "../index";
-import {
-  GalleryData,
-  GalleryPhotoData,
-  VideoProfileData,
-} from "../../Data/AboutusData/GalleryDatas";
+import { GalleryTitle } from "../../Data/AboutusData/GalleryDatas";
 import {
   GalleryAllContent,
   VideoGridOther,
@@ -18,7 +14,11 @@ import {
   VideoContainerOther,
 } from "./GalleryElements";
 import { langContext } from "../../../langContext";
-import { GalleryLangTitle } from "./GalleryLang";
+import {
+  GalleryLangTitle,
+  GalleryLangParans,
+  GalleryLangVideo,
+} from "./GalleryLang";
 
 const GalleryComponents = () => {
   const { language } = useContext(langContext);
@@ -49,18 +49,21 @@ const GalleryComponents = () => {
         <AboutSideBarComponents page9={true} />
         <AboutMain>
           <GalleryAllContent>
-            <h2>Ceria Profile Video</h2>
+            <h2>{GalleryLangParans(GalleryTitle.profile, language)}</h2>
             <VideoContentPartMain>
-              <VideoContentMain controls src={videoGallery[0].Video[0].url} />
+              <VideoContentMain
+                controls
+                src={GalleryLangVideo(videoGallery[0], language).props.children}
+              />
             </VideoContentPartMain>
-            <h2>Other Video</h2>
+            <h2>{GalleryLangParans(GalleryTitle.other, language)}</h2>
             <VideoGridOther>
               {videoGallery.slice(1).map((data, idx) => {
                 return (
                   <VideoContainerOther>
                     <VideoContentOther
                       controls
-                      src={data.Video[0].url}
+                      src={GalleryLangVideo(data, language).props.children}
                       key={idx}
                     />
                     <p>{GalleryLangTitle(data, language)}</p>
