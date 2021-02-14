@@ -22,7 +22,12 @@ import {
   DropDownContent,
   ContentDiv2,
   ContentDrop,
+  AngleRight,
+  AngleLeft,
   ButtonCloser,
+  SliderRel,
+  ContentDropped,
+  Imagees,
 } from "./AlbumElements";
 import { langContext } from "../../../../langContext";
 import { GalleryLangTitle, GalleryLangTitlePhoto } from "../GalleryLang";
@@ -51,6 +56,9 @@ const AlbumComponent = (props) => {
   const { language } = useContext(langContext);
   const [photoListGallery, setPhotoListGallery] = useState([]);
   const [photoDetailedGallery, setPhotoDetailedGallery] = useState([]);
+  const [indexing, setIndexing] = useState();
+  const [current,setCurrent] = useState(0);
+  
   const fetchListPhoto = async () => {
     const response = await aboutUsService.getPhotoGallery();
     const data = response.data;
@@ -63,14 +71,20 @@ const AlbumComponent = (props) => {
     const data = response.data;
     setPhotoDetailedGallery(data);
   };
+
   useEffect(() => {
     fetchListPhoto();
     fetchDetailedPhoto();
   }, [props.match.params.id]);
-  console.log(photoDetailedGallery);
-
   if (photoListGallery.length === 0) return null;
   if (photoDetailedGallery.length === 0) return null;
+  const lengths = photoDetailedGallery.image.length;
+  const carouseleft = () => {
+    setCurrent(current === lengths - 1? 0 : current+1);
+  }
+  const carouseright = () => {
+    setCurrent(current === 0 ? lengths - 1 : current-1);
+  }
   return (
     <>
       <GlobalContent>
@@ -80,19 +94,39 @@ const AlbumComponent = (props) => {
               {GalleryLangTitlePhoto(photoDetailedGallery, language)}
             </TitleContent>
             <AlbumGrid>
-              {photoDetailedGallery.image.map((val) => {
+              {photoDetailedGallery.image.map((val,idx) => {
+                console.log(current)
                 return (
-                  <DropDown role="button" tabIndex={-1}>
+                  <DropDown role="button" tabIndex={-1} 
+                  onClick={()=>{setIndexing(idx)}}
+                  >
                     <Dropbtn>
                       <Image src={val.url} />
                     </Dropbtn>
                     <DropDownContent>
-                      <ContentDiv2>
+                      <ContentDiv2
+                      onClick={()=>{
+                        setCurrent(0)
+                      }}>
                         <ButtonCloser />
                       </ContentDiv2>
-                      <ContentDrop>
-                        <img src={val.url} width="100%" />
-                      </ContentDrop>
+                      <SliderRel>
+                      <AngleLeft role="button" onClick={carouseright}/>
+                      <AngleRight role="button" onClick={carouseleft}/>
+                      <ContentDropped>
+                      {photoDetailedGallery.image.map((dats,index) => {
+                        return (
+                        <ContentDrop 
+                        played={index===current}
+                        key={index}>
+                          {index===current && (
+                            <Imagees src={dats.url}/>
+                        )}
+                        </ContentDrop>
+                        );
+                      })}
+                      </ContentDropped>
+                      </SliderRel>
                     </DropDownContent>
                   </DropDown>
                 );

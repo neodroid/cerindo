@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { AiOutlineClose } from "react-icons/ai";
+import Carousel from "react-elastic-carousel";
+import { FaAngleDoubleRight,FaAngleDoubleLeft } from "react-icons/fa";
 
 export const AlbumGrid = styled.div`
     display: grid;
@@ -27,14 +29,23 @@ export const ButtonCloser = styled(AiOutlineClose)`
     font-size: 26px;
     color: white;
 `;
+export const Imagees = styled.img`
+  width:100%;
+`;
+export const ContentDropped = styled.div`
+    max-width: 700px;
+    overflow: hidden;
+    display: flex;
+`;
 export const ContentDrop = styled.div`
 margin: 20px auto;
 max-width: 700px;
 border-radius: 10px;
 border-radius: 10px;
 border: 1px solid #ccc;
-padding: 16px 16px;
+padding: 16px;
 z-index: 52;
+display: ${({ played }) => (played ? "block" : "none")};
 background-color: rgba(255,255,255);`;
 
 export const DropDownContent = styled.div`
@@ -80,6 +91,64 @@ export const ContentDiv = styled.div`
     cursor: pointer;
     margin: 0 auto;
 `;
+
+export const AngleRight = styled(FaAngleDoubleRight)`
+position: absolute;
+top: 50%;
+z-index: 53;
+right: 10px;
+font-weight:bold;
+background-color: transparent;
+color : #EFB401;
+font-size:50px;
+cursor: pointer;
+user-select: none;
+`;
+export const AngleLeft = styled(FaAngleDoubleLeft)`
+position: absolute;
+top: 50%;
+z-index: 53;
+left: 10px;
+font-weight:bold;
+background-color: transparent;
+color : #EFB401;
+font-size:50px;
+cursor: pointer;
+user-select: none;
+`;
+export const Angle = styled(Carousel)`
+    margin: 0 auto;
+    width: 90%;
+    border: none;
+    outline: none;
+    box-sizing: content-box !important;
+    .rec-carousel-item-visible {
+        width: 100% !important;
+    }
+    .rec-slider {
+        transition: none !important;
+    }
+    button.rec-arrow{
+        position: relative;
+        font-weight:bold;
+        background-color: transparent;
+        color : #EFB401;
+        font-size:50px;
+        min-width: 0;
+        border: none !important;
+        outline: none !important;
+        width:50px;
+        height: 40px;
+        line-height: 10px;
+        &:hover,&:focus{
+            color: black;
+        };
+    };
+    button.rec-dot{
+        display:none;
+    };
+`;
+
 export const DropDown = styled.div`
   margin-bottom: 32px;
   display: inline-block;
@@ -105,6 +174,9 @@ export const DropDown = styled.div`
   &:focus ${ContentDiv2}, &:active${ContentDiv2} {
       display: block;
   }
+  &:focus ${Angle}, &:active${Angle} {
+    display: block;
+}
   &:focus ${ContentDiv}, &:active${ContentDiv} {
     display: none;
 }
@@ -115,4 +187,14 @@ export const DropDown = styled.div`
 
 export const Dropbtn = styled.div`
   flex-basis: 10%;
+`;
+
+export const SliderRel = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 `;

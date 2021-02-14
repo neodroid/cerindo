@@ -82,12 +82,10 @@ export const BlogImageArt = styled.div`
 
 export const BlogApart = styled.div`
     display: flex;
+    text-overflow: ellipsis;
     &:hover {
         transition: ${(props) => (props.art ? "0.2s ease-in-out" : "none")};
         transform: ${(props) => (props.art ? "scale(1.02)" : "none")};
-    }
-    @media screen and (max-width: 1150px) {
-        height: ${(props) => (props.art ? "118px" : "auto")};
     }
     @media screen and (max-width: 859px) {
         display: ${(props) => (props.containe ? "block" : "flex")};
