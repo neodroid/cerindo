@@ -20,7 +20,7 @@ export const AboutUsIntl = [
     ch: "董事会",
   },
   {
-    en: "Organizational Structures",
+    en: "Organizational Structure",
     id: "Struktur Organisasi",
     ch: "组织架构",
   },

@@ -5,7 +5,7 @@ export const SustainabilitySideBarIntl = [
     ch: "QHSE",
   },
   {
-    en: "Community Activity",
+    en: "Community Activities",
     id: "Kegiatan Komunitas",
     ch: "社区活动",
   },
