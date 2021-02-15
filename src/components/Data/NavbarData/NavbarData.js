@@ -71,7 +71,7 @@ export const SustainabilityDropdown = [
     ch: "QHSE",
   },
   {
-    en: "Community Activity",
+    en: "Community Activities",
     id: "Kegiatan Komunitas",
     ch: "社区活动",
   },
@@ -121,7 +121,7 @@ export const AboutUsDropdown = [
     ch: "董事会",
   },
   {
-    en: "Organizational Structures",
+    en: "Organizational Structure",
     id: "Struktur Organisasi",
     ch: "组织架构",
   },

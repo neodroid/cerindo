@@ -121,9 +121,9 @@ const Footer = () => {
                 {FooterDataSingle(MakassarOffice, footerLang)}
               </FooterLinkTitle>
               <FooterLinked>
-                Jl. Kima 12 Kav. N-1a, Kawasan Industrial Makassar Makassar
-                90245
+                Jl. Kima 12 Kav. N-1a, Kawasan Industrial Makassar
               </FooterLinked>
+              <FooterLinked>Makassar 90245</FooterLinked>
               <FooterLinked>Phone +62 (411) 4720747</FooterLinked>
               <FooterLinked>Fax +62 21 2912 582</FooterLinked>
             </FooterLinkItems>
