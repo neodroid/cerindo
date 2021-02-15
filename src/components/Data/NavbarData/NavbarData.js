@@ -1,13 +1,13 @@
 export const Home = {
   en: "HOME",
   id: "BERANDA",
-  ch: "家 ",
+  ch: "主页",
 };
 
 export const Business = {
   en: "BUSINESS",
   id: "BISNIS",
-  ch: "商业 ",
+  ch: "商业",
 };
 
 export const BusinessFooter = {
@@ -90,7 +90,7 @@ export const SustainabilityDropdown = [
 export const AboutUs = {
   en: "ABOUT US",
   id: "TENTANG KAMI",
-  ch: "关于我们 ",
+  ch: "关于我们",
 };
 
 export const AboutUsFooter = {

@@ -1,6 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import { footerService } from "../../service/Footer";
-import { FaFacebook, FaInstagram, FaLanguage, FaLinkedin, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLanguage,
+  FaLinkedin,
+  FaYoutube,
+} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import {
@@ -21,26 +27,25 @@ import {
   WebsiteRights,
 } from "./FooterElements";
 import image from "../../images/logo.png";
-import { langContext } from '../../langContext'
-import { FooterData, FooterDataSingle } from './FooterLang';
-import { 
-  BusinessTwo, 
-  Inquiry, 
-  ContactUs, 
-  SocialNetworks, 
+import { langContext } from "../../langContext";
+import { FooterData, FooterDataSingle } from "./FooterLang";
+import {
+  BusinessTwo,
+  Inquiry,
+  ContactUs,
+  SocialNetworks,
   AboutUsFooter,
-  BusinessFooter, 
+  BusinessFooter,
   SustainabilityFooter,
-  JakartaOffice, 
-  MakassarOffice, 
-  AboutUsDropdown, 
-  BusinessOne, 
-  SustainabilityDropdown, 
-  Copyright
- } from '../Data/NavbarData/NavbarData';
-import { setLang } from '../NavBar/index';
-import { setLangMobile } from '../SideBar/index';
-
+  JakartaOffice,
+  MakassarOffice,
+  AboutUsDropdown,
+  BusinessOne,
+  SustainabilityDropdown,
+  Copyright,
+} from "../Data/NavbarData/NavbarData";
+import { setLang } from "../NavBar/index";
+import { setLangMobile } from "../SideBar/index";
 
 const Footer = () => {
   let footerLang = null;
@@ -52,12 +57,11 @@ const Footer = () => {
       setFooterData(data);
     };
     fetchData();
-  }, []); 
+  }, []);
 
-  if(window.innerWidth < 960){
-      footerLang = setLangMobile;
-  }
-  else{
+  if (window.innerWidth < 960) {
+    footerLang = setLangMobile;
+  } else {
     footerLang = setLang;
   }
   return (
@@ -121,7 +125,7 @@ const Footer = () => {
                 90245
               </FooterLinked>
               <FooterLinked>Phone +62 (411) 4720747</FooterLinked>
-              <FooterLinked>Fax +62 (411) 4720748</FooterLinked>
+              <FooterLinked>Fax +62 21 2912 582</FooterLinked>
             </FooterLinkItems>
           </FooterLinkWrapper>
 
@@ -157,24 +161,32 @@ const Footer = () => {
             </FooterLinkItems>
 
             <FooterLinkItems>
-              <FooterLinkTitle>{FooterDataSingle(AboutUsFooter, footerLang)}</FooterLinkTitle>
+              <FooterLinkTitle>
+                {FooterDataSingle(AboutUsFooter, footerLang)}
+              </FooterLinkTitle>
               <FooterLink to="/Mission-Vision">
                 {FooterData(AboutUsDropdown, 0, footerLang)}
               </FooterLink>
-              <FooterLink to="/Commitment">{FooterData(AboutUsDropdown, 1, footerLang)}</FooterLink>
+              <FooterLink to="/Commitment">
+                {FooterData(AboutUsDropdown, 1, footerLang)}
+              </FooterLink>
               <FooterLink to="/Board-of-Director">
-              {FooterData(AboutUsDropdown, 3, footerLang)}
+                {FooterData(AboutUsDropdown, 3, footerLang)}
               </FooterLink>
               <FooterLink to="/Organization-Structure">
-              {FooterData(AboutUsDropdown, 4, footerLang)}
+                {FooterData(AboutUsDropdown, 4, footerLang)}
               </FooterLink>
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to="/Contact-Us"
               >
-                <FooterLinkTitle>{FooterDataSingle(ContactUs, footerLang)}</FooterLinkTitle>
+                <FooterLinkTitle>
+                  {FooterDataSingle(ContactUs, footerLang)}
+                </FooterLinkTitle>
               </Link>
-              <FooterLinkTitle>{FooterDataSingle(Inquiry, footerLang)}</FooterLinkTitle>
+              <FooterLinkTitle>
+                {FooterDataSingle(Inquiry, footerLang)}
+              </FooterLinkTitle>
               <FooterLinked>
                 <MdEmail /> info@cerindocorp.com
               </FooterLinked>
