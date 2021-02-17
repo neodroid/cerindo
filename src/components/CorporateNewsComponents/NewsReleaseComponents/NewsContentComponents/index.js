@@ -91,7 +91,7 @@ const NewsContentComponents = () => {
     }
     if (searchTerm && !searchDate) {
       newsShown = newsData.filter((news) => {
-        if (news.title_en.toLowerCase().startsWith(searchTerm.toLowerCase())) {
+        if (news.title_en.toLowerCase().includes(searchTerm.toLowerCase())) {
           return news;
         }
       });

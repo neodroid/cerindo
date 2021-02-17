@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
 import { FaBars } from "react-icons/fa";
-import { 
-  Home, 
-  Business,  
-  Sustainibility, 
-  AboutUs, 
-  Career, 
-  BusinessOne, 
+import {
+  Home,
+  Business,
+  Sustainibility,
+  AboutUs,
+  Career,
+  BusinessOne,
   BusinessTwo,
   SustainabilityDropdown,
-  AboutUsDropdown
- } from '../Data/NavbarData/NavbarData';
-import { NavbarLang, NavbarDropDown } from './NavbarLang';
+  AboutUsDropdown,
+} from "../Data/NavbarData/NavbarData";
+import { NavbarLang, NavbarDropDown } from "./NavbarLang";
 import image from "../../images/logo.png";
 import { newsService } from "../../service/News";
 import {
@@ -46,10 +46,10 @@ import {
 import getFlagUrl from "./getFlagURL";
 import { langContext } from "../../langContext";
 import { Link } from "react-router-dom";
-import { setLangMobile } from '../SideBar/index';
+import { setLangMobile } from "../SideBar/index";
 export let setLang = null;
 
-export function Menu ({ items, value, onChange, placeholder, showFlag }) {
+export function Menu({ items, value, onChange, placeholder, showFlag }) {
   const [selected, setSelected] = useState(value || null);
   useEffect(() => {
     if (onChange) onChange(selected);
@@ -110,12 +110,11 @@ const Navbar = ({ toggle }) => {
 
   let [val1, setValue1] = useState("en");
   const { language, setLanguage } = useContext(langContext);
-  if(window.innerWidth < 1080){
+  if (window.innerWidth < 1080) {
     val1 = setLangMobile;
-  }
-  else{
+  } else {
     setLang = val1;
-  } 
+  }
   setLanguage(val1);
   if (newsList.length === 0) return null;
   return (
@@ -136,7 +135,7 @@ const Navbar = ({ toggle }) => {
               <NavLinks>
                 {NavbarLang(Business, language)}
                 <NavbarDropdownContent>
-                  <DropDiv>                
+                  <DropDiv>
                     <NavDropLinks to="/Nickle-Ore-Mining">
                       {NavbarDropDown(BusinessOne, 0, language)}
                     </NavDropLinks>
@@ -156,7 +155,7 @@ const Navbar = ({ toggle }) => {
                     </NavDropLinks>
                     <NavDropLinks to="/Power-Supply">
                       {NavbarDropDown(BusinessTwo, 2, language)}
-                  </NavDropLinks>
+                    </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
@@ -172,8 +171,12 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Community-Activities">
                       {NavbarDropDown(SustainabilityDropdown, 1, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Reports">{NavbarDropDown(SustainabilityDropdown, 2, language)}</NavDropLinks>
-                    <NavDropLinks to="/Awards">{NavbarDropDown(SustainabilityDropdown, 3, language)}</NavDropLinks>
+                    <NavDropLinks to="/Reports">
+                      {NavbarDropDown(SustainabilityDropdown, 2, language)}
+                    </NavDropLinks>
+                    <NavDropLinks to="/Awards">
+                      {NavbarDropDown(SustainabilityDropdown, 3, language)}
+                    </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
@@ -242,7 +245,7 @@ const Navbar = ({ toggle }) => {
                     if (
                       val.title_en
                         .toLowerCase()
-                        .startsWith(searchTerm.toLowerCase())
+                        .includes(searchTerm.toLowerCase())
                     ) {
                       return val;
                     }
