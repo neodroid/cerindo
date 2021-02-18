@@ -36,7 +36,7 @@ export const BusinessOne = [
 
 export const BusinessTwo = [
   {
-    en: "Resource and Reserve",
+    en: "Resources and Reserves",
     id: "Sumber Daya dan Cadangan",
     ch: "资源储备",
   },
@@ -101,7 +101,7 @@ export const AboutUsFooter = {
 
 export const AboutUsDropdown = [
   {
-    en: "Vision, Mission, Value",
+    en: "Vision, Mission, Values",
     id: "Visi, Misi, Nilai",
     ch: "愿景, 使命, 价值",
   },

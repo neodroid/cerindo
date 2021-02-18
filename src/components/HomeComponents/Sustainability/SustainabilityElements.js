@@ -10,7 +10,7 @@ export const Heading = styled.h1`
   font-style: normal;
   font-weight: bold;
   font-size: 26px;
-  line-height: 50px;
+  line-height: 30px;
 
   @media screen and (max-width: 480px) {
     /* font-size: 32px; */

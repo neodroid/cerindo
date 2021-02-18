@@ -63,10 +63,9 @@ margin: 20px auto;
 max-width: 700px;
 border-radius: 10px;
 border-radius: 10px;
-border: 1px solid #ccc;
 padding: 16px 16px;
 z-index: 52;
-background-color: rgba(255,255,255);`;
+background-color: transparent;`;
 
 export const DropDownContent = styled.div`
 position: fixed;
@@ -80,8 +79,8 @@ z-index: 51;
 padding: 15px;
 overflow-y: scroll;
 `;
-export const ContentDiv2 = styled.button`
-    display: none;
+export const ContentDiv2 = styled.div`
+    display: block;
     font-weight: 400;
     font-family: 'Montserrat',sans-serif;
     text-align: center;
@@ -94,6 +93,9 @@ export const ContentDiv2 = styled.button`
     border: none;
     cursor: pointer;
     width: fit-content;
+    &:focus ${DropDownContent}, &:active ${DropDownContent} {
+        display: none;
+      }
 `;
 
 export const ContentDiv = styled.div`

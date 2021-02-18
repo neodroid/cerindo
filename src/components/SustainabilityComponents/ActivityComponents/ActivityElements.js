@@ -64,9 +64,10 @@ export const BoxWrapper = styled.div`
 export const BoxContainer = styled.p`
     font-weight: ${(props) => (props.titlee ? "bold" : "normal") };
     font-size: ${(props) => (props.titlee ? "14px" : "12px") };
-    line-height: ${(props) => (props.titlee ? "28px" : "20px") };
+    line-height: 20px;
+    margin-top: ${(props) => (props.titlee ? "0" : "10px") };
     @media screen and (max-width: 610px) {
-        line-height: ${(props) => (props.titlee ? "15px" : "15px") };
+        line-height: 15px;
         font-size: ${(props) => (props.titlee ? "12px" : "11px") };
     }
 `;

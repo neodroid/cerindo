@@ -34,7 +34,7 @@ export const BusinessSideBarIntl = [
     to: "page3",
   },
   {
-    en: "Resource and Reserve",
+    en: "Resources and Reserves",
     id: "Sumber Daya dan Cadangan",
     ch: "资源储备",
     to: "page1",

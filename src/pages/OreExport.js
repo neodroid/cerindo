@@ -27,7 +27,7 @@ const OreExport = () => {
     <AutoplaySlider
     play={true}
     cancelOnInteraction={false}
-    interval={5000}
+    interval={10000}
     className="aws-btn"
     >
       {businessList[4].banner.map((data, idx) => {

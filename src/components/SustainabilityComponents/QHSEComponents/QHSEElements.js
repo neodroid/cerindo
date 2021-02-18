@@ -27,7 +27,7 @@ export const Apart = styled.div`
     }
 `;
 export const WritedPart = styled.div`
-    margin-top: -26px;
+    margin-top: -32px;
     @media screen and (max-width: 638px) {
         padding-right: 0px;
     }

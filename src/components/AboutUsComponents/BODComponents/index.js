@@ -66,7 +66,9 @@ const BODComponents = () => {
                         <DropDown role="button" tabIndex={-1} key={idx}>
                           <DropDownContent>
                             <ContentDrop>
-                            <ContentDiv2><ButtonCloser/></ContentDiv2>
+                            <ContentDiv2 >
+                              <ButtonCloser/>
+                              </ContentDiv2>
                               <BodBoxIntro change>
                                 <FlexBod>
                                   <img src={data.picture.url} width={`210px`} />

@@ -27,7 +27,7 @@ const Reports = () => {
       <AutoplaySlider
         play={true}
         cancelOnInteraction={false}
-        interval={5000}
+        interval={10000}
         className="aws-btn"
       >
         {report.banner.map((data, idx) => {

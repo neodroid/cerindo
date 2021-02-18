@@ -119,7 +119,7 @@ const Navbar = ({ toggle }) => {
   if (newsList.length === 0) return null;
   return (
     <>
-      <Nav scrollNav={scrollNav}>
+      <Nav>
         <NavbarContainer>
           <NavLogo to="/">
             <Logo src={image} />

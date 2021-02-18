@@ -85,7 +85,7 @@ const HeroSection = () => {
     <AutoplaySlider
       play={true}
       cancelOnInteraction={false}
-      interval={5000}
+      interval={10000}
       className="aws-btn"
     >
       {homeData.hero_banner.map((data, idx) => {
@@ -119,7 +119,41 @@ const HeroSection = () => {
       {sortedContent.slice(0, 3).map((data, idx) => {
         if (newsData.indexOf(data) !== -1) {
           return (
-            <HeroNewsContent to={`/News/${data._id}`} key={idx}>
+            <>
+            {idx>1? (
+            <HeroNewsContent to={`/News/${data._id}`} key={idx} lastIndex>
+              <ImgWrap>
+                <Img src={data.image.url} />
+              </ImgWrap>
+              <HeroNewsDesc>
+                <HeroNewsP>
+                  {NewsLangTitle(data, language)}
+                </HeroNewsP>
+                <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+              </HeroNewsDesc>
+            </HeroNewsContent>):
+            (<HeroNewsContent to={`/News/${data._id}`} key={idx}>
+            <ImgWrap>
+              <Img src={data.image.url} />
+            </ImgWrap>
+            <HeroNewsDesc>
+              <HeroNewsP>
+                {NewsLangTitle(data, language)}
+              </HeroNewsP>
+              <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+            </HeroNewsDesc>
+          </HeroNewsContent>)}
+            </>
+          );
+        } else {
+          return (
+            <>
+            {idx>1?(
+              <HeroNewsContent
+              to={`/Community-Activity/${data._id}`}
+              key={idx}
+              lastIndex
+            >
               <ImgWrap>
                 <Img src={data.image.url} />
               </ImgWrap>
@@ -130,10 +164,8 @@ const HeroSection = () => {
                 <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
               </HeroNewsDesc>
             </HeroNewsContent>
-          );
-        } else {
-          return (
-            <HeroNewsContent
+            ):(
+              <HeroNewsContent
               to={`/Community-Activity/${data._id}`}
               key={idx}
             >
@@ -147,6 +179,8 @@ const HeroSection = () => {
                 <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
               </HeroNewsDesc>
             </HeroNewsContent>
+            )}
+            </>
           );
         }
       })}

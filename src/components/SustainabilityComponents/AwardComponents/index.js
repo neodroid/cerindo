@@ -70,7 +70,7 @@ const AwardComponents = () => {
                         <ImageAward src={data.image.url} />
                       </Dropbtn>
                       <DropDownContent>
-                        <ContentDiv2>
+                        <ContentDiv2 role="button" tabIndex={-1}>
                           <ButtonCloser />
                         </ContentDiv2>
                         <ContentDrop>

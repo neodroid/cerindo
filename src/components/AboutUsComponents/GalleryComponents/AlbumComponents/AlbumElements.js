@@ -42,11 +42,10 @@ margin: 20px auto;
 max-width: 700px;
 border-radius: 10px;
 border-radius: 10px;
-border: 1px solid #ccc;
 padding: 16px;
 z-index: 52;
 display: ${({ played }) => (played ? "block" : "none")};
-background-color: rgba(255,255,255);`;
+background-color: transparent;`;
 
 export const DropDownContent = styled.div`
 position: fixed;
@@ -199,4 +198,11 @@ export const SliderRel = styled.div`
   height: 100vh;
   width: 100%;
   overflow: hidden;
+`;
+
+export const Desctit = styled.p`
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: justify;
 `;

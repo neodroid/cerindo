@@ -55,7 +55,7 @@ export const BoxContainer = styled.div`
     font-weight: ${(props) => (props.titlee ? "bold" : "normal") };
     font-size: ${(props) => (props.titlee ? "24px" : "16px") };
     line-height: ${(props) => (props.titlee ? "25px" : "24px") };
-    padding: 8px 0;
+    padding: 2px 0;
     text-overflow: ellipsis;
     display: inline-block;
     text-align: ${(props) => (props.titlee ? "left" : "justify") };

@@ -4,7 +4,7 @@ import { MdArrowDownward } from "react-icons/md";
 import {FaSearch} from "react-icons/fa";
 
 export const Nav = styled.nav`
-  background: ${({ scrollNav }) => (scrollNav ? "#fff" : "transparent")};
+  background: #fff;
   height: 80px;
   /* margin-top: -80px; */
   display: flex;

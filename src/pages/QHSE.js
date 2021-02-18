@@ -27,7 +27,7 @@ const QHSE = () => {
      <AutoplaySlider
     play={true}
     cancelOnInteraction={false}
-    interval={5000}
+    interval={19000}
     className="aws-btn"
     >
       {QHSEContent.banner.map((data, idx) => {

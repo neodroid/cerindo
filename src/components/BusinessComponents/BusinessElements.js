@@ -81,7 +81,7 @@ export const BusinessMain = styled.div`
 export const BusinessWrited = styled.div`
     font-weight: ${(props) => (props.title ? "bold" : "normal")};
     font-size: ${(props) => (props.title ? "30px" : "15px")};
-    line-height: ${(props) => (props.title ? "50px" : "24px")};
+    line-height: 25px;
     color: #111111;
     white-space: pre-line;  
     vertical-align: bottom;

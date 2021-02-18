@@ -26,11 +26,11 @@ const QHSEComponents = () => {
       <Aboutstyle>
         <BusinessSideBarComponents page1={true} />
         <AboutMain>
+          <BusinessWrited title>
+            {QHSEContentLangTitle(QHSEContent, language)}
+          </BusinessWrited>
           <Apart>
             <WritedPart>
-              <BusinessWrited title>
-                {QHSEContentLangTitle(QHSEContent, language)}
-              </BusinessWrited>
               <BusinessWrited>
                 <ReactMarkdown
                   children={

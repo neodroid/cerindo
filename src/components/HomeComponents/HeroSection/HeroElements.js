@@ -43,7 +43,7 @@ height: 100%;
   /* position: absolute; */
   padding: 8px 24px;
   display: flex;
-  margin: 280px auto 0;
+  margin: 240px auto 0;
   flex-direction: column;
   align-self: center;
   /* margin-top: 80px; */
@@ -242,7 +242,7 @@ export const HeroNewsContent = styled(LinkR)`
   display: flex;
   flex-direction: row;
   padding-bottom: 10px;
-  border-right: 2px solid #aaa;
+  border-right: ${({ lastIndex }) => (lastIndex? "none" : "2px solid #aaa;")};
   text-decoration: none;
   color: black;
   transition: all 0.5s ease-in-out;
@@ -256,7 +256,7 @@ export const HeroNewsContent = styled(LinkR)`
     flex-direction: column;
     align-items:center;
     text-align:center !important;
-    border-bottom: 2px solid #aaa;
+    border-bottom: ${({ lastIndex }) => (lastIndex? "none" : "2px solid #aaa;")};
     border-right: none;
     min-width: 0px;
     height: fit-content;

@@ -81,7 +81,6 @@ const Footer = () => {
                 Jl. RA Kartini Kav 8 Cilandak <br />
                 Jakarta 12430 Indonesia <br />
                 Phone +62 21 2276 9324 <br />
-                Fax +62 21 2912 5827 <br />
               </FooterLinked>
             </FooterLinkItems>
             <FooterLinkItems>
@@ -126,7 +125,6 @@ const Footer = () => {
                 Kawasan Industrial Makassar <br />
                 Makassar 90245 Indonesia <br />
                 Phone +62 411 472 0747 <br />
-                Fax +62 411 472 0748 <br />
               </FooterLinked>
             </FooterLinkItems>
           </FooterLinkWrapper>

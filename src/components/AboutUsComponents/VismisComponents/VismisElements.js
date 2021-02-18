@@ -22,7 +22,7 @@ export const VismisWrited = styled.div`
     line-height: ${(props) => (props.title ? "50px" : "24px")};
     color: ${(props) => (props.title ? "#333333" : "#111111")};
     margin-bottom: ${(props) => (props.title ? "13px" : "0")};
-    margin-top: ${(props) => (props.misi ? "30px" : "0")};
+    margin-top: ${(props) => (props.misi ? "40px" : "0")};
 `;
 
 export const VismisImagePart = styled.div`
@@ -30,7 +30,7 @@ export const VismisImagePart = styled.div`
     margin: ${(props) => (props.misi ? "20px 10px 0" : "20px 10px")};
 `;
 export const ValueContent = styled.div`
-    margin: 15px 40px;
+    margin: 0 40px 15px;
     h1 {
         font-weight: bold;
         font-size: 26px;
@@ -58,11 +58,24 @@ export const ValueWrite = styled.div`
     }
 `; 
 export const ValuePartexp = styled.div`margin-bottom: 25px;`;
+
+export const ValuesWritedTitle = styled.div`
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 36px;
+    color: ${(props) => (props.choosen ? "#EFB401" : "#111111")};
+    margin-bottom: 5px;
+    @media screen and (max-width: 820px) {
+        font-size: 18px;
+    }
+`;
+
 export const ValuesWrited = styled.div`
     font-weight: ${(props) => (props.title ? "bold" : "normal")};
     font-size: ${(props) => (props.title ? "20px" : "14px")};
     line-height: ${(props) => (props.title ? "36px" : "24px")};
-    color: ${(props) => (props.title ? "#333333" : "#111111")};
+    color: ${(props) => (props.choosen ? "#EFB401" : "#111111")};
     margin-bottom: ${(props) => (props.title ? "5px" : "0")};
     @media screen and (max-width: 820px) {
         font-size: ${(props) => (props.title ? "18px" : "14px")};

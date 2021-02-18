@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 export const GlobalContent = styled.div`
     margin: 0 auto;
     margin-bottom: 80px;
-    width:70%;
+    width:900px;
     @media screen and (max-width: 1015px) {
         width:90%;
     }
@@ -14,8 +14,8 @@ export const TitleContent = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: ${(props)=>(props.art ? "18px" : "26px")};
-    line-height: ${(props)=>(props.art ? "25px" : "50px")};
-    margin: ${(props)=>(props.art ? "150px 0 15px" : "8px 0")};
+    line-height: ${(props)=>(props.art ? "25px" : "35px")};
+    margin: ${(props)=>(props.art ? "150px 0 15px" : "10px 0 20px")};
     @media screen and (max-width: 740px) {
         font-weight: 700;
         text-align:center;

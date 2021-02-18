@@ -29,6 +29,7 @@ import {
   FlexValue,
   Image,
   ValueApart,
+  ValuesWritedTitle
 } from "./VismisElements";
 
 const VismisComponents = () => {
@@ -54,24 +55,25 @@ const VismisComponents = () => {
               <VismisWrited title>
                 {VisMisTitleLang(VisionTitle, language)}
               </VismisWrited>
-              <VismisWrited>
-                {VisionDescriptionLang(MVV, language)}
-              </VismisWrited>
+                <VismisWrited>
+                  {VisionDescriptionLang(MVV, language)}
+                </VismisWrited>
               <VismisWrited title misi>
                 {VisMisTitleLang(MissionTitle, language)}
               </VismisWrited>
-              <VismisWrited>
-                {MissionDescriptionLang(MVV, language)}
-              </VismisWrited>
+                <VismisWrited>
+                  {MissionDescriptionLang(MVV, language)}
+                </VismisWrited>
             </VismisApart>
             <VismisApart>
-              <img width="245px" src={MVV.image.url} />
+              <img width="245px" src={MVV.image.url}/>
             </VismisApart>
           </VismisContent>
           <ValueContent>
             <h1>{VisMisTitleLang(ValueTitle, language)}</h1>
             <ValueWrite choose>C E R I A</ValueWrite>
             {MVV.ceriaValue.map((data, idx) => {
+              console.log(ValueTitleLang(data, language).props.children[0])
               return (
                 <FlexValue>
                   <ValueApart image>
@@ -79,9 +81,14 @@ const VismisComponents = () => {
                   </ValueApart>
                   <ValueApart>
                     <ValuePartexp key={idx}>
-                      <ValuesWrited title>
-                        {ValueTitleLang(data, language)}
-                      </ValuesWrited>
+                      <div width="100%">
+                        <ValuesWritedTitle choosen>
+                          {ValueTitleLang(data, language).props.children[0]}
+                        </ValuesWritedTitle>
+                        <ValuesWritedTitle>
+                          {ValueTitleLang(data, language).props.children.slice(1)}
+                        </ValuesWritedTitle>
+                      </div>
                       <ValuesWrited>
                         {ValueDescriptionLang(data, language)}
                       </ValuesWrited>
