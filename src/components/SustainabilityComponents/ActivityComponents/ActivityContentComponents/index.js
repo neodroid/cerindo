@@ -69,6 +69,13 @@ const ActivityContentComponent = (props) => {
   if (detailsCommunity.length === 0) return null;
   if (listCommunity.length === 0) return null;
 
+  function shuffleArray(array){
+    array.sort(function(){
+        return 0.5-Math.random();
+    });
+}
+shuffleArray(listCommunity);
+
   return (
     <>
       <GlobalContent>
@@ -96,7 +103,7 @@ const ActivityContentComponent = (props) => {
           <BlogDivApart>
             <TitleContent art>Other Article</TitleContent>
             <ArticlePart>
-              {listCommunity.map((data, idx) => (
+              {listCommunity.slice(0,4).map((data, idx) => (
                 <ManageOthArtData
                   key={idx}
                   image={data.image.url}

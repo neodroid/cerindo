@@ -116,7 +116,7 @@ const HeroSection = () => {
       </TitleNewsApart>
     </HeroNewsFlex>
     <HeroNewsFlex content>
-      {sortedContent.slice(0, 3).map((data, idx) => {
+      {sortedContent.slice(-3).map((data, idx) => {
         if (newsData.indexOf(data) !== -1) {
           return (
             <>

@@ -19,6 +19,7 @@ export const TitleContent = styled.div`
     @media screen and (max-width: 740px) {
         font-weight: 700;
         text-align:center;
+        margin: ${(props)=>(props.art ? "15px 0" : "10px 0 20px")};
     }
 `;
 
@@ -67,8 +68,8 @@ export const Nulity = styled.div`
 display:none;
 `;
 export const BlogImageArt = styled.div`
-    width: 123px;
-    height: 96px;
+    width: 100px;
+    height: 90px;
     background-image: url(${(props) => props.src});
   background-repeat: no-repeat;
   background-position: center;
