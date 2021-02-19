@@ -38,8 +38,8 @@ text-align:center;
 export const LicBoxWrited = styled.div`
     font-weight: ${(props)=>(props.title ? "bold":"normal")};
     font-size: ${(props)=>(props.title ? "26px":"14px")};
-    line-height: ${(props)=>(props.title ? "50px":"24px")};
-    margin: 0 20px;
+    line-height: ${(props)=>(props.title ? "30px":"24px")};
+    margin: 10px 20px;
     white-space: pre-line;  
     vertical-align: bottom;
     text-align: ${(props)=>(props.title ? "left":"justify")};
