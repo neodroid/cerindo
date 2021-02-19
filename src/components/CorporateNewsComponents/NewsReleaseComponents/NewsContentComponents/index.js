@@ -166,7 +166,7 @@ const NewsContentComponents = () => {
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <NewsBox key={idx}>
-                    <BoxContainer>{data.news_date}</BoxContainer>
+                    <BoxContainer>{data.date}</BoxContainer>
                     <BoxContainer titlee>
                       {NewsLangTitle(data, language)}
                     </BoxContainer>

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useState,useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import "./App.css";
-
+import {TransitionGroup, CSSTransition} from "react-transition-group";
 import GlobalFonts from "./fonts/fonts";
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -40,7 +40,6 @@ import { langContext } from "./langContext";
 
 function App() {
   const [language, setLanguage] = useState("en");
-
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -55,54 +54,63 @@ function App() {
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <langContext.Provider value={{ language, setLanguage }}>
           <Navbar toggle={toggle} />
-          <Switch>
-            <Route path="/" component={Home} exact />
-            <Route
-              path="/Nickle-Ore-Mining"
-              component={NickleOreMining}
-              exact
-            />
-            <Route
-              path="/Nickle-Cobalt-HPAL"
-              component={NickleCobaltHPAL}
-              exact
-            />
-            <Route
-              path="/Ferronickle-Smelting"
-              component={FerronickleSmelting}
-              exact
-            />
-            <Route path="/Resource-Reserve" component={ResourceReserve} exact />
-            <Route path="/Ore-Export" component={OreExport} exact />
-            <Route path="/Power-Supply" component={PowerPlant} exact />
-            <Route path="/Press-Release" component={NewsRelease} exact />
-            <Route path="/News/:title" component={NewsComponent} exact />
-            <Route path="/Mission-Vision" component={Vismis} exact />
-            <Route path="/Commitment" component={Commitment} exact />
-            <Route path="/Subsidiary" component={Subsidiary} exact />
-            <Route path="/Board-of-Director" component={BOD} exact />
-            <Route
-              path="/Organization-Structure"
-              component={Organization}
-              exact
-            />
-            <Route path="/History-Milestone" component={History} exact />
-            <Route path="/Licenses-Concession" component={License} exact />
-            <Route path="/Career" component={Career} exact />
-            <Route path="/QHSE" component={QHSE} exact />
-            <Route path="/Community-Activities" component={Activity} exact />
-            <Route path="/Reports" component={Reports} exact />
-            <Route path="/Awards" component={Award} exact />
-            <Route path="/Gallery" component={Gallery} exact />
-            <Route
-              path="/Community-Activity/:id"
-              component={ActivityContentComponent}
-            />
-            <Route path="/Album/:id" component={AlbumComponent} exact />
-            <Route path="/Jobs/:job/:jobs" component={JobComponents} exact />
-            <Route path="/Contact-Us" component={ContactComponents} exact />
-            <Route component={NotFoundPage} />
-          </Switch>
+          <Route render={({location})=>(
+          <TransitionGroup>
+            <CSSTransition
+            key={location.key}
+            timeout={450}
+            classNames="fade">
+              <Switch location={location}>
+                <Route path="/" component={Home} exact />
+                <Route
+                  path="/Nickle-Ore-Mining"
+                  component={NickleOreMining}
+                  exact
+                />
+                <Route
+                  path="/Nickle-Cobalt-HPAL"
+                  component={NickleCobaltHPAL}
+                  exact
+                />
+                <Route
+                  path="/Ferronickle-Smelting"
+                  component={FerronickleSmelting}
+                  exact
+                />
+                <Route path="/Resource-Reserve" component={ResourceReserve} exact />
+                <Route path="/Ore-Export" component={OreExport} exact />
+                <Route path="/Power-Supply" component={PowerPlant} exact />
+                <Route path="/Press-Release" component={NewsRelease} exact />
+                <Route path="/News/:title" component={NewsComponent} exact />
+                <Route path="/Mission-Vision" component={Vismis} exact />
+                <Route path="/Commitment" component={Commitment} exact />
+                <Route path="/Subsidiary" component={Subsidiary} exact />
+                <Route path="/Board-of-Director" component={BOD} exact />
+                <Route
+                  path="/Organization-Structure"
+                  component={Organization}
+                  exact
+                />
+                <Route path="/History-Milestone" component={History} exact />
+                <Route path="/Licenses-Concession" component={License} exact />
+                <Route path="/Career" component={Career} exact />
+                <Route path="/QHSE" component={QHSE} exact />
+                <Route path="/Community-Activities" component={Activity} exact />
+                <Route path="/Reports" component={Reports} exact />
+                <Route path="/Awards" component={Award} exact />
+                <Route path="/Gallery" component={Gallery} exact />
+                <Route
+                  path="/Community-Activity/:id"
+                  component={ActivityContentComponent}
+                />
+                <Route path="/Album/:id" component={AlbumComponent} exact />
+                <Route path="/Jobs/:job/:jobs" component={JobComponents} exact />
+                <Route path="/Contact-Us" component={ContactComponents} exact />
+                <Route component={NotFoundPage} />
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+          )}/>
         </langContext.Provider>
 
         <Footer />
