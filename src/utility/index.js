@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://cerindocorp.com/api";
+const BASE_URL = "http://localhost:1337";
 
 async function http(method, endpoint, body = null, data) {
   const headers = {

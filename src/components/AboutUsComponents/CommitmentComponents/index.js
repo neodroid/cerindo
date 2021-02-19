@@ -5,6 +5,8 @@ import { CommitmentWrited, CommitmentContent } from "./CommitmentElements";
 import { aboutUsService } from "../../../service/Aboutus";
 import { langContext } from "../../../langContext";
 import { CommitmentLangBody, CommitmentLangTitle } from "./CommitmentLang";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 const CommitmentComponents = () => {
   const { language } = useContext(langContext);
@@ -25,16 +27,15 @@ const CommitmentComponents = () => {
         <AboutSideBarComponents page2={true} />
         <AboutMain>
           <CommitmentContent>
-            {commitment.commitment_content.map((data, idx) => {
-              return (
-                <>
-                  <CommitmentWrited title key={idx}>
-                    {CommitmentLangTitle(data, language)}
-                  </CommitmentWrited>
-                  <CommitmentWrited>{CommitmentLangBody(data, language)}</CommitmentWrited>
-                </>
-              );
-            })}
+            <CommitmentWrited>
+              <ReactMarkdown
+                children={
+                  CommitmentLangBody(commitment, language).props.children
+                }
+                plugins={[[gfm, { singleTilde: false }]]}
+                allowDangerousHtml={true}
+              />
+            </CommitmentWrited>
           </CommitmentContent>
         </AboutMain>
       </Aboutstyle>

@@ -1,5 +1,7 @@
 import React from "react";
 import { useContext, useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 import {
   Aboutstyle,
   AboutSideBar,
@@ -71,7 +73,13 @@ const HistoryComponents = () => {
                         {HistoryLangTitle(data, language)}
                       </HisBoxWrited>
                       <HisBoxWrited>
-                        {HistoryLangDesc(data, language)}
+                        <ReactMarkdown
+                          children={
+                            HistoryLangDesc(data, language).props.children
+                          }
+                          plugins={[[gfm, { singleTilde: false }]]}
+                          allowDangerousHtml={true}
+                        />
                       </HisBoxWrited>
                     </HisContent>
                   </HisContent>
