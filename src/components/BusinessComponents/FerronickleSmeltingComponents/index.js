@@ -47,9 +47,7 @@ const FerronickleSmeltingComponents = () => {
               allowDangerousHtml={true}
             />
           </BusinessWrited>
-          {ferronicle.images.map((data) => {
-            return <ImageBusiness src={data.url} />;
-          })}
+
           <BusinessWrited>
             <ReactMarkdown
               children={

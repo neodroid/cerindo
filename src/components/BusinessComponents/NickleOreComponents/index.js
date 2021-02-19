@@ -46,9 +46,7 @@ const NickleOreComponents = () => {
               allowDangerousHtml={true}
             />
           </BusinessWrited>
-          {nickelOre.images.map((data) => {
-            return <ImageBusiness src={data.url} />;
-          })}
+
           <BusinessWrited>
             <ReactMarkdown
               children={NickleOreLangBody2(nickelOre, language).props.children}

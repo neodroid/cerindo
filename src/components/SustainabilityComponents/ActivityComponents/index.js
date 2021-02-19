@@ -30,6 +30,11 @@ const ActivityComponents = () => {
   }, []);
 
   if (activity.length === 0) return null;
+  const sortedActivities = activity.sort((a, b) => {
+    var c = new Date(a.date);
+    var d = new Date(b.date);
+    return d - c;
+  });
   return (
     <>
       <Aboutstyle>
@@ -37,7 +42,7 @@ const ActivityComponents = () => {
         <AboutMain>
           <ActivityTitle>Community Activities</ActivityTitle>
           <ActivityContainer>
-            {activity.map((data, idx) => {
+            {sortedActivities.map((data, idx) => {
               return (
                 <ActivityBox key={idx}>
                   <BoxWrapper>

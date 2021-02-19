@@ -87,10 +87,6 @@ const HistoryComponents = () => {
               );
             })}
             <MilestoneContent>
-              {/*<ImagWrited>{HistoryLangMilestone(historyMileStone, language)}</ImagWrited>
-              <ImagePart>
-                <Images src={historyMileStone.Timeline[0].Timeline.url} />
-          </ImagePart>*/}
               <h2>{HistoryLangTitleMilestone(MilestoneTitle, language)}</h2>
               {historyMileStone.milestone.map((data, idx) => {
                 return (

@@ -53,22 +53,6 @@ const ResourceReserveComponents = () => {
             />
           </BusinessWrited>
           <BusinessWrited>
-            <b>Table Drilling Data before 2017</b>
-          </BusinessWrited>
-          <Resve>
-            <ResveImage src={resourceReserve.images[0].url} />
-          </Resve>
-          <BusinessWrited>
-            <b>Table Drilling Data before 2017 - 2020</b>
-          </BusinessWrited>
-          <Resve>
-            <ResveImage src={resourceReserve.images[1].url} />
-          </Resve>
-          <BusinessWrited>
-            <b>IUP Ceria Drilling Distribution Map</b>
-          </BusinessWrited>
-          <ImageBusiness src={resourceReserve.images[2].url} />
-          <BusinessWrited>
             <ReactMarkdown
               children={
                 ResourceReserveLangBody2(resourceReserve, language).props

@@ -48,9 +48,7 @@ const NickelCobaltHPALComponents = () => {
               allowDangerousHtml={true}
             />
           </BusinessWrited>
-          {nickelCobalt.images.map((data) => {
-            return <ImageBusiness src={data.url} />;
-          })}
+
           <BusinessWrited>
             <ReactMarkdown
               children={

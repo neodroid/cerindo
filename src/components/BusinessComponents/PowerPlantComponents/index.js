@@ -46,9 +46,7 @@ const PowerPlantComponents = () => {
               allowDangerousHtml={true}
             />
           </BusinessWrited>
-          {powerPlant.images.map((data) => {
-            return <ImageBusiness src={data.url} />;
-          })}
+
           <BusinessWrited>
             <ReactMarkdown
               children={

@@ -47,9 +47,7 @@ const OreExportComponents = () => {
               allowDangerousHtml={true}
             />
           </BusinessWrited>
-          {oreExport.images.map((data) => {
-            return <ImageBusiness src={data.url} />;
-          })}
+
           <BusinessWrited>
             <ReactMarkdown
               children={OreExportLangBody2(oreExport, language).props.children}
