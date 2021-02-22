@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { NewsData } from "../../Data/News";
+import { newsSource } from "../../Data/News";
 import { newsService } from "../../../service/News";
 import {
   TitleContent,
@@ -26,6 +26,7 @@ import {
   DetailsNewsLangTitle,
   DetailsNewsLangContent,
   NewsLangTitle,
+  NewsLangSource,
 } from "./NewsLang";
 import { FaArrowRight } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
@@ -122,7 +123,8 @@ const NewsComponent = (props) => {
           </BlogWrapped>
           <OtherNews href={detailsNews.source_link}>
             <ButtonNext>
-              View Source <FaArrowRight style={{ marginLeft: "10px" }} />
+              {NewsLangSource(newsSource, language)}{" "}
+              <FaArrowRight style={{ marginLeft: "10px" }} />
             </ButtonNext>
           </OtherNews>
         </AboutMain>

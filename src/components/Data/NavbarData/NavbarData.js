@@ -60,7 +60,7 @@ export const Sustainibility = {
 
 export const SustainabilityFooter = {
   en: "Global Sustainability",
-  id: "Keberlangsungan Global",
+  id: "Keberlanjutan Global",
   ch: "全球可持续发展",
 };
 
@@ -117,7 +117,7 @@ export const AboutUsDropdown = [
   },
   {
     en: "Board of Directors",
-    id: "Jajaran Direktur",
+    id: "Direksi",
     ch: "董事会",
   },
   {

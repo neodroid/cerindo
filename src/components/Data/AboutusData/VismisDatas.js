@@ -11,7 +11,7 @@ export const MissionTitle = {
 };
 
 export const ValueTitle = {
-  en: "Value",
+  en: "Values",
   id: "Nilai",
   ch: "价值",
 };

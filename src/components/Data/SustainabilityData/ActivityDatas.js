@@ -1,5 +1,5 @@
-export const ActivityHead = [
-    {
-    "img": require("../../../images/Act.png"),
-    }
-];
+export const Reading = {
+  en: "Continue Reading",
+  id: "Selengkapnya",
+  ch: "继续阅读",
+};

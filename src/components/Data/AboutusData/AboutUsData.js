@@ -16,7 +16,7 @@ export const AboutUsIntl = [
   },
   {
     en: "Board of Directors",
-    id: "Jajaran Direktur",
+    id: "Direksi",
     ch: "董事会",
   },
   {

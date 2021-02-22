@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import { communityService } from "../../../service/Community";
 import BusinessSideBarComponents from "../index";
+import { Reading } from "../../Data/SustainabilityData/ActivityDatas";
 import {
   ActivityBox,
   ActivityContainer,
@@ -13,7 +14,11 @@ import {
   ActivityTitle,
 } from "./ActivityElements";
 import { langContext } from "../../../langContext";
-import { ActivityLangTitle, ActivityLangBody } from "./ActivityLang";
+import {
+  ActivityLangTitle,
+  ActivityLangBody,
+  ActivityLangRead,
+} from "./ActivityLang";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 
@@ -65,7 +70,7 @@ const ActivityComponents = () => {
                     </ActivityContainerPart>
                     <ActivityContainerPart btn>
                       <Activitybtn to={`/Community-Activity/${data._id}`}>
-                        Continue Reading
+                        {ActivityLangRead(Reading, language)}
                       </Activitybtn>
                     </ActivityContainerPart>
                   </BoxWrapper>
