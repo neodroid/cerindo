@@ -74,3 +74,18 @@ export const AlbumLangOther = (data, lang) => {
 
   return text;
 };
+
+export const AlbumLangDescription = (data, lang) => {
+  var text =
+    lang === "en" ? (
+      <div>{data.description_en}</div>
+    ) : lang === "id" ? (
+      <div>{data.description_id}</div>
+    ) : lang === "cn" ? (
+      <div>{data.description_ch}</div>
+    ) : (
+      <> </>
+    );
+
+  return text;
+};

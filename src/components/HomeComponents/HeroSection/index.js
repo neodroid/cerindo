@@ -117,72 +117,74 @@ const HeroSection = () => {
           </TitleNewsApart>
         </HeroNewsFlex>
         <HeroNewsFlex content>
-          {sortedContent.map((data, idx) => {
-            if (newsData.indexOf(data) !== -1) {
-              return (
-                <>
-                  {idx > 1 ? (
-                    <HeroNewsContent
-                      to={`/News/${data._id}`}
-                      key={idx}
-                      lastIndex
-                    >
-                      <ImgWrap>
-                        <Img src={data.image.url} />
-                      </ImgWrap>
-                      <HeroNewsDesc>
-                        <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                        <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
-                      </HeroNewsDesc>
-                    </HeroNewsContent>
-                  ) : (
-                    <HeroNewsContent to={`/News/${data._id}`} key={idx}>
-                      <ImgWrap>
-                        <Img src={data.image.url} />
-                      </ImgWrap>
-                      <HeroNewsDesc>
-                        <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                        <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
-                      </HeroNewsDesc>
-                    </HeroNewsContent>
-                  )}
-                </>
-              );
-            } else {
-              return (
-                <>
-                  {idx > 1 ? (
-                    <HeroNewsContent
-                      to={`/Community-Activity/${data._id}`}
-                      key={idx}
-                      lastIndex
-                    >
-                      <ImgWrap>
-                        <Img src={data.image.url} />
-                      </ImgWrap>
-                      <HeroNewsDesc>
-                        <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                        <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
-                      </HeroNewsDesc>
-                    </HeroNewsContent>
-                  ) : (
-                    <HeroNewsContent
-                      to={`/Community-Activity/${data._id}`}
-                      key={idx}
-                    >
-                      <ImgWrap>
-                        <Img src={data.image.url} />
-                      </ImgWrap>
-                      <HeroNewsDesc>
-                        <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                        <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
-                      </HeroNewsDesc>
-                    </HeroNewsContent>
-                  )}
-                </>
-              );
-            }
-          })}
+          {sortedContent
+            .filter((e, idx) => idx < 3)
+            .map((data, idx) => {
+              if (newsData.indexOf(data) !== -1) {
+                return (
+                  <>
+                    {idx > 1 ? (
+                      <HeroNewsContent
+                        to={`/News/${data._id}`}
+                        key={idx}
+                        lastIndex
+                      >
+                        <ImgWrap>
+                          <Img src={data.image.url} />
+                        </ImgWrap>
+                        <HeroNewsDesc>
+                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                          <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                        </HeroNewsDesc>
+                      </HeroNewsContent>
+                    ) : (
+                      <HeroNewsContent to={`/News/${data._id}`} key={idx}>
+                        <ImgWrap>
+                          <Img src={data.image.url} />
+                        </ImgWrap>
+                        <HeroNewsDesc>
+                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                          <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                        </HeroNewsDesc>
+                      </HeroNewsContent>
+                    )}
+                  </>
+                );
+              } else {
+                return (
+                  <>
+                    {idx > 1 ? (
+                      <HeroNewsContent
+                        to={`/Community-Activity/${data._id}`}
+                        key={idx}
+                        lastIndex
+                      >
+                        <ImgWrap>
+                          <Img src={data.image.url} />
+                        </ImgWrap>
+                        <HeroNewsDesc>
+                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                          <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                        </HeroNewsDesc>
+                      </HeroNewsContent>
+                    ) : (
+                      <HeroNewsContent
+                        to={`/Community-Activity/${data._id}`}
+                        key={idx}
+                      >
+                        <ImgWrap>
+                          <Img src={data.image.url} />
+                        </ImgWrap>
+                        <HeroNewsDesc>
+                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                          <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                        </HeroNewsDesc>
+                      </HeroNewsContent>
+                    )}
+                  </>
+                );
+              }
+            })}
         </HeroNewsFlex>
       </HeroNewsWrap>
     </>

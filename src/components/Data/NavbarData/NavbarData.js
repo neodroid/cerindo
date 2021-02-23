@@ -54,7 +54,7 @@ export const BusinessTwo = [
 
 export const Sustainibility = {
   en: "GLOBAL SUSTAINABILITY",
-  id: "KEBERLANGSUNGAN GLOBAL",
+  id: "KEBERLANJUTAN GLOBAL",
   ch: "全球可持续发展",
 };
 
