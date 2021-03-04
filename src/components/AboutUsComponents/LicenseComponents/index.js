@@ -28,13 +28,13 @@ import {
 } from "../../SustainabilityComponents/ReportsComponents/ReportsElements";
 
 import { langContext } from "../../../langContext";
-import { 
-  LicenseContent, 
-  LicenseTitle, 
-  LicenseBody, 
-  LicenseDataLangFile, 
+import {
+  LicenseContent,
+  LicenseTitle,
+  LicenseBody,
+  LicenseDataLangFile,
   LicenseDataLangButton,
-  ConcessionTitle 
+  ConcessionTitle,
 } from "./LicenseLang";
 
 const LicenseComponents = () => {
@@ -85,7 +85,9 @@ const LicenseComponents = () => {
                         </ContentTable>
                       </ApartContentTable>
                       <ApartContentTable>
-                        <ButtonTable href={data.file.url}>{LicenseDataLangButton(data, language)}</ButtonTable>
+                        <ButtonTable href={data.file.url}>
+                          {LicenseDataLangButton(data, language)}
+                        </ButtonTable>
                       </ApartContentTable>
                     </div>
                   );
@@ -98,7 +100,9 @@ const LicenseComponents = () => {
                         </ContentTable>
                       </ApartContentTable>
                       <ApartContentTable>
-                        <ButtonTable href={data.file.url}>{LicenseDataLangButton(data, language)}</ButtonTable>
+                        <ButtonTable href={data.file.url}>
+                          {LicenseDataLangButton(data, language)}
+                        </ButtonTable>
                       </ApartContentTable>
                     </div>
                   );
@@ -116,9 +120,6 @@ const LicenseComponents = () => {
                         <ConcessionWrited>
                           {LicenseBody(data, language)}
                         </ConcessionWrited>
-                      </ConcessionContent>
-                      <ConcessionContent>
-                        <ConcessionImage src={data.concession_images[1].url} />
                       </ConcessionContent>
                     </ConcessionExp>
                   </>
