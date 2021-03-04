@@ -122,7 +122,7 @@ const LicenseComponents = () => {
                         </ConcessionWrited>
                       </ConcessionContent>
                       <ConcessionContent>
-                        <ConcessionImage src={data.concession_images[0].url} />
+                        <ConcessionImage src={data.concession_images[1].url} />
                       </ConcessionContent>
                     </ConcessionExp>
                   </>
