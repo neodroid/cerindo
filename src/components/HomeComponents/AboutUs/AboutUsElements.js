@@ -31,7 +31,7 @@ export const InfoRow = styled.div`
   background: "#fff";
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
-  align-items: center;
+  align-items:center;
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 

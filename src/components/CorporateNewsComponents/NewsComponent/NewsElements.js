@@ -141,3 +141,19 @@ export const ButtonNext = styled.div`
 export const OtherNews = styled.a`
     text-decoration: none
 `;
+
+export const AnnounWrapped = styled.div`
+    text-align: left;
+    margin: 10px 0;
+`;
+export const TitleAnnoun = styled.div`
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px
+    line-height: 35px;
+    margin: 10px 0;
+    @media screen and (max-width: 740px) {
+        font-weight: 700;
+        text-align:center;
+    }
+`;

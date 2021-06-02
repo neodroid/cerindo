@@ -4,6 +4,7 @@ export const newsService = {
   getListNews,
   getDetailNews,
   getListAnnouncement,
+  getDetailAnnouncement,
 };
 
 async function getListNews() {
@@ -25,5 +26,15 @@ async function getDetailNews(newsId) {
 async function getListAnnouncement() {
   const body = {};
   const response = await gatewayHelper.http("GET", "announcements", body);
+  return response;
+}
+
+async function getDetailAnnouncement(newsId) {
+  const body = {};
+  const response = await gatewayHelper.http(
+    "GET",
+    "announcements/" + newsId,
+    body
+  );
   return response;
 }

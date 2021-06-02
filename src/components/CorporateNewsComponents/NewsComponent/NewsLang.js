@@ -59,3 +59,18 @@ export const NewsLangSource = (data, lang) => {
 
   return text;
 };
+
+export const DetailsAnouncementLangContent = (detailsNews, lang) => {
+  var text =
+    lang === "en" ? (
+      <div>{detailsNews.body_en}</div>
+    ) : lang === "id" ? (
+      <div>{detailsNews.body_id}</div>
+    ) : lang === "cn" ? (
+      <div>{detailsNews.body_ch}</div>
+    ) : (
+      <> </>
+    );
+
+  return text;
+};

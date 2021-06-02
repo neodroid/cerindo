@@ -35,7 +35,8 @@ import NotFoundPage from "./pages/404Page";
 import Award from "./pages/Award";
 import Gallery from "./pages/Gallery";
 import ActivityContentComponent from "./components/SustainabilityComponents/ActivityComponents/ActivityContentComponents";
-import ContactComponents from "./components/ContactComponents/index"
+import ContactComponents from "./components/ContactComponents/index";
+import AnnouncementPage from "./components/CorporateNewsComponents/NewsReleaseComponents/Announcement";
 import { langContext } from "./langContext";
 
 function App() {
@@ -103,6 +104,7 @@ function App() {
                   path="/Community-Activity/:id"
                   component={ActivityContentComponent}
                 />
+                <Route path="/Announcement/:id" component={AnnouncementPage} exact />
                 <Route path="/Album/:id" component={AlbumComponent} exact />
                 <Route path="/Jobs/:job/:jobs" component={JobComponents} exact />
                 <Route path="/Contact-Us" component={ContactComponents} exact />

@@ -35,3 +35,15 @@ export const NewsLangContentSubstring = (data, lang) => {
 
     return text;
 }
+
+export const AnnouncementTitle = (data, lang) => {
+    var text = 
+    (lang === "en") ? 
+        <div>{data.title_en}</div> :
+    (lang === "id") ? 
+        <div>{data.title_id}</div> :
+    (lang === "cn") ? 
+        <div>{data.title_ch}</div> : <> </>;
+
+    return text;
+}

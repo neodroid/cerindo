@@ -120,13 +120,18 @@ const NewsContentComponents = () => {
               {announcement.map((data, idx) => {
                 return (
                   <>
-                    <AnnounWrapped key={idx}>
-                      <AnnounContent>
-                        <AnnounApart>
-                          <AnnounWrited>{data.title_en}</AnnounWrited>
-                        </AnnounApart>
-                      </AnnounContent>
-                    </AnnounWrapped>
+                    <Link
+                      to={`/Announcement/${data._id}`}
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <AnnounWrapped key={idx}>
+                        <AnnounContent>
+                          <AnnounApart>
+                            <AnnounWrited>{data.title_en}</AnnounWrited>
+                          </AnnounApart>
+                        </AnnounContent>
+                      </AnnounWrapped>
+                    </Link>
                   </>
                 );
               })}
