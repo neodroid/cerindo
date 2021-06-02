@@ -105,6 +105,11 @@ const NewsContentComponents = () => {
     }
     setFiltered(newsShown);
   };
+  filtered.sort((a, b) => {
+    var c = new Date(a.date);
+    var d = new Date(b.date);
+    return d - c;
+  });
   if (newsData.length === 0) return null;
 
   return (
