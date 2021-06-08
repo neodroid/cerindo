@@ -34,6 +34,7 @@ import {
 } from "./NewsContentElements";
 import { langContext } from "../../../../langContext";
 import {
+  AnnouncementParams,
   AnnouncementTitle,
   NewsLangContent,
   NewsLangContentSubstring,
@@ -118,7 +119,7 @@ const NewsContentComponents = () => {
       <AboutSideBarComponents page8={true} />
       <AboutMain>
         <NewsWrapped>
-          <h2>Announcement</h2>
+          <h2>{AnnouncementParams(language)}</h2>
           {announcement.length == 0 ? (
             <AnnounWrited>No Announcement</AnnounWrited>
           ) : (
