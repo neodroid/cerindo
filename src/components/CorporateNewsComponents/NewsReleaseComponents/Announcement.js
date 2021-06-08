@@ -8,7 +8,7 @@ import {
   AnnounWrapped,
   Nulity,
   BlogWrapped,
-  DateWrapped
+  DateWrapped,
 } from "../NewsComponent/NewsElements";
 import Banner from "../../Banner";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
@@ -18,11 +18,8 @@ import { AboutUsTitle } from "../../AboutUsComponents/AboutUsLang";
 import { aboutUsService } from "../../../service/Aboutus";
 import {
   DetailsNewsLangTitle,
-  DetailsAnouncementLangContent
+  DetailsAnouncementLangContent,
 } from "../NewsComponent/NewsLang";
-import { FaArrowRight } from "react-icons/fa";
-import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
 
 const AnnouncementPage = (props) => {
   const { language } = useContext(langContext);
@@ -31,7 +28,9 @@ const AnnouncementPage = (props) => {
   const [press, setPress] = useState([]);
 
   const fetchDataDetails = async () => {
-    const response = await newsService.getDetailAnnouncement(props.match.params.id);
+    const response = await newsService.getDetailAnnouncement(
+      props.match.params.id
+    );
     const data = response.data;
     setDetailsAnnouncement(data);
   };
@@ -54,7 +53,7 @@ const AnnouncementPage = (props) => {
   if (detailsAnnouncement === 0) return null;
   if (listAnnouncement.length === 0) return null;
   if (press.length === 0) return null;
-  console.log(DetailsAnouncementLangContent(detailsAnnouncement, language))
+  console.log(DetailsAnouncementLangContent(detailsAnnouncement, language));
   return (
     <>
       {press.banner.map((data, idx) => {
@@ -70,7 +69,7 @@ const AnnouncementPage = (props) => {
       <Aboutstyle>
         <AboutSideBarComponents page8={true} />
         <AboutMain>
-            <DateWrapped/>
+          <DateWrapped />
           <TitleAnnoun>
             {DetailsNewsLangTitle(detailsAnnouncement, language)}
           </TitleAnnoun>

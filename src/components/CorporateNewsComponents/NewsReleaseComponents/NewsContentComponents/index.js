@@ -34,6 +34,7 @@ import {
 } from "./NewsContentElements";
 import { langContext } from "../../../../langContext";
 import {
+  AnnouncementTitle,
   NewsLangContent,
   NewsLangContentSubstring,
   NewsLangTitle,
@@ -132,7 +133,9 @@ const NewsContentComponents = () => {
                       <AnnounWrapped key={idx}>
                         <AnnounContent>
                           <AnnounApart>
-                            <AnnounWrited>{data.title_en}</AnnounWrited>
+                            <AnnounWrited>
+                              {AnnouncementTitle(data, language)}
+                            </AnnounWrited>
                           </AnnounApart>
                         </AnnounContent>
                       </AnnounWrapped>
