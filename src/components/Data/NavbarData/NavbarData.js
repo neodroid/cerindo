@@ -41,7 +41,7 @@ export const BusinessTwo = [
     ch: "资源储备",
   },
   {
-    en: "Direct Ore Shipping",
+    en: "Direct Shipping Ore",
     id: "Pengiriman Bijih Langsung",
     ch: "矿石出口",
   },
@@ -185,7 +185,6 @@ export const Inquiry = {
 
 export const Copyright = {
   en: "©2021 Copyright PT. Ceria Nugraha Indotama. All rights reserved.",
-  id:
-    "©2021 Hak Cipta PT. Ceria Nugraha Indotama. Semua Hak Dilindungi Undang-Undang.",
+  id: "©2021 Hak Cipta PT. Ceria Nugraha Indotama. Semua Hak Dilindungi Undang-Undang.",
   ch: "©2021版权所有PT。 Ceria Nugraha Indotama。 版权所有。",
 };

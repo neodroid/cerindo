@@ -74,3 +74,33 @@ export const CareerVacancies = (data, lang) => {
 
   return text;
 };
+
+export const CareerTitleVacancies = (lang) => {
+  var text =
+    lang === "en" ? (
+      <>Jobs Vacancies</>
+    ) : lang === "id" ? (
+      <>Lowongan Pekerjaan</>
+    ) : lang === "cn" ? (
+      <>职位空缺</>
+    ) : (
+      <> </>
+    );
+
+  return text;
+};
+
+export const CareerTitleEmployee = (lang) => {
+  var text =
+    lang === "en" ? (
+      <>Employees’ Stories</>
+    ) : lang === "id" ? (
+      <>Cerita Karyawan</>
+    ) : lang === "cn" ? (
+      <>员工故事</>
+    ) : (
+      <> </>
+    );
+
+  return text;
+};

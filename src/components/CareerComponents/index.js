@@ -36,6 +36,8 @@ import {
   CareerLangBody,
   CareerLangEmployeeBody,
   CareerVacancies,
+  CareerTitleVacancies,
+  CareerTitleEmployee,
 } from "./CareerLang";
 
 const CareerComponents = () => {
@@ -68,7 +70,7 @@ const CareerComponents = () => {
           <img src={career.Title.image.url} />
         </JobcerImage>
       </Jobcer>
-      <h2>Jobs Vacancies</h2>
+      <h2>{CareerTitleVacancies(language)}</h2>
       <div style={{ width: "100%", margin: "0 auto 52px" }}>
         {career.LowonganPekerjaan.map((obj, idx) => {
           if (obj.availability > 1) {
@@ -138,7 +140,7 @@ const CareerComponents = () => {
           }
         })}
       </div>
-      <h2>Employees’ Stories</h2>
+      <h2>{CareerTitleEmployee(language)}</h2>
       <div style={{ width: "100%", margin: "0 auto 52px" }}>
         {career.EmployeeStory.map((data, idx) => {
           if (idx % 2 != 0) {

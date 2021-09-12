@@ -22,11 +22,11 @@ import {
   ContentDrop,
   ButtonCloser,
   FlexBod,
-  WritedFlex
+  WritedFlex,
 } from "./BODElements";
 
 import { langContext } from "../../../langContext";
-import { BODlang } from "./BODlang";
+import { BODlang, BODTitleLang } from "./BODlang";
 
 const BODComponents = () => {
   const { language } = useContext(langContext);
@@ -60,14 +60,16 @@ const BODComponents = () => {
                             <BodBoxIntroTitle title>
                               {data.name}
                             </BodBoxIntroTitle>
-                            <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
+                            <BodBoxIntroTitle>
+                              {BODTitleLang(data, language)}
+                            </BodBoxIntroTitle>
                           </div>
                         </BodBoxIntro>
                         <DropDown role="button" tabIndex={-1} key={idx}>
                           <DropDownContent>
                             <ContentDrop>
-                            <ContentDiv2 >
-                              <ButtonCloser/>
+                              <ContentDiv2>
+                                <ButtonCloser />
                               </ContentDiv2>
                               <BodBoxIntro change>
                                 <FlexBod>
@@ -76,7 +78,9 @@ const BODComponents = () => {
                                     <BodBoxIntroTitle title>
                                       {data.name}
                                     </BodBoxIntroTitle>
-                                    <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
+                                    <BodBoxIntroTitle>
+                                      {data.position}
+                                    </BodBoxIntroTitle>
                                   </WritedFlex>
                                 </FlexBod>
                               </BodBoxIntro>
@@ -107,13 +111,17 @@ const BODComponents = () => {
                             <BodBoxIntroTitle title>
                               {data.name}
                             </BodBoxIntroTitle>
-                            <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
+                            <BodBoxIntroTitle>
+                              {data.position_id}
+                            </BodBoxIntroTitle>
                           </div>
                         </BodBoxIntro>
                         <DropDown role="button" tabIndex={-1} key={idx}>
                           <DropDownContent>
                             <ContentDrop>
-                            <ContentDiv2><ButtonCloser/></ContentDiv2>
+                              <ContentDiv2>
+                                <ButtonCloser />
+                              </ContentDiv2>
                               <BodBoxIntro change>
                                 <FlexBod>
                                   <img src={data.picture.url} width={`208px`} />
@@ -121,7 +129,9 @@ const BODComponents = () => {
                                     <BodBoxIntroTitle title>
                                       {data.name}
                                     </BodBoxIntroTitle>
-                                    <BodBoxIntroTitle>{data.position}</BodBoxIntroTitle>
+                                    <BodBoxIntroTitle>
+                                      {data.position}
+                                    </BodBoxIntroTitle>
                                   </WritedFlex>
                                 </FlexBod>
                               </BodBoxIntro>
