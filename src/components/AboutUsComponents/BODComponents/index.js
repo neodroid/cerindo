@@ -79,7 +79,7 @@ const BODComponents = () => {
                                       {data.name}
                                     </BodBoxIntroTitle>
                                     <BodBoxIntroTitle>
-                                      {data.position}
+                                      {BODTitleLang(data, language)}
                                     </BodBoxIntroTitle>
                                   </WritedFlex>
                                 </FlexBod>
@@ -112,7 +112,7 @@ const BODComponents = () => {
                               {data.name}
                             </BodBoxIntroTitle>
                             <BodBoxIntroTitle>
-                              {data.position_id}
+                              {BODTitleLang(data, language)}
                             </BodBoxIntroTitle>
                           </div>
                         </BodBoxIntro>
@@ -130,13 +130,13 @@ const BODComponents = () => {
                                       {data.name}
                                     </BodBoxIntroTitle>
                                     <BodBoxIntroTitle>
-                                      {data.position}
+                                      {BODTitleLang(data, language)}
                                     </BodBoxIntroTitle>
                                   </WritedFlex>
                                 </FlexBod>
                               </BodBoxIntro>
                               <BodDescriptionContent>
-                                {BODlang(data, language)}
+                                {BODTitleLang(data, language)}
                               </BodDescriptionContent>
                             </ContentDrop>
                           </DropDownContent>
