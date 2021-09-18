@@ -136,7 +136,7 @@ const BODComponents = () => {
                                 </FlexBod>
                               </BodBoxIntro>
                               <BodDescriptionContent>
-                                {BODTitleLang(data, language)}
+                                {BODlang(data, language)}
                               </BodDescriptionContent>
                             </ContentDrop>
                           </DropDownContent>
@@ -156,5 +156,4 @@ const BODComponents = () => {
     </>
   );
 };
-//tes
 export default BODComponents;
