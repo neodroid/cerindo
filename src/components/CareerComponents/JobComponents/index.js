@@ -102,20 +102,20 @@ const JobComponents = (props) => {
         <h1>{JobLangTitle(JobParams.duties, language)}</h1>
         <p>{JobLangDuties(shownData, language)}</p>
         <h1>{JobLangTitle(JobParams.qualification, language)}</h1>
-        <p>{JobLangQual(shownData, language)}</p>
-        <Upsiv>
+        <p>{JobLangQual(shownData, language)}<br/></p>
+        {/* <Upsiv>
           Please send your CV to <Mail>recruitment@cerindocorp.co.id</Mail>{" "}
           <br />
           Candidates who do not meet the criteria are expected not to submit a
           CV. Only CVs that meet the criteria will be processed further.
           Candidates who are accepted will receive an attractive remuneration
           package.
-        </Upsiv>
+        </Upsiv> */}
         <ArrowLeft to="/Career">
           <FaAngleLeft />
           Back to Career
         </ArrowLeft>
-        <h1>Upload CV</h1>
+        {/* <h1>Upload CV</h1>
         <form onSubmit={submit}>
           <Inputan
             type="text"
@@ -191,7 +191,7 @@ const JobComponents = (props) => {
               Send <FaArrowRight style={{ marginLeft: "8px" }} />
             </Buttons>
           </Buttonscv>
-        </form>
+        </form> */}
       </MainCareer>
     </>
   );
