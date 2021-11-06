@@ -116,9 +116,9 @@ export const AboutUsDropdown = [
     ch: "公司子公司",
   },
   {
-    en: "Board of Directors",
-    id: "Direksi",
-    ch: "董事会",
+    en: "Board of Directors and Management",
+    id: "Dewan Direksi dan Manajemen",
+    ch: "董事会和管理层",
   },
   {
     en: "Organizational Structure",
