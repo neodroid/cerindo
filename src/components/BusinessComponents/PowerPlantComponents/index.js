@@ -23,7 +23,7 @@ const PowerPlantComponents = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await businessService.getDetailBusiness(
-        "5ff43e7bb9e34a0df87694b0"
+        "618381e74161220b3a25ea81"
       );
       const data = response.data;
       setPowerPlant(data);
