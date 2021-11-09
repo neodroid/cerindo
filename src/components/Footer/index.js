@@ -144,7 +144,7 @@ const Footer = () => {
                 {FooterData(BusinessOne, 2, footerLang)}
               </FooterLink>
               <FooterLink to="/Ore-Export">
-                {FooterData(BusinessTwo, 1, footerLang)}
+                {FooterData(BusinessTwo, 0, footerLang)}
               </FooterLink>
               <FooterLinkTitle>
                 {FooterDataSingle(SustainabilityFooter, footerLang)}

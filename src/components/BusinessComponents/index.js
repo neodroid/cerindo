@@ -14,7 +14,7 @@ import { langContext } from '../../langContext';
 import { BusinessSideBarIntl } from '../Data/BusinessData/BussinessDatas';
 import { BusinessSidebar } from './BusinessLang';
 
-const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
+const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7}) => {
     const { language } = useContext(langContext);
     const [selected, setSelected] = useState(true);
 
@@ -36,6 +36,7 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                         <TextButton page={page4}>{BusinessSidebar(BusinessSideBarIntl, language, 3)}</TextButton>
                         <TextButton page={page5}>{BusinessSidebar(BusinessSideBarIntl, language, 4)}</TextButton>
                         <TextButton page={page6}>{BusinessSidebar(BusinessSideBarIntl, language, 5)}</TextButton>
+                        <TextButton page={page7}>{BusinessSidebar(BusinessSideBarIntl, language, 6)}</TextButton>
 
                         <ArrowDiv>
                             {selected ? <ArrowDownLang style={{transform: "rotate(225deg)"}}/> : <ArrowDownLang/>}
@@ -61,6 +62,9 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                         <AboutSideBarContent page={page6} to="/Power-Supply">
                             {BusinessSidebar(BusinessSideBarIntl, language, 5)}
                         </AboutSideBarContent>
+                        <AboutSideBarContent page={page7} to="/Port-Operations">
+                            {BusinessSidebar(BusinessSideBarIntl, language, 6)}
+                        </AboutSideBarContent>
                     </Contentt>
                     : 
                     <Changed>
@@ -82,6 +86,9 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6}) => {
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page6} to="/Power-Supply">
                             {BusinessSidebar(BusinessSideBarIntl, language, 5)}
+                        </AboutSideBarContent>
+                        <AboutSideBarContent page={page7} to="/Port-Operations">
+                            {BusinessSidebar(BusinessSideBarIntl, language, 6)}
                         </AboutSideBarContent>
                     </Contentt>
                     </Changed>

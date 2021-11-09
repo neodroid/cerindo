@@ -32,14 +32,14 @@ export const BusinessOne = [
     id: "Peleburan Feronikel",
     ch: "镍铁冶炼",
   },
-];
-
-export const BusinessTwo = [
   {
     en: "Resources and Reserves",
     id: "Sumber Daya dan Cadangan",
     ch: "资源储备",
   },
+];
+
+export const BusinessTwo = [
   {
     en: "Direct Shipping Ore",
     id: "Pengiriman Bijih Langsung",
@@ -49,6 +49,11 @@ export const BusinessTwo = [
     en: "Power Supply",
     id: "Sumber Daya listrik",
     ch: "电源供应",
+  },
+  {
+    en: "Port Operations",
+    id: "Operasi Pelabuhan",
+    ch: "港口运营",
   },
 ];
 

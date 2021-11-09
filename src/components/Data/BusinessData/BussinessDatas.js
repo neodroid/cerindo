@@ -57,4 +57,9 @@ export const BusinessSideBarIntl = [
     ch: "电源供应",
     to: "/",
   },
+  {
+    en: "Port Operations",
+    id: "Operasi Pelabuhan",
+    ch: "港口运营",
+  },
 ];

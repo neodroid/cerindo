@@ -145,15 +145,18 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Ferronickle-Smelting">
                       {NavbarDropDown(BusinessOne, 2, language)}
                     </NavDropLinks>
+                    <NavDropLinks to="/Resource-Reserve">
+                      {NavbarDropDown(BusinessOne, 3, language)}
+                    </NavDropLinks>
                   </DropDiv>
                   <DropDiv>
-                    <NavDropLinks to="/Resource-Reserve">
+                    <NavDropLinks to="/Ore-Export">
                       {NavbarDropDown(BusinessTwo, 0, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Ore-Export">
+                    <NavDropLinks to="/Power-Supply">
                       {NavbarDropDown(BusinessTwo, 1, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Power-Supply">
+                    <NavDropLinks to="/Port-Operations">
                       {NavbarDropDown(BusinessTwo, 2, language)}
                     </NavDropLinks>
                   </DropDiv>

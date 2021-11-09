@@ -16,6 +16,7 @@ import FerronickleSmelting from "./pages/FerronickleSmelting";
 import ResourceReserve from "./pages/ResourceReserve";
 import OreExport from "./pages/OreExport";
 import PowerPlant from "./pages/PowerPlant";
+import PortOperations from "./pages/PortOperations";
 import NewsRelease from "./pages/NewRelease";
 import NewsComponent from "./components/CorporateNewsComponents/NewsComponent";
 import AlbumComponent from "./components/AboutUsComponents/GalleryComponents/AlbumComponents";
@@ -81,6 +82,7 @@ function App() {
                 <Route path="/Resource-Reserve" component={ResourceReserve} exact />
                 <Route path="/Ore-Export" component={OreExport} exact />
                 <Route path="/Power-Supply" component={PowerPlant} exact />
+                <Route path="/Port-Operations" component={PortOperations} exact />
                 <Route path="/Press-Release" component={NewsRelease} exact />
                 <Route path="/News/:title" component={NewsComponent} exact />
                 <Route path="/Mission-Vision" component={Vismis} exact />
