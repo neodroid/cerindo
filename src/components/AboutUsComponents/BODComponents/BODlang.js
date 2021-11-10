@@ -15,6 +15,18 @@ export const BODlang = (data, lang) => {
   return text;
 };
 
+export const BODMTitleLang = (data, lang, index) => {
+  var text = 
+    (lang === "en") ? 
+        <>{data[index].en}</> :
+    (lang === "id") ? 
+        <>{data[index].id}</> :
+    (lang === "cn") ? 
+        <>{data[index].ch}</> : <> </>;
+
+  return text
+}
+
 export const BODTitleLang = (data, lang) => {
   var text =
     lang === "en" ? (

@@ -10,6 +10,19 @@ export const BODHead = {
     lightText: true,
 };
 
+export const BODMTitleData = [
+    {
+        en: 'Directors ',
+        id: 'Direksi',
+        ch: '董事',
+    },
+    {
+        en: 'General Managers',
+        id: 'General Manager',
+        ch: '总经理'
+    }
+]
+
 export const BODContentData = [
     {
         "image":derian,

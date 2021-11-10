@@ -14,6 +14,17 @@ export const Bodwrapped = styled.div`
     @media screen and (max-width: 650px) {
     }
 `;
+
+export const BODTitle = styled.div`
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 36px;
+    text-align : left;
+    color: black;
+    margin: 20px 0;
+    margin-top: 36px;
+`;
+
 export const BodGrid = styled.div`
     display: grid;
     grid-template-columns: auto auto;
@@ -57,8 +68,8 @@ export const BodBoxIntro = styled.div`
     display: flex;
     flex-direction: column;
     margin: 5px 32px;
-    align-items:${(props)=>(props.change ? "left" : "center")};
-    text-align: ${(props)=>(props.change ? "left" : "center")};
+    align-items:${(props) => (props.change ? "left" : "center")};
+    text-align: ${(props) => (props.change ? "left" : "center")};
     @media screen and (max-width: 650px) {
         margin: 0 auto;
     }
@@ -84,11 +95,11 @@ margin-left: 10px;
 export const BodBoxIntroTitle = styled.p`
     font-family: 'Montserrat', sans-serif;
     margin: 0 10px;
-    font-weight: ${(props)=>(props.title ? "bold" : "normal")};
-    font-size: ${(props)=>(props.title ? "20px" : "14px")};
-    line-height: ${(props)=>(props.title ? "30px" : "20px")};
+    font-weight: ${(props) => (props.title ? "bold" : "normal")};
+    font-size: ${(props) => (props.title ? "20px" : "14px")};
+    line-height: ${(props) => (props.title ? "30px" : "20px")};
     color: #111111;
-    font-style: ${(props)=>(props.title ? "normal" : "italic")};
+    font-style: ${(props) => (props.title ? "normal" : "italic")};
 `;
 
 export const BodDescriptionContent = styled.div`
@@ -152,7 +163,8 @@ export const ContentDiv2 = styled.button`
 `;
 export const ContentDiv = styled.div`
     display: block;
-    font-weight: 400;
+    color:#EFB401;
+    font-weight: bold;
     font-family: 'Montserrat',sans-serif;
     text-align: center;
     font-style: italic;
@@ -165,6 +177,7 @@ export const ContentDiv = styled.div`
     cursor: pointer;
     margin: 0 auto;
     width: fit-content !important;
+    
 
 `;
 export const DropDown = styled.div`
