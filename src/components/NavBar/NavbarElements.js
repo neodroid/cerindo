@@ -163,6 +163,7 @@ export const NavDropLinks = styled(LinkR)`
   font-weight: bold;
   display: flex;
   align-items: center;
+  text-align: left;
   text-decoration: none;
   padding: 15px 1rem;
   font-size: 12px;
