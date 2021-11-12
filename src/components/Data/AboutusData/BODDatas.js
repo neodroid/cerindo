@@ -17,9 +17,9 @@ export const BODMTitleData = [
         ch: '董事',
     },
     {
-        en: 'General Managers',
-        id: 'General Manager',
-        ch: '总经理'
+        en: 'Management',
+        id: 'Manajemen',
+        ch: '管理'
     }
 ]
 
