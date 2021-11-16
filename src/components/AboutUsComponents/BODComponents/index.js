@@ -57,7 +57,7 @@ const BODComponents = () => {
                     <KingBox key={idx}>
                       <BodBoxContent>
                         <BodBoxIntro>
-                          <img src={data.picture.url} width={`210px`} />
+                          <img src={data.picture.url} height={`271px`} />
                           <div>
                             <BodBoxIntroTitle title>
                               {data.name}
@@ -75,7 +75,7 @@ const BODComponents = () => {
                               </ContentDiv2>
                               <BodBoxIntro change>
                                 <FlexBod>
-                                  <img src={data.picture.url} width={`210px`} />
+                                  <img src={data.picture.url} height={`271px`} />
                                   <WritedFlex>
                                     <BodBoxIntroTitle title>
                                       {data.name}
@@ -108,7 +108,7 @@ const BODComponents = () => {
                     <Bodbox key={idx}>
                       <BodBoxContent>
                         <BodBoxIntro>
-                          <img src={data.picture.url} width={`208px`} />
+                          <img src={data.picture.url} height={`271px`} />
                           <div>
                             <BodBoxIntroTitle title>
                               {data.name}
@@ -126,7 +126,7 @@ const BODComponents = () => {
                               </ContentDiv2>
                               <BodBoxIntro change>
                                 <FlexBod>
-                                  <img src={data.picture.url} width={`208px`} />
+                                  <img src={data.picture.url} height={`271px`}  />
                                   <WritedFlex>
                                     <BodBoxIntroTitle title>
                                       {data.name}
@@ -211,7 +211,7 @@ const BODComponents = () => {
                     <Bodbox key={idx}>
                       <BodBoxContent>
                         <BodBoxIntro>
-                          <img src={data.picture.url} width={`208px`} />
+                          <img src={data.picture.url} height={`271px`} />
                           <div>
                             <BodBoxIntroTitle title>
                               {data.name}
@@ -229,7 +229,7 @@ const BODComponents = () => {
                               </ContentDiv2>
                               <BodBoxIntro change>
                                 <FlexBod>
-                                  <img src={data.picture.url} width={`208px`} />
+                                  <img src={data.picture.url} height={`271px`} />
                                   <WritedFlex>
                                     <BodBoxIntroTitle title>
                                       {data.name}
