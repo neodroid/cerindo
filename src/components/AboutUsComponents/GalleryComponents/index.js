@@ -66,7 +66,7 @@ const GalleryComponents = () => {
                       src={GalleryLangVideo(data, language).props.children}
                       key={idx}
                     />
-                    <p>{GalleryLangTitle(data, language)}</p>
+                      <p>{data.video_title_en}</p>                      
                   </VideoContainerOther>
                 );
               })}
