@@ -15,6 +15,21 @@ export const GalleryLangTitle = (data, lang) => {
   return text;
 };
 
+export const GalleryLangVideoTitle = (data, lang) => {
+  var text =
+    lang === "en" ? (
+      <div>{data.video_title_en}</div>
+    ) : lang === "id" ? (
+      <div>{data.video_title_id}</div>
+    ) : lang === "cn" ? (
+      <div>{data.video_title_ch}</div>
+    ) : (
+      <> </>
+    );
+
+    return text;
+};
+
 export const GalleryLangTitlePhoto = (photoDetailedGallery, lang) => {
   var text =
     lang === "en" ? (

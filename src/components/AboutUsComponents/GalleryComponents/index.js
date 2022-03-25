@@ -18,6 +18,7 @@ import {
   GalleryLangTitle,
   GalleryLangParans,
   GalleryLangVideo,
+  GalleryLangVideoTitle,
 } from "./GalleryLang";
 
 const GalleryComponents = () => {
@@ -66,7 +67,7 @@ const GalleryComponents = () => {
                       src={GalleryLangVideo(data, language).props.children}
                       key={idx}
                     />
-                      <p>{data.video_title_en}</p>                      
+                      <p>{GalleryLangVideoTitle(data, language)}</p>                      
                   </VideoContainerOther>
                 );
               })}
