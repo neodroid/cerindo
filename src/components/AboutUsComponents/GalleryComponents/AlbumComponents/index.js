@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { aboutUsService } from "../../../../service/Aboutus";
 import { GalleryTitle } from "../../../Data/AboutusData/GalleryDatas";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 import {
   TitleContent,
@@ -104,9 +106,11 @@ const AlbumComponent = (props) => {
             <TitleContent>
               {GalleryLangTitlePhoto(photoDetailedGallery, language)}
             </TitleContent>
-            <Desctit>
-              {AlbumLangDescription(photoDetailedGallery, language)}
-            </Desctit>
+              <ReactMarkdown
+              children={AlbumLangDescription(photoDetailedGallery, language).props.children}
+              plugins={[[gfm, { singleTilde: false }]]}
+                  allowDangerousHtml={true}
+              />
             <AlbumGrid>
               {photoDetailedGallery.image.map((val, idx) => {
                 return (
@@ -153,7 +157,7 @@ const AlbumComponent = (props) => {
               {AlbumLangOther(GalleryTitle.otherArticle, language)}
             </TitleContent>
             <ArticlePart>
-              {photoListGallery.slice(0, 3).map((data, idx) => {
+              {photoListGallery.slice(-3).map((data, idx) => {
                 return (
                   <ManageOthArtData
                     id={data._id}
