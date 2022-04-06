@@ -5,6 +5,7 @@ import {
   Business,
   Sustainibility,
   AboutUs,
+  Gallery,
   Career,
   BusinessOne,
   BusinessTwo,
@@ -221,6 +222,9 @@ const Navbar = ({ toggle }) => {
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
+            </NavItem>
+            <NavItem>
+                <NavLinks to="/Gallery">{NavbarLang(Gallery, language)}</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="/Career">{NavbarLang(Career, language)}</NavLinks>

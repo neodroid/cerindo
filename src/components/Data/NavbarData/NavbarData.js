@@ -152,6 +152,12 @@ export const AboutUsDropdown = [
   },
 ];
 
+export const Gallery = {
+  en: "GALLERY",
+  id: "GALERI",
+  ch: "Galerry",
+};
+
 export const Career = {
   en: "CAREER",
   id: "KARIR",
