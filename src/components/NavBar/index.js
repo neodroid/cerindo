@@ -224,7 +224,7 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-                <NavLinks to="/Gallery">{NavbarLang(Gallery, language)}</NavLinks>
+              <NavLinks to="/Gallery">{NavbarLang(Gallery, language)}</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="/Career">{NavbarLang(Career, language)}</NavLinks>

@@ -4,6 +4,7 @@ import {
   Business,  
   Sustainibility, 
   AboutUs, 
+  Gallery,
   Career, 
   BusinessOne, 
   BusinessTwo,
@@ -160,7 +161,11 @@ const Sidebar = ({ isOpen, toggle }) => {
             </SidebarLink>
             </DropDownContent>
           </DropDown>
-          
+          <SidebarLink to="/Gallery" onClick={toggle}>
+          <SideBtnWrap>
+          {SideBarLang(Gallery, val2)}
+            </SideBtnWrap>
+          </SidebarLink>
           <SidebarLink to="/Career" onClick={toggle}>
           <SideBtnWrap>
           {SideBarLang(Career, val2)}
