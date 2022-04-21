@@ -74,17 +74,6 @@ const Footer = () => {
                 <Logo src={image} />
               </NavLogo>
               <FooterLinkTitle>
-                {FooterDataSingle(JakartaOffice, footerLang)}
-              </FooterLinkTitle>
-              <FooterLinked>
-                South Quarter Tower A 5th Floor <br />
-                Jl. RA Kartini Kav 8 Cilandak <br />
-                Jakarta 12430 Indonesia <br />
-                Phone +62 21 2276 9324 <br />
-              </FooterLinked>
-            </FooterLinkItems>
-            <FooterLinkItems>
-              <FooterLinkTitle>
                 {FooterDataSingle(SocialNetworks, footerLang)}
               </FooterLinkTitle>
               <SocialIcons>
@@ -116,67 +105,8 @@ const Footer = () => {
                 >
                   <FaLinkedin />
                 </SocialIconLink>
-              </SocialIcons>
-              <FooterLinkTitle>
-                {FooterDataSingle(MakassarOffice, footerLang)}
-              </FooterLinkTitle>
-              <FooterLinked>
-                Jl. Kima 12 Kav. N-1a <br />
-                Kawasan Industrial Makassar <br />
-                Makassar 90245 Indonesia <br />
-                Phone +62 411 472 0747 <br />
-              </FooterLinked>
-            </FooterLinkItems>
-          </FooterLinkWrapper>
-
-          <FooterLinkWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle>
-                {FooterDataSingle(BusinessFooter, footerLang)}
-              </FooterLinkTitle>
-              <FooterLink to="/Nickle-Ore-Mining">
-                {FooterData(BusinessOne, 0, footerLang)}
-              </FooterLink>
-              <FooterLink to="/Nickle-Cobalt-HPAL">
-                {FooterData(BusinessOne, 1, footerLang)}
-              </FooterLink>
-              <FooterLink to="/Ferronickle-Smelting">
-                {FooterData(BusinessOne, 2, footerLang)}
-              </FooterLink>
-              <FooterLink to="/Ore-Export">
-                {FooterData(BusinessTwo, 0, footerLang)}
-              </FooterLink>
-              <FooterLinkTitle>
-                {FooterDataSingle(SustainabilityFooter, footerLang)}
-              </FooterLinkTitle>
-              <FooterLink to="/QHSE">
-                {FooterData(SustainabilityDropdown, 0, footerLang)}
-              </FooterLink>
-              <FooterLink to="/Report">
-                {FooterData(SustainabilityDropdown, 2, footerLang)}
-              </FooterLink>
-              <FooterLink to="/Community-Activities">
-                {FooterData(SustainabilityDropdown, 1, footerLang)}
-              </FooterLink>
-            </FooterLinkItems>
-
-            <FooterLinkItems>
-              <FooterLinkTitle>
-                {FooterDataSingle(AboutUsFooter, footerLang)}
-              </FooterLinkTitle>
-              <FooterLink to="/Mission-Vision">
-                {FooterData(AboutUsDropdown, 0, footerLang)}
-              </FooterLink>
-              <FooterLink to="/Commitment">
-                {FooterData(AboutUsDropdown, 1, footerLang)}
-              </FooterLink>
-              <FooterLink to="/Board-of-Director">
-                {FooterData(AboutUsDropdown, 3, footerLang)}
-              </FooterLink>
-              <FooterLink to="/Organization-Structure">
-                {FooterData(AboutUsDropdown, 4, footerLang)}
-              </FooterLink>
-              <Link
+                </SocialIcons>
+                <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to="/Contact-Us"
               >
@@ -191,7 +121,94 @@ const Footer = () => {
                 <MdEmail /> info@cerindocorp.com
               </FooterLinked>
             </FooterLinkItems>
-          </FooterLinkWrapper>
+            <FooterLinkItems>
+              <FooterLinkTitle>
+                {FooterDataSingle(JakartaOffice, footerLang)}
+              </FooterLinkTitle>
+              <FooterLinked>
+                South Quarter Tower A 5th Floor <br />
+                Jl. RA Kartini Kav 8 Cilandak <br />
+                Jakarta 12430 Indonesia <br />
+                Phone +62 21 2276 9324 <br />
+              </FooterLinked>
+              <FooterLinkTitle>
+                {FooterDataSingle(MakassarOffice, footerLang)}
+              </FooterLinkTitle>
+              <FooterLinked>
+                Jl. Kima 12 Kav. N-1a <br />
+                Kawasan Industrial Makassar <br />
+                Makassar 90245 Indonesia <br />
+                Phone +62 411 472 0747 <br />
+              </FooterLinked>
+            </FooterLinkItems>
+            </FooterLinkWrapper>
+
+            <FooterLinkWrapper>
+              <FooterLinkItems>
+                  <FooterLinkTitle>
+                    {FooterDataSingle(AboutUsFooter, footerLang)}
+                  </FooterLinkTitle>
+                  <FooterLink to="/Mission-Vision">
+                    {FooterData(AboutUsDropdown, 0, footerLang)}
+                  </FooterLink>
+                  <FooterLink to="/Commitment">
+                    {FooterData(AboutUsDropdown, 1, footerLang)}
+                  </FooterLink>
+                  <FooterLink to="/Subsidiary">
+                    {FooterData(AboutUsDropdown, 2, footerLang)}
+                  </FooterLink>
+                  <FooterLink to="/Board-of-Director">
+                    {FooterData(AboutUsDropdown, 3, footerLang)}
+                  </FooterLink>
+                  <FooterLink to="/Organization-Structure">
+                    {FooterData(AboutUsDropdown, 4, footerLang)}
+                  </FooterLink>
+              </FooterLinkItems>
+              <FooterLinkItems>
+              <FooterLinkTitle>
+                {FooterDataSingle(BusinessFooter, footerLang)}
+              </FooterLinkTitle>
+              <FooterLink to="/Nickle-Ore-Mining">
+                {FooterData(BusinessOne, 0, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Nickle-Cobalt-HPAL">
+                {FooterData(BusinessOne, 1, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Ferronickle-Smelting">
+                {FooterData(BusinessOne, 2, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Resource-Reserve">
+                {FooterData(BusinessOne, 3, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Ore-Export">
+                {FooterData(BusinessTwo, 0, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Power-Supply">
+                {FooterData(BusinessTwo, 1, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Port-Operations">
+                {FooterData(BusinessTwo, 2, footerLang)}
+              </FooterLink>
+              </FooterLinkItems>
+            
+              <FooterLinkItems>
+              <FooterLinkTitle>
+                {FooterDataSingle(SustainabilityFooter, footerLang)}
+              </FooterLinkTitle>
+              <FooterLink to="/QHSE">
+                {FooterData(SustainabilityDropdown, 0, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Community-Activities">
+                {FooterData(SustainabilityDropdown, 1, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Report">
+                {FooterData(SustainabilityDropdown, 2, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Awards">
+                {FooterData(SustainabilityDropdown, 3, footerLang)}
+              </FooterLink>
+              </FooterLinkItems>
+            </FooterLinkWrapper>
         </FooterLinksContainer>
 
         <SocialMedia>

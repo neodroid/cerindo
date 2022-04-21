@@ -14,14 +14,19 @@ export const FooterWrap = styled.div`
   align-items: center;
   max-width: 1100px;
   margin: 0 auto;
+
+  @media screen and (max-width: 820px) {
+    padding: 32px 16px 32px;
+  }
 `;
 
 export const FooterLinksContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content:center;
+  padding-bottom:36px;
   @media screen and (max-width: 820px) {
-    padding-top: 32px;
+    padding: 0 0 32px;
   }
 `;
 
@@ -39,14 +44,14 @@ export const FooterLinkItems = styled.div`
   align-items: flex-start;
   margin: 16px;
   text-align: left;
-  max-width: 200px;
-  /* min-width: 160px; */
+  max-width: 180px;
+  /* min-width: 180px ; */
   box-sizing: border-box;
   color: #111;
 
   @media screen and (max-width: 420px) {
     margin: 0;
-    padding: 10px;
+    padding: 10px 10px 0;
     width: 100%;
   }
 `;
@@ -122,13 +127,16 @@ export const SocialIcons = styled.div`
 
 export const SocialIconLink = styled.a`
   color: #111;
-  font-size: 40px;
-  margin: 0 3px;
+  font-size: 28px;
+  margin-right:1rem;
 `;
 
 export const Logo = styled.img`
-  width: 175px;
-  height: 61px;
+  max-width: 164px;
+
+  @media screen and (max-width: 820px) {
+    max-width: 142px;
+  }
 `;
 
 export const NavLogo = styled.div`
