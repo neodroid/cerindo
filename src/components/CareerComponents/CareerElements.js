@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
+import {Link as LinkR} from "react-router-dom";
+
 
 export const CareerTempl = styled.div`
     width: 65%;
@@ -246,3 +248,23 @@ export const Column2 = styled.div`
   text-align: justify;
   /* background: blue; */
 `;
+
+export const Vacancybtn = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    width: 100%;
+    background: #EFB401;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 50px;
+    color: white;
+`;
+
+export const JobLink = styled.a`
+    text-decoration: none
+`;
+
+

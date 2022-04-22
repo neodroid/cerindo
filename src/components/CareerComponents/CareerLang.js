@@ -60,6 +60,21 @@ export const CareerTitle = (lang) => {
   return text;
 };
 
+export const CareerOpportunitiesTitle = (lang) => {
+  var text =
+    lang === "en" ? (
+      <>View Career Opportunities</>
+    ) : lang === "id" ? (
+      <>Telusuri Peluang Karir</>
+    ) : lang === "cn" ? (
+      <>View Career Opportunities</>
+    ) : (
+      <> </>
+    );
+    return text;
+}
+
+
 export const CareerVacancies = (data, lang) => {
   var text =
     lang === "en" ? (

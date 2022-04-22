@@ -29,12 +29,15 @@ import {
   Column2,
   EmployImage,
   Nulity,
+  Vacancybtn,
+  JobLink,
 } from "./CareerElements";
 import { langContext } from "../../langContext";
 import {
   CareerLangTitle,
   CareerLangBody,
   CareerLangEmployeeBody,
+  CareerOpportunitiesTitle,
   CareerVacancies,
   CareerTitleVacancies,
   CareerTitleEmployee,
@@ -71,8 +74,11 @@ const CareerComponents = () => {
         </JobcerImage>
       </Jobcer>
       <h2>{CareerTitleVacancies(language)}</h2>
+        <JobLink href="https://hr.cerindocorp.id/jobs">
+          <Vacancybtn>{CareerOpportunitiesTitle(language)}</Vacancybtn>
+        </JobLink>
       <div style={{ width: "100%", margin: "0 auto 52px" }}>
-        {career.LowonganPekerjaan.map((obj, idx) => {
+        {/* {career.LowonganPekerjaan.map((obj, idx) => {
           if (obj.availability > 1) {
             return (
               <DropDown role="button" tabIndex={-1} key={idx}>
@@ -138,7 +144,7 @@ const CareerComponents = () => {
               </DropDown>
             );
           }
-        })}
+        })} */}
       </div>
       <h2>{CareerTitleEmployee(language)}</h2>
       <div style={{ width: "100%", margin: "0 auto 52px" }}>
