@@ -201,7 +201,7 @@ const Footer = () => {
               <FooterLink to="/Community-Activities">
                 {FooterData(SustainabilityDropdown, 1, footerLang)}
               </FooterLink>
-              <FooterLink to="/Report">
+              <FooterLink to="/Reports">
                 {FooterData(SustainabilityDropdown, 2, footerLang)}
               </FooterLink>
               <FooterLink to="/Awards">
