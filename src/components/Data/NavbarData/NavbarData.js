@@ -156,7 +156,7 @@ export const NewsGalleryDropdown = [
   {
     en: "Press Release",
     id: "Rilis Pers",
-    ch: "QHSE",
+    ch: "新闻稿",
   },
   {
     en: "Community Activities",
@@ -166,7 +166,7 @@ export const NewsGalleryDropdown = [
   {
     en: "Gallery",
     id: "Galeri",
-    ch: "Gallery",
+    ch: "画廊",
   },
   {
     en: "Publication",
