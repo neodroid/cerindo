@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import { communityService } from "../../../service/Community";
-import BusinessSideBarComponents from "../index";
+import NewsGallerySidebarComponents from "../index";
 import { Reading } from "../../Data/SustainabilityData/ActivityDatas";
 import {
   ActivityBox,
@@ -43,7 +43,7 @@ const ActivityComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <BusinessSideBarComponents page2={true} />
+        <NewsGallerySidebarComponents page2={true} />
         <AboutMain>
           <ActivityTitle>Community Activities</ActivityTitle>
           <ActivityContainer>

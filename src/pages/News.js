@@ -3,7 +3,7 @@ import Banner from "../components/Banner";
 import NewsComponent from "../components/CorporateNewsComponents/NewsComponent";
 import { aboutUsService } from "../service/Aboutus";
 import { langContext } from '../langContext';
-import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
+import { NewsGalleryTitle } from '../components/NewsGalleryComponents/NewsGalleryLang';
 
 const News = () => {
   const { language } = useContext(langContext);
@@ -25,7 +25,7 @@ const News = () => {
             img={data.url}
             texted={true}            
             key={idx}
-            place={AboutUsTitle(language)}  
+            place={NewsGalleryTitle(language)}  
           />
         );
       })}

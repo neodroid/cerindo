@@ -68,12 +68,6 @@ const AboutSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7,page8
                         <AboutSideBarContent page={page7} to="/Licenses-Concession">
                             {AboutUsSidebar(AboutUsIntl, language, 6)}
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page8} to="/Press-Release">
-                            {AboutUsSidebar(AboutUsIntl, language, 7)}
-                        </AboutSideBarContent>
-                        <AboutSideBarContent page={page9} to="/Gallery">
-                            {AboutUsSidebar(AboutUsIntl, language, 8)}
-                        </AboutSideBarContent>
                     </Contentt>
                     : 
                     <Changed>
@@ -98,12 +92,6 @@ const AboutSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7,page8
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page7} to="/Licenses-Concession">
                             {AboutUsSidebar(AboutUsIntl, language, 6)}
-                        </AboutSideBarContent>
-                        <AboutSideBarContent page={page8} to="/Press-Release">
-                            {AboutUsSidebar(AboutUsIntl, language, 7)}
-                        </AboutSideBarContent>
-                        <AboutSideBarContent page={page9} to="/Gallery">
-                            {AboutUsSidebar(AboutUsIntl, language, 8)}
                         </AboutSideBarContent>
                     </Contentt>
                     </Changed>

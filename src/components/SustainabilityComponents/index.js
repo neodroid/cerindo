@@ -61,9 +61,6 @@ const SustainabilitySideBarComponents = ({page1,page2,page3,page4,page5,page6,pa
                         <AboutSideBarContent page={page1} to="/QHSE">
                             {SustainabilitySidebar(SustainabilitySideBarIntl, language, 0)}
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page2} to="/Community-Activities">
-                            {SustainabilitySidebar(SustainabilitySideBarIntl, language, 1)}
-                        </AboutSideBarContent>
                         <AboutSideBarContent page={page3} to="/Reports">
                             {SustainabilitySidebar(SustainabilitySideBarIntl, language, 2)}
                         </AboutSideBarContent>

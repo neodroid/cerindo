@@ -5,7 +5,7 @@ import {
   Aboutstyle,
   AboutMain,
 } from "../../../AboutUsComponents/AboutUsElements";
-import AboutSideBarComponents from "../../../AboutUsComponents/index";
+import NewsGallerySideBarComponents from "../../../NewsGalleryComponents/index";
 import { newsService } from "../../../../service/News";
 import {
   NewsContent,
@@ -116,7 +116,7 @@ const NewsContentComponents = () => {
 
   return (
     <Aboutstyle>
-      <AboutSideBarComponents page8={true} />
+      <NewsGallerySideBarComponents page1={true} />
       <AboutMain>
         <NewsWrapped>
           <h2>{AnnouncementParams(language)}</h2>

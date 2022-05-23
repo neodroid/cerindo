@@ -4,11 +4,12 @@ import {
   Business,  
   Sustainibility, 
   AboutUs, 
-  Gallery,
+  NewsGallery,
   Career, 
   BusinessOne, 
   BusinessTwo,
   SustainabilityDropdown,
+  NewsGalleryDropdown,
   AboutUsDropdown
  } from '../Data/NavbarData/NavbarData';
 import { SideBarLang, SideBarDropDown } from './SideBarLang';
@@ -118,9 +119,6 @@ const Sidebar = ({ isOpen, toggle }) => {
             <SidebarLink to="/QHSE" onClick={toggle}>
             {SideBarDropDown(SustainabilityDropdown, 0, val2)}
               </SidebarLink>
-              <SidebarLink to="/Community-Activities" onClick={toggle}>
-              {SideBarDropDown(SustainabilityDropdown, 1, val2)}
-              </SidebarLink>
               <SidebarLink to="/Reports" onClick={toggle}>
               {SideBarDropDown(SustainabilityDropdown, 2, val2)}
               </SidebarLink>
@@ -156,19 +154,24 @@ const Sidebar = ({ isOpen, toggle }) => {
             <SidebarLink to="/Licenses-Concession" onClick={toggle}>
             {SideBarDropDown(AboutUsDropdown, 6, val2)}
             </SidebarLink>
+            </DropDownContent>
+          </DropDown>
+          <DropDown role="button" tabIndex={-1}>
+            <Dropbtn>
+            {SideBarLang(NewsGallery, val2)}
+            </Dropbtn>
+            <DropDownContent>
             <SidebarLink to="/Press-Release" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 7, val2)}
-            </SidebarLink>
-            <SidebarLink to="/Gallery" onClick={toggle}>
-            {SideBarDropDown(AboutUsDropdown, 8, val2)}
+            {SideBarDropDown(NewsGalleryDropdown, 0, val2)}
+              </SidebarLink>
+              <SidebarLink to="/Community-Activities" onClick={toggle}>
+              {SideBarDropDown(NewsGalleryDropdown, 1, val2)}
+              </SidebarLink>
+              <SidebarLink to="/Gallery" onClick={toggle}>
+              {SideBarDropDown(NewsGalleryDropdown, 2, val2)}
             </SidebarLink>
             </DropDownContent>
           </DropDown>
-          <SidebarLink to="/Gallery" onClick={toggle}>
-          <SideBtnWrap>
-          {SideBarLang(Gallery, val2)}
-            </SideBtnWrap>
-          </SidebarLink>
           <SidebarLink to="/Career" onClick={toggle}>
           <SideBtnWrap>
           {SideBarLang(Career, val2)}

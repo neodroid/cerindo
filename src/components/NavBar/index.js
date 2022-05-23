@@ -5,11 +5,12 @@ import {
   Business,
   Sustainibility,
   AboutUs,
-  Gallery,
+  NewsGallery,
   Career,
   BusinessOne,
   BusinessTwo,
   SustainabilityDropdown,
+  NewsGalleryDropdown,
   AboutUsDropdown,
 } from "../Data/NavbarData/NavbarData";
 import { NavbarLang, NavbarDropDown } from "./NavbarLang";
@@ -172,9 +173,6 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/QHSE">
                       {NavbarDropDown(SustainabilityDropdown, 0, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Community-Activities">
-                      {NavbarDropDown(SustainabilityDropdown, 1, language)}
-                    </NavDropLinks>
                     <NavDropLinks to="/Reports">
                       {NavbarDropDown(SustainabilityDropdown, 2, language)}
                     </NavDropLinks>
@@ -213,18 +211,30 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Licenses-Concession">
                       {NavbarDropDown(AboutUsDropdown, 6, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Press-Release">
-                      {NavbarDropDown(AboutUsDropdown, 7, language)}
-                    </NavDropLinks>
-                    <NavDropLinks to="/Gallery">
-                      {NavbarDropDown(AboutUsDropdown, 8, language)}
-                    </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/Gallery">{NavbarLang(Gallery, language)}</NavLinks>
+              <NavLinks>
+                {NavbarLang(NewsGallery, language)}
+                <NavbarDropdownContent>
+                  <DropDiv>
+                    <NavDropLinks to="/Press-Release">
+                      {NavbarDropDown(NewsGalleryDropdown, 0, language)}
+                    </NavDropLinks>
+                    <NavDropLinks to="/Community-Activities">
+                      {NavbarDropDown(NewsGalleryDropdown, 1, language)}
+                    </NavDropLinks>
+                    <NavDropLinks to="/Gallery">
+                      {NavbarDropDown(NewsGalleryDropdown, 2, language)}
+                    </NavDropLinks>
+                    {/* <NavDropLinks to="/Publication">
+                      {NavbarDropDown(NewsGalleryDropdown, 3, language)}
+                    </NavDropLinks> */}
+                  </DropDiv>
+                </NavbarDropdownContent>
+              </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="/Career">{NavbarLang(Career, language)}</NavLinks>

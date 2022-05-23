@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
 import { aboutUsService } from "../service/Aboutus";
 import Banner from "../components/Banner";
-import GalleryComponents from "../components/AboutUsComponents/GalleryComponents";
+import GalleryComponents from "../components/NewsGalleryComponents/GalleryComponents";
 import { langContext } from '../langContext';
-import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
+import { NewsGalleryTitle } from '../components/NewsGalleryComponents/NewsGalleryLang';
 
 const Gallery = () => {
   const { language } = useContext(langContext);
@@ -22,7 +22,7 @@ const Gallery = () => {
     <>
       {gallery.banner.map((data, idx) => {
         return (
-          <Banner img={data.url} texted={true} key={idx} place={AboutUsTitle(language)} />
+          <Banner img={data.url} texted={true} key={idx} place={NewsGalleryTitle(language)} />
         );
       })}
       <GalleryComponents />

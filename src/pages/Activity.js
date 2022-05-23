@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { sustainService } from "../service/Sustainability";
 import Banner from "../components/Banner";
-import ActivityComponents from "../components/SustainabilityComponents/ActivityComponents";
+import ActivityComponents from "../components/NewsGalleryComponents/ActivityComponents";
 import {BannerSlider} from "../components/BannerSlider";
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import { langContext } from '../langContext';
-import { SustainabilityTitle } from '../components/SustainabilityComponents/SustainabilityLang';
+import { NewsGalleryTitle } from '../components/NewsGalleryComponents/NewsGalleryLang';
 import 'react-awesome-slider/dist/styles.css';
 
 const AutoplaySlider = withAutoplay(BannerSlider);
@@ -34,7 +34,7 @@ const Activity = () => {
       {activity.banner.map((data, idx) => {
         return(
           <>
-          <Banner img={data.url} texted={true} key={idx} place={SustainabilityTitle(language)}/>
+          <Banner img={data.url} texted={true} key={idx} place={NewsGalleryTitle(language)}/>
           </>
       )})}
       </AutoplaySlider>

@@ -18,9 +18,9 @@ import {
 } from "./NewsElements";
 import Banner from "../../Banner";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
-import AboutSideBarComponents from "../../AboutUsComponents/index";
+import NewsGallerySideBarComponents from "../../NewsGalleryComponents/index";
 import { langContext } from "../../../langContext";
-import { AboutUsTitle } from "../../AboutUsComponents/AboutUsLang";
+import { NewsGalleryTitle } from "../../NewsGalleryComponents/NewsGalleryLang";
 import { aboutUsService } from "../../../service/Aboutus";
 import {
   DetailsNewsLangTitle,
@@ -90,12 +90,12 @@ const NewsComponent = (props) => {
             img={data.url}
             texted={true}
             key={idx}
-            place={AboutUsTitle(language)}
+            place={NewsGalleryTitle(language)}
           />
         );
       })}
       <Aboutstyle>
-        <AboutSideBarComponents page8={true} />
+        <NewsGallerySideBarComponents page1={true} />
         <AboutMain>
           <DateWrapped>
             <BoxContainer>{detailsNews.date}</BoxContainer>

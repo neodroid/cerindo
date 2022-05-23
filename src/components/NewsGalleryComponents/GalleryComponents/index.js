@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { aboutUsService } from "../../../service/Aboutus";
 import { Link } from "react-router-dom";
-import { Aboutstyle, AboutMain } from "../AboutUsElements";
-import AboutSideBarComponents from "../index";
+import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
+import NewsGallerySidebarComponents from "../index";
 import { GalleryTitle } from "../../Data/AboutusData/GalleryDatas";
 import {
   GalleryAllContent,
@@ -47,7 +47,7 @@ const GalleryComponents = () => {
   return (
     <>
       <Aboutstyle>
-        <AboutSideBarComponents page9={true} />
+        <NewsGallerySidebarComponents page3={true} />
         <AboutMain>
           <GalleryAllContent>
             <h2>{GalleryLangParans(GalleryTitle.profile, language)}</h2>

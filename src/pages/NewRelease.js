@@ -4,7 +4,7 @@ import { NReleaseBanner } from "../components/Data/News";
 import NewsContent from "../components/CorporateNewsComponents/NewsReleaseComponents/NewsContentComponents";
 import { aboutUsService } from "../service/Aboutus";
 import { langContext } from '../langContext';
-import { AboutUsTitle } from '../components/AboutUsComponents/AboutUsLang';
+import { NewsGalleryTitle } from '../components/NewsGalleryComponents/NewsGalleryLang';
 
 const NewsRelease = () => {
   const { language } = useContext(langContext);
@@ -26,7 +26,7 @@ const NewsRelease = () => {
             img={data.url}
             texted={true}            
             key={idx}
-            place={AboutUsTitle(language)}
+            place={NewsGalleryTitle(language)}
           />
         );
       })}

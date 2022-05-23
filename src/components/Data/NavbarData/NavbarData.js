@@ -152,10 +152,34 @@ export const AboutUsDropdown = [
   },
 ];
 
-export const Gallery = {
-  en: "GALLERY",
-  id: "GALERI",
-  ch: "Galerry",
+export const NewsGalleryDropdown = [
+  {
+    en: "Press Release",
+    id: "Rilis Pers",
+    ch: "QHSE",
+  },
+  {
+    en: "Community Activities",
+    id: "Kegiatan Komunitas",
+    ch: "社区活动",
+  },
+  {
+    en: "Gallery",
+    id: "Galeri",
+    ch: "Gallery",
+  },
+  {
+    en: "Publication",
+    id: "Publikasi",
+    ch: "Publication",
+  },
+];
+
+
+export const NewsGallery = {
+  en: "NEWS & GALLERY",
+  id: "BERITA & GALERI",
+  ch: "NEWS & GALLERY",
 };
 
 export const Career = {
