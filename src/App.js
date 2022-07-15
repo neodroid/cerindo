@@ -35,6 +35,7 @@ import Reports from "./pages/Reports";
 import NotFoundPage from "./pages/404Page";
 import Award from "./pages/Award";
 import Gallery from "./pages/Gallery";
+import Fms from "./pages/Fms";
 import ActivityContentComponent from "./components/NewsGalleryComponents/ActivityComponents/ActivityContentComponents";
 import ContactComponents from "./components/ContactComponents/index";
 import AnnouncementPage from "./components/CorporateNewsComponents/NewsReleaseComponents/Announcement";
@@ -110,6 +111,7 @@ function App() {
                 <Route path="/Album/:id" component={AlbumComponent} exact />
                 <Route path="/Jobs/:job/:jobs" component={JobComponents} exact />
                 <Route path="/Contact-Us" component={ContactComponents} exact />
+                <Route path="/fms" component={Fms} exact/>
                 <Route component={NotFoundPage} />
               </Switch>
             </CSSTransition>
