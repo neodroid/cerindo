@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
-import { aboutUsService } from "../../../service/Aboutus";
+import { aboutUsService} from "../../../../service/Aboutus";
 import { Link } from "react-router-dom";
-import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
-import NewsGallerySidebarComponents from "../index";
-import { GalleryTitle } from "../../Data/AboutusData/GalleryDatas";
+import { Aboutstyle, AboutMain } from "../../../AboutUsComponents/AboutUsElements";
+import NewsGallerySidebarComponents from "../../index";
+import { GalleryTitle } from "../../../Data/AboutusData/GalleryDatas";
 import {
   GalleryAllContent,
   VideoGridOther,
@@ -12,16 +12,16 @@ import {
   VideoContentPartMain,
   Figured,
   VideoContainerOther,
-} from "./GalleryElements";
-import { langContext } from "../../../langContext";
+} from "../GalleryElements";
+import { langContext } from "../../../../langContext";
 import {
   GalleryLangTitle,
   GalleryLangParans,
   GalleryLangVideo,
   GalleryLangVideoTitle,
-} from "./GalleryLang";
+} from "../GalleryLang";
 
-const GalleryComponents = () => {
+const PhotosComponents = () => {
   const { language } = useContext(langContext);
   const [videoGallery, setVideoGallery] = useState([]);
   const [photoGallery, setPhotoGallery] = useState([]);
@@ -49,12 +49,29 @@ const GalleryComponents = () => {
       <Aboutstyle>
         <NewsGallerySidebarComponents page3={true} />
         <AboutMain>
-           <a href="/VideosGallery">videos</a>
-           <br/>
-           <a href="/PhotosGallery">photos</a>
+          <GalleryAllContent>
+          <h2>Photo Gallery</h2>
+            <VideoGridOther>
+              {photoGallery.map((data, idx) => {
+                return (
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/Album/${data._id}`}
+                  >
+                    <Figured key={idx}>
+                      <img src={data.image[0].url} alt={data.title_en} />
+                      <figcaption>
+                        {GalleryLangTitle(data, language)}
+                      </figcaption>
+                    </Figured>
+                  </Link>
+                );
+              })}
+            </VideoGridOther>
+          </GalleryAllContent>
         </AboutMain>
       </Aboutstyle>
     </>
   );
 };
-export default GalleryComponents;
+export default PhotosComponents;

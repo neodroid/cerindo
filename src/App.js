@@ -35,6 +35,8 @@ import Reports from "./pages/Reports";
 import NotFoundPage from "./pages/404Page";
 import Award from "./pages/Award";
 import Gallery from "./pages/Gallery";
+import VideosGallery from "./pages/VideosGallery";
+import PhotosGallery from "./pages/PhotosGallery"; 
 import ActivityContentComponent from "./components/NewsGalleryComponents/ActivityComponents/ActivityContentComponents";
 import ContactComponents from "./components/ContactComponents/index";
 import AnnouncementPage from "./components/CorporateNewsComponents/NewsReleaseComponents/Announcement";
@@ -102,6 +104,8 @@ function App() {
                 <Route path="/Reports" component={Reports} exact />
                 <Route path="/Awards" component={Award} exact />
                 <Route path="/Gallery" component={Gallery} exact />
+                <Route path="/VideosGallery" component={VideosGallery} exact />
+                <Route path="/PhotosGallery" component={PhotosGallery} exact />
                 <Route
                   path="/Community-Activity/:id"
                   component={ActivityContentComponent}
