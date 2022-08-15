@@ -24,6 +24,7 @@ export const Jobcer = styled.div`
     margin-bottom: 50px;
     width: 100%;
     flex-direction: row;
+    gap: 32px;
     @media screen and (max-width: 952px) {
         flex-direction: column;
     }
