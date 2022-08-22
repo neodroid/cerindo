@@ -74,7 +74,7 @@ const LicenseComponents = () => {
                 </LicContents>
               );
             })}
-            <TabelDownload>
+            {/* <TabelDownload>
               {license.license_list.map((data, idx) => {
                 if (idx % 2 == 0) {
                   return (
@@ -108,7 +108,7 @@ const LicenseComponents = () => {
                   );
                 }
               })}
-            </TabelDownload>
+            </TabelDownload> */}
             <AwardContent>
               <h2>{ConcessionTitle(license, language)}</h2>
               {license.Concession.map((data, idx) => {
