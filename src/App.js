@@ -39,6 +39,7 @@ import ActivityContentComponent from "./components/NewsGalleryComponents/Activit
 import ContactComponents from "./components/ContactComponents/index";
 import AnnouncementPage from "./components/CorporateNewsComponents/NewsReleaseComponents/Announcement";
 import { langContext } from "./langContext";
+import Privacy from "./components/PrivacyComponents/Privacy";
 
 function App() {
   const [language, setLanguage] = useState("en");
@@ -110,6 +111,7 @@ function App() {
                 <Route path="/Album/:id" component={AlbumComponent} exact />
                 <Route path="/Jobs/:job/:jobs" component={JobComponents} exact />
                 <Route path="/Contact-Us" component={ContactComponents} exact />
+                <Route path="/Privacy" component={Privacy} exact />
                 <Route component={NotFoundPage} />
               </Switch>
             </CSSTransition>
