@@ -111,11 +111,7 @@ const HeroSection = () => {
         })}
       </AutoplaySlider>
       <HeroNewsWrap>
-        <HeroNewsFlex>
-          <TitleNewsApart>
             <HeroMediaH1>Recent Update</HeroMediaH1>
-          </TitleNewsApart>
-        </HeroNewsFlex>
         <HeroNewsFlex content>
           {sortedContent
             .filter((e, idx) => idx < 3)

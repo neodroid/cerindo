@@ -33,6 +33,8 @@ export const VideoContentMain = styled.video`
 export const VideoContentPartMain = styled.div`
   text-align: center;
   margin: 0 auto;
+  display:flex;
+  justify-content: start;
   @media screen and (max-width: 525px) {
     margin: 0 auto;
   }
@@ -40,7 +42,7 @@ export const VideoContentPartMain = styled.div`
 export const VideoGridOther = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 20px;
+  grid-gap: 32px;
   justify-content: start;
   @media screen and (max-width: 884px) {
     grid-template-columns: auto auto;
@@ -61,6 +63,7 @@ export const VideoContainerOther = styled.div`
     font-size: 14px;
     line-height: 24px;
     color: #111111;
+    text-align: justify;
   }
   @media screen and (max-width: 609px) {
     width: 100%;
@@ -74,17 +77,23 @@ export const VideoContentOther = styled.video`
 export const Figured = styled.figure`
   margin: 10px auto;
   max-width: 226px;
+  height: 100%;
   transition: 0.5s all ease;
+  box-shadow: 2px 2px 4px gray;
+  border-radius: 0.2rem;
+  padding: 1em;
   &:hover {
     transform: scale(1.08);
   }
   img {
-    max-width: 226px;
-    max-height: 128px;
+    max-width: 100%;
+    max-height: auto;
+    object-fit: cover;
+
   }
   div {
-    width: 226px;
-    height: 127px;
+    width: 100%;
+    min-height: 127px;
     background-image: url(${(props) => props.src});
     background-repeat: no-repeat;
     background-position: center;
@@ -101,9 +110,21 @@ export const Figured = styled.figure`
     }
   }
   figcaption {
+    text-align: justify;
+    width: 100%;
     font-size: 14px;
     line-height: 24px;
     color: #111111;
     padding: 5px 0;
   }
+`;
+export const ImgContainer = styled.div`
+  max-width: 100%;
+  max-height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  object-fit: cover;
+  
 `;

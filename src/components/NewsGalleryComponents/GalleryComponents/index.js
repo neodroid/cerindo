@@ -12,6 +12,7 @@ import {
   VideoContentPartMain,
   Figured,
   VideoContainerOther,
+  ImgContainer
 } from "./GalleryElements";
 import { langContext } from "../../../langContext";
 import {
@@ -41,9 +42,16 @@ const GalleryComponents = () => {
     fetchPhoto();
   }, []);
 
+  const sortedPhoto = photoGallery.sort((a, b) => {
+    var c = new Date(a.createdAt);
+    var d = new Date(b.createdAt);
+    return d - c;
+  });
+
   if (videoGallery.length === 0) return null;
-  if (photoGallery.length === 0) return null;
+  if (sortedPhoto.length === 0) return null;
   console.log(videoGallery[0]);
+  console.log(sortedPhoto[0]);
   return (
     <>
       <Aboutstyle>
@@ -74,14 +82,16 @@ const GalleryComponents = () => {
             </VideoGridOther>
             <h2>Photo Gallery</h2>
             <VideoGridOther>
-              {photoGallery.map((data, idx) => {
+              {sortedPhoto.map((data, idx) => {
                 return (
                   <Link
                     style={{ textDecoration: "none" }}
                     to={`/Album/${data._id}`}
                   >
                     <Figured key={idx}>
+                      <ImgContainer>
                       <img src={data.image[0].url} alt={data.title_en} />
+                      </ImgContainer>
                       <figcaption>
                         {GalleryLangTitle(data, language)}
                       </figcaption>

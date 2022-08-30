@@ -153,15 +153,14 @@ export const HeroMediaH1 = styled.h1`
   color: #333;
   /* font-size: 48px;
   text-align: center; */
-  max-width: 500px;
+  max-width: 100%;
   /* font-family: Montserrat; */
   /* font-style: normal; */
-  font-weight: 900;
-
+  font-weight: 700;
+  padding:0;
   font-size: 16px;
-  margin-top: 5px;
+  margin: 1rem 0;
   font-family: "Montserrat-black";
-  margin-bottom: 10px;
   @media screen and (max-width: 480px) {
     font-size: 16px;
   }
@@ -193,7 +192,7 @@ export const HeroBtnWrapper = styled.div`
 `;
 
 export const TitleNewsApart = styled.div`
-  flex-basis:50%;
+  /* flex-basis:50%; */
   width:100%;
 `;
 export const ViewedAll = styled(LinkR)`
