@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import NewsGallerySidebarComponents from "../index";
 import { GalleryTitle } from "../../Data/AboutusData/GalleryDatas";
+import {BsArrowRight} from "react-icons/bs"
 import {
   GalleryAllContent,
   VideoGridOther,
@@ -12,7 +13,10 @@ import {
   VideoContentPartMain,
   Figured,
   VideoContainerOther,
-  ImgContainer
+  ImgContainer,
+  CardContent,
+  ViewAlbum,
+  ArrowIcon
 } from "./GalleryElements";
 import { langContext } from "../../../langContext";
 import {
@@ -75,7 +79,7 @@ const GalleryComponents = () => {
                       src={GalleryLangVideo(data, language).props.children}
                       key={idx}
                     />
-                      <p>{GalleryLangVideoTitle(data, language)}</p>                      
+                    <p>{GalleryLangVideoTitle(data, language)}</p>
                   </VideoContainerOther>
                 );
               })}
@@ -90,11 +94,17 @@ const GalleryComponents = () => {
                   >
                     <Figured key={idx}>
                       <ImgContainer>
-                      <img src={data.image[0].url} alt={data.title_en} />
+                        <img src={data.image[0].url} alt={data.title_en} />
                       </ImgContainer>
-                      <figcaption>
-                        {GalleryLangTitle(data, language)}
-                      </figcaption>
+                      <CardContent>
+                        <figcaption>
+                          {GalleryLangTitle(data, language)}
+                        </figcaption>
+                        <ViewAlbum>View Album
+                          <ArrowIcon><BsArrowRight/>
+                          </ArrowIcon>
+                        </ViewAlbum>
+                      </CardContent>
                     </Figured>
                   </Link>
                 );

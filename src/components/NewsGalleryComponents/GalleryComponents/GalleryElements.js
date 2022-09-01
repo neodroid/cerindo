@@ -7,6 +7,7 @@ export const GalleryAllContent = styled.div`
     line-height: 50px;
     color: #111111;
     margin-top: 40px;
+    margin-bottom:20px;
     @media screen and (max-width: 525px) {
       text-align: center;
     }
@@ -42,17 +43,17 @@ export const VideoContentPartMain = styled.div`
 export const VideoGridOther = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 32px;
+  grid-gap: 16px;
   justify-content: start;
   @media screen and (max-width: 884px) {
     grid-template-columns: auto auto;
   }
   @media screen and (max-width: 618px) {
     grid-template-columns: 100%;
-    justify-content: center;
+    justify-items: center;
     text-align: center;
     align-items: center;
-    grid-gap: 10px;
+    grid-gap: 16px;
     width: 100%;
   }
 `;
@@ -75,23 +76,25 @@ export const VideoContentOther = styled.video`
 `;
 
 export const Figured = styled.figure`
-  margin: 10px auto;
-  max-width: 226px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0;
+  width: 256px;
   height: 100%;
   transition: 0.5s all ease;
-  box-shadow: 2px 2px 4px gray;
-  border-radius: 0.2rem;
-  padding: 1em;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   &:hover {
-    transform: scale(1.08);
+    transform: scale(1.06);
   }
   img {
-    max-width: 100%;
-    max-height: auto;
+    width: 100%;
+    height: 190px;
     object-fit: cover;
 
   }
-  div {
+  /* div {
     width: 100%;
     min-height: 127px;
     background-image: url(${(props) => props.src});
@@ -108,23 +111,47 @@ export const Figured = styled.figure`
       width: 226px;
       height: 127px;
     }
-  }
+  } */
   figcaption {
-    text-align: justify;
+    text-align: left;
     width: 100%;
     font-size: 14px;
     line-height: 24px;
     color: #111111;
-    padding: 5px 0;
   }
 `;
 export const ImgContainer = styled.div`
-  max-width: 100%;
-  max-height: 128px;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  object-fit: cover;
+  background-size: cover;
   
 `;
+
+export const CardContent = styled.div`
+  height: 100%;
+  display: flex;
+  padding: 0px 14px 16px;
+  gap:32px;
+  justify-content: space-between;
+  flex-direction: column;
+`
+
+export const ViewAlbum = styled.div`
+  gap:12px;
+  display: flex;
+  align-items:center;
+  color: #EFB401;
+
+`
+
+export const ArrowIcon = styled.div`
+  display: flex;
+  align-items: center;
+  font-size:24px;
+
+`
+
