@@ -92,7 +92,6 @@ export const Figured = styled.figure`
     width: 100%;
     height: 190px;
     object-fit: cover;
-
   }
   /* div {
     width: 100%;
@@ -124,18 +123,19 @@ export const ImgContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   overflow: hidden;
-  background-size: cover;
+  /* background-size: cover; */
   
 `;
 
 export const CardContent = styled.div`
   height: 100%;
   display: flex;
+  align-items: flex-start;
   padding: 0px 14px 16px;
-  gap:32px;
+  /* gap:32px; */
   justify-content: space-between;
   flex-direction: column;
 `
@@ -143,15 +143,17 @@ export const CardContent = styled.div`
 export const ViewAlbum = styled.div`
   gap:12px;
   display: flex;
+  font-size:14px;
   align-items:center;
   color: #EFB401;
+  margin-top: 1rem;
 
 `
 
 export const ArrowIcon = styled.div`
   display: flex;
   align-items: center;
-  font-size:24px;
+  font-size:22px;
 
 `
 
