@@ -15,8 +15,8 @@ export const GalleryAllContent = styled.div`
 `;
 
 export const VideoContentMain = styled.video`
-  width: 709px;
-  height: 505px;
+  width: 800px;
+  height: 450px;
   background: #f1f1f1;
   @media screen and (max-width: 884px) {
     width: 567px;
@@ -38,6 +38,7 @@ export const VideoContentPartMain = styled.div`
   justify-content: start;
   @media screen and (max-width: 525px) {
     margin: 0 auto;
+    justify-content: center;
   }
 `;
 export const VideoGridOther = styled.div`
@@ -59,20 +60,20 @@ export const VideoGridOther = styled.div`
 `;
 
 export const VideoContainerOther = styled.div`
-  width: 226px;
+  width: 256px;
   p {
     font-size: 14px;
     line-height: 24px;
     color: #111111;
-    text-align: justify;
+    text-align: left;
   }
   @media screen and (max-width: 609px) {
-    width: 100%;
+    
   }
 `;
 export const VideoContentOther = styled.video`
-  width: 226px;
-  height: 127px;
+  width: 256px;
+  height: 144px;  
 `;
 
 export const Figured = styled.figure`

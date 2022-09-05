@@ -52,10 +52,17 @@ const GalleryComponents = () => {
     return d - c;
   });
 
-  if (videoGallery.length === 0) return null;
+  const sortedVideo = videoGallery.sort((a, b) => {
+    var c = new Date(a.createdAt);
+    var d = new Date(b.createdAt);
+    return d - c;
+  });
+
+  if (sortedVideo.length === 0) return null;
   if (sortedPhoto.length === 0) return null;
   console.log(videoGallery[0]);
   console.log(sortedPhoto[0]);
+
   return (
     <>
       <Aboutstyle>
@@ -66,12 +73,12 @@ const GalleryComponents = () => {
             <VideoContentPartMain>
               <VideoContentMain
                 controls
-                src={GalleryLangVideo(videoGallery[0], language).props.children}
+                src={GalleryLangVideo(videoGallery[videoGallery.length-1], language).props.children}
               />
             </VideoContentPartMain>
             <h2>{GalleryLangParans(GalleryTitle.other, language)}</h2>
             <VideoGridOther>
-              {videoGallery.slice(1).map((data, idx) => {
+              {sortedVideo.map((data, idx) => {
                 return (
                   <VideoContainerOther>
                     <VideoContentOther
