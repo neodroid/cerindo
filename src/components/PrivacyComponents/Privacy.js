@@ -4,7 +4,7 @@ import "./Privacy.css"
 function Privacy() {
   return (
     <div className='container'>
-      <h1>Kebijakan Privasi Ceria Mobile</h1>
+      <h1 className='heading'>Kebijakan Privasi Aplikasi Ceria Mobile</h1>
       <p>
         Kebijakan privasi ini bertujuan untuk menyampaikan bagaimana PT Ceria Nugraha Indotama mengelola dan menjaga data milik pengguna layanan Ceria Mobile.
 
