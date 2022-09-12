@@ -170,7 +170,8 @@ export const HeroMediaH1 = styled.h1`
   margin: 1rem 0;
   font-family: "Montserrat";
   @media screen and (max-width: 480px) {
-    font-size: 16px;
+    text-align: center;
+    font-size: 40px;
   }
 `;
 
@@ -310,7 +311,7 @@ export const ReadMore = styled.div`
 export const HeroNewsP = styled.div`
   font-family: "Montserrat";
   font-size: 14px;
-  line-height: 18px;
+  line-height: 1.5rem;
   color: black;
 `;
 
