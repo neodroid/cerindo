@@ -241,6 +241,13 @@ const Navbar = ({ toggle }) => {
             </NavItem>
           </NavMenu>
           <NavBtn>
+            <Menu
+              value={val1}
+              onChange={setValue1}
+              showFlag
+              placeholder="select language"
+              items={["en", "cn", "id"]}
+            />
             <SearchImage onClick={SearchedButton} />
             {searchbuttons ? (
               <SearchField scrollNav={scrollNav}>
@@ -281,13 +288,6 @@ const Navbar = ({ toggle }) => {
             ) : (
               <Nulity></Nulity>
             )}
-            <Menu
-              value={val1}
-              onChange={setValue1}
-              showFlag
-              placeholder="select language"
-              items={["en", "cn", "id"]}
-            />
           </NavBtn>
         </NavbarContainer>
       </Nav>

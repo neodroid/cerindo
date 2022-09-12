@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { MdArrowDownward } from "react-icons/md";
-import {FaSearch} from "react-icons/fa";
+import {BsSearch} from "react-icons/bs";
 
 export const Nav = styled.nav`
   background: #fff;
@@ -23,6 +23,7 @@ export const NavbarContainer = styled.div`
   /* background: "#fff"; */
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 80px;
   z-index: 1;
   width: 100%;
@@ -35,26 +36,25 @@ export const HeaderImage = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 90px;
-  height: 30px;
+  height: 48px;
   /* margin: 15px; */
+
+  @media screen and (max-width: 480px){
+    height: 40px;
+  }
 `;
 
 export const NavLogo = styled(LinkR)`
-  border-radius: 50px;
-  padding-left: 10px;
-  padding-right: 10px;
+  
   /* background-color: #fff; */
   justify-self: flex-start;
+  justify-content: center;
   cursor: pointer;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
-  height: 40px;
-  margin-top: 15px;
 `;
 
 export const MobileIcon = styled.div`
@@ -65,7 +65,7 @@ export const MobileIcon = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 60%);
+    transform: translate(-100%, 70%);
     font-size: 1.8rem;
     cursor: pointer;
     color: #333;
@@ -114,7 +114,6 @@ export const NavbarDropdownContent = styled.div`
 export const NavLinks = styled(LinkR)`
   font-family: 'Montserrat', sans-serif;
   color: #333;
-  font-weight: bold;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -125,16 +124,15 @@ export const NavLinks = styled(LinkR)`
   font-size: 14px;
   line-height: 17px;
   transition: 0.3s linear;
+  border-bottom: 3px solid transparent;
   color: ${({ bottom }) => (bottom ? "#efb401" : "none")};
 
   &.active {
     border-bottom: 3px solid #efb401;
-    font-weight: bold;
   }
 
   &:hover {
     color: #efb401;
-    font-weight: bold;
     border-bottom: 3px solid #efb401;
   }
 
@@ -311,7 +309,7 @@ export const ArrowForward = styled(MdArrowDownward)`
 `;
 
 /////Search Button
-export const SearchImage = styled(FaSearch)`
+export const SearchImage = styled(BsSearch)`
   font-size: 20px;
   color: black;
   cursor: pointer;
