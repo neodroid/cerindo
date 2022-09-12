@@ -30,6 +30,7 @@ import {
   Angle,
   BgColoring,
   Slider,
+  ReadMore,
 } from "./HeroElements";
 import { langContext } from "../../../langContext";
 import { NewsLangTitle, NewsLangBanner } from "./HeroLang";
@@ -111,7 +112,7 @@ const HeroSection = () => {
         })}
       </AutoplaySlider>
       <HeroNewsWrap>
-            <HeroMediaH1>Recent Update</HeroMediaH1>
+        <HeroMediaH1>Recent Update</HeroMediaH1>
         <HeroNewsFlex content>
           {sortedContent
             .filter((e, idx) => idx < 3)
@@ -129,9 +130,10 @@ const HeroSection = () => {
                           <Img src={data.image.url} />
                         </ImgWrap>
                         <HeroNewsDesc>
-                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                           <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                         </HeroNewsDesc>
+                        <ReadMore>Read More</ReadMore>
                       </HeroNewsContent>
                     ) : (
                       <HeroNewsContent to={`/News/${data._id}`} key={idx}>
@@ -139,9 +141,10 @@ const HeroSection = () => {
                           <Img src={data.image.url} />
                         </ImgWrap>
                         <HeroNewsDesc>
-                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                           <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                         </HeroNewsDesc>
+                        <ReadMore>Read More</ReadMore>
                       </HeroNewsContent>
                     )}
                   </>
@@ -159,9 +162,10 @@ const HeroSection = () => {
                           <Img src={data.image.url} />
                         </ImgWrap>
                         <HeroNewsDesc>
-                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                           <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                         </HeroNewsDesc>
+                        <ReadMore>Read More</ReadMore>
                       </HeroNewsContent>
                     ) : (
                       <HeroNewsContent
@@ -172,9 +176,10 @@ const HeroSection = () => {
                           <Img src={data.image.url} />
                         </ImgWrap>
                         <HeroNewsDesc>
-                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                           <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                         </HeroNewsDesc>
+                        <ReadMore>Read More</ReadMore>
                       </HeroNewsContent>
                     )}
                   </>

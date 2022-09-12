@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { MdArrowDownward, MdKeyboardArrowDown} from "react-icons/md";
-import {Link as LinkR} from "react-router-dom";
+import { MdArrowDownward, MdKeyboardArrowDown } from "react-icons/md";
+import { Link as LinkR } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 import AwesomeSlider from 'react-awesome-slider';
 
@@ -62,7 +62,7 @@ export const HeroRow = styled.div`
 
   @media screen and (max-width: 768px) {
     grid-template-areas: ${({ imgStart }) =>
-      imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
+    imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
 `;
 
@@ -96,34 +96,44 @@ export const H1Wrap = styled.div`
 `;
 
 export const HeroNewsFlex = styled.div`
+  height: 470px;
+  width: 100%;
   display:flex;
-  flex-direction: ${(props)=>(props.content ? "row" : "row")};
-  @media screen and (max-width: 1065px) {
-    flex-direction: ${(props)=>(props.content ? "column" : "row")};
-  }
+  gap: 2rem;
+  flex-direction: row;
+
+  @media screen and (max-width: 1033px) {
+  flex-direction : column;
+  align-items : center;
+  height: 100%;
+}
 `;
 
 export const HeroNewsWrap = styled.div`
   z-index: 3;
-  min-height: 471 px;
   overflow: hidden;
-  width: 1000px;
-  background: rgba(255,255,255,0.8);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
   /* position: absolute; */
   /* margin-top: 40px; */
-  padding: 8px 24px;
+  padding: 160px 128px;
+  gap: 3rem;
   display: flex;
   flex-direction: column;
-  margin: 50px auto 20px;
   /* align-items: center; */
+  @media screen and (max-width: 1280px){
+    padding: 80px 64px;
+  }
   @media screen and (max-width: 1065px) {
     width: 100%;
+    padding: 80px 64px;
+    align-items: center;
+
   }
   @media screen and (max-width: 600px) {
-    width: 90%;
-    margin: 10px auto 20px;
+    width: 100%;
+    padding: 32px 24px;
+    align-items: center;
+
+
   }
 `;
 
@@ -154,13 +164,11 @@ export const HeroMediaH1 = styled.h1`
   /* font-size: 48px;
   text-align: center; */
   max-width: 100%;
-  /* font-family: Montserrat; */
-  /* font-style: normal; */
-  font-weight: 700;
+  font-weight: 400;
   padding:0;
-  font-size: 16px;
+  font-size: 3rem;
   margin: 1rem 0;
-  font-family: "Montserrat-black";
+  font-family: "Montserrat";
   @media screen and (max-width: 480px) {
     font-size: 16px;
   }
@@ -219,9 +227,18 @@ export const ArrowDown = styled(MdKeyboardArrowDown)`
 `;
 
 export const ImgWrap = styled.div`
-  width: 96px;
-  height: 96px;
-  box-shadow: 5px 5px 2px #aaaaaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  overflow: hidden;
+
+  img{
+    object-fit: cover;
+    height: 400px;
+  }
 `;
 
 export const Img = styled.div`
@@ -235,66 +252,75 @@ export const Img = styled.div`
 
 export const HeroNewsContent = styled(LinkR)`
   cursor: pointer;
-  min-width: 295px;
-  margin: 15px;
-  height: 140px;
+  position: relative;
+  width: 400px;
+  height: 100%;
+  flex-direction:column;
   display: flex;
-  flex-direction: row;
-  padding-bottom: 10px;
-  border-right: ${({ lastIndex }) => (lastIndex? "none" : "2px solid #aaa;")};
   text-decoration: none;
-  color: black;
   transition: all 0.5s ease-in-out;
-
-  text-overflow: ellipsis;
-  overflow-y: hidden;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   &:hover {
     transform: scale(1.02);
   }
+
+  @media screen and (max-width: 1033px) {
+    height: 450px;
+    width: 100%;
+  }
+
   @media screen and (max-width: 486px) {
-    flex-direction: column;
-    align-items:center;
-    text-align:center !important;
-    border-bottom: ${({ lastIndex }) => (lastIndex? "none" : "2px solid #aaa;")};
-    border-right: none;
-    min-width: 0px;
-    height: fit-content;
+    height: 450px;
+    width: 100%;
   }
 `;
+
 export const HeroNewsDesc = styled.div`
-max-width: 50%;
-  z-index: 3;
-  margin-left: 10px;
+  height: 100%;
+  padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
-
   align-items: flex-start;
   @media screen and (max-width: 480px) {
-    align-items:center;
-    margin-left: 0px;
+    /* align-items:center;
     padding: 10px;
-    text-align: center;
+    text-align: center; */
+  }
+`;
+
+export const ReadMore = styled.div`
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(2.2rem);
+  background-color: #EFB401;
+  justify-content: center;
+  padding: 8px 4px;
+  color: white;
+  transition: all 0.5s ease-in-out;
+
+  ${HeroNewsContent}:hover &{
+    transform: translateY(0);
   }
 `;
 
 export const HeroNewsP = styled.div`
-  overflow: hidden;
-  text-overflow: ellipsis;
-flex-basis: 57%;
   font-family: "Montserrat";
-  font-weight: bold;
   font-size: 14px;
   line-height: 18px;
+  color: black;
 `;
 
 export const HeroNewsTimeP = styled.div`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  flex-basis: 33%;
   font-family: "Montserrat";
+  margin-bottom: 4px;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 30px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #858585;
 `;
 
 export const VideoWrapped = styled.a`
