@@ -101,6 +101,7 @@ export const HeroNewsFlex = styled.div`
   display:flex;
   gap: 2rem;
   flex-direction: row;
+  justify-content: center;
 
   @media screen and (max-width: 1033px) {
   flex-direction : column;
@@ -114,23 +115,22 @@ export const HeroNewsWrap = styled.div`
   overflow: hidden;
   /* position: absolute; */
   /* margin-top: 40px; */
-  padding: 160px 128px;
+  padding: 3rem 6rem;
   gap: 3rem;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   @media screen and (max-width: 1280px){
-    padding: 80px 64px;
+    padding: 3rem 5rem;
   }
   @media screen and (max-width: 1065px) {
     width: 100%;
-    padding: 80px 64px;
     align-items: center;
 
   }
   @media screen and (max-width: 600px) {
     width: 100%;
-    padding: 32px 24px;
+    padding: 2rem 1.5rem;
     align-items: center;
 
 
@@ -161,13 +161,14 @@ export const HeroH1 = styled.div`
 export const HeroMediaH1 = styled.h1`
   /* background: #333; */
   color: #333;
+  width: 100%;
   /* font-size: 48px;
   text-align: center; */
   max-width: 100%;
   font-weight: 400;
   padding:0;
   font-size: 3rem;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
   font-family: "Montserrat";
   @media screen and (max-width: 480px) {
     text-align: center;
@@ -235,38 +236,22 @@ export const ImgWrap = styled.div`
   min-height: 300px;
   object-fit: cover;
   overflow: hidden;
-
-  img{
-    object-fit: cover;
-    height: 400px;
-  }
-`;
-
-export const Img = styled.div`
-  width: 100%;
-  background-image: url(${(props) => props.src});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100%;
+ 
 `;
 
 export const HeroNewsContent = styled(LinkR)`
   cursor: pointer;
   position: relative;
-  width: 400px;
+  width: 100%;
   height: 100%;
   flex-direction:column;
   display: flex;
   text-decoration: none;
-  transition: all 0.5s ease-in-out;
+  /* transition: all 0.5s ease-in-out; */
   overflow: hidden;
   background: #FFFFFF;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  &:hover {
-    transform: scale(1.02);
-  }
-
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
+  
   @media screen and (max-width: 1033px) {
     height: 450px;
     width: 100%;
@@ -275,6 +260,20 @@ export const HeroNewsContent = styled(LinkR)`
   @media screen and (max-width: 486px) {
     height: 450px;
     width: 100%;
+  }
+`;
+
+export const Img = styled.div`
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+
+  ${HeroNewsContent}:hover &{
+    transform: scale(1.08);
   }
 `;
 
@@ -296,7 +295,7 @@ export const ReadMore = styled.div`
   display: flex;
   bottom: 0;
   width: 100%;
-  transform: translateY(2.2rem);
+  transform: translateY(2.4rem);
   background-color: #EFB401;
   justify-content: center;
   padding: 8px 4px;
@@ -378,7 +377,7 @@ export const Slider = styled(AwesomeSlider)`
   .awssld__wrapper{
     margin: 0 auto !important;
     display: block !important;
-    height: 730px;
+    height: 90vh;
   }
   .awssld__bullets{
     bottom: 30px;

@@ -23,6 +23,15 @@ import {
   HomeLangButton,
   HomeLangVideo,
 } from "../HomeLang";
+import {
+  FlexContainer,
+  FlexWrap,
+  HomeFlex,
+  HomeFlexElement,
+  HomeH1,
+  HomeP,
+  HomeTextWrap,
+} from "../HomeElements";
 
 const AboutUs = ({
   lightText,
@@ -47,41 +56,42 @@ const AboutUs = ({
   if (homeData.length === 0) return null;
   return (
     <>
-      <InfoContainer lightBg={lightBg} id={id}>
-        <InfoWrapper>
-          <InfoRow imgStart={imgStart}>
-            <Column1>
-              <TextWrapper>
-                <Heading lightText={lightText}>
+      <FlexWrap>
+        <FlexContainer>
+          <HomeFlex>
+            <HomeFlexElement>
+              <HomeTextWrap>
+                <HomeH1 lightText={lightText}>
                   {HomeLangTitle(homeData, language)}
-                </Heading>
-                <Subtitle darktext={darktext}>
+                </HomeH1>
+                <HomeP darktext={darktext}>
                   {HomeLangBody(homeData, language)}
-                </Subtitle>
-                <BtnWrap button={button}>
-                  <Button
-                    primary="true"
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    exact="true"
-                    offset={-80}
-                    to="/Mission-Vision"
-                  >
-                    {HomeLangButton(homeData, language)}
-                  </Button>
-                </BtnWrap>
-              </TextWrapper>
-            </Column1>
-            <Column2>
+                </HomeP>
+              </HomeTextWrap>
+              <BtnWrap button={button}>
+                <Button
+                  primary="true"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}
+                  to="/Mission-Vision"
+                >
+                  {HomeLangButton(homeData, language)}
+                </Button>
+              </BtnWrap>
+            </HomeFlexElement>
+            <HomeFlexElement>
               <VideoContent
                 controls
+                poster="https://cerindo.s3.ap-southeast-1.amazonaws.com/thumbnail_ceria_profile_03fc7e7c01.webp"
                 src={HomeLangVideo(homeData, language).props.children}
               ></VideoContent>
-            </Column2>
-          </InfoRow>
-        </InfoWrapper>
-      </InfoContainer>
+            </HomeFlexElement>
+          </HomeFlex>
+        </FlexContainer>
+      </FlexWrap>
     </>
   );
 };

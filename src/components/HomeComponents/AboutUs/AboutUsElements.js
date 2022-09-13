@@ -118,8 +118,9 @@ export const Subtitle = styled.p`
 export const BtnWrap = styled.div`
   display: ${({ button }) => (button ? "flex" : "none")};
   justify-content: flex-start;
+  margin-top: 2rem;
   @media screen and (max-width: 1033px) {
-    justify-content: center;
+    justify-content: left;
     align-items:center;
     text-align:center;
   }
@@ -142,10 +143,10 @@ export const Img = styled.img`
 `;
 
 export const VideoContent = styled.video`
-  width:480px;
-  height:300px;
+  width:100%;
+  height:100%;
   @media screen and (max-width: 577px) {
-    width: 300px;
-    height: 150px;
+    width: 100%;
+    height: auto;
   }
 `;

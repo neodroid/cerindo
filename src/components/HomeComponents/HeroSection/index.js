@@ -9,6 +9,7 @@ import { homeService } from "../../../service/Homepage";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 import "react-awesome-slider/dist/styles.css";
 import { HeroData } from "../../Data/HomeData";
+import {FlexContainer} from "../HomeElements"
 import {
   HeroContainer,
   HeroContent,
@@ -112,81 +113,83 @@ const HeroSection = () => {
         })}
       </AutoplaySlider>
       <HeroNewsWrap>
-        <HeroMediaH1>Recent Update</HeroMediaH1>
-        <HeroNewsFlex content>
-          {sortedContent
-            .filter((e, idx) => idx < 3)
-            .map((data, idx) => {
-              if (newsData.indexOf(data) !== -1) {
-                return (
-                  <>
-                    {idx > 1 ? (
-                      <HeroNewsContent
-                        to={`/News/${data._id}`}
-                        key={idx}
-                        lastIndex
-                      >
-                        <ImgWrap>
-                          <Img src={data.image.url} />
-                        </ImgWrap>
-                        <HeroNewsDesc>
-                          <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
-                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                        </HeroNewsDesc>
-                        <ReadMore>Read More</ReadMore>
-                      </HeroNewsContent>
-                    ) : (
-                      <HeroNewsContent to={`/News/${data._id}`} key={idx}>
-                        <ImgWrap>
-                          <Img src={data.image.url} />
-                        </ImgWrap>
-                        <HeroNewsDesc>
-                          <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
-                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                        </HeroNewsDesc>
-                        <ReadMore>Read More</ReadMore>
-                      </HeroNewsContent>
-                    )}
-                  </>
-                );
-              } else {
-                return (
-                  <>
-                    {idx > 1 ? (
-                      <HeroNewsContent
-                        to={`/Community-Activity/${data._id}`}
-                        key={idx}
-                        lastIndex
-                      >
-                        <ImgWrap>
-                          <Img src={data.image.url} />
-                        </ImgWrap>
-                        <HeroNewsDesc>
-                          <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
-                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                        </HeroNewsDesc>
-                        <ReadMore>Read More</ReadMore>
-                      </HeroNewsContent>
-                    ) : (
-                      <HeroNewsContent
-                        to={`/Community-Activity/${data._id}`}
-                        key={idx}
-                      >
-                        <ImgWrap>
-                          <Img src={data.image.url} />
-                        </ImgWrap>
-                        <HeroNewsDesc>
-                          <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
-                          <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
-                        </HeroNewsDesc>
-                        <ReadMore>Read More</ReadMore>
-                      </HeroNewsContent>
-                    )}
-                  </>
-                );
-              }
-            })}
-        </HeroNewsFlex>
+        <FlexContainer>
+          <HeroMediaH1>Recent Update</HeroMediaH1>
+          <HeroNewsFlex content>
+            {sortedContent
+              .filter((e, idx) => idx < 3)
+              .map((data, idx) => {
+                if (newsData.indexOf(data) !== -1) {
+                  return (
+                    <>
+                      {idx > 1 ? (
+                        <HeroNewsContent
+                          to={`/News/${data._id}`}
+                          key={idx}
+                          lastIndex
+                        >
+                          <ImgWrap>
+                            <Img src={data.image.url} />
+                          </ImgWrap>
+                          <HeroNewsDesc>
+                            <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                            <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                          </HeroNewsDesc>
+                          <ReadMore>Read More</ReadMore>
+                        </HeroNewsContent>
+                      ) : (
+                        <HeroNewsContent to={`/News/${data._id}`} key={idx}>
+                          <ImgWrap>
+                            <Img src={data.image.url} />
+                          </ImgWrap>
+                          <HeroNewsDesc>
+                            <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                            <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                          </HeroNewsDesc>
+                          <ReadMore>Read More</ReadMore>
+                        </HeroNewsContent>
+                      )}
+                    </>
+                  );
+                } else {
+                  return (
+                    <>
+                      {idx > 1 ? (
+                        <HeroNewsContent
+                          to={`/Community-Activity/${data._id}`}
+                          key={idx}
+                          lastIndex
+                        >
+                          <ImgWrap>
+                            <Img src={data.image.url} />
+                          </ImgWrap>
+                          <HeroNewsDesc>
+                            <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                            <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                          </HeroNewsDesc>
+                          <ReadMore>Read More</ReadMore>
+                        </HeroNewsContent>
+                      ) : (
+                        <HeroNewsContent
+                          to={`/Community-Activity/${data._id}`}
+                          key={idx}
+                        >
+                          <ImgWrap>
+                            <Img src={data.image.url} />
+                          </ImgWrap>
+                          <HeroNewsDesc>
+                            <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                            <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
+                          </HeroNewsDesc>
+                          <ReadMore>Read More</ReadMore>
+                        </HeroNewsContent>
+                      )}
+                    </>
+                  );
+                }
+              })}
+          </HeroNewsFlex>
+        </FlexContainer>
       </HeroNewsWrap>
     </>
   );
