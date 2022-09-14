@@ -39,11 +39,13 @@ export const HeroBg = styled.div`
 export const HeroContent = styled.div`
 height: 100%;
   z-index: 3;
-  max-width: 1000px;
+  max-width: 1440px;
+  justify-content:center;
+  margin: auto;
+  padding: 3rem 6rem;
   /* position: absolute; */
-  padding: 8px 24px;
   display: flex;
-  margin: 240px auto 0;
+  /* margin: 240px auto 0; */
   flex-direction: column;
   align-self: center;
   /* margin-top: 80px; */
@@ -96,7 +98,7 @@ export const H1Wrap = styled.div`
 `;
 
 export const HeroNewsFlex = styled.div`
-  height: 470px;
+  height: 440px;
   width: 100%;
   display:flex;
   gap: 2rem;
@@ -140,7 +142,7 @@ export const HeroNewsWrap = styled.div`
 export const HeroH1 = styled.div`
   /* font-size: 48px;
   text-align: center; */
-  max-width: 550px;
+  width: 100%;
   white-space: pre-line;  
     vertical-align: bottom;
   font-size: ${({ size }) => (size ? "32px" : "40px")};

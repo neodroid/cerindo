@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link as LinkR } from "react-router-dom";
 
 export const Heading = styled.h1`
   margin-bottom: 24px;
@@ -112,7 +113,108 @@ export const ImageCanvas = styled.div`
   background-color: rgba(239, 180, 1, 0.8);
   z-index: 2;
   height:100%;
+  min-height: 320px;
   width:100%;
 `;
 
-export const Imaging = styled.div`text-align: center;`;
+export const SustainabilityNewsFlex = styled.div`
+  height: 100%;
+  width: 100%;
+  display:flex;
+  gap: 2rem;
+  flex-direction: row;
+  justify-content: center;
+
+  @media screen and (max-width: 1033px) {
+  flex-direction : column;
+  align-items : center;
+  height: 100%;
+}
+`;
+
+export const ActivityContent = styled(LinkR)`
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: auto;
+  flex-direction:column;
+  display: flex;
+  text-decoration: none;
+  /* transition: all 0.5s ease-in-out; */
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
+  
+  @media screen and (max-width: 1033px) {
+    height: 450px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 486px) {
+    height: 450px;
+    width: 100%;
+  }
+`;
+
+export const ActivityImg = styled.div`
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 240px;
+
+  ${ActivityContent}:hover &{
+    transform: scale(1.08);
+  }
+`;
+
+export const ActivityDesc = styled.div`
+  height: 100%;
+  justify-content: flex-start;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @media screen and (max-width: 480px) {
+    /* align-items:center;
+    padding: 10px;
+    text-align: center; */
+  }
+`;
+
+export const ActivityImgWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+ 
+`;
+
+export const ActivityReadMore = styled.div`
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(2.4rem);
+  background-color: #EFB401;
+  justify-content: center;
+  padding: 8px 4px;
+  color: white;
+  transition: all 0.5s ease-in-out;
+
+  ${ActivityContent}:hover &{
+    transform: translateY(0);
+  }
+`;
+
+export const Imaging = styled.div`
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+`;

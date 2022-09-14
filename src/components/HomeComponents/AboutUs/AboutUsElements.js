@@ -117,10 +117,10 @@ export const Subtitle = styled.p`
 
 export const BtnWrap = styled.div`
   display: ${({ button }) => (button ? "flex" : "none")};
-  justify-content: flex-start;
+  justify-content: ${props => props.end ? "flex-end" : "flex-start"};
   margin-top: 2rem;
-  @media screen and (max-width: 1033px) {
-    justify-content: left;
+  @media screen and (max-width: 1280px) {
+    justify-content: ${props => props.end ? "flex-end" : "flex-start"};
     align-items:center;
     text-align:center;
   }

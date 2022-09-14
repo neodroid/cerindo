@@ -18,6 +18,15 @@ import {
   BtnWrap,
   InfoWrapper,
 } from "../AboutUs/AboutUsElements";
+import {
+  FlexContainer,
+  FlexWrap,
+  HomeFlex,
+  HomeFlexElement,
+  HomeH1,
+  HomeP,
+  HomeTextWrap,
+} from "../HomeElements";
 import { langContext } from "../../../langContext";
 import { HomeLangTitle, HomeLangBody, HomeLangButton } from "../HomeLang";
 
@@ -35,14 +44,17 @@ const Business = () => {
   if (homeData.length === 0) return null;
   return (
     <InfoBg img={homeData.background_image.url}>
-      <InfoWrappered>
-        <InfoWrapper>
-          <InfoRow imgStart={false}>
-            <Column1>
-              <TextWrapper>
-                <Heading>{HomeLangTitle(homeData, language)}</Heading>
-                <Subtitle>{HomeLangBody(homeData, language)}</Subtitle>
-                <BtnWrap button={true}>
+      <FlexWrap>
+        <FlexContainer>
+          <HomeFlex imgStart={false}>
+            <HomeFlexElement>
+              <ImageInfo src={homeData.image.url} alt="image" />
+            </HomeFlexElement>
+            <HomeFlexElement>
+              <HomeTextWrap>
+                <HomeH1 white right>{HomeLangTitle(homeData, language)}</HomeH1>
+                <HomeP white right>{HomeLangBody(homeData, language)}</HomeP>
+                <BtnWrap end button={true}>
                   <Button
                     primary="false"
                     smooth={true}
@@ -55,14 +67,11 @@ const Business = () => {
                     {HomeLangButton(homeData, language)}
                   </Button>
                 </BtnWrap>
-              </TextWrapper>
-            </Column1>
-            <Column2>
-              <ImageInfo src={homeData.image.url} alt="image" />
-            </Column2>
-          </InfoRow>
-        </InfoWrapper>
-      </InfoWrappered>
+              </HomeTextWrap>
+            </HomeFlexElement>
+          </HomeFlex>
+        </FlexContainer>
+      </FlexWrap>
     </InfoBg>
   );
 };
