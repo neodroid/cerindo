@@ -62,7 +62,7 @@ const Business = () => {
                     spy={true}
                     exact="true"
                     offset={-80}
-                    to="/Nickle-Ore-Mining"
+                    to="/Nickel-Ore-Mining"
                   >
                     {HomeLangButton(homeData, language)}
                   </Button>

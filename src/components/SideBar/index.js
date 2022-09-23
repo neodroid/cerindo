@@ -87,7 +87,7 @@ const Sidebar = ({ isOpen, toggle }) => {
             {SideBarLang(Business, val2)}
             </Dropbtn>
             <DropDownContent>
-              <SidebarLink to="/Nickle-Ore-Mining" onClick={toggle}>
+              <SidebarLink to="/Nickel-Ore-Mining" onClick={toggle}>
               {SideBarDropDown(BusinessOne, 0, val2)}
               </SidebarLink>
               <SidebarLink to="/Nickle-Cobalt-HPAL" onClick={toggle}>

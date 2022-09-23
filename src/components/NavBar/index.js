@@ -134,17 +134,17 @@ const Navbar = ({ toggle }) => {
               <NavLinks to="/">{NavbarLang(Home, language)}</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks>
+              <NavLinks to="/Nickel-Ore-Mining">
                 {NavbarLang(Business, language)}
                 <NavbarDropdownContent>
                   <DropDiv>
-                    <NavDropLinks to="/Nickle-Ore-Mining">
+                    <NavDropLinks to="/Nickel-Ore-Mining">
                       {NavbarDropDown(BusinessOne, 0, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Nickle-Cobalt-HPAL">
+                    <NavDropLinks to="/Nickel-Cobalt-HPAL">
                       {NavbarDropDown(BusinessOne, 1, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Ferronickle-Smelting">
+                    <NavDropLinks to="/Ferronickel-Smelting">
                       {NavbarDropDown(BusinessOne, 2, language)}
                     </NavDropLinks>
                     <NavDropLinks to="/Resource-Reserve">
@@ -166,7 +166,7 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks>
+              <NavLinks to="/QHSE">
                 {NavbarLang(Sustainibility, language)}
                 <NavbarDropdownContent>
                   <DropDiv>
@@ -184,7 +184,7 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks>
+              <NavLinks to="/Mission-Vision">
                 {NavbarLang(AboutUs, language)}
                 <NavbarDropdownContent>
                   <DropDiv>
@@ -216,7 +216,7 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks>
+              <NavLinks to="/Press-Release">
                 {NavbarLang(NewsGallery, language)}
                 <NavbarDropdownContent>
                   <DropDiv>

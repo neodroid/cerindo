@@ -105,8 +105,8 @@ const Footer = () => {
                 >
                   <FaLinkedin />
                 </SocialIconLink>
-                </SocialIcons>
-                <Link
+              </SocialIcons>
+              <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to="/Contact-Us"
               >
@@ -141,40 +141,39 @@ const Footer = () => {
                 Phone +62 411 472 0747 <br />
               </FooterLinked>
             </FooterLinkItems>
-            </FooterLinkWrapper>
-
-            <FooterLinkWrapper>
-              <FooterLinkItems>
-                  <FooterLinkTitle>
-                    {FooterDataSingle(AboutUsFooter, footerLang)}
-                  </FooterLinkTitle>
-                  <FooterLink to="/Mission-Vision">
-                    {FooterData(AboutUsDropdown, 0, footerLang)}
-                  </FooterLink>
-                  <FooterLink to="/Commitment">
-                    {FooterData(AboutUsDropdown, 1, footerLang)}
-                  </FooterLink>
-                  <FooterLink to="/Subsidiary">
-                    {FooterData(AboutUsDropdown, 2, footerLang)}
-                  </FooterLink>
-                  <FooterLink to="/Board-of-Director">
-                    {FooterData(AboutUsDropdown, 3, footerLang)}
-                  </FooterLink>
-                  <FooterLink to="/Organization-Structure">
-                    {FooterData(AboutUsDropdown, 4, footerLang)}
-                  </FooterLink>
-              </FooterLinkItems>
-              <FooterLinkItems>
+          </FooterLinkWrapper>
+          <FooterLinkWrapper>
+            <FooterLinkItems>
+              <FooterLinkTitle>
+                {FooterDataSingle(AboutUsFooter, footerLang)}
+              </FooterLinkTitle>
+              <FooterLink to="/Mission-Vision">
+                {FooterData(AboutUsDropdown, 0, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Commitment">
+                {FooterData(AboutUsDropdown, 1, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Subsidiary">
+                {FooterData(AboutUsDropdown, 2, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Board-of-Director">
+                {FooterData(AboutUsDropdown, 3, footerLang)}
+              </FooterLink>
+              <FooterLink to="/Organization-Structure">
+                {FooterData(AboutUsDropdown, 4, footerLang)}
+              </FooterLink>
+            </FooterLinkItems>
+            <FooterLinkItems>
               <FooterLinkTitle>
                 {FooterDataSingle(BusinessFooter, footerLang)}
               </FooterLinkTitle>
-              <FooterLink to="/Nickle-Ore-Mining">
+              <FooterLink to="/Nickel-Ore-Mining">
                 {FooterData(BusinessOne, 0, footerLang)}
               </FooterLink>
-              <FooterLink to="/Nickle-Cobalt-HPAL">
+              <FooterLink to="/Nickel-Cobalt-HPAL">
                 {FooterData(BusinessOne, 1, footerLang)}
               </FooterLink>
-              <FooterLink to="/Ferronickle-Smelting">
+              <FooterLink to="/Ferronickel-Smelting">
                 {FooterData(BusinessOne, 2, footerLang)}
               </FooterLink>
               <FooterLink to="/Resource-Reserve">
@@ -189,9 +188,9 @@ const Footer = () => {
               <FooterLink to="/Port-Operations">
                 {FooterData(BusinessTwo, 2, footerLang)}
               </FooterLink>
-              </FooterLinkItems>
-            
-              <FooterLinkItems>
+            </FooterLinkItems>
+
+            <FooterLinkItems>
               <FooterLinkTitle>
                 {FooterDataSingle(SustainabilityFooter, footerLang)}
               </FooterLinkTitle>
@@ -207,8 +206,8 @@ const Footer = () => {
               <FooterLink to="/Awards">
                 {FooterData(SustainabilityDropdown, 3, footerLang)}
               </FooterLink>
-              </FooterLinkItems>
-            </FooterLinkWrapper>
+            </FooterLinkItems>
+          </FooterLinkWrapper>
         </FooterLinksContainer>
 
         <SocialMedia>

@@ -66,17 +66,17 @@ function App() {
               <Switch location={location}>
                 <Route path="/" component={Home} exact />
                 <Route
-                  path="/Nickle-Ore-Mining"
+                  path="/Nickel-Ore-Mining"
                   component={NickleOreMining}
                   exact
                 />
                 <Route
-                  path="/Nickle-Cobalt-HPAL"
+                  path="/Nickel-Cobalt-HPAL"
                   component={NickleCobaltHPAL}
                   exact
                 />
                 <Route
-                  path="/Ferronickle-Smelting"
+                  path="/Ferronickel-Smelting"
                   component={FerronickleSmelting}
                   exact
                 />
