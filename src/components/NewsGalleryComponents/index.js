@@ -51,9 +51,9 @@ const NewsGallerySidebarComponents = ({page1,page2,page3,page4}) => {
                         <AboutSideBarContent page={page3} to="/Gallery">
                             {NewsGallerySidebar(NewsGallerySideBarIntl, language, 2)}
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page4} to="/Publication">
+                        {/* <AboutSideBarContent page={page4} to="/Publication">
                             {NewsGallerySidebar(NewsGallerySideBarIntl, language, 3)}
-                        </AboutSideBarContent>
+                        </AboutSideBarContent> */}
                     </Contentt>
                     : 
                     <Changed>
