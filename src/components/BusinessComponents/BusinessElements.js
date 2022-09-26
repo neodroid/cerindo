@@ -4,10 +4,11 @@ import {Link as LinkR} from "react-router-dom";
 export const Businessstyle = styled.div`
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 2rem auto;
     width: 85%;
     @media screen and (max-width: 810px) {
         flex-direction: column;
+        margin: 0 auto;
     }
 `;
 

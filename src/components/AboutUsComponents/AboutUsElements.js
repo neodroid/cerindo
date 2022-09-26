@@ -4,10 +4,11 @@ import {Link as LinkR} from "react-router-dom"
 export const Aboutstyle = styled.div`
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 2rem auto;
     width: 85%;
     @media screen and (max-width: 1050px) {
         flex-direction: column;
+        margin: 0 auto;
     }
 `;
 
