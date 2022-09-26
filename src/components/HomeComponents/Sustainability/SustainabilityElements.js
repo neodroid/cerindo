@@ -118,7 +118,7 @@ export const ImageCanvas = styled.div`
 `;
 
 export const SustainabilityNewsFlex = styled.div`
-  height: 100%;
+  height: auto;
   width: 100%;
   display:flex;
   gap: 2rem;
@@ -146,14 +146,10 @@ export const ActivityContent = styled(LinkR)`
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
   
   @media screen and (max-width: 1033px) {
-    height: 450px;
+    height: auto;
     width: 100%;
   }
 
-  @media screen and (max-width: 486px) {
-    height: 450px;
-    width: 100%;
-  }
 `;
 
 export const ActivityImg = styled.div`
@@ -173,15 +169,12 @@ export const ActivityImg = styled.div`
 export const ActivityDesc = styled.div`
   height: 100%;
   justify-content: flex-start;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
+  padding: 0.5rem 1rem 1.5rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @media screen and (max-width: 480px) {
-    /* align-items:center;
-    padding: 10px;
-    text-align: center; */
+  @media screen and (max-width: 1033px) {
+    padding-bottom: 1.5rem;
   }
 `;
 
@@ -190,7 +183,7 @@ export const ActivityImgWrap = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  min-height: 240px;
   object-fit: cover;
   overflow: hidden;
  

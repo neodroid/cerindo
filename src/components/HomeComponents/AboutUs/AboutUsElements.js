@@ -124,6 +124,9 @@ export const BtnWrap = styled.div`
     align-items:center;
     text-align:center;
   }
+  @media screen and (max-width: 1033px){
+    justify-content: flex-start;
+  }
 `;
 
 export const ImgWrap = styled.div`

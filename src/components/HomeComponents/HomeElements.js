@@ -60,6 +60,10 @@ export const HomeH1 = styled.h1`
     font-weight: 400;
     font-size: 3rem;
     margin-bottom: 2rem;
+
+    @media screen and (max-width: 1033px){
+      text-align: left;
+    }
 `
 
 export const HomeP = styled.p`
@@ -67,6 +71,10 @@ export const HomeP = styled.p`
     text-align: ${props => props.right ? "right" : "left"};
     font-size: 1rem;
     line-height: 2rem;
+    
+    @media screen and (max-width: 1033px){
+      text-align: left;
+    }
 `
 
 export const HomeTextWrap = styled.div`
@@ -87,6 +95,7 @@ export const HeaderFlex = styled.div`
   justify-content: space-between;
   margin-bottom:2rem;
   align-items: center;
+  width: 100%;
 
 `
 

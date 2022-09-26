@@ -98,7 +98,7 @@ export const H1Wrap = styled.div`
 `;
 
 export const HeroNewsFlex = styled.div`
-  height: 440px;
+  height: 100%;
   width: 100%;
   display:flex;
   gap: 2rem;
@@ -142,7 +142,7 @@ export const HeroNewsWrap = styled.div`
 export const HeroH1 = styled.div`
   /* font-size: 48px;
   text-align: center; */
-  width: 100%;
+  max-width: 550px;
   white-space: pre-line;  
     vertical-align: bottom;
   font-size: ${({ size }) => (size ? "32px" : "40px")};
@@ -172,7 +172,7 @@ export const HeroMediaH1 = styled.h1`
   font-size: 3rem;
   margin-bottom: 2rem;
   font-family: "Montserrat";
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     text-align: center;
     font-size: 40px;
   }
@@ -235,7 +235,7 @@ export const ImgWrap = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 300px;
+  min-height: 240px;
   object-fit: cover;
   overflow: hidden;
  
@@ -244,8 +244,8 @@ export const ImgWrap = styled.div`
 export const HeroNewsContent = styled(LinkR)`
   cursor: pointer;
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 100%; 
+  height: auto;
   flex-direction:column;
   display: flex;
   text-decoration: none;
@@ -255,12 +255,7 @@ export const HeroNewsContent = styled(LinkR)`
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
   
   @media screen and (max-width: 1033px) {
-    height: 450px;
-    width: 100%;
-  }
-
-  @media screen and (max-width: 486px) {
-    height: 450px;
+    height: 100%;
     width: 100%;
   }
 `;
@@ -272,7 +267,7 @@ export const Img = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100%;
+  min-height: 240px;
 
   ${HeroNewsContent}:hover &{
     transform: scale(1.08);
@@ -281,14 +276,12 @@ export const Img = styled.div`
 
 export const HeroNewsDesc = styled.div`
   height: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 1.5rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @media screen and (max-width: 480px) {
-    /* align-items:center;
-    padding: 10px;
-    text-align: center; */
+  @media screen and (max-width: 1033px) {
+    padding-bottom: 1.5rem;
   }
 `;
 
