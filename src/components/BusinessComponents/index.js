@@ -72,13 +72,13 @@ const BusinessSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7}) 
                         <AboutSideBarContent page={page1} to="/Nickel-Ore-Mining">
                             {BusinessSidebar(BusinessSideBarIntl, language, 0)}
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page2} to="/Ferronickle-Smelting">
+                        <AboutSideBarContent page={page2} to="/Ferronickel-Smelting">
                             {BusinessSidebar(BusinessSideBarIntl, language, 1)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page3} to="/Resource-Reserve">
                             {BusinessSidebar(BusinessSideBarIntl, language, 2)}
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page4} to="/Nickle-Cobalt-HPAL">
+                        <AboutSideBarContent page={page4} to="/Nickel-Cobalt-HPAL">
                             {BusinessSidebar(BusinessSideBarIntl, language, 3)}
                         </AboutSideBarContent>
                         <AboutSideBarContent page={page5} to="/Ore-Export">

@@ -90,10 +90,10 @@ const Sidebar = ({ isOpen, toggle }) => {
               <SidebarLink to="/Nickel-Ore-Mining" onClick={toggle}>
               {SideBarDropDown(BusinessOne, 0, val2)}
               </SidebarLink>
-              <SidebarLink to="/Nickle-Cobalt-HPAL" onClick={toggle}>
+              <SidebarLink to="/Nickel-Cobalt-HPAL" onClick={toggle}>
               {SideBarDropDown(BusinessOne, 1, val2)}
               </SidebarLink>
-              <SidebarLink to="/Ferronickle-Smelting" onClick={toggle}>
+              <SidebarLink to="/Ferronickel-Smelting" onClick={toggle}>
               {SideBarDropDown(BusinessOne, 2, val2)}
               </SidebarLink>
               <SidebarLink to="/Resource-Reserve" onClick={toggle}>
