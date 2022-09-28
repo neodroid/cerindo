@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BannerContainer = styled.div`
   color: #333;
   height: 340px;
-  background-image: radial-gradient(108.47% 253.52% at -13.58% 95.83%,#000 0,rgba(0,0,0,.28125) 65.54%,rgba(0,0,0,.113963) 81.96%,transparent 100%) , url(${(props) => props.img}) ;
+  background-image: radial-gradient(108.47% 253.52% at -13.58% 95.83%,#000 0,rgba(0,0,0,.28125) 40%,rgba(0,0,0,.113963) 81.96%,transparent 100%) , url(${(props) => props.img}) ;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
