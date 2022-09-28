@@ -296,7 +296,7 @@ export const Item = styled.a`
 `;
 
 export const Flag = styled.img`
-  max-width: 1.4rem;
+  max-width: 1.3rem;
   max-height: 1rem;
   position: relative;
   top: 2px;
