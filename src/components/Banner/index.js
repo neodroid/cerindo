@@ -1,7 +1,7 @@
 import React from "react";
-import { 
-  BannerContainer, 
-  BannerWrapper, 
+import {
+  BannerContainer,
+  BannerWrapper,
   Heading,
   BannerBottomContent,
   BannerBottom,
@@ -10,21 +10,19 @@ import {
 } from "./BannerElement";
 import { FaAngleDoubleRight } from "react-icons/fa";
 
-const Banner = ({ img, heading,lightText, texted, place }) => {
+const Banner = ({ img, heading, lightText, texted, place }) => {
   return (
     <>
       <BannerContainer img={img}>
         <BannerWrapper texted={texted}>
           <BannerBottom>
-            <BannerBottomContent>
-              {/*<BannerBotTop>
+            {/*<BannerBotTop>
                 Home
                 <FaAngleDoubleRight style={{paddingLeft:"5px"}}/>
-              </BannerBotTop>*/}
-              <BannerPlace>
-                  {place}
-              </BannerPlace>
-            </BannerBottomContent>
+                  </BannerBotTop> */}
+            <BannerPlace>
+              {place}
+            </BannerPlace>
           </BannerBottom>
         </BannerWrapper>
       </BannerContainer>

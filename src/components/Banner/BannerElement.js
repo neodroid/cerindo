@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BannerContainer = styled.div`
   color: #333;
   height: 340px;
-  background-image: url(${(props) => props.img});
+  background-image: radial-gradient(108.47% 253.52% at -13.58% 95.83%,#000 0,rgba(0,0,0,.28125) 65.54%,rgba(0,0,0,.113963) 81.96%,transparent 100%) , url(${(props) => props.img}) ;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -13,8 +13,10 @@ export const BannerWrapper = styled.div`
   position: inherit;
   display: flex;
   background-color: ${({texted})=>(texted ? "transparent" : "rgba(0, 0, 0, 0.7)")};
-  width: 100%;
+  width:80%;
   height: 100%;
+  margin: 0 auto;
+  padding-bottom: 4rem;
   text-align: center;
   flex-direction: column;
 `;
@@ -34,8 +36,6 @@ export const Heading = styled.h1`
 
 export const BannerBottom = styled.div`
 height: 100%;
-bottom: 0px;
-left: 200px;
   position: relative;
   align-self: flex-start !important;
   flex-direction: column-reverse !important;
@@ -43,9 +43,8 @@ left: 200px;
   @media screen and (max-width: 865px) {
     position: static;
     align-items:center;
-    margin: 0 auto 30px;
     width: 100%;
-    text-align: left;
+    text-align: center;
   }
 
 `
@@ -76,8 +75,12 @@ export const BannerBotTop = styled.div`
   align-items: center;
 `;
 export const BannerPlace = styled.p`
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 36px;
-  color: black;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: white;
+
+  @media screen and (max-width: 865px){
+    font-size: 2.5rem;
+  }
 `;
