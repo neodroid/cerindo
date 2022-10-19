@@ -103,7 +103,7 @@ const BODComponents = () => {
             </TheKing>
             <BodGrid>
               {BOD.listBoardOfDirectors.map((data, idx) => {
-                if (idx < 4 && idx > 0) {
+                if (idx < 5 && idx > 0) {
                   return (
                     <Bodbox key={idx}>
                       <BodBoxContent>
@@ -206,7 +206,7 @@ const BODComponents = () => {
             <BODTitle>{BODMTitleLang(BODMTitleData, language,1)}</BODTitle>
             <BodGrid>
               {BOD.listBoardOfDirectors.map((data, idx) => {
-                if (idx > 3) {
+                if (idx > 4) {
                   return (
                     <Bodbox key={idx}>
                       <BodBoxContent>
