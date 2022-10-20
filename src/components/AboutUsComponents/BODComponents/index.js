@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Aboutstyle, AboutMain } from "../AboutUsElements";
-import { BODContentData,BODMTitleData } from "../../Data/AboutusData/BODDatas";
+import { Aboutstyle, AboutMain, UnderCons } from "../AboutUsElements";
+import { BODContentData, BODMTitleData } from "../../Data/AboutusData/BODDatas";
 import { aboutUsService } from "../../../service/Aboutus";
 import AboutSideBarComponents from "../index";
 import {
@@ -27,7 +27,8 @@ import {
 } from "./BODElements";
 
 import { langContext } from "../../../langContext";
-import { BODlang, BODMTitleLang, BODTitleLang } from "./BODlang";
+import { BODlang, BODMTitleLang, BODTitleLang, UnderConsLang } from "./BODlang";
+import { UnderConsData } from "../../Data/AboutusData/UnderConstructionDatas";
 
 const BODComponents = () => {
   const { language } = useContext(langContext);
@@ -49,8 +50,10 @@ const BODComponents = () => {
         <AboutSideBarComponents page4={true} />
         <AboutMain>
           <Bodwrapped>
-            <BODTitle>{BODMTitleLang(BODMTitleData, language,0)}</BODTitle>
-            <TheKing>
+            <BODTitle>{BODMTitleLang(BODMTitleData, language, 0)}</BODTitle>
+            <UnderCons><p>{UnderConsLang(UnderConsData, language, 0)}</p>
+            </UnderCons>
+            {/* <TheKing>
               {BOD.listBoardOfDirectors.map((data, idx) => {
                 if (idx == 0) {
                   return (
@@ -202,7 +205,7 @@ const BODComponents = () => {
                   );
                 }
               })}
-            </TheKing> */}
+            </TheKing> 
             <BODTitle>{BODMTitleLang(BODMTitleData, language,1)}</BODTitle>
             <BodGrid>
               {BOD.listBoardOfDirectors.map((data, idx) => {
@@ -254,7 +257,7 @@ const BODComponents = () => {
                   );
                 }
               })}
-            </BodGrid>
+            </BodGrid> */}
           </Bodwrapped>
         </AboutMain>
       </Aboutstyle>

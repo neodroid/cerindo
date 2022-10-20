@@ -4,6 +4,7 @@ import {
   AboutSideBar,
   AboutMain,
   AboutSideBarContent,
+  UnderCons,
 } from "../AboutUsElements";
 import { aboutUsService } from "../../../service/Aboutus";
 import AboutSideBarComponents from "../index";
@@ -19,6 +20,8 @@ import {
   OrganizationLangTitle,
 } from "./OrganizationLang";
 import { VismisWrited } from "../VismisComponents/VismisElements";
+import { UnderConsLang } from "../BODComponents/BODlang";
+import { UnderConsData } from "../../Data/AboutusData/UnderConstructionDatas";
 
 const OrganizationComponents = () => {
   const { language } = useContext(langContext);
@@ -42,12 +45,13 @@ const OrganizationComponents = () => {
             <VismisWrited title>
               {OrganizationLangTitle(organization, language)}
             </VismisWrited>
-            <CommitmentWrited>
+            <UnderCons><p>{UnderConsLang(UnderConsData, language, 0)}</p></UnderCons>
+            {/* <CommitmentWrited>
               {OrganizationLangBody(organization, language)}
             </CommitmentWrited>
             <ImagePart>
               <Imagess src={organization.Structure_image.url} alt="structure" />
-            </ImagePart>
+            </ImagePart> */}
           </OrgWrapped>
         </AboutMain>
       </Aboutstyle>

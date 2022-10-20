@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Link as LinkR} from "react-router-dom"
+import { Link as LinkR } from "react-router-dom"
 
 export const Aboutstyle = styled.div`
     display: flex;
@@ -24,8 +24,8 @@ export const AboutSideBar = styled.div`
 `;
 
 export const AboutSideBarContent = styled(LinkR)`
-    background-color: ${(props)=>(props.page ? "#FBFF47" : "white")};
-    border-left: ${(props)=>(props.page ? "2px solid #EFB401" : "none")};
+    background-color: ${(props) => (props.page ? "#FBFF47" : "white")};
+    border-left: ${(props) => (props.page ? "2px solid #EFB401" : "none")};
     font-size: 14px;
     line-height: 25px;
     margin-bottom: 14px;
@@ -35,7 +35,7 @@ export const AboutSideBarContent = styled(LinkR)`
     color: black;
     text-decoration: none;
     &:hover {
-      background-color: ${(props)=>(props.page ? "#FBFF47" : "#dedede")};
+      background-color: ${(props) => (props.page ? "#FBFF47" : "#dedede")};
   }
 `;
 
@@ -158,4 +158,13 @@ export const Changed = styled.div`
 @media screen and (max-width: 1050px) {
     display: none;
   }
+`
+
+export const UnderCons = styled.div`
+  display:flex;
+  justify-content:start;
+  align-items: start;
+  width: 100%;
+  height: 50vh;
+
 `
