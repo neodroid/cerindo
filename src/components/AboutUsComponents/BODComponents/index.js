@@ -51,9 +51,9 @@ const BODComponents = () => {
         <AboutMain>
           <Bodwrapped>
             <BODTitle>{BODMTitleLang(BODMTitleData, language, 0)}</BODTitle>
-            <UnderCons><p>{UnderConsLang(UnderConsData, language, 0)}</p>
-            </UnderCons>
-            {/* <TheKing>
+            {/* <UnderCons><p>{UnderConsLang(UnderConsData, language, 0)}</p>
+            </UnderCons> */}
+            <TheKing>
               {BOD.listBoardOfDirectors.map((data, idx) => {
                 if (idx == 0) {
                   return (
@@ -106,7 +106,7 @@ const BODComponents = () => {
             </TheKing>
             <BodGrid>
               {BOD.listBoardOfDirectors.map((data, idx) => {
-                if (idx < 5 && idx > 0) {
+                if (idx < 6 && idx > 0) {
                   return (
                     <Bodbox key={idx}>
                       <BodBoxContent>
@@ -205,11 +205,11 @@ const BODComponents = () => {
                   );
                 }
               })}
-            </TheKing> 
+            </TheKing> */}
             <BODTitle>{BODMTitleLang(BODMTitleData, language,1)}</BODTitle>
             <BodGrid>
               {BOD.listBoardOfDirectors.map((data, idx) => {
-                if (idx > 4) {
+                if (idx > 5) {
                   return (
                     <Bodbox key={idx}>
                       <BodBoxContent>
@@ -257,7 +257,7 @@ const BODComponents = () => {
                   );
                 }
               })}
-            </BodGrid> */}
+            </BodGrid>
           </Bodwrapped>
         </AboutMain>
       </Aboutstyle>
