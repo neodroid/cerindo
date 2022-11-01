@@ -45,13 +45,13 @@ const OrganizationComponents = () => {
             <VismisWrited title>
               {OrganizationLangTitle(organization, language)}
             </VismisWrited>
-            <UnderCons><p>{UnderConsLang(UnderConsData, language, 0)}</p></UnderCons>
-            {/* <CommitmentWrited>
+            {/* <UnderCons><p>{UnderConsLang(UnderConsData, language, 0)}</p></UnderCons> */}
+            <CommitmentWrited>
               {OrganizationLangBody(organization, language)}
             </CommitmentWrited>
             <ImagePart>
               <Imagess src={organization.Structure_image.url} alt="structure" />
-            </ImagePart> */}
+            </ImagePart>
           </OrgWrapped>
         </AboutMain>
       </Aboutstyle>
